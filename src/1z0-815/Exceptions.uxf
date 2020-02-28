@@ -1,0 +1,358 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>930</x>
+      <y>470</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Object
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>970</x>
+      <y>490</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>930</x>
+      <y>540</y>
+      <w>220</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Throwable
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>620</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Error
+bg=#F6F6F6
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>770</y>
+      <w>150</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>RuntimeException
+bg=#F6F6F6
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>860</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ArithmeticException
+bg=#F6F6F6
+halign=left
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>830</y>
+      <w>270</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ArrayIndexOutOfBoundsException
+bg=#F6F6F6
+halign=left
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>890</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ClassCastException
+bg=#F6F6F6
+halign=left
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>920</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>NullPointerException
+bg=#F6F6F6
+halign=left
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1090</x>
+      <y>950</y>
+      <w>220</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>IllegalArgumentException
+bg=#F6F6F6
+halign=left
+group=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1350</x>
+      <y>950</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>NumberFormatException
+bg=#F6F6F6
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1300</x>
+      <y>950</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1140</x>
+      <y>790</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>560</y>
+      <w>150</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>790</x>
+      <y>630</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Exception
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1100</x>
+      <y>560</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1240</x>
+      <y>620</y>
+      <w>240</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>ExceptionInInitializerError
+bg=#F6F6F6
+halign=left
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1240</x>
+      <y>650</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>StackOverflowError
+bg=#F6F6F6
+halign=left
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1240</x>
+      <y>680</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>NoClassDefFoundError
+bg=#F6F6F6
+halign=left
+group=2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>640</x>
+      <y>630</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>IOException
+bg=#F6F6F6
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>740</x>
+      <y>630</y>
+      <w>70</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>50.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>560</x>
+      <y>690</y>
+      <w>190</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>FileNotFoundException
+bg=#F6F6F6
+halign=left</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1070</x>
+      <y>750</y>
+      <w>510</w>
+      <h>240</h>
+    </coordinates>
+    <panel_attributes>Unchecked Exceptions
+bg=#ffffff
+lt=.
+halign=right
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>540</x>
+      <y>510</y>
+      <w>360</w>
+      <h>230</h>
+    </coordinates>
+    <panel_attributes>Checked Exceptions
+halign=left
+bg=#ffffff
+lt=.
+layer=-2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>830</x>
+      <y>650</y>
+      <w>280</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;130.0;130.0;260.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>710</x>
+      <y>650</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1170</x>
+      <y>620</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>750</x>
+      <y>540</y>
+      <w>90</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>??
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
