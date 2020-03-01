@@ -45,23 +45,33 @@
 3. what ever method is called
 
 
-### 8 Primitive Data Types
-* Java works with _objects_ that contain collections of primitive data types.
-* primitive data types are not objects
-* primitive types hold their values in memory
-* `null` means pointer is pointing to no object
-    * thus primitives can't be null
+## Data Types
+* Java works with _objects_ that contain collections of Primitive Data Types.
 
+##### _object_ vs. Reference
+* _variable name_ : name of the var 
+* _reference_ : @9999Object : accessed by it's variable name
+    * always of same size (=length) 
+    * has a _type_ (`Object` is such a type - not to be confused with _object_).
+    * may cause, e.g. through `new Object();` , an _object_ to be created on the heap
+* _object_ is what the reference points to
+    * an object may have multiple references
 
-    int i; // Java just allocated 32 bits of memory.
+#### 8 Primitive Types
+* Contain a pointer to a value in memory.
+    * Thus have fixed size.
+    * Thus upon declaring a Primitive Type, Java will directly allocate memory according to the size of the Primitive Type.
+* Can't contain `null` (as they don´t contain an pointer to an _object_ in the first place).
+* _mutable_.
 
-### Reference Type
+#### Reference Type
 * holds pointer to memory address of object
     * unlike other Languages, Java does not allow to know what the physical memory adress is
 * a reference can be assigend to another object of the a compatible type
+* _immutable_.
 
-
-#### Identifier Name
+## Variables
+##### Identifier Name
 * must begin with letter , $ or _
 * can include numbers
 * a single _ is not allowed as identifier (since Java 9)
@@ -97,66 +107,37 @@
     * compiler will throw error, if the code reads an un-init var
     
     
-    int i;
-    int x;
+    int i, x;
     if (check){
-        i=0;
-        x=0;
-        } else {
+        i=0; x=0;
+    } else {
         i=1;
-        }
-        int a = i; // OK (i is initialized either way)
-        int b = x; // NO
+    }
+    int a = i; // OK // i is initialized either way
+    int b = x; // NO // reading uninitialized variable
     
     
-#### Parameters (constructor or method)
-* are local variables
-* that have been pre-initialized
+##### Parameters (constructor or method)
+* are local variables, that have been pre-initialized
+* C-Error: `int i; find(i);`
 
+#### `var` (local variable type inference)
 
-    public void check(){
-        boolean value;
-        find(value); // NO
-        }
-
-
-
-variable type | default init value
---- | ---
-boolean | false
-byte,short,int,long | 0
-float,double | 0.0
-char | '\u0000
-all objects (e.g. String) | null
-
-
-### var (local variable type inference)
-* since Java 10
-* can only be used with local variables
-    * var cannot be used with parameters, pick your reason
-        * not declared & init on same line
-        * special kind of local variable
-    * can't be used with instance/class vars
-* var must be declared and initialized on the same line.
-
-        var a = 1;
-        var b = "name";
-        a = b; // NO
-
-* in Java the type of var is resolved at compile time.
-* in JavaScript var would be resolved at run time.
-
-        var a = (short)10; // tell 10 to be short
-        a = (bype) 5; since byte < short, it is auto. promoted to short
-
+* `var` can only be used with local variables
+   * thus can't be used with instance/class vars
+* `var` must be declared and initialized on the same line.
+    * thus cannot be used with parameters
 * var can be used for reference types
-* however it can not be assigend null (as the compiler would be overburdened to guess the Object type)
+*   however it can't be assigend `null` , since impossible to guess type.
+ 
 
-        var a = "foo"; // OK
-        a = null; // OK
-        var b = null; // NO
-        var c = 0; //OK
-        c = null; // NO
+    var a = (short) 1;
+    a= "name"; // OK
+    var c = 0; // OK
+    c = null;  // NO
+
+
+
 * var is not a _reserved word_.
     * var is a _reserved type name_.
         * cannot be used for _class_, _interface_, or _enum_ declarations.
@@ -196,13 +177,5 @@ all objects (e.g. String) | null
     * it can run only once
     * not part of exam, since deprecated
     
-##### Object vs. Reference
-* _variable name_ : name of the var 
-* _reference_ : @9999Object : accessed by it's variable name
-    * always of same size (=length) 
-    * has a _type_
-    * `Object` is a type - that is not what we are talking about.
-    * may (`new Object();`) or may not cause an Object created on the heap
-* _object_ is what the reference points to
-    * an object may have multiple references
+
     

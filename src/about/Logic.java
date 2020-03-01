@@ -6,6 +6,8 @@ package about;
 public class Logic {
     private static final int i = 2;
 
+    static boolean b;
+
     /*
      * &&	AND
      * ||	OR
@@ -39,6 +41,8 @@ public class Logic {
 
         }
 
+        ternary();
+        incrementTest();
         //switchTest();
         logicTest();
 
@@ -81,6 +85,46 @@ public class Logic {
 
 
         System.out.println(a && b);
+
+
+    }
+
+
+
+    static void incrementTest(){
+         int i = 0;
+         b= i++ == 0;
+         b = (i=i+1) == 0;
+         b= ++i == 0;
+    }
+
+
+    static Object ternary( ){
+        int i = 0;
+        var v = i>0? new Integer(1) : "foo";
+        v = new Integer(2);
+        v = "a";
+        var a = 1;
+        var b = new Integer(2);
+        a = b;
+
+
+
+        return i>0 ? new Integer(1) : "foo";
+    }
+
+
+    static void  unperformedSide(){
+        int i=0;
+        if (i>0){
+            i++;
+        }else{
+            i--;
+        }
+        // i == -1
+
+        i = i>0 ? i-- : i++; // the i-- is ignored
+
     }
 
 }

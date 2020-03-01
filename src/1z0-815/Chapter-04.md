@@ -116,13 +116,15 @@ implicit vs explicit casts
     * an Object whose type implements java.lang.Iterable
 
 ##### break
-        optionalLabel : for (String entry : list){
-                    for (String foo :list){
-                        break optionalLabel;
-                    }
-        }
+* transfers control to the next enclosing statement
+    *  _label_ allows to break out of an higher-level loop
 
-* _label_ allows to break out of an higher-level loop
+
+    optionalLabel : for (String entry : list){
+                for (String foo :list){
+                    break optionalLabel;
+    }           }
+
 
 ##### continue
 * _continue_ transfers control to the boolean expression that determines 
@@ -134,3 +136,9 @@ in that they allow to exit a block of code early.
 * Any statement after a break or continue statement will lead to an 
 _unrachable statemennt_ error, and will not compile.
 
+#### Reviewing Branching
+* `switch` does ot allow `continue` statement.
+
+
+#### Unperformed Side Effects
+* 

@@ -1,4 +1,4 @@
-package about;
+package about.basics.collections;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -14,7 +14,12 @@ public class Array {
 	 * int 0, double 0.0, char '0', boolean false, Object null 
 	 */
 
+	static boolean b;
+
 	public static void main(String[] args) {
+
+		// index starts at 0
+		// length starts at 1
 
 		compareArrays();
 		int[] a1D = new int[3];			// [0, 0, 0]

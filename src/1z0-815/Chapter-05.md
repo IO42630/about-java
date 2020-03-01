@@ -120,15 +120,18 @@ print either with for or with Arrays.tostring(array)
         Arrays.binarySearch(num,3); // -2
 
 ### Comparing
-* < 0 : first array is smaller
-* = 0 : both arrays are equal
-* 0 < : second array is smaller
+* `int` can be compared with operators (Ch.3)
+* Objects e.g. `Integer` can be compared with
+    * operators (e.g. `<`,`==`) , this will return a `boolean`.
+    * `a.compareTo(b)` , this will return an `int`.
+* Arrays can be compared with `Arrays.compare(a,b);` , this will return an `int`.
+* Think of `a.compareTo(b)` and `compare(a,b)` as `a - b`. 
 
-        Arrays.compare({1}, {1}); // 0
-        Arrays.compare({1}, {1,1}); // -1
-        Arrays.compare({2}, {1,1}); // 
- 
-        arrayA.compare
+
+    Arrays.compare({1}, {1}); // 0
+    Arrays.compare({1}, {1,1}); // -1
+    Arrays.compare({2}, {1,1}); // 
+        
 
 * null is smaller than any other value
 * for String : a < b if a prefix of b
@@ -221,4 +224,36 @@ char | Character | 'c'
 
 
 ##### Conv between Array and List
+* fixed-size lists
+    * backed (changes are synchronized between original array and list)
+        * `list = Arrays.asList(array)`.
+    * immutable (values of list are immutable)
+        * `list = List.of(array)`.
 
+#### Using Varargs to Create a List
+    List<String> list1 = Arrays.asList("one", "two");
+    List<String> list2 = List.of("one", "two");
+
+### Summary
+Conversions | toArray() | Arrays.asList() | List.of()
+---|---|---|---
+Types| List -> Array | Array/varargs -> List | Array/varargs -> List  
+OK to remove() from new obj | No | No | NO
+OK to set() in new obj | Yes |  YES | NO
+Sync | NO | YES | N/A
+    
+    List<String> fixedSizeList = Arrays.asList("a", "b", "c");
+    List<String> expandableList = new ArrayList<>(fixedSizeList);
+
+#### Sorting 
+* `Collections.sort(list)`
+
+## Sets and Maps
+####Sets
+* Are not ordered
+* Can't contain duplicates
+* See `Sets.java`.
+#### Maps
+* See `Maps.java`.
+
+## Math

@@ -1,7 +1,5 @@
 package about;
 
-import about.primitives.Char;
-
 import java.util.ArrayList;
 import java.util.List;
 

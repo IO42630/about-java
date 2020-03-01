@@ -1,8 +1,13 @@
-package about;
+package about.basics;
 
-public class Opreators {
+public class Operators {
+
+
 
     static int i = 1;
+    static int i1;
+    static int i2;
+    static double d;
 
     public static void main(String args[]) {
         test();
@@ -50,5 +55,26 @@ public class Opreators {
 		// modulo may be applied to negative integers and floats
     }
 
+    static void precedence(){
+
+
+        d = (double)1/2;//0.5   // casting has precedence over division
+        d = (double)(1/2);//0.0
+    }
+
+
+
+    static void comaring(){
+        Integer integer1 = 1;
+        Integer integer2 = 0;
+
+        boolean b = 1 < 2;
+        b = integer1 < integer2;
+        integer1.compareTo(integer2);
+
+
+
+
+    }
 
 }

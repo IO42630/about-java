@@ -128,7 +128,44 @@ Operator | with Primitive Types | with Reference Types
 * comparing two variables/literals of type boolean
 * comparing two references (including `null` and references to objects of type `String`)
 * in Java null==null is true.
+#### compareTo()
+* imagine: `a.compareTo(b) = a - b;`
 
 ### Relational Operators
+* boolean
+    * `>` , `>=`, `<`, `<=`
+    * `obj instanceof Object`
+        * may be used before Casting.
+        * C-Error: `Number time;  b = time instanceof String;` 
+        * `null instanceof Object` is always `false`.
+        * C-Error: `null instanceof null`
+        
+#### Logical Operators
+* Logical
+    * AND `&` , OR `|` , XOR `^`
+* Short-cirquit: 
+    * If first clause suffices to determine the result, the second clause is not evaluated.
+    * AND `&&` , OR `||`
+    * Usage: `if(list!=null && list.get(1){ // }`
+    
+##### Unperformed Side Effects:
 
-##### Continue Here
+
+    int i =0;
+    boolean b = (i==0 || (i=i+1)==0); // this is valid syntax
+    // i remains 0 , because clause after || is never evaluated
+
+
+### Ternary Operator
+
+
+    int i = 0;
+    String s = i<2 ? "val if true" : "val if false";
+    
+    Object find(int i){
+        return i>0 ? new Integer(1) : "foo"; // OK to have different types
+    }
+    
+        
+ * obvious Unperformed Side Effects see `Logic.java`.
+        

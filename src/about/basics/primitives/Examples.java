@@ -1,4 +1,4 @@
-package about.primitives;
+package about.basics.primitives;
 
 public class Examples {
 
