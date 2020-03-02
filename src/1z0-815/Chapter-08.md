@@ -60,3 +60,14 @@ pubic | final | class | Foo  | extends Bar| {int i=0;}
 SKIP
 
 ### Polymorphism
+One object or one method call show different behavior.
+##### 2 Types of Polymorphism
+* Overloading (C-Time Poly) : resolved at C-Time
+* Overriding (R-Time Poly) : resolved at R-Time
+
+* non-static fields are hidden not overridden.
+
+* type of _object_ (in memory)
+    * immutable
+* type of reference (data type)
+    * determines api

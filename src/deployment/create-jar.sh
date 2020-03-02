@@ -1,4 +1,4 @@
-$!/bin/bash
+#!/bin/bash
 # compile
 javac pkg/Core.java
 # create the jar with manifest

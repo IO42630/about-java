@@ -2,17 +2,19 @@ package about.basics.classes.childpackage;
 
 import about.basics.classes.parentpackage.Parent;
 
-// Child - - - - - - - - - - - - - - - - - -
+
 public class Child extends Parent {
 
-    int n;
+    public int instanceVar =0;
+    private int n;
+    public static int classVar;
 
     public Child() {
-        this(23);
-        int n = 0;
+        this(0);
+        int n = 1;
         this.n = n;
-        this.show();
-        super.show();
+        classVar =1;
+
 
     }
 
@@ -24,10 +26,11 @@ public class Child extends Parent {
     }
 
     @Override
-    public void show() {
-
-        super.show();
+    public String toString() {
+        return "Child";
     }
+
+    public static String staticMethod(){return "Child";};
 
     void protectedTest(){
         int i = protectedInteger;
