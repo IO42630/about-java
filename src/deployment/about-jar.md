@@ -1,17 +1,29 @@
 # ABOUT JAR
 JAR (Java Archive)
-* Security: You can digitally sign the contents of a JAR file. Users who recognize your signature can then optionally grant your software security privileges it wouldn't otherwise have.
-* Packaging for extensions: The extensions framework provides a means by which you can add functionality to the Java core platform, and the JAR file format defines the packaging for extensions. By using the JAR file format, you can turn your software into extensions as well.
+* Security: 
+You can digitally sign the contents of a JAR file. 
+Users who recognize your signature can then optionally grant your software security privileges it wouldn't otherwise have.
+* Packaging for extensions: 
+The extensions framework provides a means by which you can add functionality to the Java core platform, and the JAR file format defines the packaging for extensions. By using the JAR file format, you can turn your software into extensions as well.
+
+
 
 |Operation|Command|
 | --- | --- |
-|create JAR| `jar cf jar-file input-file(s)`|
-|create JAR with manifest-addition | `jar cfm jar-file manifest-addition input-file(s)`|
-|view contents|`jar tf jar-file`|
-|extract contents|`jar xf jar-file1`|
-|update (add/overwrite)|`jar uf jar-file input-file(s)`|
-| set entry point (directly set main class)|`jar cfe Core.jar pkg.Core pkg/Core.class`|
-|run|`java -jar app.jar`|
+`c`| create
+`f`| file : a jar file description will follow
+`m`| manifest : a manifest will follow, manifest/file must be in same order as `mf`.
+`t`| table of contents : prints table of contents
+`x`| extract
+`u`| update
+`e`| entry point : overrides the main-class set in the manifest
+`jar cf jar-file input-file(s)` | create JAR
+`jar cfm jar-file manifest input-file(s)` | create JAR with manifest-addition|
+`jar tf jar-file` |view contents
+`jar xf jar-file1`|extract contents|
+`jar uf jar-file input-file(s)` |update (add/overwrite)|
+`jar cfe Core.jar pkg.Core pkg/Core.class` | set entry point (directly set main class)|
+`java -jar app.jar`|run|
 
 
 ### Manifest Files

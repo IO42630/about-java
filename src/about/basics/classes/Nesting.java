@@ -1,42 +1,40 @@
-package about.basics.classes;
-
-
-
-
-
-
-
-
-
+package basics.classes;
 
 
 public class Nesting {
 
-    public static void main(String... args){
+    public static void main(String... args) {
 
-        //new Default().privateTest();
+        System.out.println(new OuterDefault().new InnerDefault().why);
+        System.out.println(new OuterDefault().new InnerProtected().why);
+        System.out.println(new OuterDefault().getInnerPrivate()); // "why" is not accessible
+        System.out.println();
     }
-
-
 
 
 }
 
 
-class Default {
+class OuterDefault {
 
-    private void privateTest(){}
+    InnerPrivate getInnerPrivate() {
+        return new InnerPrivate();
+    }
 
+    public class InnerPublic {
+        public int why;
+    }
+
+    class InnerDefault {
+        public int why;
+    }
+
+    protected class InnerProtected {
+        public int why;
+    }
 
     // internal class => encapsulation
-    private class Foo {
-
+    private class InnerPrivate {
+        public int why;
     }
-
-    protected class Bar {
-
-    }
-
 }
-
-

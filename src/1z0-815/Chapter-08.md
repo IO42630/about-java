@@ -25,6 +25,10 @@ optional | optional | |   | optional | empty-able
 pubic | final | class | Foo  | extends Bar| {int i=0;}
 
 ##### Access Modifier
+Construct | `private` | default | `protected` | `public`
+---|---|---|---|---
+top-level class| | YES | | YES
+inner class | YES | YES | YES | YES
 * top-level class : is not defined inside another class
     * pubic or default
 * innner class : defined inside another class
