@@ -7,9 +7,9 @@
 ####Variable
 * Variables can not be declared outside of a class or interface.
 * Fields
-    * Instance Variable: (non-static) , defined withing a Class.
-    * Class Variable : static , defined within a Class.
-* Local Variable : defined within a Constructor , Method or Initializer Block.
+    * Instance Variable: (non-static) , declared withing a Class.
+    * Class Variable : static , declared within a Class.
+* Local Variable : declared within a Constructor , Method or Initializer Block.
 * Constant : what ever Variable has a `final` keyword.
 
 

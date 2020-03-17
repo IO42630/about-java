@@ -9,7 +9,7 @@ boolean, we know the lambda returns a boolean.
 * Arrow operator to separate the parameter and body
 * Body calls a single methods, and returns the result
 * parentheses can be omitted if there is a single parameter and its type is not explicitly stated
-* there isn't a rule that says you must use all defined parameters
+* there isn't a rule that says you must use all declared parameters
 
 
 

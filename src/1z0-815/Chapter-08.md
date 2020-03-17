@@ -1,11 +1,11 @@
 # Chapter 8 : Class Design
 ### General
 
-* member : inherited component of class
+* _member_ : inherited component of class
     * fields, methods, nested classes, interfaces, enumerated types
     * ! consctructors (since not inherited)
-* field : variable defined outside of method, but inside class. is a member of the class.
-* A Java-file can have 0..1 public top level classes.
+* _field_ : variable declared outside of method, but inside class.
+* A Java-file can have 0..1 public top-level classes.
 * `this.var` references to current and iherited members
     * instance of is used do set apart instance/class variables from parameters/local variables
     * references 
@@ -19,25 +19,22 @@
 
 * Class declaration:
 
-access modifier | specifier | class | class name || extends | { // class body }
+access modifier | specifier | class | class name |extends|  implements| { // class body }
 ---|---|---|---|---|--- |---
-optional | optional | |   | optional | empty-able
-pubic | final | class | Foo  | extends Bar| {int i=0;}
+| | optional | | | optional | optional |empty-able
+pubic | final | class | Foo  | extends Bar| implements Zoc | {int i=0;}
 
 ##### Access Modifier
 Construct | `private` | default | `protected` | `public`
 ---|---|---|---|---
 top-level class| | YES | | YES
-inner class | YES | YES | YES | YES
-* top-level class : is not defined inside another class
-    * pubic or default
-* innner class : defined inside another class
-    * public, protected, default or private
+inner class : declared inside another class | YES | YES | YES | YES
+ 
 
     
 ##### Specifier
-    * abstract
-    * final : class cannot be extended
+* abstract
+* final : class cannot be extended
     
     
 #### Constructors
@@ -45,7 +42,7 @@ inner class | YES | YES | YES | YES
 * may have different access modifiers, 
     * overloading rules do apply
 * `var` type can not be used in parameters
-* if a user-defined constructor is present, the default constructor is not defined in the background
+* if a user-declared constructor is present, the default constructor is not declared in the background
     * thus calling the default constructor -> C-Error.
     * having a private constructor effectively disables the instantiation of the class from outside.
 * `this()` and `super()` must be the first statement in the constructor
