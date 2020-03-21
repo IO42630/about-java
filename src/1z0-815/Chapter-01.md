@@ -47,7 +47,7 @@ Launcher | `java` |Creates JVM and executes. <br> JVM _interprets_ the bytecode 
         
         
 
-### Running a Prog in One Line 
+### One Line 
 Normal | One Line
 ---|---
 `javac Core.java` | `java Core.java`
@@ -55,6 +55,15 @@ Normal | One Line
 Produces class file | Fully in memory
 For any program | For programs with one class
 Can import any library | Can ony import code that came with the JDK.
+
+* One Line ignores packages, thus a `Main.java` in `package one.line.pkg;` can be called as:
+    * `java ./one/line/pkg/Main.java`
+    * `java Main.java`
+
+
+
+
+
 
 ### Packages
 * _Declaration_ : `package pkg;`
@@ -111,10 +120,7 @@ assuming java.util.Date and java.sql.Date
  
     
 
-### JAR
-
-# ABOUT JAR
-JAR (Java Archive)
+### JAR (Java Archive)
 * Security: 
 You can digitally sign the contents of a JAR file. 
 Users who recognize your signature can then optionally grant your software security privileges it wouldn't otherwise have.
@@ -132,11 +138,13 @@ The extensions framework provides a means by which you can add functionality to 
 `x`| extract
 `u`| update
 `e`| entry point : overrides the main-class set in the manifest
-`jar cf jar-file input-file(s)` | create JAR
+`<input>` | Can be a file, a list of files, a wildcard or a directory 
+`-C`|  input directory. `jar -cf foo.jar -C pkg Main.class` ~ `jar -cf foo.jar pkg/Main.class`
+`jar cf foo.jar <input>` | create JAR
 `jar cfm jar-file manifest input-file(s)` | create JAR with manifest-addition|
 `jar tf jar-file` |view contents
-`jar xf jar-file1`|extract contents|
-`jar uf jar-file input-file(s)` |update (add/overwrite)|
+`jar xf jar-file1`|extract contents to current directory|
+`jar uf jar-file <input>` |update (add/overwrite)|
 `jar cfe Core.jar pkg.Core pkg/Core.class` | set entry point (directly set main class)|
 `java -jar app.jar`|run|
 
@@ -183,3 +191,12 @@ Sealed: true
 or just seal the entire JAR
 
 Sealed: true
+
+### Ordering Elements in a Class
+Element|Example|Required|Placement
+---|---|---|---
+Package declaration | `package foo;`|NO | First line in the file
+Import statements | `import bar.*;`|NO | After the package
+Class declaration | `public class C`| YES | After import
+Field declarations | `int i;`| NO | Any top-level element in class
+Method declarations | `void method()` | NO |  Any top-level element in class 
