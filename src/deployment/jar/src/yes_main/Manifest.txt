@@ -1,0 +1,2 @@
+Main-Class: jar.src.yes_main.Main
+Class-Path:  /home/user/ws/idea/about-java/src/deployment/jar/out/no_main.jar

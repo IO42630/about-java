@@ -1,7 +1,7 @@
-package pkg;
+package jar.src.yes_main;
 
-import other.pkg.OtherPkg;
 import jar.src.no_main.ClassInJar;
+
 
 public class Main {
     public Main() {
@@ -11,11 +11,8 @@ public class Main {
 
 
         System.out.println("Main says Hi!");
-        new Helper().helperSaysHi();
-        new OtherPkg().otherPkgSaysHi();
+        new Helper().hi();
         new ClassInJar().hi();
 
-        //Date foo = new Date();
-        java.util.Date date ; // fully qualified class name
     }
 }
