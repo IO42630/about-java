@@ -1,7 +1,7 @@
-package about.basics.classes.parentpackage;
+package basics.classes.parentpackage;
 
-import about.basics.classes.AbstractClass;
-import about.basics.classes.Interface;
+import basics.classes.AbstractClass;
+import basics.classes.Interface;
 
 
 public class Parent extends AbstractClass implements Interface {
@@ -12,13 +12,24 @@ public class Parent extends AbstractClass implements Interface {
     private int n;
 
 
-    /** default constructor, can be omitted,
-     * unless a custom constructor is defined.
-     * in that case it must be written, else error.
+
+    public void abstractMethod(){
+            int i =0;
+    }
+
+    /**
+     * default constructor,
+     * > can be omitted,
+     *   > unless a custom constructor is defined.
+     *   > in that case it must be written, else error.
      */
     public Parent() {
         this(0);
         classVar = 0;
+    }
+
+    public static CharSequence hiddenMethod(){
+        return "";
     }
 
     public Parent(int n) {
@@ -30,6 +41,8 @@ public class Parent extends AbstractClass implements Interface {
     @Override
     public String toString() {
         String out = super.toString();
+
+        if(false) out = "";
         //     out = this.toString(); // StackOverflowError : circular reference
         return "Parent";
     }
@@ -46,6 +59,8 @@ public class Parent extends AbstractClass implements Interface {
     public void packagePrivateAccess(){
 
     }
+
+
 
 
 }

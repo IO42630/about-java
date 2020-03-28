@@ -1,4 +1,4 @@
-package about.basics;
+package basics;
 
 import java.io.FileWriter;
 import java.io.IOException;

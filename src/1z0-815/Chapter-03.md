@@ -73,6 +73,7 @@ Operator | What it does
  a = b | assigns the value on the right to the var on the left.
  
  ##### Casting
+ * See `about.basics.classes.Main.polymorphism`
  * optional from smaller to larger types.
  * mandatory from larger to smaller types
  * because casting is an unary operation, use parantheses where necessary

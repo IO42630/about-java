@@ -25,6 +25,7 @@ public class Strings {
 
     public static void main(String args[]) {
 
+        stringEquality();
         methods();
         concatenation();
 
@@ -158,10 +159,10 @@ public class Strings {
         String s5 = s2.intern();
 
 
-        boolean b1 = (s1 == s2);
-        boolean b13 = (s1 == s3);
-        boolean b2 = (s1 == s4);
-        boolean b3 = (s4 == s5);
+        boolean b1 = (s1 == s2);// true
+        boolean b13 = (s1 == s3); // false
+        boolean b2 = (s1 == s4); // true
+        boolean b3 = (s4 == s5); // true
 
 
         int br = 0;

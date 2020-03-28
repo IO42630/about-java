@@ -1,4 +1,4 @@
-package about.advanced;
+package advanced;
 
 import java.awt.*;
 import java.awt.event.KeyEvent;

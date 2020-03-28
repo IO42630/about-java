@@ -1,4 +1,4 @@
-package about.basics.primitives;
+package basics.primitives;
 
 public class FloatingPoint {
 

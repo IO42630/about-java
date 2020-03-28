@@ -127,4 +127,18 @@ public class Logic {
 
     }
 
+
+
+    static void ifthenelse(){
+        // one line allowed without braces.
+        // whitespace is ignored in Java.
+        if(true)
+
+
+            b=false;
+
+
+        else if(true) b=true;
+        else b=false;
+    }
 }

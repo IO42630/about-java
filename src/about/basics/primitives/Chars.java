@@ -1,6 +1,6 @@
-package about.basics.primitives;
+package basics.primitives;
 
-public class Char {
+public class Chars {
 
 
 

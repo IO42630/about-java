@@ -1,4 +1,4 @@
-package about.basics;
+package basics;
 
 import java.util.*;
 import java.util.function.Consumer;

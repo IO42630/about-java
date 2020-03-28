@@ -1,4 +1,4 @@
-package about;
+
 
 public class Variables {
 
@@ -26,5 +26,12 @@ public class Variables {
         class foo{ };
 
     }
+
+
+
+
+
+
+
 
 }

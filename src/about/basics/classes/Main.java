@@ -1,7 +1,7 @@
 package basics.classes;
 
-import about.basics.classes.childpackage.Child;
-import about.basics.classes.parentpackage.Parent;
+import basics.classes.childpackage.Child;
+import basics.classes.parentpackage.Parent;
 
 public class Main {
 
@@ -23,29 +23,12 @@ public class Main {
 
     static void polymorphism() {
 
-        b = new Child() instanceof Parent;  // true
 
-        b = new Parent() instanceof Parent; // true
-        b = new Parent() instanceof Child;  // false
-        b = (Parent)new Child() instanceof Child;
-        b = (Parent) new Child() instanceof Parent;
-
-        Parent parent = new Child();   // Implicit Cast, (Parent) is inserted during compilation.
-        Child child = (Child) parent;  // Explicit Cast, C-Error if (Child) is omitted.
+s = ((Parent) new Child()).toString(); // Child
 
 
-        if (new Parent() instanceof Child) { child = (Child) new Parent(); }// ClassCastException
-        // ClassCastException does not apply to Interfaces
-
-        // if (new Integer(1) instanceof String){// C-Error
-        //   s = (String) new Integer(1);         // C-Error
-        // }
-
-        s = ((Parent) new Child()).toString(); // Child
-
-
-        child = new Child();
-        parent = child;
+        Child child = new Child();
+        Parent parent = child;
 
         String castToParent = compareMember(parent,child);
 
@@ -56,7 +39,8 @@ public class Main {
 
         // both cases instanceVar is evaluated from parent after (casting)
 
-        int br = 0;
+
+
 
 
 
@@ -76,8 +60,3 @@ public class Main {
 }
 
 
-class ConstructorError {
-
-    ConstructorError(int i) {}
-
-}

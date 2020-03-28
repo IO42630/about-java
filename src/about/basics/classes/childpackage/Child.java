@@ -1,6 +1,6 @@
-package about.basics.classes.childpackage;
+package basics.classes.childpackage;
 
-import about.basics.classes.parentpackage.Parent;
+import basics.classes.parentpackage.Parent;
 
 
 public class Child extends Parent {
@@ -25,6 +25,11 @@ public class Child extends Parent {
 
     }
 
+
+    public static String hiddenMethod(){
+        return null;
+    }
+
     @Override
     public String toString() {
         return "Child";
@@ -32,10 +37,14 @@ public class Child extends Parent {
 
     public static String staticMethod(){return "Child";};
 
+    /**
+     * protectedInteger is declared in Parent.
+     *
+     */
     void protectedTest(){
-        int i = protectedInteger;
+        int i = protectedInteger;            // declared in parent
         i = new Child().protectedInteger;
-        //i = new Parent().protectedInteger; // C-Error
+        //i = new Parent().protectedInteger; // C-Error, since this is a different package
 
 
     }

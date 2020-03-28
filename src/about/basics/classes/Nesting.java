@@ -38,3 +38,6 @@ class OuterDefault {
         public int why;
     }
 }
+
+
+ class OuterPrivate{}

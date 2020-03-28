@@ -1,7 +1,7 @@
 # Chapter 5 : Core Java APIs
 ### Strings
 * see `about/Strings` .
-* implements _CharSequence_ .
+* implements the `CharSequence` interface.
 * concatenation 
     * if both opernads are numeric, + means addition.
     * if eiter operand is a String, + means concatenation.
@@ -15,11 +15,12 @@
     s+=2;           // s = s + 2 thus a122
     
 * immutability
-    * onece a String object is created, it cannot be changed
+    * once a String object is created, it cannot be changed
        
        
 ### StringBuilder
 * see `about/StringBuilder`
+* implements the `CharSequence` interface.
 
 ### Equality
 = reference equality : variable points to same object

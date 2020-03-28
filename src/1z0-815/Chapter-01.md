@@ -1,33 +1,40 @@
-# Chapter 1 : About Java
+## Chapter 1 : About Java
 | | | |
 ---|---|---
 JDK     | | Java Development Kit : minimum software needed for Java development.
-Compiler | `javac` | Converts `.java` to `.class` files.<br> _compiles_ to `bytecode` , contained in `foo.class`
-Launcher | `java` |Creates JVM and executes. <br> JVM _interprets_ the bytecode .
+Compiler | `javac` | _Compiles_ from sourcecode contained in `.java` files.<br> _Compiles_ to `bytecode` contained in `.class` files.
+Launcher | `java` |Launches the JVM. <br> JVM _interprets_ the bytecode .
  Archiver| `jar` | 
  | | `javadoc` | generates documentation.
 | API | | StringBuilder is an API.
     
 #### Benefits
-* Object Oriented
-* Encapsualtion
-    * Access modifiers
-    * Local scope of variables
-* Platform Independent : bytecode runs in any JVM
-* Robust: no memory leaks
-* Simple : no pointers, no operator overloading
-* Secure : JVM creates a sandbox
-* Multithreaded : 
-* Backward Compatibility : 
-    * APIs about to be obsolete are flagged as _depreciated_ .
+| | |
+---|---
+Object Oriented | All code is defined in classes.
+Encapsualtion | - Access modifiers <br> - Local scope of variables
+Platform Independent | bytecode runs in any JVM
+Robust| no memory leaks
+| Simple | no pointers, no operator overloading
+| Secure | JVM creates a sandbox
+| Multithreaded | 
+| Backward Compatibility | APIs about to be obsolete are flagged as _depreciated_ .
+
+#### Building Blocks
+* _keyword_ word with special meaning. 
+* _variables_ hold state
+    * have _type_
+* _methods_ operate on state
 * _member_ all that is inherited
-    * _fields_ (=variables) (hold state)
+    * _fields_ : variable declared outside of method, but inside class.
     * _methods_ (=functions) (operate on state)
-* _keyword_ word with special meaning.
-* variables have _type_
-* methods have parameters
-* _method signatuer_ = name + parameter types
-* _method declaration_ = full line (?)
+        * methods have parameters
+        * _method signature_ = name + parameter types
+        * _method declaration_ = full line (?)
+    * _nested classes_
+    * _interfaces_
+    * _enumerated types_
+    * NOT _Constructors_ , since those are not inherited.
 * Comment
     * `/* */ */` does not compile, as there is one `*/` too much.
 * only one class is allowed to be public in a file
@@ -35,19 +42,18 @@ Launcher | `java` |Creates JVM and executes. <br> JVM _interprets_ the bytecode 
     * file also must have a .java extension
     
 #### Command Line
-* Without _package_ :
-    * `class Core` in file `Core.java` in directory `/pkg` 
-        * `javac pkg/Core.java`
-        * `cd ./pkg` then `java Core`
-* With _package_ : 
-    * `class Core` in file `Core.java` in directory `/pkg`  
-    * file contains statement `package pkg;`  
-        * `javac pkg/Core.java`
-        * `java pkg.Core`
+`class Core` in file `Core.java` in directory `/pkg` 
         
+| no package | with package
+---|---
+| | file contains statement `package pkg;`  
+`javac pkg/Core.java` | `javac pkg/Core.java`
+`cd ./pkg` then `java Core` | `java pkg.Core`
+ 
+ 
         
 
-### One Line 
+#### One Line 
 Normal | One Line
 ---|---
 `javac Core.java` | `java Core.java`
@@ -65,10 +71,11 @@ Can import any library | Can ony import code that came with the JDK.
 
 
 
-### Packages
+#### Packages
 * _Declaration_ : `package pkg;`
 * _Fully qualifed class name_ : `java.util.Date foo;`
-##### Imports
+
+#### Imports
 
     import java.util.Random;
     import java.util.* // wildcard
@@ -93,7 +100,7 @@ assuming java.util.Date and java.sql.Date
     
 
 
-##### Creation
+#### Creation
 * _Default package_ : if nothing is specified
 * Example : 
     * `cd ./src/deployment`
@@ -120,7 +127,7 @@ assuming java.util.Date and java.sql.Date
  
     
 
-### JAR (Java Archive)
+#### JAR (Java Archive)
 * Security: 
 You can digitally sign the contents of a JAR file. 
 Users who recognize your signature can then optionally grant your software security privileges it wouldn't otherwise have.

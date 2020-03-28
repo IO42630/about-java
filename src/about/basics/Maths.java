@@ -1,4 +1,4 @@
-package about.basics;
+package basics;
 
 public class Maths {
 

@@ -113,7 +113,8 @@ implicit vs explicit casts
     
 * here _collection_ is either:
     * a Java array
-    * an Object whose type implements java.lang.Iterable
+    * an Object whose type implements `java.lang.Iterable`
+        * `ArrayList` implements the `Iterable` interface
 
 ##### break
 * transfers control to the next enclosing statement

@@ -1,4 +1,4 @@
-package about.basics.classes;
+package basics.classes;
 
 public abstract class AbstractClass implements Interface {
 
@@ -16,4 +16,7 @@ public abstract class AbstractClass implements Interface {
 
 
     protected abstract void packagePrivateAccess(); // must be protected so it can be extended by Parent class.
+
+
+    public abstract void abstractMethod();
 }

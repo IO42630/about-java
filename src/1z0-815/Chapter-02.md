@@ -1,61 +1,67 @@
-# Chapter 2 : Java Building Blocks
-####Object
+## Chapter 2 : Java Building Blocks
+#### Object
     Integer integer = new Integer(0);
     <type>  <name>        <constructor>
-* The purpose of a _constructor_ is to initialize fields.
 
-####Variable
-* Variables can not be declared outside of a class or interface.
+
+#### Variables
+* Variables can't be declared outside of a class or interface.
 * Fields
-    * Instance Variable: (non-static) , declared withing a Class.
-    * Class Variable : static , declared within a Class.
-* Local Variable : declared within a Constructor , Method or Initializer Block.
-* Constant : what ever Variable has a `final` keyword.
+    * Instance Variable: (non-static) , declared within a Class.
+    * Class Variable : `static` , declared within a Class.
+* Local Variable : declared within a Constructor, Method or Initializer Block.
+* Constant : `final` variable.
+
+
+    int i;       // declaration
+    i = 1;       // write access "set"
+    i = i + 1;   // read & write access "get & set"
 
 
 
-    public class Foo {
-        int i;
-    
-        Foo(){
-            i = 1;       // write access "set"
-            i = i + 1;   // read & write access "get & set"
-     }  }
-
-
-
-####Code Block
-    {}      // code block
-            // a brace is missing == "balanced parantheses problem"
-    
-    public class Foo {      // class definition
-    
-        {int bar = 1;}     // instance initializer
-    
+#### Code Block
+    {}                    // code block
+                          // a brace is missing == "balanced parantheses problem"
+    public class Foo {    // class definition
+        {int bar = 1;}    // instance initializer
         void bob(int i){  // method definition
-            {i++;}       // inner block
+            {i++;}        // inner block
     }   }
 
 #### Order of Initialization
     new Foo().bob(1);
 1. code outside of constructor
-    1. thus instance variables and instance initializers
+    1. instance variables and instance initializers
     1. line by line
 2. code inside the constructor
+    1. super? (TODO)
 3. what ever method is called
 
 
 ## Data Types
 * Java works with _objects_ that contain collections of Primitive Data Types.
 
-##### _object_ vs. Reference
-* _variable name_ : name of the var 
-* _reference_ : @9999Object : accessed by it's variable name
-    * always of same size (=length) 
-    * has a _type_ (`Object` is such a type - not to be confused with _object_).
-    * may cause, e.g. through `new Object();` , an _object_ to be created on the heap
-* _object_ is what the reference points to
-    * an object may have multiple references
+#### reference vs. instance vs. object
+* _variable_ whose type is a reference type
+    * holds a _reference_
+* _reference_
+    * holds the address of an _instance_
+    * always of same size (=length)
+    * a reference can be held by multiple variables
+    * `new Object()` creates a new reference
+* _instance_
+    * holds the physical address of an _object_
+    * the physical address is invisible in Java.
+* _object_
+    * physical object in memory
+    * `new Object()` causes an _object_ to be created in memory
+    
+    
+    Object obj = null;       // obj is a variable. here it holds a referenct to null
+    new Object();            // new Object() is an reference to an instance of the Object class
+    obj = new Object();      // obj now holds a reference to an instance of the Object class
+    
+    System.out.print(obj);   // java.lang.Object@6acbcfc0
 
 #### 8 Primitive Types
 * Contain a pointer to a value in memory.
@@ -69,6 +75,11 @@
     * unlike other Languages, Java does not allow to know what the physical memory adress is
 * a reference can be assigend to another object of the a compatible type
 * _immutable_.
+
+#### mutable vs immutable
+* primitives are immutable
+* String , Integer , Char etc. are immutable
+* StringBuilder, List are mutable
 
 ## Variables
 ##### Identifier Name

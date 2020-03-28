@@ -1,4 +1,4 @@
-package about.advanced;
+package advanced;
 
 import java.util.logging.*;
 
