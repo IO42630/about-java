@@ -37,9 +37,7 @@ Robust| no memory leaks
     * NOT _Constructors_ , since those are not inherited.
 * Comment
     * `/* */ */` does not compile, as there is one `*/` too much.
-* only one class is allowed to be public in a file
-    * C-Error if filename does not match name of public class.
-    * file also must have a .java extension
+
     
 #### Command Line
 `class Core` in file `Core.java` in directory `/pkg` 
@@ -100,22 +98,11 @@ assuming java.util.Date and java.sql.Date
     
 
 
-#### Creation
-* _Default package_ : if nothing is specified
-* Example : 
-    * `cd ./src/deployment`
-    * `javac ./pkg/Core.java ./other/pkg/NotCore.java`
-    * with wildcards: `javac ./pkg/*.java ./other/pkg/*.java`
-    * `java pkg.Core`
-* `-d` : overwrite target directory for .class files
+
+#### `javac` Options
+* _Directory_ 
+    * `-d` : overwrite target directory for .class files 
     * `javac -d ./out ./pkg/Core.java ./other/pkg/NotCore.java `
-* _Classpath_ : indicates where .class files are located
-    * `java -cp ./out pkg.Core`
-    * also `-classpath` , `--class-path`
-    * possible to use multiple paths
-        * look in current dir and in ./out and in foo.jar
-        * Win: `java -cp ".;./out;./foo.jar`
-        * Unix: `java -cp ".:./out:./foo.jar`
 * _Sourcepath_
     * `cd ./src/deployment/pkg`
     * `javac -sourcepath ../pkg Main.java`
@@ -123,9 +110,30 @@ assuming java.util.Date and java.sql.Date
     * `java pkg.Main`
 * _Modulepath_
     * `-p , --module-path`
+
+
+#### `java` Options
+* _Classpath_ : indicates where .class files are located
+    * `java -cp ./out pkg.Core`
+    * also `-classpath` , `--class-path`
+    * possible to use multiple paths
+        * look in current dir and in ./out and in foo.jar
+        * Win: `java -cp ".;./out;./foo.jar`
+        * Unix: `java -cp ".:./out:./foo.jar`
+
+
     
  
-    
+#### Examples
+##### no.pkg
+* _Default package_ : if nothing is specified
+##### pkg
+
+* Example : 
+    * `cd ./src/deployment`
+    * `javac ./pkg/Core.java ./other/pkg/NotCore.java`
+    * with wildcards: `javac ./pkg/*.java ./other/pkg/*.java`
+    * `java pkg.Core`
 
 #### JAR (Java Archive)
 * Security: 

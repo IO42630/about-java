@@ -3,11 +3,12 @@ package basics;
 public class Operators {
 
 
-
     static int i = 1;
     static int i1;
     static int i2;
     static double d;
+    static long l;
+    static boolean b;
 
     public static void main(String args[]) {
         test();
@@ -15,7 +16,6 @@ public class Operators {
 
 
     static void test() {
-
 
 
         int z = 0b1100;    //12
@@ -30,51 +30,65 @@ public class Operators {
         i = i++; // evaluate, then update // thus i remains 0
         i = ++i; // update, then evaluate // i = 1
         // -- behaves identically
-		i = 1;
-		i = ++i * 2 / i--; // i = 2 * 2 / i-- // i = 2 * 2 / 2 // i = 4 / 2 // i = 2
-		i = ++i * 2 / --i; // i = 2 * 2 / --i // i = 2 * 2 / 1 // i = 4 / 1 // i = 4
+        i = 1;
+        i = ++i * 2 / i--; // i = 2 * 2 / i-- // i = 2 * 2 / 2 // i = 4 / 2 // i = 2
+        i = ++i * 2 / --i; // i = 2 * 2 / --i // i = 2 * 2 / 1 // i = 4 / 1 // i = 4
 
 
-		int foo = (1+2)* 4;
+        int foo = (1 + 2) * 4;
 
         int a9 = 5 % 2;//modulo, dh rest a9=1;
-
-
 
 
         z += 1;// z=z+1
         z /= 1;// z=z/1
         z %= 1;// z=z%1
 
-        i *= 3+4;  // i = i * (3+4);
+        i *= 3 + 4;  // i = i * (3+4);
 
 
+        // DIVISION / MODULO
 
-		// DIVISION / MODULO
-
-		// modulo may be applied to negative integers and floats
+        // modulo may be applied to negative integers and floats
     }
 
-    static void precedence(){
+    static void precedence() {
 
 
-        d = (double)1/2;//0.5   // casting has precedence over division
-        d = (double)(1/2);//0.0
+        d = (double) 1 / 2;//0.5   // casting has precedence over division
+        d = (double) (1 / 2);//0.0
     }
 
 
-
-    static void comaring(){
+    static void comparing() {
         Integer integer1 = 1;
         Integer integer2 = 0;
-
-        boolean b = 1 < 2;
+        b = 1 < 2;
         b = integer1 < integer2;
-        integer1.compareTo(integer2);
-
-
-
-
+        i = integer1.compareTo(integer2);
     }
 
+
+    class Assignments {
+
+        void compoundAssignmentOperators() {
+            // Compound assignment operators obscure casting
+            l = 1;
+            i = 1;
+            // i = i + l;             // C-Error
+            i = (int) (i + l);        // OK , addition will be done with longs
+            i = (int) ((long) i + l); // what actually happens
+            i += l;                   // ok, same as above ... obscured
+        }
+
+
+        void assignmentsAsOperands() {
+            int i;
+            int j = (i = 3);
+
+            boolean b = false;
+            if (b = true) {}
+        }
+
+    }
 }

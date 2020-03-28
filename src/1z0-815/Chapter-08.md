@@ -2,7 +2,8 @@
 #### General
 
 
-* A Java-file can have 0..1 public top-level classes.
+* A `.java` file can have 0 or 1 public top-level classes.
+    * C-Error if filename does not match name of public class.
 * `this.var` references to current and iherited members
     * instance of is used do set apart instance/class variables from parameters/local variables
     * references 
