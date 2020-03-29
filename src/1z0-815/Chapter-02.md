@@ -20,7 +20,12 @@
 
 
 #### Code Block
-    {}                    // code block
+| | |
+---|---
+`{}` | block
+`a=1+1;` , `a++;` | statement
+`1+1` , `a++` | expression
+
                           // a brace is missing == "balanced parantheses problem"
     public class Foo {    // class definition
         {int bar = 1;}    // instance initializer

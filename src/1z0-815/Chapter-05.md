@@ -1,5 +1,5 @@
-# Chapter 5 : Core Java APIs
-### Strings
+## Chapter 5 : Core Java APIs
+#### Strings
 * see `about/Strings` .
 * implements the `CharSequence` interface.
 * concatenation 
@@ -18,11 +18,11 @@
     * once a String object is created, it cannot be changed
        
        
-### StringBuilder
+#### StringBuilder
 * see `about/StringBuilder`
 * implements the `CharSequence` interface.
 
-### Equality
+#### Equality
 = reference equality : variable points to same object
 beware when dealing with objects, e.g. arrays, 
 since a new array with same contents will be a new object and thus not ==
@@ -38,7 +38,7 @@ for Objects in general it checks for refeence equality just like ==
 checking for reference equality of two different object types will result in a compilation error.
 
 
-### String Pool
+#### String Pool
 Strings use a lot of memory.
 To reuse common strings java collects them in the string pool (a.k.a. intern pool)
 
@@ -64,63 +64,62 @@ pool contains literal values and constants that apppear in your program
     a!=f += is like a method, so it is only equal at runtime
     a==g intern is always == to the first string literal of said content
 
+<br>
 
-### Arrays
-An array is a reference type (even if it is an array of primitives)
+#### Wrapper Classes
+* Wrapper classes make use of some caching, somilar to the pool for String
+* The ability of Wrappers to contain `null` is useful for data services.
 
+P-Type | W-Class | .valueOf(<>) | Wrapper.parse<>()
+---|---|---|---
+boolean | Boolean | true
+byte |
+short |
+int |   | | parseInt
+long | | | parseLong
+float | | (float) 1.0)
+double | Double | 1.0
+char | Character | 'c'
 
-    int[] n1 = new int[3];
-    int[] n2 = new int[]{1,5,7};
-    int[] n3 = {1,5,7}; // anonymous array, type and size are deduced
-    
-    int []n;
-    int [] n;
-    int n [];
-    int n []; // are all legal
-    
-    
-    int[] a, b; // two int arrays
-    int a[], b; // a is array , b is just int , deal with it.
-    
-     String[] strings = { "stringValue" };
-     Object[] objects = strings;
-     String[] againStrings = (String[]) objects;
-     againStrings[0] = new StringBuilder(); // DOES NOT COMPILE
-     objects[0] = new StringBuilder(); // careful! runteime error loading sb into string
+    int primitive = Integer.parseInt("123");
+    Integer wrapper = Integer.valueOf("123"); // may throw NumberformatException
 
 
-int[] arr = new int[4];
-int i = arr.length; // not a method
+
+##### Autoboxing and Unboxing
+* Autoboxing `Integer integer = 50;`
+* Unboxing `int i = integer;`
+    * NullPointerException: `int i = new Integer(null)`
+
+<br>
+
+## Collections
+* see `basics.collections`
+    * for API see `InterfaceCopy` files
+
+#### Array
+* An array is a reference type (even if it is an array of primitives)
+* see `about.basics.collections.Arrays`
 
 
 ##### Sorting
+* sorts alphabetically  numbers before a before A
 
-importArrays
-importjava.util.*;
-java.util.Arrays;
-// import whole package including
-// import just Arrays
-
-
-print either with for or with Arrays.tostring(array)
-
-
+        java.util.Arrays;
         Arrays.sort(stringArray);
-        sorts alphabetically  numbers before a before A
         [10 , 100, 9]
 
-### Binary search 
-* only sorted arrays
+##### Binary search 
+* only on sorted arrays , else unpredictable output
 * found - return index ou match
 * not found - return (negative value of index where searched would need to be inserted) - 1 
-* unsorted - unpredictable output
 
         int[] nym = {2,4,6,8};
         Arrays.binarySearch(num,2); // 0
         Arrays.binarySearch(num,1); // -1
         Arrays.binarySearch(num,3); // -2
 
-### Comparing
+##### Comparing
 * `int` can be compared with operators (Ch.3)
 * Objects e.g. `Integer` can be compared with
     * operators (e.g. `<`,`==`) , this will return a `boolean`.
@@ -149,11 +148,11 @@ when comparing , arrays must be of same type, else compilation error
 ##### varargs
 main(Strings... args) // varargs , this is legal, args can be used normally
 
-### N-Dim Arrays
+##### N-Dim Arrays
 * Array can hold Objects,
 * thus can hold Arrays.
 
-### ArrayList
+#### ArrayList
 
         Arraylist<String> list = new ArrayList<>();
 
@@ -167,81 +166,40 @@ main(Strings... args) // varargs , this is legal, args can be used normally
 
         Arrays.toString(a2D);
         Arrays.deepToString(a2D);
-        Arrays.asList(new String[]{"foo"};
         
 * List is an Interface, so
     * List<String> = new ArrayList<>(); is OK
     * ArrayList<String> = new ArrayList<>(); is OK
     * ArrayList<String> = new List<String>(); is not OK
     
-##### add()
-
-boolean add(E element)
-void add(int index, E element)
-
-##### remove()
-boolean remove(Object obj) // removes first matching element // boolean tells if something was removed.
-E remove (int index) // removes & returns element at index.
-
-##### set 
-replaces element
-E set (int index , E element)
 
 
-int size() same as .length() strings for arrrays (remember arrays have .length without method)
-boolean isEmpty() // same as is size()==0
-void clear() // remove all elements
-
-boolean contains(Object obj) // calls equals() on each element in the list.
-* ArrayList has a own .equals() implememtation
-* [a].equals([b]) true
-* [a,b].equals([b,a]) false
-
-### Wrapper Classes
-* Wrapper classes make use of some caching, somilar to the pool for String
-* The ability of Wrappers to contain `null` is useful for data services.
-
-P-Type | W-Class | .valueOf(<>) | Wrapper.parse<>()
----|---|---|---
-boolean | Boolean | true
-byte |
-short |
-int |   | | parseInt
-long | | | parseLong
-float | | (float) 1.0)
-double | Double | 1.0
-char | Character | 'c'
-
-    int primitive = Integer.parseInt("123");
-    Integer wrapper = Integer.valueOf("123"); // may throw NumberformatException
+| | |
+---|---
+`Collection` , `Map` | `int size()`
+`String` | `int length()`
+`Array` | `int length`
 
 
 
-##### Autoboxing and Unboxing
-* Autoboxing `Integer integer = 50;`
-    * Care: `new List<Integer>().remove(0)` is not autoboxed (.
-* Unboxing `int i = integer;`
-    * NullPointerException: `int i = new Integer(null)`
+
+* `boolean contains(Object obj) // calls equals() on each element in the list`
+    * ArrayList has a own .equals() implememtation
+    * [a].equals([b]) true
+    * [a,b].equals([b,a]) false
 
 
-##### Conv between Array and List
-* fixed-size lists
-    * backed (changes are synchronized between original array and list)
-        * `list = Arrays.asList(array)`.
-    * immutable (values of list are immutable)
-        * `list = List.of(array)`.
 
-#### Using Varargs to Create a List
-    List<String> list1 = Arrays.asList("one", "two");
-    List<String> list2 = List.of("one", "two");
 
-### Summary
-Conversions | toArray() | Arrays.asList() | List.of()
+<br>
+
+#### Conversions
+| `about.basics.collections.Conversions` | toArray() | Arrays.asList() | List.of()
 ---|---|---|---
 Types| List -> Array | Array/varargs -> List | Array/varargs -> List  
-OK to remove() from new obj | No | No | NO
-OK to set() in new obj | Yes |  YES | NO
-Sync | NO | YES | N/A
+Collection mutable? | - | NO | NO
+Entries mutable? | YES |  YES | NO
+Sync | NO | YES | -
     
     List<String> fixedSizeList = Arrays.asList("a", "b", "c");
     List<String> expandableList = new ArrayList<>(fixedSizeList);
@@ -249,12 +207,10 @@ Sync | NO | YES | N/A
 #### Sorting 
 * `Collections.sort(list)`
 
-## Sets and Maps
-####Sets
-* Are not ordered
-* Can't contain duplicates
-* See `Sets.java`.
-#### Maps
-* See `Maps.java`.
-
-## Math
+#### Sets and Maps
+* Sets
+    * Are not ordered
+    * Can't contain duplicates
+    * See `Sets.java`.
+* Maps
+    * See `Maps.java`.

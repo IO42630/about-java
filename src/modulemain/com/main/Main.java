@@ -13,6 +13,5 @@ public class Main {
     public static void main(String[] args){
         new Main().mainSaysHi();
         new Transit().transitSaysHi();
-
     }
 }

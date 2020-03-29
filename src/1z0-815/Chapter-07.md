@@ -28,12 +28,14 @@ pubic | final | void | foo | () | throws Exception | {int i=0;}
 * strictfp : makes float operations portable.
 
 
-#### Varargs
+#### varargs
 * Varargs : e.g. `int...`
     * similar to `int[]` for array
-    * may take `1,2` in addition the data `int[]` can take.
+    * may additionally take `1,2`
 * only one `...` allowed per paramter list
-* may only be used with the last prameter in parameter list.
+    * may only be used with the last prameter in parameter list.
+* a method with a `int[]` parameter won't accept `1,2`
+ * must have an `int...` parameter to accept `1,2`
 
 #### static 
 * Purpose
@@ -150,7 +152,7 @@ Method parameter & local variable (static and instance)| one copy per call
 
 
 
-### Encapsulating
+#### Encapsulating
 * make field private
 * make getter (accessor method) / setter (mutator method) with guards
 * naming conventions

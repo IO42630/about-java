@@ -3,7 +3,7 @@
 
 * Exceptions do alter the program flow.
 * Since `Throwable` includes `Error` , do not catch `Throwable` directly.
-* Examples see `Exceptions.java` .
+* see `about.basics.Exceptions`
 * _handle_ means `try/catch`
 * _declare_ means `throw`
 * if attempting to catch `cE` (not relevant for `uE`) that the try-block is unable to throw
@@ -48,30 +48,31 @@ Java runs static initializers the first time a class is used.
 * there may be multiple catch blocks
     * evaluated in the order they appear in
     * only one may run
-    * if superclass Exception catch before subclass cat
+    * if superclass Exception catch before subclass catch
         * then Compile-Time error 
 * multi-catch block see `Exceptions.java` .
     * declaring inheriatance-related Exceptions in a multi-catch will result in a Compile-time error
         * even if child comes before parent.
-* order of try/catch/finally matters, either catch OR finally must be present.
+* order of try/catch/finally matters
+* either catch OR finally must be present.
 
 #### finally
      int goHome() {
       try {
-      // Optionally throw an exception here
-      System.out.print("1");
-      return -1;
+          // Optionally throw an exception here
+          System.out.print("1");
+          return -1;
       } catch (Exception e) {
-      System.out.print("2");
-      return -2;
+          System.out.print("2");
+          return -2;
       } finally {
-      System.out.print("3");
-      return -3;
+          System.out.print("3");
+          return -3;
       }
      }
 
 * finally is always executed before try/catch return
-    * thus here return is always -1
+    * thus here return is always -3
     * print is either 12 or 13 depending if an Exception occurs.
 * Special case: finally is not executed
 
@@ -87,7 +88,7 @@ Java runs static initializers the first time a class is used.
 ### try-with-resource
 * resources are : databases, webservers, filesystems
 resource leak just as bad as memory leak
-*  use finnally to close the resources
+*  use finally to close the resources
 
 
     try (FileInputStream in = new FileInputStream("foo"); FileInputStream in = new FileInputStream("foo"); ){
@@ -104,7 +105,7 @@ resource leak just as bad as memory leak
     * because they must implement `.close()`
 * scope of resource is only the try block.
 
-##### Overrideing Methods with Exceptions
+##### Overriding Methods with Exceptions
 * this applies only to checked exceptions
     * overridden method in a subclass is allowed to declare fewer exceptions that the superclass or interface.
         * this is legal because callers are already handling then (???)

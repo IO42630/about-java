@@ -1,7 +1,5 @@
 # Chapter 4 : Decisions
 
-        int i = 0; // statement
-        { //foo }  // block
 
 * the target of an decision-making statement can be
     * a single statement
@@ -20,17 +18,17 @@
 * Execute everything below the current statement.
     * This is why we have optional `break` statements.
 
-        switch(varToTest) {
-            case constExpr1:
-                //branch for case;
-                break; // optional
-            case constExpr2:
-                // branch for case;
-                break; // optional
-            default:
-                // branch for default;
-        }
-
+            switch(varToTest) {
+                case constExpr1:
+                    //branch for case;
+                    break; // optional
+                case constExpr2:
+                    // branch for case;
+                    break; // optional
+                default:
+                    // branch for default;
+            }
+* `switch` does ot allow `continue` statement.
 * The following data types are allowed in switch statements.
     * int and Integer
     * byte and Byte
@@ -68,55 +66,40 @@ implicit vs explicit casts
 *  `break;` ends the loop.
 * `continue` ends the current iteration of the loop.
 
-##### While Loop
+#### While & Do While
 
-        while (booleanExpression){
-            // Body
-        }
-        
-* booleanExpression evaluated before each iteration
-
-##### Do While
-
-        do { // braces optional for single statement 
-        } while (booleanExpression);
-
-* Loop is executed once before the expression is evaluated.
-
-* _Expression_ : `a++` , `a+b`
-* _Statement_ : `a++;` , `a=b+c;`
+* `while (booleanExpression){}`    
+    * booleanExpression evaluated before each iteration
+* `do {} while (booleanExpression);`
+    * Loop is executed once before the expression is evaluated.    
+* care: C-Error unreachable statement
+    * `while(false){ i=1 }`
+    * `while(true){} i=1;`
 
 
-### For Loop
 
-        for (initializationStatement ; booleanExpression ; updateStatement) {
-            // Body
-        ]
-        
+
+
+#### For
+* `for (initializationStatement ; booleanExpression ; updateStatement) {}`
 * Order of execution:
-    * Init statement executes
-    * Evaluate Expression (_before_ body)
-    * Body executes
-    * Execute updateStatement
-    * Return to Step 2
-    
+    1. init statement executes
+        * the rules for multiple-declaration do apply.
+    1. Evaluate Expression (_before_ body)
+    1. Body executes
+    1. Execute updateStatement
+    1. Return to Step 2
 * each of the 3 components of the for loop are optional
-    * `for( ; ; )` is simply an infinite loop.
-* in the _initializationStatement_ the rules for multiple-declaration do apply.
+    * `for( ; ; )` ~ infinite loop.
 
-### Enhanced For Loop
-* also called for each loop
+#### Enhanced For (for each)
+* `for (datatype instance : collection){}`
+*  _collection_ is either:
+    *  array
+    * X implementing `java.lang.Iterable` , e.g. `ArrayList` 
 
-        for (datatype instance : collection){
-            // Body
-        }
-    
-* here _collection_ is either:
-    * a Java array
-    * an Object whose type implements `java.lang.Iterable`
-        * `ArrayList` implements the `Iterable` interface
 
-##### break
+#### break
 * transfers control to the next enclosing statement
     *  _label_ allows to break out of an higher-level loop
 
@@ -127,19 +110,13 @@ implicit vs explicit casts
     }           }
 
 
-##### continue
+#### continue
 * _continue_ transfers control to the boolean expression that determines 
 if the loop should continue.
 * _return_ statements are somewhat similar, 
 in that they allow to exit a block of code early.
 
-##### Unreachable Code
+#### Unreachable Code
 * Any statement after a break or continue statement will lead to an 
 _unrachable statemennt_ error, and will not compile.
 
-#### Reviewing Branching
-* `switch` does ot allow `continue` statement.
-
-
-#### Unperformed Side Effects
-* 

@@ -1,92 +1,65 @@
 # Chapter 6 : Lambdas and Functional Interfaces
 * Lambdas work with interfaces that have only one abstract method
-Since that interface’s method takes an Animal, that means the lambda
-parameter has to be an Animal. And since that interface’s method returns a
-boolean, we know the lambda returns a boolean.
 
-* Example see `Lambdas.java`.
-* Single parameter
-* Arrow operator to separate the parameter and body
-* Body calls a single methods, and returns the result
+
+
+* see `about.basics.lambdas.Intro`
+* Interface with one Method
+    * Instead of implementing in a Class
+    * Skip Class, Skip Method
+    * Write just parameter and method body
 * parentheses can be omitted if there is a single parameter and its type is not explicitly stated
 * there isn't a rule that says you must use all declared parameters
 
 
 
     <parameter name> -> <body>
-    a -> a.canHop()
+    a -> a.foo()
+    (a,b,c) -> { int d = a+b; int e = d+c; return e;};
     
-    
-* Examples of Invalid Lambdas:
+* IF one parmaeter omit ()
+* IF one statement, omit { return ;}
 
-
-    a, b -> a.startsWith("test")
-     Missing parentheses
-    a -> { a.startsWith("test"); }
-     Missing return
-    a -> { return a.startsWith("test") }
-     Missing semicolon
 
 * _functional interface_ : interface with one abstract method
-    * optional annotation `@FunctionalInterface` to signal intent.
+    * optional anotation `@FunctionalInterface` to signal intent.
     
     
 #### Predefined Funtional Interfaces
-* Java provides some functoinal interfaces
 
-
-
-    public interface Predicate<T> {
-        boolean test(T t);
-    }
-
-#### Consumer
-
-    public interface Consumer<T>{
-        void accept(T t);
-    }
     
-    
-Func-Interface | # Param | Return Type
+   
+Interface | # Param | Return Type
 ---|---|---
-Comparator|2|int
-Consumer| 1| void
-Predicate | 1 | boolean
-Supplier | 0 | any
+`Comparator<T> { int compare(T o1, T o2); }`|2|int
+`Consumer<T> { void accept(T t); }`| 1| void
+`Predicate<T> { boolean test(T t); }` | 1 | boolean
+`Supplier<T> { T get(); }` | 0 | any
 
 * var can be used in Lambda parameters
 * Lambda body may contain:
     * Lambda parameters
     * any class/instance variables
     * effectively final parameters/local variables
+        * A variable is _effectively final_ if adding final before it would not cause an C-Error
 
 
 
-     01:  public void variables(int a, int d) {
+     01:  public void variables(int d) {
      02:  int b = 1;
      03:  d++
      04:  Predicate<Integer> p1 = a -> {
-     05:  int b = 0;
+     05:  int b = 0;          // C-Error : b aleady taken
      06:  int c = 0;
-     07:  c = d;
-     08:  return b == c;}
+     07:  c = d;             // C-Error : not effectively final
+     08:  return b == c;}    // C-Error : ; after } missing
      09:  }
 
 
-* 4 errors
-    * a is already declared
-    * b is already declared
-    * ; missing after end of declaration of p1 ( correct c:}; )
-    * C-Error on line 07, since variables that are not effectively final can't be used in Lambdas
 
-    
-    
- #### Effectively Final
- * A variable is _effectively final_ if adding final before it would not cause an C-Error
-  
-  
  #### Calling APIs with Lambdas
  * See `Lambdas.java/LambdaAPIs`.
- * List and Set feature .removeIf(lambda)
- * .sort(lambda) is also available
- * .forEach(lambda)
+ * List and Set implement methods, that take Lambdas as parameters
+     * .removeIf(Predicate)
+     * .sort(Comparator)
+     * .forEach(Consumer)

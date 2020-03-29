@@ -32,7 +32,7 @@ public class Maps {
         Set<Integer> keySet = hashMap.keySet(); // Set of all Keys.
         Collection<String> valueCollection = hashMap.values();
 
-
+        hashMap.isEmpty();
 
 
 

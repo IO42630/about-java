@@ -20,23 +20,6 @@ public class Exceptions {// exception "e"
      *          v                                                   |
      *          method with error (thorws e)-------------------------
      *
-     *
-     *
-     * Checked Exception == MANDATORY handle or declare
-     *      > handle == try/catch
-     *      > declare == throw
-     *
-     *
-     * Unchecked Exception == OPTIONAL treatment
-     * |-- (a)"Error" = external i.e. hardware malfunction (java.io.IOError)
-     * |-- (b)"RuntimeException" = bugs
-     *
-     *
-     * Some 'RuntimeException' :
-     * - ArithmeticException
-     * - IllegalArgumentException
-     * - IndexOutOfBoundsException
-     * - NullPointerException
      */
 
 
@@ -54,11 +37,9 @@ public class Exceptions {// exception "e"
         handleDeclaredE();
 
 
-
-        System.out.println("All OK.");
-        if (true){
+        if (true) {
             throw new Exception();
-        }else{
+        } else {
             throw new Error();
         }
     }
@@ -78,31 +59,24 @@ public class Exceptions {// exception "e"
 
 
         try {
-            manuallyThrowE();
-        } catch (IndexOutOfBoundsException | NullPointerException e){// multi-catch block
+            manuallyThrowUE();
+        } catch (IndexOutOfBoundsException | NullPointerException e) {// multi-catch block
             System.out.print("foo");
         }
-
-
-
 
 
     }
 
 
-    /**
-     * This syntax is called "declaring an exception".<p>
-     *
-     * @throws IndexOutOfBoundsException
-     */
+
     static void declareUncheckedE() throws IndexOutOfBoundsException {// throws optional, since UE.
 
         if (SIZE < 0) { // possible to manually trow
             throw new IndexOutOfBoundsException();
+            // int i =0; // C-Error : unreachable
         }
-
-        list.get(SIZE);
-        int i = 0; // Code after Exception is not executed.
+        list.get(SIZE); // natural throw
+        int i = 0;      // Code after Exception is not executed.
     }
 
 
@@ -121,29 +95,18 @@ public class Exceptions {// exception "e"
     }
 
 
-    static void declareCheckedE() throws IOException {
 
-
-    }
 
 
     /**
      * Exceptions may be thrown manually
      */
-    static void manuallyThrowE() {
-        if (true) {
-            throw new NullPointerException();
-        } else {
-            throw new NullPointerException("foo");
-        }
-    }
+    static void manuallyThrowUE() { throw new NullPointerException();}
 
 
+    static void tryWithResource() {
 
-
-    static void tryWithResource(){
-
-        try(var a1 = new CanBeClosed(); var a2 = new CanBeClosed()){// ; after last declaration is optional
+        try (var a1 = new CanBeClosed(); var a2 = new CanBeClosed()) {// ; after last declaration is optional
             // try with only guarantees the .close(); will be called.
         }
 
@@ -158,27 +121,26 @@ public class Exceptions {// exception "e"
      * this is c
      * Exception in thread "main" java.lang.RuntimeException: c
      */
-    static void multipleThrow(){
+    static void multipleThrow() {
         try {
             System.out.println("this is a");
             throw new RuntimeException("a");
-        }catch (RuntimeException e){
+        } catch (RuntimeException e) {
             System.out.println("this is b");
             throw new RuntimeException("b");
             // System.out.println("this is b"); // unreachable statement
-        }finally {
+        } finally {
             System.out.println("this is c");
             throw new RuntimeException("c");
         }
     }
 
 
-    static void unreachableException(){ // Compile-time error
-        //try{
-        //    int i = 1;
-        //}catch (IOException e){
-        //
-        //}
+    static void errors() {
+
+        try {} catch (NullPointerException e) {}
+        // try {} catch (IOException e) {} // C-Error : unable to throw cE
+        // try {} catch (RuntimeException e) {} catch (NullPointerException e) {} // C-Error : Exception already caught by super
     }
 
 }
@@ -195,10 +157,40 @@ class CanBeClosed implements AutoCloseable {
 
 
 
+class Helpers{
+    static void declareCheckedE() throws IOException { }
+}
 
 
+class Finally{
+
+    public static void main(String... args){
+
+        int i = new Finally().goHome();
+        int br = 0;
+    }
 
 
+    int goHome() {
+        try {
+
+            System.out.print("1");
+            // Optionally throw an exception here
+            return -1;
+        } catch (Exception e) {
+            System.out.print("2");
+            return -2;
+        } finally {
+            System.out.print("3");
+            return -3;
+        }
+    }
+
+
+    void neverFinally(){
+
+    }
+}
 
 
 
