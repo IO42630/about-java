@@ -25,7 +25,7 @@ public class Strings {
 
     public static void main(String args[]) {
 
-
+        stringPool();
         methods();
         concatenation();
 
@@ -88,17 +88,17 @@ public class Strings {
 
     static void stringPool() {
 
-        b = "foo" == "foo";             //  true , since java reuses string from pool, since they are equal at compile-time
-        b = "foo" == " foo ".trim();    // false , since they are made equal only at runtime
-        b = "foo" == "fo"+"o";          //  true , since equal at compile-timesiince equal at compile-time
-        b = "foo" == new String("foo"); // false , simply forces creation of new String in the pool
+        b = "foo" == "foo";                      //  true , since java reuses string from pool, since they are equal at compile-time
+        b = "foo" == " foo ".trim();             // false , since they are made equal only at runtime
+        b = "foo" == "fo"+"o";                   //  true , since equal at compile-timesiince equal at compile-time
+        b = "foo" == new String("foo");          // false , simply forces creation of new String in the pool
         String f = "f";
-        b = "foo" == (f+="oo");         // false , += is like a method, so it is only equal at runtime
-        b = "foo" == f.intern();        //intern is always == to the first string literal of said content
-        b = "foo" == "foo".intern();    // true  , returns value from string pool if it is there, otherwise it adds the value to the string pool.
+        b = "foo" == (f+="oo");                  // false , += is like a method, so it is only equal at runtime
+        b = "foo" == f.intern();                 //intern is always == to the first string literal of said content
+        b = "foo" == "foo".intern();             // true  , returns value from string pool if it is there, otherwise it adds the value to the string pool.
+        b = new String("foo") == "foo".intern(); // false
 
-        b = "foo".equals(new String("foo")); // true
-
+        b = "foo".equals(new String("foo"));     // true
     }
 
 

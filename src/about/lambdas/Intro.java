@@ -20,29 +20,21 @@ public class Intro {
         List<XNumber> integers = new ArrayList<>(Arrays.asList(new XNumber(-1), new XNumber(2)));
 
         // Variant 1 : without Lambda
-        // Implement Class and pass the class.
+        // Implement class/method , then pass the class.
         print(integers, new CheckIfPositive());
 
-
         // Variant 2 : use Lambda
-        // Skip the class.
+        // Skip the class/method
         // Start at Interface :
         // Has one Method : Take XNumber , return boolean
         // Omit method name,
-        // Write Paaramter Body of Method as Lambda
-
-        int foo =3;
-        // infers from siganture of `void print()` that second parameter implements PredicateCopy
-        // infers from PredicateCopy that `boolean test(XNumber integer)` is called
-        print(integers, (XNumber a) -> {return a.isPositive;});
+        // Write Paramter Body of Method as Lambda
         print(integers, (XNumber a) -> {return a.isPositive;});
         // java util stuff like ArrayList aleady implements methods that take predicates as input
         // integers.printif( a -> a.isPositive)
 
-        // concise variant
-        print(integers, a -> a.isPositive);
 
-        int i3=3;
+        print(integers, a -> a.isPositive); // concise variant
     }
 
 }

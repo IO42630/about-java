@@ -1,4 +1,4 @@
-## Chapter 1 : About Java
+## 01 About
 | | | |
 ---|---|---
 JDK     | | Java Development Kit : minimum software needed for Java development.
@@ -20,6 +20,8 @@ Robust| no memory leaks
 | Multithreaded | 
 | Backward Compatibility | APIs about to be obsolete are flagged as _depreciated_ .
 
+<br>
+
 #### Building Blocks
 * _keyword_ word with special meaning. 
 * _variables_ hold state
@@ -38,7 +40,141 @@ Robust| no memory leaks
 * Comment
     * `/* */ */` does not compile, as there is one `*/` too much.
 
+| | |
+---|---
+`Integer integer = new Integer(0);` | `<type>  <name>   = new     <constructor> ;`
+`{}` | block
+`a=1+1;` , `a++;` | statement
+`1+1` , `a++` | expression
+
+                          // a brace is missing == "balanced parantheses problem"
+    public class Foo {    // class definition
+        {int bar = 1;}    // instance initializer
+        void bob(int i){  // method definition
+            {i++;}        // inner block
+    }   }
+
+<br>
+
+#### Variables
+
+
+* Variables can't be declared outside of a class or interface.
+* Fields
+    * Instance Variable: (non-static) , declared within a Class.
+    * Class Variable : `static` , declared within a Class.
+* Local Variable : declared within a Constructor, Method or Initializer Block.
+* Constant : `final` variable.
+
+
+    int i;       // declaration
+    i = 1;       // write access "set"
+    i = i + 1;   // read & write access "get & set"
+
+##### Identifier Name
+* must begin with letter , $ or _
+* can include numbers
+* a single _ is not allowed as identifier (since Java 9)
+* cannot be reserved
+* can't contain non char operators e.g. `+` , `%` , `~`
+* unicode letters, e.g. arabic are allowed.
+
+##### Compound Declaration
+
+* may or may not be initialized.
+* only one type declaration allowed.
+
+
+    int i1, i2, i3=0;  // OK
+    int a, int b;      // NO , multiple declarations not allowed.
+    int i1, String s1; // NO , multiple declarations & not of the same type.
+    int a; int b;      // OK , two statements.
+    int a; b;          // NO , b is not a statement.
+
+
+##### Initializing Variables
+* Instance Variables have default values:
+
+
+    boolean                  false
+    byte, short, int, long   0
+    float, double            0.0
+    char                     '\u0000' (NUL)
+    Objects                 null
     
+    
+
+* Local Variables do not hat a default value
+    * compiler will throw error, if the code reads an un-init var
+    
+    
+    int i, x;
+    if (check){
+        i=0; x=0;
+    } else {
+        i=1;
+    }
+    int a = i; // OK // i is initialized either way
+    int b = x; // NO // reading uninitialized variable
+    
+    
+##### Parameters (constructor or method)
+* are local variables, that have been pre-initialized
+* C-Error: `int i; find(i);`
+
+<br>
+
+#### `var` 
+* local variable type inference
+
+| yes | no|
+---|---
+can only be used with local variables | can't be used with fields
+must be initialized when declared | can't be used with parameters
+can be used for reference types | can't be assigend `null` , <br> since impossible to guess type.
+is a _reserved type name_.  <br> can't be used for _class_, _interface_, or _enum_ declarations | is not a _reserved word_.
+ - |can't be used in multiple-var declaration
+
+
+
+
+
+#### Scope
+* the scope of the variable is the code block it is declared in
+* for parameters the scope is the method/class
+    * start: when declared
+    * end: when brace is closed
+* instance var
+    * start: when declared
+    * end: lifetime of object ends (object eligible for GC)
+* class var
+    * start: when declared
+    * end: life of the program ends
+    
+#### GC
+ * all Ojbects are stored in _heap_ (_free store_).
+    * pool of unuserd memory allocated to the Java application.
+*  Object is _eligiblie for GC_ = no longer accessible in program
+    * Object no longer has any references pointing to it.
+    * all references to the Object have gone out of scope.
+
+        System.gc();
+        
+* suggests JVM to do GC, JVM may comply.
+* example
+
+        String a = new String("a");
+        String b = new String("b");
+        a=b; // String "a" just went out of scope
+        b=null; // String "b" is still in scope
+* Side Node:
+    * finalize() was intended to run when the object was GCd.
+    * it can run only once
+    * not part of exam, since deprecated
+
+
+## 014 Deployment
+
 #### Command Line
 `class Core` in file `Core.java` in directory `/pkg` 
         
@@ -135,7 +271,9 @@ assuming java.util.Date and java.sql.Date
     * with wildcards: `javac ./pkg/*.java ./other/pkg/*.java`
     * `java pkg.Core`
 
-#### JAR (Java Archive)
+
+## 016 Jar
+* Java Archive
 * Security: 
 You can digitally sign the contents of a JAR file. 
 Users who recognize your signature can then optionally grant your software security privileges it wouldn't otherwise have.
@@ -207,52 +345,17 @@ or just seal the entire JAR
 
 Sealed: true
 
-### Ordering Elements in a Class
-Element|Example|Required|Placement
----|---|---|---
-Package declaration | `package foo;`|NO | First line in the file
-Import statements | `import bar.*;`|NO | After the package
-Class declaration | `public class C`| YES | After import
-Field declarations | `int i;`| NO | Any top-level element in class
-Method declarations | `void method()` | NO |  Any top-level element in class
+
+
+
+
+
+
 
 <br><br><br><br>
 
-## 02 Building Blocks
-#### Object
-    Integer integer = new Integer(0);
-    <type>  <name>        <constructor>
+## 02 Data Types
 
-<br>
-
-
-<br>
-
-#### Code Block
-| | |
----|---
-`{}` | block
-`a=1+1;` , `a++;` | statement
-`1+1` , `a++` | expression
-
-                          // a brace is missing == "balanced parantheses problem"
-    public class Foo {    // class definition
-        {int bar = 1;}    // instance initializer
-        void bob(int i){  // method definition
-            {i++;}        // inner block
-    }   }
-
-#### Order of Initialization
-    new Foo().bob(1);
-1. code outside of constructor
-    1. instance variables and instance initializers
-    1. line by line
-2. code inside the constructor
-    1. super? (TODO)
-3. what ever method is called
-
-
-#### Data Types
 * Java works with _objects_ that contain collections of Primitive Data Types.
 
 #### reference vs. instance vs. object
@@ -276,6 +379,7 @@ Method declarations | `void method()` | NO |  Any top-level element in class
     obj = new Object();      // obj now holds a reference to an instance of the Object class
     
     System.out.print(obj);   // java.lang.Object@6acbcfc0
+    
 
 #### 8 Primitive Types
 * Contain a pointer to a value in memory.
@@ -297,129 +401,34 @@ Method declarations | `void method()` | NO |  Any top-level element in class
 
 <br>
 
-#### Variables
+#### Wrapper Classes
+* Wrapper classes make use of some caching, somilar to the pool for String
+* The ability of Wrappers to contain `null` is useful for data services.
 
+P-Type | W-Class | .valueOf(<>) | Wrapper.parse<>()
+---|---|---|---
+boolean | Boolean | true
+byte |
+short |
+int |   | | parseInt
+long | | | parseLong
+float | | (float) 1.0)
+double | Double | 1.0
+char | Character | 'c'
 
-* Variables can't be declared outside of a class or interface.
-* Fields
-    * Instance Variable: (non-static) , declared within a Class.
-    * Class Variable : `static` , declared within a Class.
-* Local Variable : declared within a Constructor, Method or Initializer Block.
-* Constant : `final` variable.
-
-
-    int i;       // declaration
-    i = 1;       // write access "set"
-    i = i + 1;   // read & write access "get & set"
-
-##### Identifier Name
-* must begin with letter , $ or _
-* can include numbers
-* a single _ is not allowed as identifier (since Java 9)
-* cannot be reserved
-* can't contain non char operators e.g. `+` , `%` , `~`
-* unicode letters, e.g. arabic are allowed.
-
-##### Compound Declaration
-
-* may or may not be initialized.
-* only one type declaration allowed.
-
-
-    int i1, i2, i3=0;  // OK
-    int a, int b;      // NO , multiple declarations not allowed.
-    int i1, String s1; // NO , multiple declarations & not of the same type.
-    int a; int b;      // OK , two statements.
-    int a; b;          // NO , b is not a statement.
-
-
-##### Initializing Variables
-* Instance Variables have default values:
-
-
-    boolean                  false
-    byte, short, int, long   0
-    float, double            0.0
-    char                     '\u0000' (NUL)
-    Objects                 null
-    
-    
-
-* Local Variables do not hat a default value
-    * compiler will throw error, if the code reads an un-init var
-    
-    
-    int i, x;
-    if (check){
-        i=0; x=0;
-    } else {
-        i=1;
-    }
-    int a = i; // OK // i is initialized either way
-    int b = x; // NO // reading uninitialized variable
-    
-    
-##### Parameters (constructor or method)
-* are local variables, that have been pre-initialized
-* C-Error: `int i; find(i);`
-
-#### `var` (local variable type inference)
-
-* `var` can only be used with local variables
-   * thus can't be used with instance/class vars
-* `var` must be declared and initialized on the same line.
-    * thus cannot be used with parameters
-* var can be used for reference types
-*   however it can't be assigend `null` , since impossible to guess type.
- 
-
-    var a = (short) 1;
-    a= "name"; // OK
-    var c = 0; // OK
-    c = null;  // NO
+    int primitive = Integer.parseInt("123");
+    Integer wrapper = Integer.valueOf("123"); // may throw NumberformatException
 
 
 
-* var is not a _reserved word_.
-    * var is a _reserved type name_.
-        * cannot be used for _class_, _interface_, or _enum_ declarations.
-* var cannot be used in multiple-var declaration
+##### Autoboxing and Unboxing
+* Autoboxing `Integer integer = 50;`
+* Unboxing `int i = integer;`
+    * NullPointerException: `int i = new Integer(null)`
 
 
-#### Scope
-* the scope of the variable is the code block it is declared in
-* for parameters the scope is the method/class
-    * start: when declared
-    * end: when brace is closed
-* instance var
-    * start: when declared
-    * end: lifetime of object ends (object eligible for GC)
-* class var
-    * start: when declared
-    * end: life of the program ends
-    
-#### GC
- * all Ojbects are stored in _heap_ (_free store_).
-    * pool of unuserd memory allocated to the Java application.
-*  Object is _eligiblie for GC_ = no longer accessible in program
-    * Object no longer has any references pointing to it.
-    * all references to the Object have gone out of scope.
-
-        System.gc();
-        
-* suggests JVM to do GC, JVM may comply.
-* example
-
-        String a = new String("a");
-        String b = new String("b");
-        a=b; // String "a" just went out of scope
-        b=null; // String "b" is still in scope
-* Side Node:
-    * finalize() was intended to run when the object was GCd.
-    * it can run only once
-    * not part of exam, since deprecated
-    
 <br><br><br><br>
+
 
 ## 03 Operators
 * _operand_ : variable, literal, value
@@ -644,9 +653,8 @@ Operator | What it does
 
 <br><br><br><br>
 
-## 05 Core APIs
-#### Strings
-* see `about/Strings` .
+## 053 String
+* see `about.string` .
 * implements the `CharSequence` interface.
 * concatenation 
     * if both opernads are numeric, + means addition.
@@ -687,33 +695,6 @@ To reuse common strings java collects them in the string pool (a.k.a. intern poo
 
 * pool contains literal values and constants used by the program
     * `myObject.toString()` is a string but not a literal, so it does not go into the string pool.
-
-<br>
-
-#### Wrapper Classes
-* Wrapper classes make use of some caching, somilar to the pool for String
-* The ability of Wrappers to contain `null` is useful for data services.
-
-P-Type | W-Class | .valueOf(<>) | Wrapper.parse<>()
----|---|---|---
-boolean | Boolean | true
-byte |
-short |
-int |   | | parseInt
-long | | | parseLong
-float | | (float) 1.0)
-double | Double | 1.0
-char | Character | 'c'
-
-    int primitive = Integer.parseInt("123");
-    Integer wrapper = Integer.valueOf("123"); // may throw NumberformatException
-
-
-
-##### Autoboxing and Unboxing
-* Autoboxing `Integer integer = 50;`
-* Unboxing `int i = integer;`
-    * NullPointerException: `int i = new Integer(null)`
 
 <br>
 
@@ -828,8 +809,8 @@ Collection mutable? | - | NO | NO
 Entries mutable? | YES |  YES | NO
 Sync | NO | YES | -
     
-    List<String> fixedSizeList = Arrays.asList("a", "b", "c");
-    List<String> expandableList = new ArrayList<>(fixedSizeList);
+* `List<String> fixedSizeList = Arrays.asList("a", "b", "c");`
+* `List<String> expandableList = new ArrayList<>(fixedSizeList);`
 
 #### Sorting 
 * `Collections.sort(list)`
@@ -845,43 +826,18 @@ Sync | NO | YES | -
 <br><br><br><br>
 
 ## 06 Lambdas
-* Lambdas work with interfaces that have only one abstract method
-    * = Functional Interfaces
-
-
 * see `about.basics.lambdas.Intro`
-* Interface with one Method
-    * Instead of implementing in a Class
-    * Skip Class, Skip Method
-    * Write just parameter and method body
+* Lambdas work with `functional` interfaces (interfaces that have only one `abstract` method)
+    * optional annotation `@FunctionalInterface` to signal intent.
+* Instead of implementing class/method
+    * write just parameter and method body
 * parentheses can be omitted if there is a single parameter and its type is not explicitly stated
 * there isn't a rule that says you must use all declared parameters
-
-
-
-    <parameter name> -> <body>
-    a -> a.foo()
-    (a,b,c) -> { int d = a+b; int e = d+c; return e;};
-    
+* `<parameter name> -> <body>`
+* `a -> a.foo()`
+* `(a,b,c) -> { int d = a+b; int e = d+c; return e;};`
 * IF one parmaeter omit ()
 * IF one statement, omit { return ;}
-
-
-* _functional interface_ : interface with one abstract method
-    * optional anotation `@FunctionalInterface` to signal intent.
-    
-    
-#### Predefined Funtional Interfaces
-
-    
-   
-Interface | # Param | Return Type
----|---|---
-`Comparator<T> { int compare(T o1, T o2); }`|2|int
-`Consumer<T> { void accept(T t); }`| 1| void
-`Predicate<T> { boolean test(T t); }` | 1 | boolean
-`Supplier<T> { T get(); }` | 0 | any
-
 * var can be used in Lambda parameters
 * Lambda body may contain:
     * any Lambda parameters (the ones before `->`)
@@ -889,12 +845,24 @@ Interface | # Param | Return Type
     * `effectively final` parameters/local variables (of the surrounding method)
         * A variable is _effectively final_ if adding final before it would not cause an C-Error
 
+<br>
+    
+#### Predefined Funtional Interfaces
+
+| | 
+|---|
+|`Comparator<T> { int compare(T o1, T o2); }`
+|`Consumer<T>      { void accept(T t); }`
+|`Predicate<T>   { boolean test(T t); }` 
+|`Supplier<T>   { T get(); }`    
+
+
  #### Calling APIs with Lambdas
  * See `Lambdas.java/LambdaAPIs`.
  * List and Set implement methods, that take Lambdas as parameters
-     * .removeIf(Predicate)
-     * .sort(Comparator)
-     * .forEach(Consumer)
+     * `.removeIf(Predicate)`
+     * `.sort(Comparator)`
+     * `.forEach(Consumer)`
 
 <br><br><br><br>
 
@@ -1078,6 +1046,7 @@ Method parameter & local variable (static and instance)| one copy per call
     void play (long a){}
     play(4) // OK can convert from int to long
     
+    
 * can't convert twice
     * from int to Integer
     * from Integer to Long
@@ -1095,7 +1064,7 @@ Method parameter & local variable (static and instance)| one copy per call
 
 <br><br><br><br>
 
-## 08 Class Design
+## 08 Class
 
 #### General
 
@@ -1110,12 +1079,22 @@ Method parameter & local variable (static and instance)| one copy per call
 
 <br>
 
+#### Ordering of Elements
+Element|Example|Required|Placement
+---|---|---|---
+Package declaration | `package foo;`|NO | First line in the file
+Import statements | `import bar.*;`|NO | After the package
+Class declaration | `public class C`| YES | After import
+Field declarations | `int i;`| NO | Any top-level element in class
+Method declarations | `void method()` | NO |  Any top-level element in class
+
+<br>
+
 #### Constructors
 * The purpose of a _constructor_ is to initialize fields.
 * Match the name of the class
 * may have different access modifiers, 
     * overloading rules do apply
-* `var` type can not be used in parameters
 * if a user-declared constructor is present, the default constructor is not declared in the background
     * thus calling the default constructor -> C-Error.
     * having a private constructor effectively disables the instantiation of the class from outside.
@@ -1146,21 +1125,29 @@ Method parameter & local variable (static and instance)| one copy per call
  
  <br>
  
- #### Order of Initialization with Inheritance (class loading)
+ #### Order of Initialization
+ * aka _class loading_
  * a `class` is initialized either when
     * program starts
     * static member of the class is referenced
     * shortly before instance of class is created
- #####Order
-1. `static` (starting with highes superclass)
-    1. If exists superclass Y of X, then init Y first.
-    2. Process all `static` var declarations in order of appearance
-    3. Process all `static` initializers in the order of appearance
+    
+ ##### Order
+1. `static`
+    1. init `super` first (start with highest)
+    2. `static` var declarations (in order of appearance)
+    3. `static` initializers (in order of appearance)
 1. `instance`
-    1. If exists superclass Y of Z, then init Y first.
-    2. Process all instance var declaration in order of appearance
-    3. Process all instance initializers in order of appearance
+    1. init `super` first
+    2. instance var declaration (in order of appearance)
+    3. instance initializers (in order of appearance)
     4. Initialize the constructor including any overloaded constructors referenced with `this()`.
+        1. `this()` or `super()` if present
+        2. default `super()`
+1. what ever instance method is called
+
+
+
 
 <br>
 
@@ -1262,7 +1249,7 @@ Illegal | | !private | same | same | !covariant
 <br><br><br><br>
 
 
-## 09 Advanced Class Design
+## 09 Class 2
 
 #### Abstract Classes
 * see `basics.classes.AbastractClass`

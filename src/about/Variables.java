@@ -28,6 +28,12 @@ public class Variables {
     }
 
 
+    static void vars(){
+
+        int var = 3;
+    }
+
+
 
 
 

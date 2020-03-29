@@ -13,5 +13,15 @@ class B extends A {
     B() { super(1); }
 }
 
-class C extends B {}
+class C extends B {
+    C(){
+
+    }
+
+    C(int i){
+        super();
+      //this(); // C-Error , must be first statement, thus only one may be present
+
+    }
+}
 
