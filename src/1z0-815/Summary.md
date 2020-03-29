@@ -235,20 +235,18 @@ assuming java.util.Date and java.sql.Date
 
 
 
-#### `javac` Options
+#### `javac`
 * _Directory_ 
     * `-d` : overwrite target directory for .class files 
     * `javac -d ./out ./pkg/Core.java ./other/pkg/NotCore.java `
-* _Sourcepath_
+* _Sourcepath_ , `-sourcepath`
     * `cd ./src/deployment/pkg`
     * `javac -sourcepath ../pkg Main.java`
     * `cd ..`
     * `java pkg.Main`
-* _Modulepath_
-    * `-p , --module-path`
 
 
-#### `java` Options
+#### `java`
 * _Classpath_ : indicates where .class files are located
     * `java -cp ./out pkg.Core`
     * also `-classpath` , `--class-path`
@@ -344,12 +342,6 @@ Sealed: true
 or just seal the entire JAR
 
 Sealed: true
-
-
-
-
-
-
 
 
 <br><br><br><br>
@@ -1440,6 +1432,7 @@ resource leak just as bad as memory leak
 <br><br><br><br>
 
 ## 11 Modules
+* see `deployment.modules`
 #### Benefits
 | | |
 ---|---
@@ -1449,25 +1442,38 @@ Custom Java Builds |
 Improved Performance |
 Unique Package Enforcement | 
 
-* --modulep-path
-    * location of any custom module files
-    
-    
-java --module-path feeding --module zoo.animal.
-
-
+* `--modulep-path` , `-p`
+    * location of module `.jars` i.e. dependencies
+* `--module` , `-m`
+    * `-m <module-name>/<package-name>.<class-name> `
+* run
+    * `java -p deployment/modules -m modulemain/com.main.Main`
+* package names must still be unique across all modules
+    * if both modules contain `pkg` error when compiling.
 
 
 
 #### `java` Options
-`--describe-module` 
+* `--describe-module` 
 
-provides uses opens also exist
-
-
-* package names must still be unique across all modules
-    * if both modules contain `pkg` error when compiling.
     
-    
+#### `module-info.java`
 * `requires transitive foo` : this module depends on `foo` and its dependencies
+* also exist:
+    * `provides` , `uses` , `opens`
      
+
+#### `jdeps`
+* looks at module-info.java and code contents
+    * `jdeps modules/modulemain.jar`
+* `-summary -s`
+    * short version
+* when with dependencies to other jars need to specify -m
+    * `jdeps -m modules modules/modulemain.jar`
+#### `jmod` 
+* advanced JAR
+    * create
+    * extract
+    * describe
+    * list
+    * hash
