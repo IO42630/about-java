@@ -1,4 +1,4 @@
-package basics.collections;
+package collections;
 
 public interface ListCopy<E> extends CollectionCopy {
 

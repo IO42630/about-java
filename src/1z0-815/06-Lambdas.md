@@ -1,6 +1,6 @@
-# Chapter 6 : Lambdas and Functional Interfaces
+# 06 Lambdas
 * Lambdas work with interfaces that have only one abstract method
-
+    * = Functional Interfaces
 
 
 * see `about.basics.lambdas.Intro`

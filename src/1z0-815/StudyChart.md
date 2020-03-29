@@ -6,10 +6,11 @@ Chapter | Content | Summary | Exercises
 02 Building Blocks | DONE 
 03 Operators | DONE | 
 04 Decisions | DONE | 
-05 Core API |  DONE | 
+05 Core API |  DONE |  DONE  
 06 Lambdas | DONE | 
 07 Methods | DONE | 
 08 Class | DONE |
 09 Class 2 | DONE | 
 10 Exceptions | DONE | 
 11 Modules | DONE
+

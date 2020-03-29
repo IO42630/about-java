@@ -1,4 +1,4 @@
-# Chapter 7 : Methods and Encapsulation
+## 07 Methods and Encapsulation
 * Method declaration:
 
 access modifier | specifier | return type | method name | (list of param)| exception | {method body}

@@ -1,4 +1,4 @@
-package basics.collections;
+package collections;
 
 import java.util.Arrays;
 
@@ -21,6 +21,7 @@ public class Array {
 
     public static void main(String[] args) {
 
+        methods();
         // index starts at 0
         // length starts at 1
 
@@ -80,4 +81,15 @@ public class Array {
 		int e = new int[4].length; // .length is not a method
 
 	}
+
+
+	static void methods(){
+        int i[] = new int[]{3,2,1};
+        Arrays.sort(i); // i = {1,2,3}
+
+        int pos = Arrays.binarySearch(i, 4); // searches a sorted array and returns theh index of a match
+        // if no match is found, it negates the position where the element would need to be inserted and sutracts 1
+        boolean b = (pos == -4);
+        Arrays.mismatch(i,i); // checks wether two arrays are equivalent
+    }
 }

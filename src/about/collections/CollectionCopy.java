@@ -1,4 +1,4 @@
-package basics.collections;
+package collections;
 
 public interface CollectionCopy<E> {
 

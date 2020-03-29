@@ -21,7 +21,7 @@ Error  |Yes| No | No
 
 <br>
 
-RuntimeExceptions | -
+RuntimeExceptions |  |
 ---| ---
 ArithmeticException | Thrown when code attempts to divide by zero
 ArrayIndexOutOfBoundsException | Thrown when code uses an illegal index to access an array
@@ -48,8 +48,7 @@ Java runs static initializers the first time a class is used.
 * there may be multiple catch blocks
     * evaluated in the order they appear in
     * only one may run
-    * if superclass Exception catch before subclass catch
-        * then Compile-Time error 
+    * if superclass Exception catch before subclass catch -> C-Error
 * multi-catch block see `Exceptions.java` .
     * declaring inheriatance-related Exceptions in a multi-catch will result in a Compile-time error
         * even if child comes before parent.
@@ -85,7 +84,7 @@ Java runs static initializers the first time a class is used.
 
 
 
-### try-with-resource
+#### try-with-resource
 * resources are : databases, webservers, filesystems
 resource leak just as bad as memory leak
 *  use finally to close the resources

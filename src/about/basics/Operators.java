@@ -9,11 +9,40 @@ public class Operators {
     static double d;
     static long l;
     static boolean b;
+    static boolean b1;
+    static boolean b2;
 
     public static void main(String args[]) {
         test();
     }
 
+
+    static void logicTest() {
+
+        b = (b1 || (b2 = true)); // b2 is never set to true
+        b = (b1 | (b2 = true));
+    }
+
+    static void incrementTest(){
+        int i = 0;
+        b= i++ == 0;
+        b = (i=i+1) == 0;
+        b= ++i == 0;
+    }
+
+    static Object ternary( ){
+        int i = 0;
+        var v = i>0? new Integer(1) : "foo";
+        v = new Integer(2);
+        v = "a";
+        var a = 1;
+        var b = new Integer(2);
+        a = b;
+
+
+
+        return i>0 ? new Integer(1) : "foo";
+    }
 
     static void test() {
 
