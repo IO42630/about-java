@@ -38,6 +38,8 @@ public class StringBuilderS {
 
         sb.reverse(); // "of
         sb.toString();
+
+        sb.substring(0,1); // does not change the value of StringBuilder
     }
 
 
