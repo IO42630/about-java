@@ -1,4 +1,4 @@
-###JETTY
+### Jetty Server
 #### Files
 * src : `app/jetty-9.4-src/` (cloned from github)
 * bin : `app/jetty9.4` (downloaded from official website)
@@ -6,7 +6,6 @@
 <br>
 
 #### PATH(s)
-
 * `$JETTY_HOME` : where jetty is started from.
     * `app/jetty9.4/`
     * contains
@@ -16,9 +15,6 @@
     * may be identical to `$JETTY_HOME`
     * `/start.d` contains `.ini` files
         * those generate xml for config
-
-
-
 
 <br>
 
@@ -34,9 +30,6 @@
 * add modules to config : `java -jar $JETTY_HOME/start.jar --add-to-start=<module>`
     * `<module` e.g. server,client, webapp, websocket, proxy
     
-
-<br>
-
 <br>
 
 #### RUN
