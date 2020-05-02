@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>700</y>
+      <w>110</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>
+
+--
+main
+halign=center
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>380</x>
+      <y>530</y>
+      <w>390</w>
+      <h>140</h>
+    </coordinates>
+    <panel_attributes>1:  public static void main(String.. args){
+2:    foo();
+3:  }
+4:  static void foo(){
+5:    Runnable r = new Runnable();
+6:    Thread t = new Thread(r);
+7:    t.start;
+8:  }
+halign=left
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>800</y>
+      <w>110</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>
+--
+foo
+--
+main
+halign=center
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>380</x>
+      <y>690</y>
+      <w>340</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>EoLine 1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>380</x>
+      <y>790</y>
+      <w>340</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>EoLine 2</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>590</x>
+      <y>900</y>
+      <w>110</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>
+
+--
+run
+halign=center
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>460</x>
+      <y>900</y>
+      <w>110</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>
+--
+foo
+--
+main
+halign=center
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>380</x>
+      <y>890</y>
+      <w>340</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>EoLine 7</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>460</x>
+      <y>990</y>
+      <w>110</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Stack A
+Thread "Thread-0"</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>590</x>
+      <y>990</y>
+      <w>110</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>Stack B
+Thread "main"</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
