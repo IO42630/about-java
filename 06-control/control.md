@@ -59,7 +59,7 @@
 * `for (datatype instance : collection){}`
 *  _collection_ is either:
     *  array
-    * X implementing `java.lang.Iterable` , e.g. `ArrayList` 
+    * class implementing `java.lang.Iterable` , e.g. `ArrayList` 
 
 <br>
 

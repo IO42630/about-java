@@ -1,22 +1,18 @@
 ### Jetty API
 #### C
-* `ContextHandler` 
-    * Collection uses the longest prefix of the request URI (the contextPath) 
-    to select a specific ContextHandler to handle the request. 
-    * A ContextHandler is a HandlerWrapper that responds only to requests that have a URI prefix 
-    that matches the configured context path.
-    * Requests that match the context path have their path methods updated accordingly, 
-    and the following optional context features applied as appropriate: 
+* `ContextHandler`
+    * Is a `HandlerWrapper` that responds only to requests that matche the configured `ContextPath`.
+* `ContextPath` URI
 #### H
 * `HandlerCollection` 
     * holds a collection of other handlers and calls each handler in order. 
     * This is useful for combining statistics and logging handlers with the handler that generates the response.
 * `HandlerList`
-    * is a Handler Collection that calls each handler in turn until either an exception is thrown, the response is committed or the request.isHandled() returns true. 
-    * It can be used to combine handlers that conditionally handle a request.  
+    * is a `HandlerCollection` that calls each handler in turn until either an exception is thrown, the response is committed or the request.isHandled() returns true. 
+    * Used to combine handlers that conditionally handle a request.  
 * `HandlerWrapper` 
-    * Base class that can be used to daisy chain handlers together in the style of aspect-oriented programming. 
-    * For example, a standard web application is implemented by a chain of a context, session, security and servlet handlers.
+    * Used to daisy chain handlers. 
+    * E.g. a standard web app is implemented by a chain of a context, session, security and servlet handlers.
 * `HttpClient` 
     * Provides API to perform HTTP (or HTTPS) requests.
 * `HttpServlet`

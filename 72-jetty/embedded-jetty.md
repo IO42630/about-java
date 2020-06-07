@@ -12,26 +12,13 @@
 #### Create Server
 
 
-#### Connectors
-* A Connector can be configured with:
-    * interface
-    * port
-    * buffer sizes
-    * timeouts
+#### Connector
+* "Virtual physical connection".
+* Interface: `org.eclipse.jetty.server.Connector`
+* Impl:
+    * `org.eclipse.jetty.server.ServerConnector`
 
-```java
-Server server = new Server();
- 
-SelectChannelConnector connector = new SelectChannelConnector();
-connector.setPort(8080);
-connector.setMaxIdleTime(30000);
-connector.setRequestHeaderSize(8192);
 
-server.setConnectors(new Connector[]{ connector, connector1, ssl_connector });
-server.setHandler(new HelloHandler());
-
-server.start();
-```
 <br>
 
 #### Handlers

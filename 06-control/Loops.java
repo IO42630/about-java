@@ -42,13 +42,13 @@ public class Loops {
     }
 
     static void incrementTest() {
-        for (int i = 0; i < 3; i++) {
-            System.out.println(i);
-        }
-        System.out.println("-----");
-        for (int i = 0; i < 3; ++i) {
-            System.out.println(i);
-        }
+        StringBuilder sb1 = new StringBuilder();
+        for (int i = 0; i < 3; i++) sb1.append(i);
+
+        StringBuilder sb2 = new StringBuilder();
+        for (int i = 0; i < 3; ++i) sb2.append(i);
+
+        assert sb1.toString().equals(sb2.toString());
     }
 
 
@@ -103,20 +103,19 @@ public class Loops {
         for (String entry : list) {
             for (String foo : list) {
                 break label;
-                //int i = 0; // DOES NOT COMPILE
+                //int i = 0; // C-Error
             }
         }
     }
 
 
-    static void whileS() {
+    static void whileTest() {
 
-        while (i <1) {i += 1;}
+        while (i < 1) {i += 1;}
         while (i < 2) i += 1;
 
-        do {i+=1;} while (i<3);
+        do {i += 1;} while (i < 3);
         do i += 1; while (i < 10);
-
     }
 
 

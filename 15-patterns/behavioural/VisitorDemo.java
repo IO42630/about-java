@@ -1,10 +1,8 @@
 package behavioural;
 
 /*
- * Visitor. 
- * Represent an operation to be performed on the elements of an object structure. 
- * Visitor lets you define a new operation 
- * without changing the classes of the elements on which it operates.
+ * The visitor-pattern outsources logic from an Element to a Visitor.
+ * Thus the visitor-patterns defines a new operation on the Element, without changing the Element.
  */
 
 class Element {
@@ -23,7 +21,7 @@ class Visitor{
 	}
 }
 
-// MAIN	- - - - - -
+
 public class VisitorDemo {
 	public static void main(String[] args) {
 		new Element().accept(new Visitor());

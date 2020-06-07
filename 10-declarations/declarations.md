@@ -1,5 +1,7 @@
 ## 065 Declarations
 
+
+
 | | | | | | | | 
 ---|---|---|---|---|--- |---
 __access modifier__|__specifier__|__return type__|__method name__|__(list of param)__|__exception__|__{method body}__
@@ -14,7 +16,7 @@ public | final, abstract | class | Foo  | extends Bar| implements Zoc | {int i=0
     
 <br>
 
-#### Declarations
+#### Specifiers
 * placement:
     * before/after _access modifier_
     * before 
