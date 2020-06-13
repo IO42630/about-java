@@ -2,10 +2,10 @@
 
 #### General
 
-* `.java` file can have 0 or 1 public top-level classes.
+* `.java` file can have 0..1 public top-level classes.
     * `C-Error` if filename does not match name of public class.
 * `this.var` references current and inherited members
-    * sed do set apart instance/class variables from parameters/local variables
+    * used do set apart instance/class variables from parameters/local variables
 * `super.var` reference to inherited members
     * used to call members of the Parent class from the Child class.
 * `this(int i)` is used to call overloaded Constructor.
@@ -26,15 +26,16 @@ Method declarations | `void method()` | NO |  Any top-level element in class
 
 #### Constructors
 * The purpose of a _constructor_ is to initialize fields.
-* Match the name of the class
-* may have different access modifiers, 
-    * overloading rules do apply
-* if a user-declared constructor is present, the default constructor is not declared in the background
-    * thus calling the default constructor -> C-Error.
+* Matches the name of the class.
+* May have different access modifiers. 
+    * Overloading rules do apply.
+* If a user-declared constructor is present, 
+    * then the default constructor is not declared in the background.
+    * Thus calling the default constructor `-> C-Error`.
     * having a private constructor effectively disables the instantiation of the class from outside.
 * `this()` and `super()` must be the first statement in the constructor
     * `Foo(){this();}` does not Compile, likewise other circular references caused by constructors. 
-* if no `this()` and `super()` are present the compiler inserts a `super()` in the background
+* If no `this()` or `super()` are present, then the compiler inserts a `super()` in the background
 * Trivia:
     * since compiler inserts super() the parent constructor is called in every child
     * if class has private constructor
@@ -47,17 +48,6 @@ Method declarations | `void method()` | NO |  Any top-level element in class
 * see `about.basics.classes.Constructors`
 
 <br>
-
-##### `final` with Constructors
-* final can be assigned values
-    * in the line in which they are declared 
-    * in an instance initializer 
-    * constructor
- * `final` local variable may be assigned a value
- * `final` field not assigned after constructor `-> C-Error`
-    * assigning `null` counts as an assignment
- 
- <br>
  
  #### Order of Initialization
  * aka _class loading_
@@ -80,9 +70,6 @@ Method declarations | `void method()` | NO |  Any top-level element in class
         2. default `super()`
 1. what ever instance method is called
 
-
-
-
 <br>
 
 #### Reviewing Constructor Rules SKIP
@@ -92,10 +79,8 @@ Method declarations | `void method()` | NO |  Any top-level element in class
 #### Inheriting Members
 * same _signature_ and compatible return type
     * thus same name, parameters and return type
-    * `super` allows to reference parent method
-    * `this` references the child method
-* Checks performed when overridng a method
-1. child method must havve same signature as parent method
+* Checks performed when overriding a method
+1. child method must have same signature as parent method
 2. child method must be at least as accessible as parent method
     * `Child` contains `private foo()` , `Parent` contains `pubic foo()`
     *  `Parent parent = new Child();`
@@ -123,16 +108,14 @@ Method declarations | `void method()` | NO |  Any top-level element in class
     * X, Y interface -> X subinterface of Y
     * X class, Y interface -> X implements Y (directly or through superclass)
 #### Overload vs Override vs Hide vs Redeclare
-|   | member | modifier |name |parameters | return type|
----|---|---|---|---|---
-Overload | instance method | | same | __different__ | __any__
-Override | instance method | |  same | __same__ | __covariant__
-Hiding | instance/static field, static method | | same | same | covariant
-Redeclaring | | (both) private  | same | same | !covariant
+|   | member | modifier |name |param | return type| effect |
+---|---|---|---|---|---|---
+Overload | instance method | | same | __different__ | __any__ 
+Override | instance method | |  same | __same__ | __covariant__ | replaces the parent method.
+Hiding | instance field, <br> static field, <br> static method | | same | same | covariant | replaces the member only <br> if a Child reference type is used.
+Redeclaring | | (both) private  | same | same | !covariant | is always ok, <br> (accessing the member <br> from outside the class <br> is prohibited).
 Illegal | | !private | same | same | !covariant
-* Overriding : replaces the parent method.
-* Hiding : replaces the member only if a Child reference type is used.
-* Redeclaring : is always ok, since accessing the member from outside the class is prohibited anyways.
+
 
 #### Overriding with Generics
 * due to `type erasure` can't overload `foo(List<Integer>)` with `foo(List<String>)`

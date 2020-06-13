@@ -47,6 +47,15 @@ Method parameter & local variable (static and instance)| one copy per call
 * `final` fields are not initialized by default
     * `final int i=0;  // OK`
     * `final int i;    // C-Error` 
+* `final` can be assigned values
+    * in the line in which they are declared 
+    * in an instance initializer 
+    * constructor
+ * `final` local variable may be assigned a value
+ * `final` field not assigned after constructor `-> C-Error`
+    * assigning `null` counts as an assignment
+    
+<br>
 
 #### passing data
     {
