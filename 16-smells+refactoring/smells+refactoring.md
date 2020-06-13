@@ -1,0 +1,37 @@
+##### Duplicate Code
+
+##### Long Method
+
+##### Large Class
+
+##### Long Parameter List
+
+##### Data Clumps
+
+##### Primitive Obsession
+
+##### Switch Statements
+
+##### Parallel Inheritance Hierarchies
+
+##### Lazy Class
+
+##### Speculative Generality
+
+##### Temporary Field
+
+##### Message Chains
+
+##### Middle Man
+
+##### Inappropriate Intimacy
+
+##### Alternative Classes with Different Interfaces
+
+##### Incomplete Library Class
+
+##### Data Class
+
+##### Refused Bequest
+
+##### Comments
