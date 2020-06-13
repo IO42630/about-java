@@ -8,10 +8,10 @@ Launcher | `java` |Launches the JVM. <br> JVM _interprets_ the bytecode .
  | | `javadoc` | generates documentation.
 | API | | StringBuilder is an API.
 
-* Java_EE
+* Java EE
     * Java Enterprise Edition (Currently rebranded as Jakarta EE).
-    * Specification that is related to JAVA SE." 
-    * It includes all the classes in Java SE, plus a number that are more useful to programs that run on servers as opposed to workstations.";
+    * Specification that is related to JAVA SE.
+    * It includes all the classes in Java SE, plus a number that are more useful to programs that run on servers as opposed to workstations.
 * Java SE  Java Platform, Standard Edition 
     * Specification of a computing platform for development and deployment.
 * Oracle JDK   Java Development Kit
