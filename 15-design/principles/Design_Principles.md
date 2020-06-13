@@ -12,7 +12,7 @@
     * Interfaces are closed, may be implemented by different classes.
     * If reusing code between implementing classes is desired, use inheritance or composition.
 
-##### Liskov Substitute Principle
+##### Liskov Substitute
 * parent should be replaceable with child dsf without breaking the application
 * formal:
     * S subtype of T

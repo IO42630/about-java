@@ -1,4 +1,4 @@
-package principles.examples.level2;
+package principles.examples.level3;
 
 public class Main {
 
