@@ -1,0 +1,14 @@
+### Architecture
+* Core
+    * Core
+    * Bean
+    * Context
+    * SpeL : expression language for manipulating object graph at runtime
+* Data Access/Integration
+    * JDBC :
+    * ORM : integrates object-relational-mapping (JPA/JDO/Hibernate)
+    * OXM : supports object-xml-mapping (JAXB, Castor, XMLBeans)
+    * JMS :
+    * Transactions :
+* Web
+* Miscellaneous

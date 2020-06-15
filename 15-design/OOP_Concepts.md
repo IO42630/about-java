@@ -5,3 +5,7 @@ then providing access to them via public methods
 * Inheritance : 
 * Polymorphism : overloading, overwriting and acessing a subset of features of a class 
 by acessing it via an interface/parent class.
+
+### AOP
+* Aspect Oriented Programming.
+* Separate Aspects such as logging, security, caching, ...

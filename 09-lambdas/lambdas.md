@@ -20,7 +20,7 @@
 
 <br>
     
-#### Predefined Funtional Interfaces
+#### Predefined Functional Interfaces
 
 | | 
 |---|
@@ -36,3 +36,6 @@
      * `.removeIf(Predicate)`
      * `.sort(Comparator)`
      * `.forEach(Consumer)`
+ 
+ ### Method References
+ TODO
