@@ -1,0 +1,34 @@
+== Testing
+
+=== Pyramid
+* Manual Testing Session
+** Automated GUI Tests
+*** Automated API Tests
+**** Auto. Integration Tests
+***** Auto. Component Tests
+****** Auto. Unit Tests
+
+
+==== Fixtures
+
+
+
+==== Annotations
+
+[cols="10,30"]
+|===
+|@Test|Labels method as test.
+|@Test(timeout=1000)|Test will be failed if it takes longer than 1000ms.
+|@BeforeClass|Method will be invoked once before starting all the tests.
+|@Before| Method will be invoked before each test.
+|@After|Method will be invoked after each test.
+|@AfterClass|Method will be invoked after finishing all tests.
+|===
+
+==== Assert Class
+[source,java]
+void assertEquals(boolean expected,boolean actual)
+void assertTrue(boolean condition)
+void assertFalse(boolean condition)
+void assertNull(Object obj)
+void assertNotNull(Object obj)
