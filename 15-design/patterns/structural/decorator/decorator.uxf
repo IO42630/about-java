@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>340</y>
+      <w>360</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>ConcreteDecorator2(
+*    ConcreteDecorator1(BaseClass())*
+)
+halign=left
+
+bg=#FFF59D</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>390</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>930</x>
+      <y>680</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>480</x>
+      <y>620</y>
+      <w>170</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>AbstractDecorator does the wrapping.</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>450</x>
+      <y>530</y>
+      <w>50</w>
+      <h>130</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>630</y>
+      <w>120</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=.</panel_attributes>
+    <additional_attributes>100.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>450</y>
+      <w>360</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>AbstractDecorator(
+*    ConcreteDecorator1(BaseClass()*
+)
+halign=left
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>290</x>
+      <y>510</y>
+      <w>360</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>wrapped = ConcreteDecorator1(BaseClass())
+halign=left
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>620</y>
+      <w>200</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>AbstractDecorator(
+*    BaseClass()*
+)
+halign=left
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>640</x>
+      <y>510</y>
+      <w>120</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>510</y>
+      <w>200</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>ConcreteDecorator1(
+*    BaseClass()*
+)
+halign=left
+
+bg=#FFF59D</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>780</x>
+      <y>560</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>680</y>
+      <w>200</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>wrapped = BaseClass()
+halign=left
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1030</x>
+      <y>680</y>
+      <w>110</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>BaseClass()
+halign=left
+
+bg=#FFF59D</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -2,10 +2,37 @@ package patterns.structural;
 
 /*
  * Facade (=Fassade).
- * Provide an unified interface to a set of interfaces in a subsystem.
- * Facade defines a higher-level interface that makes the subsystem easier to use.
+ * A higher-level interface providing simpler access to a set of sub-interfaces.
  */
 
-public class Facade {
+interface ComputerFacade{
+
+
+    CPU cpu = new CPUImpl();
+
+    MB mb = new MBImpl();
+
+    RAM ram = new RAMImpl();
+}
+
+
+
+
+interface CPU{}
+
+interface MB{}
+
+interface RAM{}
+
+
+
+class CPUImpl implements CPU{
 
 }
+
+class MBImpl implements MB{}
+
+class RAMImpl implements  RAM{}
+
+
+

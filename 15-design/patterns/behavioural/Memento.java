@@ -1,4 +1,4 @@
-package patterns.structural;
+package patterns.behavioural;
 
 /*
  * Memento.
