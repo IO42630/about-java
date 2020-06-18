@@ -1,4 +1,4 @@
-package sub_routines;
+package sub.routines;
 
 
 
@@ -31,7 +31,7 @@ public class Write {
 	 * append all elements of <b>pool</b> to StringBuilder and write to
 	 * <b>/tmp/name</b>
 	 * <p>
-	 * 
+	 *
 	 * @param pool
 	 */
 	public void textPool(String name, Map<Integer, File> pool) {
@@ -47,7 +47,7 @@ public class Write {
 	 * append all elements of <b>md5Pool</b> to StringBuilder and write to
 	 * <b>/tmp/name</b>
 	 * <p>
-	 * 
+	 *
 	 * @param md5Pool
 	 */
 	public void textMd5Pool(String name, Map<Integer, Artifacts.MFile> md5Pool) {

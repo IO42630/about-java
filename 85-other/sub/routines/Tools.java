@@ -1,11 +1,11 @@
-package sub_routines;
+package sub.routines;
 
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.IOException;
 
 /** @author user
- * @meta general tools to be used with Core 
+ * @meta general tools to be used with Core
  * stringContains<p>
  * getMd5<p>
  * */
@@ -18,7 +18,7 @@ public class Tools {
 	}
 
 	/** Returns true if String string contains any character from String chars
-	 * 
+	 *
 	 * @param string
 	 * @param forbidden
 	 * @return TRUE if STRING contains any CHAR from FORBIDDEN, else FALSE */
@@ -58,7 +58,7 @@ public class Tools {
 	}
 
 	/** @param br BufferedReader
-	 * @return String of BufferedReader 
+	 * @return String of BufferedReader
 	 **/
 	public StringBuilder brStringBuilder(BufferedReader br) {
 		StringBuilder sb = new StringBuilder();
@@ -92,15 +92,15 @@ public class Tools {
 		return sb;
 	}
 
-	
+
 	/** @return name of <i>file</i> as <i>String</i>
 	 **/
 	public String getFilename(File file) {
 		String[] slashSplit = file.getPath().split("/");
 		return slashSplit[slashSplit.length - 1];
 	}
-	
-	
-	
-	
+
+
+
+
 }

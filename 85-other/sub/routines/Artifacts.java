@@ -1,10 +1,10 @@
-package sub_routines;
+package sub.routines;
 
 import java.io.File;
 
 public class Artifacts {
 
-    static Tools tools = new Tools();
+    static sub.routines.Tools tools = new sub.routines.Tools();
 
     public MFile getMFile(File file){
         return new MFile(file);

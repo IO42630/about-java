@@ -1,22 +1,22 @@
-package sub_routines;
+package sub.routines;
 import java.io.IOException;
 import java.net.InetAddress;
 import java.net.UnknownHostException;
 
 public class Network  {
-	
-		
+
+
 		public String myIP() throws UnknownHostException{
 			 return InetAddress.getLocalHost().getHostAddress();
 		}
-	
-		
 
 
 
 
 
-	
+
+
+
 	void reachable(String target, String ipAddr) {
 		try {
 			InetAddress inet = InetAddress.getByName(ipAddr);
@@ -28,10 +28,10 @@ public class Network  {
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
-	
-	
-	
-		
+
+
+
+
 	}
-	
+
 }

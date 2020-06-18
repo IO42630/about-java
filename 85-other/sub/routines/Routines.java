@@ -1,4 +1,4 @@
-package sub_routines;
+package sub.routines;
 
 
 import java.io.File;
@@ -52,7 +52,7 @@ public class Routines {
 	 * [2] Read <b>/tmp/find</b> into <b>List>String></b> <br>
 	 * [3] Add <b>List>String></b> entries to <b>Map>String,File></b> , where
 	 * <b>String</b> is an <b>int</b> key. <br>
-	 * 
+	 *
 	 * @param srcdir
 	 * @param type
 	 *            file OR directory
@@ -99,7 +99,7 @@ public class Routines {
 
 	/** <b>WARNING</b>: will delete <b>srcdir</b> too, if it contains no files at
 	 * all
-	 * 
+	 *
 	 * @param srcdir */
 	public void deleteEmptyDir(String srcdir) {
 		Map<Integer, File> filepool = loadPool(srcdir, "directory");

@@ -1,4 +1,4 @@
-package sub_routines;
+package sub.routines;
 
 
 import java.io.BufferedReader;
@@ -7,9 +7,9 @@ import java.util.Map;
 
 
 /**
- * 
+ *
  * copy of core (main) with all the currently unused snippets
- * 
+ *
  */
 public class Snippets {
 	Tools tools;
@@ -64,7 +64,7 @@ public class Snippets {
 
 	/**
 	 * quick & dirty console output for testing
-	 * 
+	 *
 	 * @param o
 	 */
 	public static void print(Object o) {

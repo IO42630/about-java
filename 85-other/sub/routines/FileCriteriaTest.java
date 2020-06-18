@@ -1,4 +1,4 @@
-package sub_routines;
+package sub.routines;
 
 
 
@@ -8,17 +8,19 @@ import java.io.IOException;
 
 /** @author user */
 public class FileCriteriaTest {
-	Tools tools;
+
+	sub.routines.Tools tools;
 	Execute x;
-	Write write;
+
+	sub.routines.Write write;
 
 
 	/** selection of <b>boolean</b> that flip if <b>file</b> matches certain
 	 * <b>criteria</b>.<p> */
 	public FileCriteriaTest() {
-		tools = new Tools();
+		tools = new sub.routines.Tools();
 		x = new Execute();
-		write = new Write();
+		write = new sub.routines.Write();
 	}
 
 
@@ -26,7 +28,7 @@ public class FileCriteriaTest {
 	 * "null", "keyword" was not found. */
 	public boolean pdfContainsKeyword(String path, String keyword) {
 		// Runtime.exec() can'd "do" pipes, write a .sh to work around
-		Execute.TwoBr twobr = x.execute(new String[] { Core.shell + "pipe.sh",
+		Execute.TwoBr twobr = x.execute(new String[] {Core.shell + "pipe.sh",
 				"pdftotext -q " + path + " - ", "grep " + keyword });
 		try {
 			if (twobr.output.readLine() != null) {

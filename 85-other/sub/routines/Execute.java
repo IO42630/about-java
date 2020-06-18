@@ -1,15 +1,15 @@
-package sub_routines;
+package sub.routines;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
 public class Execute {
 
-	
+
 
 
 	/**
-	 * 
+	 *
 	 * @param <i>cmd</i>  array, representing shell command
 	 * @return <i>TwoBr</i>  class, containing two BufferedReaders,  <i>output</i> and  <i>error</i>
 	 * @see <i>output</i>  BufferedReader, from input stream, from normal output of the subprocess<br>
@@ -27,11 +27,11 @@ public class Execute {
 		}
 		return twobr;
 	}
-	
+
 	public class TwoBr{
 		public BufferedReader output;
 		public BufferedReader error;
 	}
-	
-	
+
+
 }

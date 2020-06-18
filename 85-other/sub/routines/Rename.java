@@ -1,4 +1,4 @@
-package sub_routines;
+package sub.routines;
 
 
 
@@ -21,7 +21,7 @@ public class Rename {
 	}
 
 	/** replace some "forbidden" characters with dashes <p>
-	 *  find list directory contents 
+	 *  find list directory contents
 	 **/
 	public void withDash() {
 		try {
@@ -45,8 +45,8 @@ public class Rename {
 			//e2.printStackTrace();
 		}
 	}
-	
-	
+
+
 
 
 }

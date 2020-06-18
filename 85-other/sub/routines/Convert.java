@@ -1,19 +1,19 @@
-package sub_routines;
+package sub.routines;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 
 /**
- * 
+ *
  */
 public class Convert {
 	String directory;
-	Execute x;
+	sub.routines.Execute x;
 	BufferedReader output;
 
 	public Convert(String dir) {
 
-		x = new Execute();
+		x = new sub.routines.Execute();
 		this.directory = dir;
 	}
 
@@ -32,9 +32,9 @@ public class Convert {
 				//TODO add support for extensions
 				if (linesplit[linesplit.length - 1].equals("mp4") || linesplit[linesplit.length - 1].equals("wav")) {
 					// convert
-					x.execute(new String[] { Core.shell + "mp3.sh", line });
+					x.execute(new String[] {sub.routines.Core.shell + "mp3.sh", line });
 					if (remove == true) {
-						new Execute().execute(new String[] { "rm", line });
+						new sub.routines.Execute().execute(new String[] {"rm", line });
 					}
 				}
 			}
