@@ -1,6 +1,4 @@
-public class Declarations {}
-
-
+package com.olexyn.about.java;
 
 
 /**
