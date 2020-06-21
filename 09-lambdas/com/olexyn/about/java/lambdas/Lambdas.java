@@ -1,4 +1,4 @@
-package lambdas;
+package com.olexyn.about.java.lambdas;
 
 import java.util.*;
 import java.util.function.Consumer;
