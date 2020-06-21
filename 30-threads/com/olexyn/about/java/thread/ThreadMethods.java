@@ -1,6 +1,8 @@
-public class Methods {
+package com.olexyn.about.java.thread;
 
-    void threadMethods(){
+public class ThreadMethods {
+
+    void staticMethods(){
         Thread.currentThread(); // returns reference to the currently executing thread object.
     }
 

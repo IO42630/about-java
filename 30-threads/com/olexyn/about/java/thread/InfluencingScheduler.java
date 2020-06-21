@@ -1,3 +1,5 @@
+package com.olexyn.about.java.thread;
+
 public class InfluencingScheduler {
 
 

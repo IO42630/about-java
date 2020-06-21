@@ -1,3 +1,5 @@
+package com.olexyn.about.java.thread;
+
 public class ThreadDemo {
 
     static Thread t = null;

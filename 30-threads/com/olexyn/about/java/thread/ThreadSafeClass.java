@@ -1,3 +1,5 @@
+package com.olexyn.about.java.thread;
+
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
