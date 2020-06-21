@@ -1,3 +1,5 @@
+package com.olexyn.about.java.operators.math;
+
 public class Maths {
 
     static int i;
