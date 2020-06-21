@@ -1,0 +1,14 @@
+== JDBC
+
+
+
+=== Interfaces
+Are usually provided in a `.jar` supplied by the DB manufacturer.
+
+[options=header, cols="10,20"]
+|===
+|Interface |
+|`Driver`|
+|`Connection`|
+|`Statement`| SQL-statement.
+|`ResultSet`|
