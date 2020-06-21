@@ -2,7 +2,10 @@ package com.olexyn.about.java.h2;
 
 import org.h2.jdbcx.JdbcDataSource;
 
+
+import javax.sql.DataSource;
 import java.sql.Connection;
+import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
@@ -11,12 +14,13 @@ public class H2Server {
     private Connection connection;
 
     public H2Server() {
-        JdbcDataSource ds = new JdbcDataSource();
-        ds.setURL("jdbc:h2:mem:db1");
-        ds.setUser("user");
-        ds.setPassword("password");
+        JdbcDataSource jdbcDataSource = new JdbcDataSource();
+        jdbcDataSource.setURL("jdbc:h2:mem:db1");
+        jdbcDataSource.setUser("user");
+        jdbcDataSource.setPassword("password");
+
         try {
-            connection = ds.getConnection();
+            connection = ((DataSource) jdbcDataSource).getConnection();
         } catch (SQLException ignored) { }
 
         populate();
