@@ -1,4 +1,4 @@
-package generics;
+package generics.example.dispenser;
 
 /**
  * this is a dispenser, which consists of E's

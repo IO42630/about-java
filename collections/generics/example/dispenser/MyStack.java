@@ -1,14 +1,13 @@
-package generics;
+package generics.example.dispenser;
 
 import java.util.ArrayList;
 import java.util.EmptyStackException;
 import java.util.List;
 
-class MyQueue<E> extends AbstractDispenser<E> implements Dispenser<E>  {
+class MyStack<E>  extends  AbstractDispenser<E> implements Dispenser<E> {
 
 
-
-	public MyQueue(){
+	public MyStack(){
 		super.items = new ArrayList<>();
 	}
 
@@ -25,11 +24,10 @@ class MyQueue<E> extends AbstractDispenser<E> implements Dispenser<E>  {
 		if (items.isEmpty()) {
 			throw new EmptyStackException();
 		}
-		int first = 0;
+		int last = items.size()-1;
 		List<E> queueItems = (List<E>) items;
-		return queueItems.remove(first);
+		return queueItems.remove(last);
 	}
-
 
 
 

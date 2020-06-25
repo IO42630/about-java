@@ -1,4 +1,4 @@
-package generics;
+package generics.example.dispenser;
 
 import java.util.EmptyStackException;
 import java.util.ArrayList;
