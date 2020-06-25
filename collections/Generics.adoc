@@ -1,0 +1,109 @@
+= Generics
+
+== Intordution
+Skip to summary if in a hurry.
+
+=== Purpose
+
+Introduced in Java 1.5. Before collections consisted of Objects.
+Those resulted in Casts when retrieving. This could cause ClassCastException at Runtime
+To avoid this compile-time type checking was added with Generics.
+
+[source,java]
+
+List list = new ArrayList(); // Java 1.5
+list.add("abc");
+list.add(new Integer(5))
+for(Object obj : list) { String str=(String) obj; }
+List<String> list = new ArrayList<String>(); // Java 1.7+
+list1.add("abc");
+for(String str : list1){ }
+
+If the Generics Type is omitted,
+Java will use Object and warn about "raw usage".
+
+
+=== Inheritance (Recap)
+All parametrized classes still inherit from Object.
+Thus they can't be cast from one to another.
+[source,java]
+String str = "";
+Object obj = new Object();
+List<String> strList = new ArrayList<>();
+List<Object> objList = new ArrayList<>();
+//
+obj = str;           // OK
+str = (String) obj;  // OK
+objList = strList    // C-Error
+obj = strList        // OK
+//
+interface MyList<E,T> extends List<E>{} // Example of what can be done with generics.
+
+
+
+== Summary
+
+=== Abbreviations
+** Generic Type : `T`
+** Generic Type Wildcard : `?`
+
+====  T <> ?
+
+[options=header]
+|===
+||`T` | `?`
+|Can be used with... | class, method, field, param, local var | field, param, local var
+|Needs to be declared in enclosing class or method? | YES +
+Syntax in class: +
+`Class<T>{}` +
+Syntax in method: +
+`<T> return-type method(){}` | NO
+|===
+
+
+
+
+==== Bounds
+* unbounded (`<T>`)
+* upper bound (`<T1 extends T2>`) may be used with/without a wildcard.
+* lower bound (`<T1 super T2>`) may only be used with wildcard
+
+
+==== Cheatsheet (Complete)
+
+[options=header, cols="7,5,5,5"]
+|===
+| Declaration Scenarios                   | unbounded | upper bound | lower bound
+| Class with `<T>`   2+^| YES            |
+| Class with `<?>`   3+|
+| Method with `<T>`  2+^| YES          |
+| Method with `<?>`  3+|
+| Field with `<T>`   | If T declared in Class. 2+|
+| Field with `<?>`   3+^| YES
+| Parameter (or local var) with <T> | If T declared in Method (or Class). 2+|
+| Parameter (or local var) with `<?>`   3+^| YES
+|===
+
+[options=header, cols="7,5"]
+|===
+| Type Scenarios |
+| Method with return type `T` | If T declared in Class.
+| Method with return type `?` |
+| Field of type `T`   | If T declared in Class.
+| Field of type `?`   |
+| Parameter of type `T`   | If T declared in Method (or Class).
+| Parameter of type `?`   |
+| Local var of type `T`   | If T declared in Method (or Class).
+| Local var of type `?`   | Use `var` instead.
+|===
+
+==== Naming
+
+|===
+| E |Element of Collection
+| K |Key of Map
+| N |Number
+| T |Type
+| V |Value of Map
+| S , U | Other
+|===
