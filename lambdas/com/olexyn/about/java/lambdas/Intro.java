@@ -5,58 +5,54 @@ import java.util.Arrays;
 import java.util.List;
 
 /**
- * Start here if you forgot Lambdas.
+ * Start here if you forgot Lambdas. <br>
+ *
+ * > First, we have a functional interface PredicateCopy. <br>
+ * > It may be implemented as Class IsPositive and Method evaluate(). <br>
+ * > Or we can write it as a Lambda (inline method).
  */
 public class Intro {
 
-    private static void print(List<XNumber> xNumbers, PredicateCopy checker) {
-        for (XNumber x : xNumbers) {
-            if (checker.test(x)) System.out.println(x);
-        }
+    static void evaluateListEntries(List<Integer> integerList, PredicateCopy predicate) {
+        for (Integer x : integerList)
+            if (predicate.evaluate(x)) System.out.println(x+" is true.");
+            else System.out.println(x+ " is false.");
     }
 
 
     public static void main(String... args) {
-        List<XNumber> integers = new ArrayList<>(Arrays.asList(new XNumber(-1), new XNumber(2)));
+        List<Integer> integerList = new ArrayList<>(Arrays.asList(-1, 2));
 
-        // Variant 1 : without Lambda
-        // Implement class/method , then pass the class.
-        print(integers, new CheckIfPositive());
+        // Variant 1 : Without Lambdas
+        //     Implement the IsPositive class, then pass it.
+        evaluateListEntries(integerList, new IsPositive());
 
-        // Variant 2 : use Lambda
-        // Skip the class/method
-        // Start at Interface :
-        // Has one Method : Take XNumber , return boolean
-        // Omit method name,
-        // Write Paramter Body of Method as Lambda
-        print(integers, (XNumber a) -> {return a.isPositive;});
-        // java util stuff like ArrayList aleady implements methods that take predicates as input
-        // integers.printif( a -> a.isPositive)
-
-
-        print(integers, a -> a.isPositive); // concise variant
+        // Variant 2 : With Lambdas
+        //     Start at the functional interface PredicateCopy.
+        //     The interfaces is sufficient to bind the parameter and return types.
+        //     Write parameter and method body as lambda.
+        evaluateListEntries(integerList, (Integer a) -> {return a > 0;});
+        //     Since the parameter and return types are bound, a more concise version is possible.
+        evaluateListEntries(integerList, a -> a>0);
     }
-
 }
 
 
+/**
+ * A functional interface has only one method.
+ */
+@FunctionalInterface
 interface PredicateCopy {
-    boolean test(XNumber a);
+    boolean evaluate(Integer a);
 }
 
 
-class CheckIfPositive implements PredicateCopy {
-    public boolean test(XNumber integer) {
-        return integer.isPositive;
+class IsPositive implements PredicateCopy {
+    public boolean evaluate(Integer integer) {
+        return integer > 0;
     }
 }
 
 
-class XNumber {
-
-    XNumber(Integer integer) { isPositive = integer > 0; }
-
-    boolean isPositive;
-}
 
 
