@@ -1,9 +1,9 @@
-## 06 Lambdas
+== 06 Lambdas
 * see `about.basics.lambdas.Intro`
-* Lambdas work with `functional` interfaces (interfaces that have only one `abstract` method)
-    * optional annotation `@FunctionalInterface` to signal intent.
+* Lambdas work with `functional` interfaces (interfaces that have only one method)
+* optional annotation `@FunctionalInterface` to signal intent.
 * Instead of implementing class/method
-    * write just parameter and method body
+* write just parameter and method body
 * parentheses can be omitted if there is a single parameter and its type is not explicitly stated
 * there isn't a rule that says you must use all declared parameters
 * `<parameter name> -> <body>`
@@ -13,21 +13,21 @@
 * IF one statement, omit { return ;}
 * var can be used in Lambda parameters
 * Lambda body may contain:
-    * any Lambda parameters (the ones before `->`)
-    * any class/instance variables (of the surrounding class)
-    * `effectively final` parameters/local variables (of the surrounding method)
-        * A variable is _effectively final_ if adding final before it would not cause an C-Error
+* any Lambda parameters (the ones before `->`)
+* any class/instance variables (of the surrounding class)
+* `effectively final` parameters/local variables (of the surrounding method)
+* A variable is _effectively final_ if adding final before it would not cause an C-Error
 
 <br>
-    
-#### Predefined Functional Interfaces
 
-| | 
+==== Predefined Functional Interfaces
+
+| |
 |---|
 |`Comparator<T> { int compare(T o1, T o2); }`
 |`Consumer<T>      { void accept(T t); }`
-|`Predicate<T>   { boolean test(T t); }` 
-|`Supplier<T>   { T get(); }`    
+|`Predicate<T>   { boolean test(T t); }`
+|`Supplier<T>   { T get(); }`
 
 
  #### Calling APIs with Lambdas
@@ -36,6 +36,8 @@
      * `.removeIf(Predicate)`
      * `.sort(Comparator)`
      * `.forEach(Consumer)`
- 
+
+
+
  ### Method References
  TODO
