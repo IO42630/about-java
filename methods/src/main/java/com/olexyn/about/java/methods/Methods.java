@@ -1,3 +1,5 @@
+package com.olexyn.about.java.methods;
+
 public class Methods {
 
 
@@ -13,7 +15,7 @@ public class Methods {
     }
 
 
-    static int[] varargsDemo(int... varint) { return varint; }
+    static void varargsDemo(int... varint) { }
 
 
     public int hello() {
