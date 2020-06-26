@@ -43,8 +43,9 @@ public class Intro {
         List<Integer> integerList = new ArrayList<>(Arrays.asList(-1, 2));
 
         // Variant 1 : Without Lambdas
-        //     Implement the IsPositive class, then pass it.
-        evaluateListEntries(integerList, new IsPositive<Integer>());
+        //     Implement the IsPositive class, then declare/pass it.
+        PredicateCopy<Integer> predicate = new IsPositive<>();
+        evaluateListEntries(integerList, predicate);
 
         // Variant 2 : With Lambdas
         //     Start at the functional interface PredicateCopy.
