@@ -1,4 +1,4 @@
-package com.olexyn.about.java.lambdas;
+package com.olexyn.about.java.lambda;
 
 import java.util.*;
 import java.util.function.Consumer;
@@ -8,7 +8,7 @@ import java.util.function.Supplier;
 
 
 
-public class Lambdas {
+public class LambdaTypes {
 
 
     public static void main(String[] args) {
