@@ -1,11 +1,14 @@
 == 065 Declarations
 
+==== Method
+
 [cols="10,10,10,10,10,10,10", options="header"]
 |===
 |__access modifier__|__specifier__|__return type__|__method name__|__(list of param)__|__exception__|__{method body}__
 |optional | optional | | | empty-able | optional | empty-able
 |public | final | void | foo | () | throws Exception | {int i=0;}
 |===
+=== Class
 [cols="10,10,10,10,10,10,10", options="header"]
 |===
 |__access modifier__|__specifier__| __class__ | __class name__ |__extends__|__implements__|__{class body}__
@@ -26,14 +29,18 @@
 * default : private + any class in same package
 ** (if access modifier is omitted)
 * protected
-** default + may be accessed in/through an instance of the child class
+** default + may be accessed in child through an instance of child class.
+*** may *not* be accessed in child through instance of parent class.
 * public : anywhere
 
 [cols="40,10,10,10,10", options="header"]
 |===
 |Construct | `private` | (default) | `protected` | `public`
-|top-level type (abstract-/concrete-class, interface)| | YES | | YES
-|outer class |  | YES | |
+|top-level type +
+(abstract-/concrete-class, interface) +
+one per file - matches the file name. | |  | | YES
+|outer type +
+(abstract-/concrete-class, interface)|  | YES | |
 |inner class : declared inside another class | YES | YES | YES | YES
 |===
 
@@ -52,9 +59,9 @@
 |`static` | |
 |`abstract` | can't be instantiated |
 |`final` | can't be extended | may not be overridden
-|synchronized | - | for multithreading
-|native | - |  for C++ compat.
-|strictfp | - |  makes float operations portable.
+|`synchronized` | - | for multithreading
+|`native` | - |  for C++ compat.
+|`strictfp` | - |  makes float operations portable.
 |===
 
 '''
