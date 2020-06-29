@@ -6,7 +6,7 @@ package com.olexyn.about.java;
  * > on the line they are declared<p>
  * > in an initializer<p>
  * > in the constructor<p>
- * initialization is optional for local final variables<p>
+ *
  * assigning <i>null</i> counts as initialization
  */
 class Final {

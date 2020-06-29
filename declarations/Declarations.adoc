@@ -16,8 +16,7 @@
 |public | final, abstract | class | Foo | extends Bar| implements Zoc | {int i=0;}
 |===
 
-* "signature of a method" = method name and parameter list (type and order).
-* the name itself is not unique.
+
 
 
 '''
@@ -45,28 +44,3 @@ one per file - matches the file name. | |  | | YES
 |===
 
 '''
-
-=== Specifiers
-* placement:
-    ** before/after _access modifier_
-    ** before
-        *** `class`
-        *** _return type_
-
-[options=header]
-|===
-| specifier| class| method
-|`static` | |
-|`abstract` | can't be instantiated |
-|`final` | can't be extended | may not be overridden
-|`synchronized` | - | for multithreading
-|`native` | - |  for C++ compat.
-|`strictfp` | - |  makes float operations portable.
-|===
-
-'''
-
-=== Illegal Combinations
-* `abstract` + `private` = C-Error
-* `abstract` + `final` = C-Error
-* `abstract` + `static` = C-Error

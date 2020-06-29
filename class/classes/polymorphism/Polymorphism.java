@@ -67,26 +67,7 @@ public class Polymorphism {
 
 
 
-    static void instanceOf(){
 
-        b = new Parent() instanceof Parent;         // true
-        b = new Parent() instanceof Child;          // false
-
-        b = new Child() instanceof Parent;          // true
-        b = new Child() instanceof Child;           // true
-
-        b = (Parent) new Child() instanceof Parent; // true
-        b = (Parent) new Child() instanceof Child;  // true
-
-
-
-
-        Number i = 4;
-        b = i instanceof List; // since Number is not Final, the instance type might extend Number and implement List
-        // -> OK
-        Integer ii = 4;
-        // b = ii instanceof List; // C-Error , since Integer is final, and compiler can be sure there is no way the instance type might implement List
-    }
 
 
 
