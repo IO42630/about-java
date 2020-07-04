@@ -19,7 +19,7 @@ public class Enum {
          System.out.println(sa);
          System.out.println(Arrays.deepToString(sa));
          System.out.println(Arrays.deepToString(Seasons.values()));
-         System.out.println(Seasons.SUMMER.n);
+         System.out.println(Seasons.SUMMER);
          System.out.println(s.ordinal());
 
      }
