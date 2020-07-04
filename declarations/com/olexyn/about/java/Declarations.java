@@ -47,6 +47,16 @@ class Variables{
     private final static  int constant = 0;
     private static int count = 0;
 
+    final  int cc ;
+
+    public Variables(){
+        cc = set();
+    }
+
+
+     int set(){
+        return  1;
+    }
 
 
 

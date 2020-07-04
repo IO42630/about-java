@@ -15,10 +15,13 @@ public class InstanceOf {
         b = new Child1() instanceof SomeInterface; // false
         b = new Child2() instanceof SomeInterface; // true
         b = new Child1() instanceof FooInterface; // true
-        b = new Child1() instanceof  Child2; // C-Error TODO
+        //b = new Child1() instanceof  Child2; // C-Error TODO
 
         SomeInterface ss = (SomeInterface) new Child1();
-        Child2 cc = (Child2) new Child1();
+        //Child2 cc = (Child2) new Child1();
+        //SomeInterface fail = (SomeInterface) new Child3();
+
+
 
     }
 
@@ -53,5 +56,6 @@ class SuperParent  implements FooInterface{}
 class Parent1 extends SuperParent{}
 class Child1 extends Parent1 {}
 class Child2 extends Parent1 implements SomeInterface{}
+final class Child3 extends Parent1{}
 interface SomeInterface{}
 interface FooInterface{}

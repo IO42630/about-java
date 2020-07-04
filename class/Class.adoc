@@ -145,8 +145,10 @@ void foo(Parent p){
 Parent p = new Child1(); // the compiler only checks if the object can match the reference,
 // and forgets the rest.
 Interface i = (Interface) p; // child may implement interface or not - the compiler doesn't remember
+// -> R-Error (if Child1 doesn't happen to be implementing Interface)
 Chi1d1 c = new Child2(); // to the compiler it is very clear, that Child2 can neither implement Child1
 // (as Child1 is a class), nor extend Child1 (since Chld2 already extends Parent).
+// -> C-Error
 
 * type of _object_ (in memory)
     ** immutable
@@ -212,9 +214,31 @@ Chi1d1 c = new Child2(); // to the compiler it is very clear, that Child2 can ne
 * if signatures are same
     ** overriding rules apply
 
+{blank} +
 
 ==== Enums
-* out of scope for 815.
+* Abbreviation: `Enum` will be used as placeholder what the "enum-name".
+* An enum is a very fancy class, with a very fancy constructor
+|===
+|The constructor are declared similar to an array (despite being top-level constructs)|
+`public enum Enum { WINTER, SPRING, SUMMER, FALL}`
+|An enum constant ist at the same time an enum instance.|
+`Season s = Enum.SUMMER;`
+|It includes an `toString()` |
+`System.out.println(Enum.SUMMER);     // SUMMER`
+|And can be compared with `==`|
+`s == Season.SUMMER; // true` +
+|===
+* Consists of final static "fields" and helper methods.
+* `static enum[] values()` returns array
+* instance methods
+** `Enum.SUMMER.name()` returns String (same as `Enum.SUMMER.toString()`)
+** not the same as Enum.toString()
+** `Enum.SUMMER.ordinal()` returns linear position of enum member
+* other
+** Season.valueOf("SUMMER")
+
+{blank} +
 
 === Poly and Ifaces
 * when using abstract reference (e.g. inface) for concrete class

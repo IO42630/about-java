@@ -1,0 +1,33 @@
+=== Object
+
+=== toString
+* Java automatically calls toString when an object is printed.
+* Some classes implement toString() to return a pretty print, others just print the reference.
+    * pretty: ArrayList
+    * reference:
+
+==== equals
+* `Object.equals()` just uses `==`.
+* String overrides to check if literal is the same
+
+there is an best practice how to implement equals:
+
+|===
+| for x,y,x != null |
+| x.equals(x) == true | reflexive
+| x.equals(y) == y.equals(x) | symmetric
+| x.equals(y) && y.equals(z) implies x.equals(z) | transitive
+| repeated evaluations should not change the result | consistent
+| x.equals(null) = false | (and not a NullPointerException)
+|
+|===
+
+
+==== hashCode
+* used for retrieval, e.g. in `HashMap`
+* `hashCode()` is a subset of `equals()`
+
+|===
+| `a.equals(b) == true` implies `a.hashCode() == a.hashCode()`
+| `a.hashCode() != a.hashCode()` implies `a.equals(b) == false`
+|===
