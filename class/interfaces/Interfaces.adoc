@@ -1,0 +1,83 @@
+=== Interfaces
+* `interfaces`
+** can define `abstract` methods
+** a `class` can implement many `interfaces`
+** class implements interface by overriding the inherited abstract methods
+
+* One object or one method call show different behavior.
+
+
+==== Interfaces
+* may be public or default
+* all members of an interface are assumed to be public (unless specified otherwise)
+
+{empty} +
+
+===== May include
+
+
+[cols="2,8"]
+|===
+| may include |
+> abstract methods +
+> _constants_
+| since Java 8 |
+> static methods +
+> default methods (concrete, has body)
+| since Java 9 |
+> private +
+> private static methods +
+> added for code-reuse with interface, cannot be called from outside.
+|===
+
+{empty} +
+
+===== Rules for Default Method Resolution
+. Inherited classes have precedence over implemented interfaces.
+. `default` method in child interface has precedence over `default` method in parent interface.
+. If above rules fail to resolve situation, the implementing class *must* override the `default` method.
+
+[source,java]
+interface A{ default void foo();}
+interface B extends A{}
+interface C extends A{}
+class D implements B,C{} // if D calls foo() it will call foo() of A
+//
+interface A{ default void foo();}
+interface B extends A{default void foo();}
+interface C extends A{default void foo();}
+class D implements B,C{
+    public void foo(){ A.super.foo();} // special syntax for calling one of the inherited ifaces.
+}
+// D must override foo()
+// it can call either it's own foo(), or foo() of B or C through them.
+
+---
+
+* `interfaces` provides implicit modifiers
+** thes must be written explicitly in class implementing interface
+* call may implement multiple interfaces, separated by comma
+** class must implement all of the abstract methods contained in the interfaces.
+** if 1+ interface contain identical methods
+** imlementing class overrides them all at once.
+* `interfaces` may extend multiple interfaces (spearated by comma)
+** ok, since no Constructors / concrete instance members present
+** some rules of class declarations apply
+*** .java file may have at most one public top-level interface, must match name
+* abstract type inheriting from interface is not required to implement or declare inherited methods
+* interface cant extend class
+** nothing can implement class
+
+{empty} +
+
+===== Overriding 2 Interfaces
+
+[cols="2,8"]
+|===
+| if declared signatures match  | > write one method, to override them both. +
+> if one declaration has a narrower type +
+> > e.g. String vs. CharSequence +
+> then the return type of overriding method must be covariant to the narrower type +
+> > e.g. String.
+| if signatures of both declarations are different | It is an overload.
+|===

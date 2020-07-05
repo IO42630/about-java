@@ -21,16 +21,14 @@ public abstract interface Interface {
 
 interface Test {
 
-    public abstract void foo();        // pubic, abstract are implicit
+    public abstract void foo();        // pubic, abstract are added, unless specified otherwise.
 
-    public static final int INT = 0;   // pubic, static, final are implicit
+    public static final int INT = 0;   // pubic, static, final are added, unless specified otherwise.
 
     default void bar8() {} // since Java 8
-
     static void baz8() {} // since Java 8
 
     private void bar9() {} // since Java 9
-
     private static void baz9() {} // since Java 9
 
 }
@@ -42,17 +40,14 @@ interface ParentOne {
 
 
 interface ParentTwo {
-
     CharSequence foo();
-
 }
 
 
-class ChildSuper implements ParentOne, ParentTwo {
+class ChildSuper implements ParentTwo, ParentOne {
 
     public String foo() { return null; } // dummy
-
-    // public CharSequence foo() { return ""; } // C-Error because of using Super
+    //public CharSequence foo() { return ""; } // C-Error because of using Super
 
 
 }
