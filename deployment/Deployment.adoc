@@ -1,22 +1,22 @@
 ## Deployment
 
 #### Command Line
-`class Core` in file `Core.java` in directory `/pkg` 
-        
+`class Core` in file `Core.java` in directory `/pkg`
+
+|===
 | no package | with package
----|---
-| | file contains statement `package pkg;`  
+| | file contains statement `package pkg;`
 `javac pkg/Core.java` | `javac pkg/Core.java`
 `cd ./pkg` then `java Core` | `java pkg.Core`
- 
- 
-        
+|===
 
-#### One Line 
+
+
+#### One Line
 Normal | One Line
 ---|---
 `javac Core.java` | `java Core.java`
-`java Core` | 
+`java Core` |
 Produces class file | Fully in memory
 For any program | For programs with one class
 Can import any library | Can ony import code that came with the JDK.
@@ -38,6 +38,7 @@ Can import any library | Can ony import code that came with the JDK.
 
     import java.util.Random;
     import java.util.* // wildcard
+
 * _wildcard_ : compiler figures out what is needed
     * only imports classes
     * static imports may import methods, see Ch.7
@@ -50,19 +51,19 @@ Can import any library | Can ony import code that came with the JDK.
     import java.nio.*              // can't match "files.File"
     import java.nio.*.*            // only one * allowed
     import java.nio.file.Paths.*   // can import methods
-    
+
 assuming java.util.Date and java.sql.Date
-    
-    import java.util.*; import java.sql.*;        // causes Date declaration to C-Error 
+
+    import java.util.*; import java.sql.*;        // causes Date declaration to C-Error
     import java.util.Date; import java.sql.*;     // OK
     import java.util.Date; import java.sql.Date;  // C-Error (even if not used)
-    
+
 
 
 
 #### `javac`
-* _Directory_ 
-    * `-d` : overwrite target directory for .class files 
+* _Directory_
+    * `-d` : overwrite target directory for .class files
     * `javac -d ./out ./pkg/Core.java ./other/pkg/NotCore.java `
 * _Sourcepath_ , `-sourcepath`
     * `cd ./src/deployment/pkg`
@@ -72,7 +73,9 @@ assuming java.util.Date and java.sql.Date
 
 
 #### `java`
-* _Classpath_ : indicates where .class files are located
+* _Classpath_ : indicates where .class files are located +
+an environment variable or a command-line argument indicating the path searched by the Java
+compiler and the runtime for class definitions
     * `java -cp ./out pkg.Core`
     * also `-classpath` , `--class-path`
     * possible to use multiple paths
@@ -81,14 +84,14 @@ assuming java.util.Date and java.sql.Date
         * Unix: `java -cp ".:./out:./foo.jar`
 
 
-    
- 
+
+
 #### Examples
 ##### no.pkg
 * _Default package_ : if nothing is specified
 ##### pkg
 
-* Example : 
+* Example :
     * `cd ./src/deployment`
     * `javac ./pkg/Core.java ./other/pkg/NotCore.java`
     * with wildcards: `javac ./pkg/*.java ./other/pkg/*.java`

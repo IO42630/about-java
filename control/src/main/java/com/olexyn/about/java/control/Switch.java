@@ -44,10 +44,30 @@ public class Switch {
 
     }
 
+    static void switchEnum(){
+
+
+
+    }
+
 
 
 
     public static void main(String... args){
 
+        Caps c = null;
+        c = Caps.A;
+
+
+        switch (c){
+            case A:
+                System.out.println("f");
+                break;
+            case C:
+                break;
+        }
+
     }
+
+    enum Caps{A,B,C,D}
 }

@@ -22,7 +22,7 @@ a -> a.foo()
 ** any Lambda parameters (the ones before `->`)
 ** any class/instance variables (of the surrounding class)
 ** `effectively final` parameters/local variables (of the surrounding method)
-** A variable is _effectively final_ if adding final before it would not cause an C-Error
+*** A variable is _effectively final_ if adding final before it would not cause an C-Error
 
 
 

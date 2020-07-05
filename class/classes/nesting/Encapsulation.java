@@ -1,43 +1,29 @@
-package classes;
+package classes.nesting;
 
 
-public class Nesting {
-
+/**
+ * The instance of the private inner class can be returned by the getter. <br>
+ * However the members of the private inner class can not be accessed.
+ */
+public class Encapsulation {
     public static void main(String... args) {
 
         System.out.println(new OuterDefault().new InnerDefault().why);
-        System.out.println(new OuterDefault().new InnerProtected().why);
         System.out.println(new OuterDefault().getInnerPrivate()); // "why" is not accessible
         System.out.println();
     }
-
-
 }
 
 
 class OuterDefault {
 
-    InnerPrivate getInnerPrivate() {
-        return new InnerPrivate();
-    }
-
-    public class InnerPublic {
-        public int why;
-    }
+    InnerPrivate getInnerPrivate() { return new InnerPrivate(); }
 
     class InnerDefault {
         public int why;
     }
 
-    protected class InnerProtected {
-        public int why;
-    }
-
-    // internal class => encapsulation
     private class InnerPrivate {
         public int why;
     }
 }
-
-
- class OuterPrivate{}

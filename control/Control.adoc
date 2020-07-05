@@ -1,0 +1,79 @@
+== Control
+
+
+* the target of an decision-making statement can be a
+    ** single statement
+    ** block
+* reminder : 0 and 1 are not boolean value in Java
+
+==== Switch
+
+. goto matching case
+. `IF` no matching case available, `THEN`  goto default
+. execute everything below the current statement
+    ** this is why optional `break` statements are used
+
+---
+
+* `switch` does ot allow `continue` statement.
+* allowed `switch(T)` param types:
+    ** `short` , `Short` , `int` , `Integer` +
+    `byte` , `Byte` , `char` , `Character` +
+    `String`
+    ** enum instance
+    ** `var` (type resolves to one of the above)
+
+===== case expressions
+* no declarations allowed
+* be, or consist of, `C-time constant` expressions
+    ** literals
+    ** enum constants
+        *** when using enum constants omit the enum name (`A` instead of `Enum.A`)
+
+    ** _constants_
+
+
+* match the `switch` type without an explicit cast (see `about.Castig`)
+
+{blank} +
+
+==== while & do while
+
+* `while (booleanExpression){}`
+    ** booleanExpression evaluated before each iteration
+* `do {} while (booleanExpression);`
+    ** Loop is executed once before the expression is evaluated.
+* care: C-Error unreachable statement
+    ** `while(false){ i=1 }`
+    ** `while(true){} i=1;`
+
+{blank} +
+
+==== for
+* `for (initializationStatement ; booleanExpression ; updateStatement) {}`
+* Order of execution:
+    1. init statement executes
+        * the rules for multiple-declaration do apply.
+    1. Evaluate Expression (_before_ body)
+    1. Body executes
+    1. Execute updateStatement
+    1. Return to Step 2
+* each of the 3 components of the for loop are optional
+    ** `for( ; ; )` ~ infinite loop.
+
+==== enhanced for (for each)
+* `for (datatype instance : collection){}`
+*  _collection_ is either:
+    **  array
+    ** class implementing `java.lang.Iterable` , e.g. `ArrayList`
+
+{blank} +
+
+==== break & continue
+* `break`transfers control to the next enclosing statement
+    **  _label_ allows to break out of an higher-level loop
+* `continue` transfers control to the expression that determines if the loop should continue.
+* any statement after `break` , `continue` is unreachable -> C-Error
+
+
+==== labels??
