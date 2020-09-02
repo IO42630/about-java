@@ -1,5 +1,7 @@
 == Class
+{empty} +
 
+'''
 ==== General
 
 * `.java` file can have 0..1 public top-level classes.
@@ -11,8 +13,9 @@
 * `this(int i)` is used to call overloaded Constructor.
 * Java supports only single inheritance
 
-'''
+{empty} +
 
+'''
 ==== Ordering of Elements
 
 [options=header]
@@ -24,9 +27,9 @@
 |Field declarations | `int i;`| NO | Any top-level element in class
 |Method declarations | `void method()` | NO |  Any top-level element in class
 |===
+{empty} +
 
 '''
-
 ==== Constructors
 * The purpose of a _constructor_ is to initialize fields.
 * Matches the name of the class.
@@ -40,7 +43,6 @@
 * `this()` and `super()` must be the first statement in the constructor
     ** `Foo(){this();}` does not Compile, likewise other circular references caused by constructors.
 * If no `this()` or `super()` are present, then the compiler inserts a `super()` in the background
-* Trivia:
     ** since compiler inserts super() the parent constructor is called in every child
 * Relevant:
     ** Parent has no-default constructor
@@ -92,17 +94,20 @@
     ** X, Y interface -> X subinterface of Y
     ** X class, Y interface -> X implements Y (directly or through superclass)
 
+{empty} +
+
+'''
 ==== Overload vs Override vs Hide vs Redeclare
-[options=header]
+[options=header, cols="1,2,1,1,1,1,2"]
 |===
 |    | member | modifier |name |param | return type| effect
 |Overload | instance method | | same | __different__ | __any__ |
 |Override | instance method | |  same | __same__ | __covariant__ | replaces the parent method.
-|Hiding | instance field, +
+|Hide | instance field, +
 static field, +
 static method | | same | same | covariant | replaces the member only +
 if a Child reference type is used.
-|Redeclaring | | (both) private  | same | same | !covariant | is always ok, +
+|Redeclare | | (both) private  | same | same | _any_ | is always ok, +
 (accessing the member +
 from outside the class +
 is prohibited).
@@ -111,6 +116,16 @@ is prohibited).
 
 * virtual method invocation : calling an abstract method in an abstract class, with confidence
 that it will be implemented in child class.
+* see also
+** `method/Methods.adoc#Overriding`
+
+{empty} +
+{empty} +
+
+
+
+
+
 
 
 {empty} +
@@ -120,16 +135,7 @@ that it will be implemented in child class.
 
 
 
-
-
-{empty} +
-{empty} +
-
-
-
-
-
-==== Polymorphism
+=== Polymorphism
 * See `about.basics.classes.Polymorphism`
 
 
@@ -165,19 +171,25 @@ Chi1d1 c = new Child2(); // to the compiler it is very clear, that Child2 can ne
 * ??? is casting nothing more than reclaiming the full api of the child class
 
 
+{empty} +
+{empty} +
+
 '''
+=== Abstract Classes
+|===
+| `classes.AbastractDemo.java`
+| `interfaces.Interfaces.adoc`
+|===
 
-
-
-==== Abstract Classes
-* see `basics.classes.AbastractClass`
-* may contain abstract methods
-    * without body: `abstract void foo();`
-    * does not define an implementation upon declaration
-    * must be overridden in first _concrete class_
-        * overriding rules _DO_ apply
-* `abstract` classes may contain anything an concrete class contains
-    * not true vice-versa
+* abstract class may contain concrete members
+** concrete class may NOT contain abstract members
+* abstract methods
+** without body: `abstract void foo();`
+** does not define an implementation upon declaration
+** must be overridden in first _concrete class_
+*** overriding rules _DO_ apply
+* `abstract_class` classes may contain anything an concrete class contains
+** not true vice-versa
 
 
 ==== Constructors in Abstract

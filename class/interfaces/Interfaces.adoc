@@ -1,30 +1,27 @@
 === Interfaces
 * `interfaces`
-** can define `abstract` methods
-** a `class` can implement many `interfaces`
+** can define `abstract_class` methods
+** may be public or default
+** all members of an interface are assumed to be public (unless specified otherwise)
+* a `class` can implement many `interfaces`
 ** class implements interface by overriding the inherited abstract methods
 
-* One object or one method call show different behavior.
 
 
-==== Interfaces
-* may be public or default
-* all members of an interface are assumed to be public (unless specified otherwise)
+
 
 {empty} +
 
-===== May include
 
-
-[cols="2,8"]
+[options=header,cols="1,8"]
 |===
-| may include |
-> abstract methods +
+| since  | interfaces may include
+| | > abstract methods +
 > _constants_
-| since Java 8 |
+| Java 8 |
 > static methods +
 > default methods (concrete, has body)
-| since Java 9 |
+| Java 9 |
 > private +
 > private static methods +
 > added for code-reuse with interface, cannot be called from outside.

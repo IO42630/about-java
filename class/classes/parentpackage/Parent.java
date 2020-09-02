@@ -1,6 +1,6 @@
 package classes.parentpackage;
 
-import classes.AbstractClass;
+import classes.abstract_class.AbstractClass;
 import classes.Interface;
 
 
