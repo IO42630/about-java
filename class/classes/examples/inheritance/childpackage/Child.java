@@ -1,6 +1,6 @@
-package classes.childpackage;
+package classes.examples.inheritance.childpackage;
 
-import classes.parentpackage.Parent;
+import classes.examples.inheritance.parentpackage.parentpackage.Parent;
 
 
 public class Child extends Parent {

@@ -1,7 +1,8 @@
-package classes.parentpackage;
+package classes.examples.inheritance.parentpackage.parentpackage;
 
-import classes.abstract_class.AbstractClass;
+
 import classes.Interface;
+import classes.examples.inheritance.AbstractClass;
 
 
 public class Parent extends AbstractClass implements Interface {

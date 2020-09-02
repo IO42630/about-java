@@ -1,7 +1,7 @@
-package classes;
+package classes.examples.inheritance;
 
-import classes.childpackage.Child;
-import classes.parentpackage.Parent;
+import classes.examples.inheritance.childpackage.Child;
+import classes.examples.inheritance.parentpackage.parentpackage.Parent;
 
 public class Main {
 
@@ -24,31 +24,26 @@ public class Main {
     static void polymorphism() {
 
 
-s = ((Parent) new Child()).toString(); // Child
+        s = ((Parent) new Child()).toString(); // Child
 
 
         Child child = new Child();
         Parent parent = child;
 
-        String castToParent = compareMember(parent,child);
+        String castToParent = compareMember(parent, child);
 
         parent = new Child();
         child = (Child) parent;
 
-        String castToParentCastToChild = compareMember(parent,child);
+        String castToParentCastToChild = compareMember(parent, child);
 
         // both cases instanceVar is evaluated from parent after (casting)
-
-
-
-
 
 
     }
 
 
-
-    static String compareMember(Parent parent , Child child){
+    static String compareMember(Parent parent, Child child) {
         boolean instanceVarEqual = parent.instanceVar == child.instanceVar;
         boolean classVarEqual = parent.classVar == child.classVar;
         boolean instanceMethodEqual = parent.toString().equals(child.toString());

@@ -9,7 +9,7 @@ public class AbstractDemo {
 }
 
 
-abstract class AbstractA {
+ abstract class AbstractA {
 
     abstract void abstractMethodOne();
 
