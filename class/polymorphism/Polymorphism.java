@@ -1,6 +1,4 @@
-package classes.polymorphism;
-
-import java.util.List;
+package polymorphism;
 
 /**
  * * Java an instance of a class may be accessed with reference type:

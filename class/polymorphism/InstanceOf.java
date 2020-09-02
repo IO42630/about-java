@@ -1,9 +1,13 @@
-package classes.polymorphism;
+package polymorphism;
 
+
+import classes.examples.inheritance.childpackage.Child;
 
 import java.util.List;
 
 public class InstanceOf {
+
+    public static void main(String... args){}
 
     static boolean b;
 
@@ -27,15 +31,15 @@ public class InstanceOf {
 
 
     static void instanceOf(){
-
-        b = new Parent() instanceof Parent;         // true
-        b = new Parent() instanceof Child;          // false
-
-        b = new Child() instanceof Parent;          // true
-        b = new Child() instanceof Child;           // true
-
-        b = (Parent) new Child() instanceof Parent; // true
-        b = (Parent) new Child() instanceof Child;  // true
+        // TODO uncomment and fix this
+        // b = new Parent() instanceof Parent;         // true
+        // b = new Parent() instanceof Child;          // false
+        //
+        // b = new Child() instanceof Parent;          // true
+        // b = new Child() instanceof Child;           // true
+        //
+        // b = (Parent) new Child() instanceof Parent; // true
+        // b = (Parent) new Child() instanceof Child;  // true
 
 
 

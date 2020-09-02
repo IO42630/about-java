@@ -1,0 +1,61 @@
+=== Polymorphism
+|===
+|`class.polymorphism.Polymorphism.java`
+|===
+
+
+
+
+
+==== 2 Types of Polymorphism
+* Overloading (C-Time Poly) : resolved at C-Time
+* Overriding (R-Time Poly) : resolved at R-Time
+** Example below: +
+Compiler will check if all calls to `foo` are with param of type `Parent`. +
+Compiler will *not* check if all call to `foo` are with param of type `Child`. +
+If it so happens that `p` is not of type `Child` -> `R-Error`.
+*** Similarly if p was a local variable +
+Basically when we write Parent p = new Child(); +
+
+[source,java]
+void foo(Parent p){
+    Child c = (Child) p;
+}
+//
+Parent p = new Child1(); // the compiler only checks if the object can match the reference,
+// and forgets the rest.
+Interface i = (Interface) p; // child may implement interface or not - the compiler doesn't remember
+// -> R-Error (if Child1 doesn't happen to be implementing Interface)
+Chi1d1 c = new Child2(); // to the compiler it is very clear, that Child2 can neither implement Child1
+// (as Child1 is a class), nor extend Child1 (since Chld2 already extends Parent).
+// -> C-Error
+
+* type of _object_ (in memory)
+** immutable
+* type of reference (data type)
+** determines API
+* ??? is casting nothing more than reclaiming the full api of the child class
+
+{empty} +
+
+'''
+==== instanceof
+
+|===
+|`class.polymorphism.InstanceOf.java`
+|===
+
+[cols="8,1,8"]
+|===
+| `X` covariant to `Y` | => |  `X instanceof Y` is `true`
+2+|  always  |`X instanceof Object` is `true`
+2+| always | `X instanceof null` is `false`
+| `X` can be implicit cast to `Y` |=> |  `X instanceof Y` is true
+| X need to be explicit cast to Y +
+> even if `ClassCastException` would occur
+| => | X instanceof Y == false
+|casting X to Y -> `C-Error` | => | `X instance Y` -> `C-Error`
+|===
+
+{empty} +
+{empty} +

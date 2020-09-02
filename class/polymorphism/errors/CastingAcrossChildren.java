@@ -1,4 +1,4 @@
-package classes.polymorphism.errors;
+package polymorphism.polymorphism.errors;
 
 class Parent {}
 

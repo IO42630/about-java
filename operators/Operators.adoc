@@ -159,12 +159,3 @@ var =                 double;
 
 {empty} +
 
-'''
-==== instanceof
-* `X` covariant to `Y` => `X instanceof Y` is `true`
-* `X instanceof Object` always true
-* X instanceof null always false
-* X instanceof Y == true if X can be implicit cast to Y
-* X instanceof Y == false if X need to be explicit cast to Y
-** even if ClassCastException would occur
-* X instance Y == C-Error if casting X to Y -> C-Error.
