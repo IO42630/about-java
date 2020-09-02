@@ -1,5 +1,10 @@
 == Declarations
 
+[options=header]
+|===
+| Related Documents
+|===
+
 === Overview
 ==== Method
 
@@ -62,7 +67,7 @@ one per file - matches the file name. | |  | | YES
 |===
 | specifier| class| method
 |`static` | |
-|`abstract` | can't be instantiated |
+|`abstract_class` | can't be instantiated |
 |`final` | can't be extended | may not be overridden
 |`synchronized` | - | for multithreading
 |`native` | - |  for C++ compat.
@@ -122,6 +127,6 @@ import java.util.Arrays.asList;  // Error
 
 
 ==== Illegal Combinations
-* `abstract` + `private` = C-Error
-* `abstract` + `final` = C-Error
-* `abstract` + `static` = C-Error
+* `abstract_class` + `private` = C-Error
+* `abstract_class` + `final` = C-Error
+* `abstract_class` + `static` = C-Error

@@ -1,41 +1,42 @@
 == Operators
 * _operand_ : variable, literal, value
-    * variable : `foo`
-    * literal : `1`  ()
-    * value : a series of bits in heap
+    ** variable : `foo`
+    ** literal : `1`
+    ** value : a series of bits in heap
 * _operator_ : special symbol that can be applied to a set of operands
 
-==== Types of Operators
+{empty} +
 
+==== Types of Operators
 * unary (one operand), binary (two operands), ternary (three operands)
+
+{empty} +
 
 ==== Precedence
 * according to precedence
 * if same precedence, then left to right
  * Precedence may be overridden with parentheses ().
-    * Java does not allow brackets [].
-    * Java does not allow braces {}.
+    ** Java does not allow brackets [].
+    ** Java does not allow braces {}.
 
-Order | Operator (by precedence DESC) | Example
---- | --- | ---
-1 | post-unary | expr++, expr--
-2 | pre-unary | ++expr , --expr
-3 | other unary | - , ! , ~ , + , (type)
-4 | mult/div/mod | * , / , %
-5 | add/subtract | + , -
-6 | shift   | << , >> , >>>
-7 | relational | < , > , <= , >= , `instanceof`
-8 | (not) equal to | == , !=
-9 | logical | & , ^ , \|
-10 | ternary | boolean expr ? expr1 : expr2
-11 | assignment | = , += , -= , *= , /= , %= , ^= , <<= , >>=, >>>=
+[options=header,cols="1,4,4"]
+|===
+| Order | Operator +
+(by precedence DESC) | Example
+| 1 | post-unary | `foo++`, `foo--`
+| 2 | pre-unary | `++foo` , `--foo`
+| 3 | other unary | - , ! , ~ , + , (type)
+| 4 | mult/div/mod | * , / , %
+| 5 | add/subtract | + , -
+| 6 | shift   | << , >> , >>>
+| 7 | relational | < , > , <= , >= , `instanceof`
+| 8 | (not) equal to | == , !=
+| 9 | logical | & , ^ , \|
+| 10 | ternary | `boolean foo ? foo1 : foo2`
+| 11 | assignment | = , += , -= , *= , /= , %= , ^= , <<= , >>=, >>>=
+|===
 
-
-
- Operator | What it does
- --- | ---
- -expr | negates the literal or variable
-
+{empty} +
 
 ==== Binary Arithmetic Operators
 
@@ -47,6 +48,7 @@ Order | Operator (by precedence DESC) | Example
 
 ===== Numeric Promotion
 Not at assignment, but each time an operation takes place, the following rules are applied in the following order:
+
 1. `byte` , `short` , `char` are promoted to `int` before being used with a binary arithmetic operator.
     *  unary operators are excluded from this rule (`++short` is still `short`)
 1. IF operands have different data types,
@@ -54,26 +56,32 @@ Not at assignment, but each time an operation takes place, the following rules a
     * IF one operand is floating-point, THEN promote integer operands to floating-point operands.
 1. The result of the operation has the same data type as the promoted operands.
 
-        short w = 14;
-        float x = 13;
-        double y = 30;
-        var z = w *x / y;
+[source,java]
+short w = 14;
+float x = 13;
+double y = 30;
+var z = w *x / y;
+//
+// type "resolution":
+var = short * float / double;
+var =   int * float / double;
+var = float * float / double;
+var =         float / double;
+var =        double / double;
+var =                 double;
 
-        type "resolution":
-
-        var = short * float / double;
-        var =   int * float / double;
-        var = float * float / double;
-        var =         float / double;
-        var =        double / double;
-        var =                 double;
+{empty} +
 
 ==== Assignment Operators
-Operator | What it does
- --- | ---
- a = b | assigns the value on the right to the var on the left.
+|===
+| Operator | What it does
+|a = b | assigns the value on the right to the var on the left.
+|===
 
- ===== Casting
+{empty} +
+
+==== Casting
+
  * See `about.basics.classes.Main.polymorphism`
  * optional from smaller to larger types.
  * mandatory from larger to smaller types
@@ -81,6 +89,8 @@ Operator | What it does
  * the space between operator and operand is optional.
 
         short foo  = (short)(1+2);
+
+{empty} +
 
 ===== Compound Assignment Operators
 * see `bout.basics.Operators.Assignments`
@@ -147,9 +157,12 @@ Operator | What it does
  * obvious Unperformed Side Effects see `Logic.java`.
 
 
+{empty} +
+
+'''
 ==== instanceof
-* X instanceof Y is true if X covariant to Y
-* X instanceof Object always true
+* `X` covariant to `Y` => `X instanceof Y` is `true`
+* `X instanceof Object` always true
 * X instanceof null always false
 * X instanceof Y == true if X can be implicit cast to Y
 * X instanceof Y == false if X need to be explicit cast to Y

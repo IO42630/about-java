@@ -3,11 +3,13 @@
 #### Command Line
 `class Core` in file `Core.java` in directory `/pkg`
 
+[options=header]
 |===
 | no package | with package
 | | file contains statement `package pkg;`
-`javac pkg/Core.java` | `javac pkg/Core.java`
-`cd ./pkg` then `java Core` | `java pkg.Core`
+|`$ javac pkg/Core.java` | `$ javac pkg/Core.java`
+|`$ cd ./pkg` +
+`$ java Core` | `$ java pkg.Core`
 |===
 
 
@@ -27,41 +29,62 @@ Can import any library | Can ony import code that came with the JDK.
 
 
 
-
+{empty} +
 
 
 #### Packages
 * _Declaration_ : `package pkg;`
-* _Fully qualifed class name_ : `java.util.Date foo;`
+* (reference by) _fully qualifed class name_ : `java.util.Date foo;`
 
-#### Imports
+{empty} +
 
-    import java.util.Random;
-    import java.util.* // wildcard
+'''
+==== Import
+
+[source,java]
+import java.util.Random;
+import java.util.*; // wildcard
 
 * _wildcard_ : compiler figures out what is needed
-    * only imports classes
-    * static imports may import methods, see Ch.7
+** only imports classes
+** static imports may import methods
 * redundant imports:
-    * `java.lang` is auto-imported
-    * classes of same package are auto-imported
-* invalid imports
+** `java.lang` is auto-imported
+** classes of same package are auto-imported
+
+===== invalid imports
+
+[source,java]
+import java.nio.*;              // can't match "files.File"
+import java.nio.*.*;            // only one * allowed
+import java.nio.file.Paths.*;   // methods can't be instance-imported
+
+assuming `java.util.Date` and `java.sql.Date` :
+
+[source,java]
+import java.util.*; import java.sql.*;        // causes Date declaration to C-Error
+import java.util.Date; import java.sql.*;     // OK
+import java.util.Date; import java.sql.Date;  // C-Error (even if not used)
 
 
-    import java.nio.*              // can't match "files.File"
-    import java.nio.*.*            // only one * allowed
-    import java.nio.file.Paths.*   // can import methods
-
-assuming java.util.Date and java.sql.Date
-
-    import java.util.*; import java.sql.*;        // causes Date declaration to C-Error
-    import java.util.Date; import java.sql.*;     // OK
-    import java.util.Date; import java.sql.Date;  // C-Error (even if not used)
-
+===== determine when imports are needed
+[source,java]
+import java.util.List;
+import java.util.ArrayList;
+import static java.util.Collections.sort;
+//
+List<String> list = new Arraylist<String>();
+sort(list);
 
 
 
-#### `javac`
+
+
+{empty} +
+{empty} +
+
+'''
+==== javac
 * _Directory_
     * `-d` : overwrite target directory for .class files
     * `javac -d ./out ./pkg/Core.java ./other/pkg/NotCore.java `
