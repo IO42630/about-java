@@ -66,15 +66,21 @@ R-Error | Runtime error.
 | Backward Compatibility | APIs about to be obsolete are flagged as _depreciated_ .
 |===
 
-'''
+{empty} +
 
 ==== Building Blocks
-* _keyword_ word with special meaning.
-* _variables_ hold state
-** have _type_
-* _methods_ operate on state
+[cols="2,8"]
+|===
+| _keyword_ | word with special meaning.
+| _variables_ | > hold state +
+> have _type_
+| _methods_ | operate on state
+|===
+
+
+
 * _member_ all that is inherited
-** _fields_ : variable declared outside of method, but inside class.
+** _field_ : variable declared outside of method, but inside class.
 ** _methods_ (=functions) (operate on state)
 *** methods have parameters
 *** _method signature_ = name + parameter types
