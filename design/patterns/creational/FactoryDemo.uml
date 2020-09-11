@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>patterns.creational.FactoryDemo</OriginalElement>
+  <nodes>
+    <node x="218.0" y="205.0">patterns.creational.Product</node>
+    <node x="148.0" y="0.0">patterns.creational.Factory</node>
+    <node x="296.0" y="105.0">patterns.creational.FactoryB</node>
+    <node x="0.0" y="105.0">patterns.creational.FactoryA</node>
+    <node x="140.0" y="308.0">patterns.creational.ProductBA</node>
+    <node x="420.0" y="308.0">patterns.creational.ProductBB</node>
+    <node x="280.0" y="308.0">patterns.creational.ProductAA</node>
+    <node x="0.0" y="308.0">patterns.creational.ProductAB</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="patterns.creational.FactoryB" target="patterns.creational.Factory">
+      <point x="0.0" y="-27.5" />
+      <point x="434.0" y="80.0" />
+      <point x="355.0" y="80.0" />
+      <point x="69.0" y="27.5" />
+    </edge>
+    <edge source="patterns.creational.FactoryA" target="patterns.creational.Factory">
+      <point x="0.0" y="-27.5" />
+      <point x="138.0" y="80.0" />
+      <point x="217.0" y="80.0" />
+      <point x="-69.0" y="27.5" />
+    </edge>
+    <edge source="patterns.creational.ProductBA" target="patterns.creational.Product">
+      <point x="0.0" y="-26.5" />
+      <point x="200.0" y="288.0" />
+      <point x="257.0" y="288.0" />
+      <point x="-13.0" y="26.5" />
+    </edge>
+    <edge source="patterns.creational.ProductAA" target="patterns.creational.Product">
+      <point x="0.0" y="-26.5" />
+      <point x="340.0" y="288.0" />
+      <point x="283.0" y="288.0" />
+      <point x="13.0" y="26.5" />
+    </edge>
+    <edge source="patterns.creational.ProductBB" target="patterns.creational.Product">
+      <point x="0.0" y="-26.5" />
+      <point x="480.0" y="278.0" />
+      <point x="309.0" y="278.0" />
+      <point x="39.0" y="26.5" />
+    </edge>
+    <edge source="patterns.creational.ProductAB" target="patterns.creational.Product">
+      <point x="0.0" y="-26.5" />
+      <point x="60.0" y="278.0" />
+      <point x="231.0" y="278.0" />
+      <point x="-39.0" y="26.5" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="286.0" y="180.5" />
+  <SelectedNodes>
+    <node>patterns.creational.Product</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Constructors</Category>
+    <Category>Methods</Category>
+    <Category>Properties</Category>
+    <Category>Inner Classes</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+

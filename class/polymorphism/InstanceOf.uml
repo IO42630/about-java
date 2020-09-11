@@ -3,49 +3,58 @@
   <ID>JAVA</ID>
   <OriginalElement>polymorphism.InstanceOf</OriginalElement>
   <nodes>
-    <node x="236.0" y="206.0">polymorphism.SomeInterface</node>
-    <node x="91.99999999999999" y="0.0">polymorphism.FooInterface</node>
-    <node x="111.99999999999999" y="206.0">polymorphism.Parent1</node>
-    <node x="116.0" y="309.0">polymorphism.Child3</node>
-    <node x="95.99999999999999" y="103.0">polymorphism.SuperParent</node>
-    <node x="240.0" y="309.0">polymorphism.Child2</node>
-    <node x="0.0" y="309.0">polymorphism.Child1</node>
+    <node x="102.0" y="103.0">polymorphism.instance_of.ParentInterface</node>
+    <node x="60.0" y="309.0">polymorphism.instance_of.Child3</node>
+    <node x="298.0" y="309.0">polymorphism.instance_of.Child2</node>
+    <node x="254.0" y="0.0">polymorphism.instance_of.SuperParentInterface</node>
+    <node x="182.0" y="309.0">polymorphism.instance_of.Child1</node>
+    <node x="0.0" y="206.0">polymorphism.instance_of.Child3Interface</node>
+    <node x="290.0" y="103.0">polymorphism.instance_of.SuperParent</node>
+    <node x="204.5" y="206.0">polymorphism.instance_of.Parent</node>
   </nodes>
   <notes />
   <edges>
-    <edge source="polymorphism.Child3" target="polymorphism.Parent1">
+    <edge source="polymorphism.instance_of.Child1" target="polymorphism.instance_of.Parent">
+      <point x="0.0" y="-26.5" />
+      <point x="230.0" y="284.0" />
+      <point x="252.5" y="284.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="polymorphism.instance_of.Child2" target="polymorphism.instance_of.Parent">
+      <point x="0.0" y="-26.5" />
+      <point x="346.0" y="284.0" />
+      <point x="284.5" y="284.0" />
+      <point x="32.0" y="26.5" />
+    </edge>
+    <edge source="polymorphism.instance_of.SuperParent" target="polymorphism.instance_of.SuperParentInterface">
       <point x="0.0" y="-26.5" />
       <point x="0.0" y="26.5" />
     </edge>
-    <edge source="polymorphism.Child2" target="polymorphism.Parent1">
-      <point x="-24.0" y="-26.5" />
-      <point x="264.0" y="284.0" />
-      <point x="198.66666666666663" y="284.0" />
-      <point x="34.66666666666666" y="26.5" />
-    </edge>
-    <edge source="polymorphism.Parent1" target="polymorphism.SuperParent">
-      <point x="0.0" y="-26.5" />
-      <point x="0.0" y="26.5" />
-    </edge>
-    <edge source="polymorphism.Child1" target="polymorphism.Parent1">
-      <point x="0.0" y="-26.5" />
-      <point x="48.0" y="284.0" />
-      <point x="129.33333333333331" y="284.0" />
-      <point x="-34.66666666666666" y="26.5" />
-    </edge>
-    <edge source="polymorphism.Child2" target="polymorphism.SomeInterface">
+    <edge source="polymorphism.instance_of.Child3" target="polymorphism.instance_of.Parent">
       <point x="24.0" y="-26.5" />
+      <point x="132.0" y="284.0" />
+      <point x="220.5" y="284.0" />
+      <point x="-32.0" y="26.5" />
+    </edge>
+    <edge source="polymorphism.instance_of.Parent" target="polymorphism.instance_of.SuperParent">
+      <point x="24.0" y="-26.5" />
+      <point x="276.5" y="181.0" />
+      <point x="358.0" y="181.0" />
       <point x="0.0" y="26.5" />
     </edge>
-    <edge source="polymorphism.SuperParent" target="polymorphism.FooInterface">
-      <point x="0.0" y="-26.5" />
+    <edge source="polymorphism.instance_of.Parent" target="polymorphism.instance_of.ParentInterface">
+      <point x="-24.0" y="-26.5" />
+      <point x="228.5" y="181.0" />
+      <point x="186.0" y="181.0" />
+      <point x="0.0" y="26.5" />
+    </edge>
+    <edge source="polymorphism.instance_of.Child3" target="polymorphism.instance_of.Child3Interface">
+      <point x="-24.0" y="-26.5" />
       <point x="0.0" y="26.5" />
     </edge>
   </edges>
   <settings layout="Hierarchic Group" zoom="1.0" x="194.0" y="181.0" />
-  <SelectedNodes>
-    <node>polymorphism.SomeInterface</node>
-  </SelectedNodes>
+  <SelectedNodes />
   <Categories>
     <Category>Fields</Category>
     <Category>Constructors</Category>

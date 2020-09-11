@@ -29,7 +29,7 @@
 | 4 | mult/div/mod | * , / , %
 | 5 | add/subtract | + , -
 | 6 | shift   | << , >> , >>>
-| 7 | relational | < , > , <= , >= , `instanceof`
+| 7 | relational | < , > , <= , >= , `instance_of`
 | 8 | (not) equal to | == , !=
 | 9 | logical | & , ^ , \|
 | 10 | ternary | `boolean foo ? foo1 : foo2`

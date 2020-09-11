@@ -94,30 +94,7 @@
     ** X, Y interface -> X subinterface of Y
     ** X class, Y interface -> X implements Y (directly or through superclass)
 
-{empty} +
 
-'''
-==== Overload vs Override vs Hide vs Redeclare
-[options=header, cols="1,2,1,1,1,1,2"]
-|===
-|    | member | modifier |name |param | return type| effect
-|Overload | instance method | | same | __different__ | __any__ |
-|Override | instance method | |  same | __same__ | __covariant__ | replaces the parent method.
-|Hide | instance field, +
-static field, +
-static method | | same | same | covariant | replaces the member only +
-if a Child reference type is used.
-|Redeclare | | (both) private  | same | same | _any_ | is always ok, +
-(accessing the member +
-from outside the class +
-is prohibited).
-|Illegal | | !private | same | same | !covariant|
-|===
-
-* virtual method invocation : calling an abstract method in an abstract class, with confidence
-that it will be implemented in child class.
-* see also
-** `method/Methods.adoc#Overriding`
 
 {empty} +
 {empty} +
@@ -173,41 +150,6 @@ that it will be implemented in child class.
 {empty} +
 
 
-=== Enums
-* Abbreviation: `Enum` will be used as placeholder what the "enum-name".
-* An enum is a very fancy class, with a very fancy constructor
-|===
-|The constructor are declared similar to an array (despite being top-level constructs)|
-`public enum Enum { A, B, C, D}`
-|An enum constant ist at the same time an enum instance.|
-`Enum instance = Enum.A;`
-|It includes an `toString()` |
-`System.out.println(Enum.A);     // A`
-|And can be compared with `==`|
-`instance == Enum.A; // true`
-2+| As an instance it has access to the following instance methods:
-2+|`Enum.A.name()` returns String (same as `Enum.A.toString()`)
-2+|`Enum.A.ordinal()` returns linear position of enum constant
-2+|Apart from that the Enum hast `static` methods:
-2+|`static enum[] values()` returns array
-2+|`Season.valueOf("SUMMER")` returns instance that matches param, as if reverse of `Enum.SUMMER.name()`.
-2+| also enums can't be extended
-| Enums can contain Java code | > in block after each constant +
-> after `;` after all constants have been listed (see below)
-|===
-
-[source,java]
-public enum Season3 {
-    WINTER { public void printHours() { System.out.println("short hours"); }
-    },
-    SUMMER { public void printHours() { System.out.println("long hours"); }
-    },
-    SPRING,
-    FALL;
-    public void printHours() { System.out.println("default hours");
-    }
-}
-
 
 {blank} +
 
@@ -216,7 +158,7 @@ public enum Season3 {
     ** wish to access memeber which exist in concrete class only
     ** explicit cast from e.g. infterface to class
         *** mus be compatible
-* `instanceof`
+* `instance_of`
     ** if reference type is final compiler will detect
     ** if reference type is abstract it might be extended to become an instance of
         *** thus compiler can't check
@@ -239,16 +181,48 @@ All 4 Types are considered nested. Non-static nested classes are called inner cl
 | 4 Types| static nested | member inner | local inner | anon inner
 | 2+| same level as fields 2+|within method
 | | static | instance | | without name
-| access modif 2+| all 2+| none, already local to method
-| can extend, implement, +
-or be abstract, final 3+| yes | no, assigned to one super or interface at declaration
+| access modif 2+| ALL 2+| none, already local to method
+| Can extend, implement. +
+Can be `abstract`, `final`. 3+| YES | NO, zero. +
+Instead it is assigned to one `super` or `iface` at declaration
 |access to instance members of enclosing class +
 (incl. private vars) | NO 3+|YES
-|access local var of enclosing class 2+|NO 2+|YES, if final or effectively-final.
-|declare static methods | YES 3+|NO
+|access local var of enclosing method | NO +
+Not applicable, since member-inner can't contain static members. |YES +
+If member inner of local inner. (and if final or eff-final)
+2+|YES, if final or effectively-final.
+|Declare `static` methods. | YES 3+|NO
 |===
 
-TODO at page 26ff
+==== General
+* nested / inner are treated as separate namespaces.
+
+{empty} +
+
+==== Static Nested
+* may be static-imported:
+[source,java]
+package somepkg;
+public class Enclosing{ static class Nested{} }
+//
+import static somepkg.Enclosing.Nested;
+
+
+{empty} +
+
+==== Local Inner
+* Local inner class instance can't be returned by enclosing method.
+
+{empty} +
+
+==== Anon Inner
+* Required to  extend an existing class or implement an existing interface.
+* Can be a param:
+[source,java]
+void bar(SomeAnon some){}
+void foo(){
+    return bar(new SomeAnon{ void baz(){} });
+}
 
 
 

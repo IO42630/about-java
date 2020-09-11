@@ -1,1 +1,170 @@
 === Stream
+`java.util.stream` provides an additional way to operate on collections. +
+`Stream`(s) are *not* passed - but either:
+
+* created
+* consumed
+* or both (a method consumes an incoming `Stream`, and returns a newly created `Stream`)
+
+There are specific classes for primitive types – `IntStream`, `LongStream` and `DoubleStream`.
+
+
+{empty} +
+
+---
+==== Intermediate vs Terminal Operations
+* intermediate : returns a new Stream
+** lazy - start producing new stream elements and send them to the next operation
+** examples `filter` , `map`
+* terminal
+** return result, or produce side effect (error?)
+** consumes the stream
+** eager - process all the elements before returning the result
+** example -
+
+
+{empty} +
+
+---
+==== Creating Streams
+Notable interfaces:
+
+* `java.util.stream.Supplier`
+
+
+
+[source,java]
+Stream<Integer> stream;
+stream = Stream.of(1, 2, 3, 4);
+stream = Stream.of(new Integer[]{1, 2, 3, 4});
+stream = Stream.of(new int[]{1,2,3,4}); // -> C-Error
+//
+List<Integer> myList = new ArrayList<>();
+Stream<Integer> sequentialStream = myList.stream(); //sequential stream
+Stream<Integer> parallelStream = myList.parallelStream(); //parallel stream
+//
+//
+public static<T> Stream<T> generate(Supplier<T> s)
+Stream<String> stream1 = Stream.generate(() -> {return "abc";});
+//
+Stream<String> stream2 = Stream.iterate("abc", (i) -> i);
+//
+LongStream is = Arrays.stream(new long[]{1, 2, 3, 4});
+IntStream is2 = "abc".chars();
+
+
+
+
+{empty} +
+
+---
+==== Transforming Streams
+Notable Interfaces
+
+* Function : Takes an argument of a type (T) and returns an argument of another type (`R`).
+
+
+
+[source,java]
+
+
+IntStream mapToInt(ToIntFunction<? super T> mapper);
+// similarly for long and double returning primitive specific stream.
+IntStream flatMapToInt(Function<? super T, ? extends IntStream> mapper);
+// similarly for long and double
+<A> A[] toArray(IntFunction<A[]> generator);
+<U> U reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner);
+
+===== map
+[source,java]
+<R> Stream<R> map(Function<? super T, ? extends R> mapper);
+List<Integer> num = Arrays.asList(1,2,3,4,5);
+List<Integer> collect1 = num.stream().map(n -> n * 2).collect(Collectors.toList());
+System.out.println(collect1); //[2, 4, 6, 8, 10]
+
+
+* toArray
+* reduce
+** are these even transformations.
+
+
+
+
+
+
+
+{empty} +
+
+---
+==== Collecting Streams
+==== (Bi-) Predicate
+Used to filter a Stream.
+
+examples
+
+[source,java]
+Stream<T> filter(Predicate<? super T> predicate)
+boolean anyMatch(Predicate<? super T> predicate)
+boolean allMatch(Predicate<? super T> predicate)
+boolean noneMatch(Predicate<? super T> predicate)
+
+{empty} +
+
+---
+==== (Bi-) Consumer
+Operation that accepts a single input argument and returns no result.
+
+examples
+
+[source,java]
+Stream<T> peek(Consumer<? super T> action)
+void forEach(Consumer<? super T> action)
+void forEachOrdered(Consumer<? super T> action)
+
+
+{empty} +
+
+
+
+
+
+{empty} +
+
+---
+==== java.util.Optional
+Java Optional is a container object which may or may not contain a non-null value. +
+If a value is present, isPresent() will return true and get() will return the value. +
+Stream terminal operations return Optional object. Some of these methods are: +
+
+[source,java]
+Optional<T> reduce(BinaryOperator<T> accumulator)
+Optional<T> min(Comparator<? super T> comparator)
+Optional<T> max(Comparator<? super T> comparator)
+Optional<T> findFirst()
+Optional<T> findAny()
+
+
+{empty} +
+
+---
+==== java.util.Splinterator
+Try executing in parallel.
+
+[source,java]
+trySplit
+
+
+
+==== Short Circuiting
+
+An intermediate operation is called short circuiting, if it may produce finite stream for an infinite stream. For example limit() and skip() are two short circuiting intermediate operations.
+
+A terminal operation is called short circuiting, if it may terminate in finite time for infinite stream. For example anyMatch, allMatch, noneMatch, findFirst and findAny are short circuiting terminal operations.
+
+
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+{empty} +
+

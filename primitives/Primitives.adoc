@@ -4,19 +4,19 @@ Java works with _objects_ that contain collections of primitive data types.
 '''
 
 ==== reference vs. instance vs. object
-* _variable_ of reference type
-    ** holds a _reference_
-* _reference_
-    ** holds the address of an _instance_
-    ** always of same size (=length)
-    ** a reference can be held by multiple variables
-    ** `new Object()` returns a new reference
-* _instance_
-    ** holds the physical address of an _object_
-    ** the physical address is invisible in Java.
-* _object_
-    ** physical object in memory
-    ** `new Object()` causes an _object_ to be created in memory
+[cols="1,5"]
+|===
+| _variable_ | > is of a certain reference type +
+> holds a _reference_
+| _reference_ | > holds the address of an _instance_ +
+. > always of same size (=length) +
+> `new Object()` returns a new reference +
+> a reference can be held by multiple variables
+| _instance_ | > holds the physical address of an _object_ +
+> the physical address is invisible in Java.
+| _object_ | > physical object in memory +
+> `new Object()` causes an _object_ to be created in memory
+|===
 
 [source,java]
 Object obj = null;       // obj is a variable. here it holds a referenct to null

@@ -21,31 +21,59 @@ so as factory design patterns maintain loose coupling and easy implementation we
 go for factory for achieving loose coupling and creation of similar kind of object.
  */
 
-abstract class Product {
-}
+interface Product {}
 
-class cProduct extends Product {
-    cProduct() {
-        System.out.println(this);
-    }
-}
+class ProductAA implements Product {}
+
+class ProductAB implements Product {}
+
+class ProductBA implements Product {}
+
+class ProductBB implements Product {}
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 
-abstract class Factory {
-    public abstract Product createProduct();
+interface Factory {
+    public abstract Product createProduct(String foo);
 }
 
-class cFactory extends Factory { // (2)
+
+class FactoryA implements Factory { // (2)
     @Override
-    public Product createProduct() {
-        return new cProduct(); // (3)
+    public Product createProduct(String foo) {
+        switch (foo) {
+            case "a":
+                return new ProductAA();
+            case "b":
+                return new ProductAB();
+            default:
+                return null;
+        }
     }
 }
+
+class FactoryB implements Factory { // (2)
+    @Override
+    public Product createProduct(String foo) {
+        switch (foo) {
+            case "a":
+                return new ProductBA();
+            case "b":
+                return new ProductBB();
+            default:
+                return null;
+        }
+    }
+}
+
 
 // - - - - - - - - - - - - - - - - - - - - - - - - -
 public class FactoryDemo {
     public static void main(String args[]) {
-        new cFactory().createProduct();
+
+        Factory factory = new FactoryA();
+        Product productAA = factory.createProduct("a");
+        Product productBB = new FactoryB().createProduct("b");
     }
 }

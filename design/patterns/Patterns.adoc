@@ -1,4 +1,9 @@
-### Patterns
+=== Patterns
+Established solution to common problem.
+
+* some say the problem is usually caused by a shortcoming of the language.
+
+Anti-Pattern - common solution to common problem that tends to cause problems.
 
 ##### 3 Types
 * __Behavioral__ : describe interactions between objects and focus on how objects communicate with each other.

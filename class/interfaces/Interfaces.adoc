@@ -1,6 +1,6 @@
 === Interfaces
 * `interfaces`
-** can define `abstract_class` methods
+** can define `abstract` methods
 ** may be public or default
 ** all members of an interface are assumed to be public (unless specified otherwise)
 * a `class` can implement many `interfaces`
@@ -20,12 +20,13 @@
 > _constants_
 | Java 8 |
 > static methods +
-> default methods (concrete, has body)
+> `default` methods (concrete, has body, the `default` keyword was specially introduced for this).
 | Java 9 |
-> private +
+> private methods +
 > private static methods +
 > added for code-reuse with interface, cannot be called from outside.
 |===
+
 
 {empty} +
 
@@ -51,9 +52,11 @@ class D implements B,C{
 
 ---
 
-* `interfaces` provides implicit modifiers
-** thes must be written explicitly in class implementing interface
-* call may implement multiple interfaces, separated by comma
+* `interfaces` provide implicit modifiers
+** these must be written explicitly in class implementing interface
+*** public  to all interface methods
+*** abstract to all non-static, non-default methods
+* class may implement multiple interfaces, separated by comma
 ** class must implement all of the abstract methods contained in the interfaces.
 ** if 1+ interface contain identical methods
 ** imlementing class overrides them all at once.
@@ -62,8 +65,10 @@ class D implements B,C{
 ** some rules of class declarations apply
 *** .java file may have at most one public top-level interface, must match name
 * abstract type inheriting from interface is not required to implement or declare inherited methods
-* interface cant extend class
+* interface can't extend class
 ** nothing can implement class
+* "marker interface" : iface that contains no methods, e.g. `java.io.Serializable`
+
 
 {empty} +
 
@@ -78,3 +83,5 @@ class D implements B,C{
 > > e.g. String.
 | if signatures of both declarations are different | It is an overload.
 |===
+* if class or interface inherits two default methods with same signature,
+and does not provide it's own implementation -> C-Error

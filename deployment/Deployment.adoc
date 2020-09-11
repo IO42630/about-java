@@ -39,6 +39,15 @@ Can import any library | Can ony import code that came with the JDK.
 {empty} +
 
 '''
+==== Namespace
+* A space, that separates one set of names from another.
+* i.e. two different things with the same name can coexist, as long as they belong to different namespaces
+* a package is a namespace
+** `foo.SomeClass` and `foo.bar.SomeClass` can coexist.
+
+{empty} +
+
+'''
 ==== Import
 
 [source,java]

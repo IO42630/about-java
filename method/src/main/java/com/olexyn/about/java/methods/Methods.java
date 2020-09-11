@@ -1,5 +1,7 @@
 package com.olexyn.about.java.methods;
 
+import java.util.List;
+
 public class Methods {
 
 
@@ -32,11 +34,7 @@ public class Methods {
 
 
 
-    public int hello() {
 
-        return 1;
-        // return for all except void type
-    }
 
 
     int overload(int i) {return i; }
@@ -44,4 +42,19 @@ public class Methods {
     int overload(int[] i) {return i[0];}
     // void overload(int i) {} // C-Error
     // static void overload(int i){}  // C-Error
+}
+
+
+
+class Parent{
+
+    List<String> foo(){ return  null;}
+
+
+}
+
+class Child extends Parent{
+
+
+    List<String> foo(){return  null;}
 }

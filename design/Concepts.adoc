@@ -1,0 +1,44 @@
+== OOP Concepts
+
+* Abstraction : a class is an abstraction of the set of members it contains.
+* Encapsulation : the practice of keeping fields within a class private,
+then providing access to them via public methods
+* Inheritance :
+* Polymorphism : overloading, overwriting and acessing a subset of features of a class
+by acessing it via an interface/parent class.
+
+{empty} +
+
+==== AOP
+* Aspect Oriented Programming.
+* Separate Aspects such as logging, security, caching, ...
+
+{empty} +
+
+==== Encapsulation
+the process of protecting the state of objects by defining its attributes as private and channeling access to them through accessor and mutator methods
+
+* make field private
+* make getter (accessor method) / setter (mutator method) with guards
+** these guards ensure that chosen invariants are maintained.
+** invariant : some property that is maintained even after data is modified.
+* naming conventions, with someFoo being the var name
+** `boolean` : `.isSomeFoo()` : `.getSomeFoo()`  : `.setSomeFoo()`
+** not `boolean` : `.getSomeFoo()` : `.setSomeFoo()`
+* trivial getters / setters serve a purpose:
+** they may be modified, without all of the users of said class having to modify their code.
+
+{empty} +
+
+---
+
+==== JavaBean
+* All properties private (use getters/setters)
+* A public no-argument constructor
+* Implements Serializable.
+
+==== Composition
+* an alternative to (multiple) inheritance.
+* have an object contain other objects as fields
+** i.e. human has feet, hands & etc.
+

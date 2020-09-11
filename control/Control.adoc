@@ -70,10 +70,11 @@
 {blank} +
 
 ==== break & continue
-* `break`transfers control to the next enclosing statement
+* `break` transfers control to the next enclosing statement
     **  _label_ allows to break out of an higher-level loop
 * `continue` transfers control to the expression that determines if the loop should continue.
 * any statement after `break` , `continue` is unreachable -> C-Error
 
 
 ==== labels??
+// TODO

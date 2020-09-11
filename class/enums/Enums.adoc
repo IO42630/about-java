@@ -1,0 +1,76 @@
+// TODO REDO
+
+=== Enums
+* An enum is a fixed set of calls to a constructor of a particular "enum-type".
+** the set can't be extended.
+* full enum example (including usually hidden segments):
+** comments in table below.
+[source,java]
+enum SomeEnum {
+    A("a"){
+        public void absPrint(){ System.out.println(string); } // mandatory override of abstract method
+        public void print(){ // optional override
+            System.out.println(this.equals(SomeEnum.A)); // -> true
+            SomeEnum.A.privateString = "foo";
+            // this.privateString = "bar"; // C-Error
+            boolean b2 = SomeEnum.A.badf.equals(SomeEnum.B.badf);
+            boolean b3 = SomeEnum.badf.equals(SomeEnum.C.badf);
+    }   },
+    B("b"){ public void absPrint(){ System.out.println(string); } },
+    C{ public void absPrint(){ System.out.println(string); } },
+    D{ public void absPrint(){  } }; // ; after all constants have been listed
+    //
+    static String badf;
+    String string;
+    private String privateString;
+    SomeEnum(){}; // default constructor
+    private SomeEnum(String string){ this.string = string; } // must be private
+    public abstract void absPrint();
+    public void print() { System.out.println(string); }
+}
+
+|===
+| the enum construct | `public enum SomeEnum { A, B, C, D}`
+| enum-type |  `SomeEnum`
+| calls to constructor of enum-type | `A, B, C, D`
+| reference to instance created by constructor calls +
+> when first reference is made, +
+. then all the constructor calls are executed. +
+> also called enum-value
+|  `SomeEnum foo == SomeEnum.A;`
+|===
+[source,java]
+foo == SomeEnum.A; // true
+(SomeEnum.A.toString()).equals(SomeEnum.A.name());     // true, string value is "A"
+SomeEnum.A.ordinal() // returns linear position of enum constant instance
+
+
+
+* Enum usage in `switch` see `control.Control.adoc#Switch`
+* Enums are top-level constructs
+* Enum types (i.e. `SomeEnum`) can't be instantiated directly (i.e. `new SomeEnum() -> C-Error`)
+
+{empty} +
+
+===== static methods
+|===
+|`static enum[] values()` | returns array
+|`Season.valueOf("SUMMER")` | returns instance that matches param, as if reverse of `Enum.SUMMER.name()`.
+|===
+
+{empty} +
+
+===== Constructor
+* must be `private`
+*** `private` keyword may be omitted
+* Enum-instances can't access private members (e.g. `baz`) of enum via `this.baz`.
+** still possible via `SomeEnum.A.baz`
+** can also access private members of other enum-instances
+
+
+
+
+
+
+{empty} +
+{empty} +

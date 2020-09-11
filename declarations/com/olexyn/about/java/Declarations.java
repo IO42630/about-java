@@ -90,3 +90,34 @@ class DeclarationVsDefinition{
         class foo{ };
     }
 }
+
+
+class PrivateStealing{
+
+    private int foo = 1;
+
+
+
+    public static void main(String[] args) {
+
+
+        PrivateStealing bar1 = new PrivateStealing();
+        PrivateStealing bar2 = new PrivateStealing();
+        bar1.foo = 2;
+
+
+    }
+
+
+
+}
+
+public class Declarations{
+
+    public static void main(String[] args) {
+
+
+
+    }
+
+}

@@ -20,5 +20,5 @@ However, they shall be resolved in time.
         * lambdas
     * collections
         * generics
+* stream
         
-

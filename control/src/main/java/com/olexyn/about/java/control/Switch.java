@@ -40,24 +40,13 @@ public class Switch {
 
             System.out.println("-------");
         }
-
-
     }
+
 
     static void switchEnum(){
 
-
-
-    }
-
-
-
-
-    public static void main(String... args){
-
         Caps c = null;
         c = Caps.A;
-
 
         switch (c){
             case A:
@@ -66,8 +55,16 @@ public class Switch {
             case C:
                 break;
         }
-
     }
 
     enum Caps{A,B,C,D}
+
+
+
+
+
+
+    public static void main(String... args) {
+
+    }
 }

@@ -88,8 +88,17 @@ one per file - matches the file name. | |  | | YES
 * assigning `null` counts as an assignment
 * initialization is optional for local final variables
 
-'''
+===== effectively final
+* introduced in Java 8
+* final can be placed in declaration without causing C-Error.
+[source,java]
+int i = 1; // is eff-final
+i++; // this makes i not eff-final,
+// and causes C-Error in all the subsequent expressions that, require it i to be eff-final
 
+{empty} +
+
+'''
 ==== static
 * Purpose
 ** Helper methods, that don't require any object state.

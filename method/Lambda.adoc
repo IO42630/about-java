@@ -1,8 +1,10 @@
-== 06 Lambdas
+== Lambdas
 * see `about.java.lambdas.Intro`
-* A _functional interface_ (FI) is an interface with only one method.
+* A _functional interface_ (FI) is an interface with only one `abstract` method.
+** it may contain multiple `static` or `default` methods (those don't count towards)
 ** Optional annotation `@FunctionalInterface` for signaling intent.
-** An FI can only contain one method, +
+*** causes `C-Error` if mutiple abstract methods.
+** An FI can only contain one `abstract` method, +
 but a class can implement multiple functional interfaces.
 * Lambda expressions (lambdas) can be written for FIs.
 ** Instead of implementing class/method
@@ -11,11 +13,13 @@ but a class can implement multiple functional interfaces.
 ** there isn't a rule that says you must use all declared parameters
 
 [source,java]
-<parameter name> -> <body>
+<parameters> -> <body>
 a -> a.foo()
 (a,b,c) -> { int d = a+b; int e = d+c; return e;};
 
-* IF one parmaeter omit `()`
+* IF one parameter omit `()`
+** if `()` , then may contain parameter type e.g. `(String a)`
+*** if one parameter uses a type, all param must use type, else C-Error.
 * IF one statement, omit `{ return ;}`
 * var can be used in Lambda parameters
 * Lambda body may contain:
@@ -29,7 +33,7 @@ a -> a.foo()
 ==== Predefined Functional Interfaces
 
 |===
-|`Comparator<T> { int compare(T o1, T o2); }`
+|`Comparator<T> { int compare(T t1, T t2); }`
 |`Consumer<T>      { void accept(T t); }`
 |`Predicate<T>   { boolean test(T t); }`
 |`Supplier<T>   { T get(); }`

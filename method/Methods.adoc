@@ -43,7 +43,7 @@ void foo(int j){j=1;}
 * Java is "pass-by-value"
 ** the parameter is created as a new local variable
 ** the parameter `j` holds the  same value as the original variable `i`
-* with mutable _values_
+* with mutable _values_ one is passing a copy of the reference.
 ** modifying the parameter will cause a modification of the original variable
 ** mutable reference type (`StringBuilder`,`List`)
 * with immutable values this is not a problem
@@ -53,6 +53,7 @@ void foo(int j){j=1;}
 * "pass-by-reference"
 ** the physical address of the __variable__ is passed
 ** `j` would point to the same physical address as `i`
+
 
 {empty} +
 
@@ -114,6 +115,8 @@ To avoid  errors, the following checks are made at compilation.  |
 |===
 
 
+
+
 ===== Covariance
 * Same class or subclass.
 * `void` is only covariant with `void`
@@ -128,28 +131,76 @@ To avoid  errors, the following checks are made at compilation.  |
 
 {empty} +
 
+{empty} +
 
+---
+==== Overload vs Override vs Hide vs Redeclare
+[options=header, cols="1,2,1,1,1,1,2"]
+|===
+|    | member | modifier |name |param | return type| effect
+|Overload | instance method | | same | __different__ | __any__ |
+|Override | instance method | |  same | __same__ | __covariant__ | replaces the parent method. +
+(even if the parent-type is used as reference)
+|Hide | instance field, +
+static field, +
+static method | | same | same | covariant | replaces the member only +
+if a Child reference type is used.
+|Redeclare | | (both) private  | same | same | _any_ | is always ok, +
+(accessing the member +
+from outside the class +
+is prohibited).
+|Illegal | | !private | same | same | !covariant|
+|===
+
+* virtual method invocation : calling an abstract method in an abstract class, with confidence
+that it will be implemented in child class.
+* see also
+** `method/Methods.adoc#Overriding`
+
+
+{empty} +
+
+{empty} +
+
+---
 ==== Overriding with Generics
 * Type erasure : `List<T>` will be converted to `List<Object>` during compilation.
-** thus can't overload `foo(List<Integer>)` with `foo(List<String>)`
-* thus overriding `foo(List<Integer>)` with `foo(List<String>)` would be seen as an illegal overload
-* instead it's ok to override `foo(List<Integer>)` with `foo(List<Integer>)`
-* `Parent.foo(List<Integer>)` with `Child.foo(ArrayList<Integer>)` will cause an OK overload.
-* for 816
-** wildcard for generics is `<?>`
-*** `<? super String>` and `<? extends String>` is ok too
-* generic return types
-** generic must be exactly same
-** return type of overriding method may be coviant
-***  Parent `List<String> foo()` Child `ArrayList<String> foo()`
+** The compiler also inserts casts where necessary.
+[options=header]
+|===
+| Parent | Child |
+| `foo(List<Integer>)` | `foo(List<String>)` | Not an override du to different param. +
+C-Error due to same type erasure.
+| `foo(List<Integer>)` | `foo(List<Integer>)` | Override
+| `foo(List<Integer>)` | `foo(ArrayList<Integer>)` | Overload
+| `foo(List<? super String>)` | `foo(List<? extends String>)` | Not an override du to different param. +
+C-Error due to same type erasure.
+|===
+
+===== return types (of overriding methods)
+* generic type must be exactly same
+* return type of overriding method may be covariant
+
+[source,java]
+List<String> foo() // Parent
+ArrayList<String> foo() // Child
+
+{empty} +
+
+{empty} +
+
 * final methods
 ** can't be overridden or hidden
 ** still could be redeclared (if private in parent)
 * special
-** Parent : `pubic int i=0;`
+** Parent : `public int i=0;`
 ** Child : `private int i=3;`
 ** 3 reference paths : new Parent(), new Child(), Parent childAsParent = new Child())
 ** we are executing main from child
 ** parent.i == 0
 ** child.i ==3 // thus hiding works
 ** childAsParent == 0 // hiding still works // just __beware__ accessing private from outside of class
+
+==== Other
+* a void method can contain `return;`
+** this might be used to exit early.

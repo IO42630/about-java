@@ -1,0 +1,23 @@
+== IO
+
+=== NIO.2
+Differences to java.io streams.
+
+* buffers / channels instead of streams
+* load date from file channel into temp buffer, that
+** unlike streams, can be read forward and backward without blocking the underlying resource
+* NIO.1 was not popular
+
+
+
+==== Path
+vs File
+
+* File is a class
+* Path is an interface
+** implemented by classes depending on which System the action is performed.
+
+
+* replacement for legacy class `java.io.File`
+* Path unlike File supports symbolic links
+** pointer to another file/directory.

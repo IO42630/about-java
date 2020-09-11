@@ -7,8 +7,8 @@ abstract class AbstractParent {
 
     abstract void hello(); // "virtual method"
 
-    void sayHello() {
-        hello(); // "virtual method invocation"
+    void sayHello( AbstractParent child) {
+        child.hello(); // "virtual method invocation"
     }
 }
 
