@@ -1,7 +1,6 @@
 = Generics
 
-== Intordution
-Skip to summary if in a hurry.
+== Introdution
 
 === Purpose
 
@@ -33,7 +32,8 @@ List<String> strList = new ArrayList<>();
 List<Object> objList = new ArrayList<>();
 //
 obj = str;           // OK
-str = (String) obj;  // OK
+str = (String) obj;  // OK (here obj is a String instance with a Object reference,
+// if obj were an Object instance, then ClassCastException at runtime.
 objList = strList    // C-Error
 obj = strList        // OK
 //
@@ -107,3 +107,60 @@ Syntax in method: +
 | V |Value of Map
 | S , U | Other
 |===
+
+
+==== Other
+* Overriding with Generics see Methods.adoc
+
+
+==== What can't be done with generics:
+
+Call the constructor. new T() is not allowed because at runtime it would be new
+Object().
+Create an array of that static type. This one is the most annoying, but it makes sense
+because you’d be creating an array of Objects.
+Call instanceof. This is not allowed because at runtime List<Integer> and
+List<String> look the same to Java thanks to type erasure.
+Use a primitive type as a generic type parameter. This isn’t a big deal because you
+can use the wrapper class instead. If you want a type of int, just use Integer.
+Create a static variable as a generic type parameter. This is not allowed because the
+type is linked to the instance of the class.
+
+{empty} +
+
+==== Bound Wildcard Collections
+* Java is very conservative in what it allows to be added to "wildcarded-collections".
+* Example:
+
+[cols="2,6"]
+|===
+| What it is | a List of type Parent
+| What it says | a List of type Child or one of it's superclasses.
+| What it means | a List that is guaranteed to hold Child or any of it's subclasses.
+| Why? | if list was of type Child and one added a Parent -> ClassCastException
+|===
+
+
+[source,java]
+List<? super Child> list2 = new ArrayList<Parent>();
+list2.add(new Object());  // C-Error
+list2.add(new Parent());  // C-Error
+list2.add(new Child());
+list2.add(new SubChild());
+
+* For the same reason unbounded and upper bounds wildcards make the collection effectively immutable.
+
+[cols="2,6"]
+|===
+| What it is | A List of type Child
+| What it says | A List of type Parent or one of it's subclasses.
+| What it means | The List is not guaranteed to hold known classes, as the inheritance tree might be extended. +
+If we add any of the known classes, a `ClassCastException` might happen.
+|===
+
+[source,java]
+List<? Extends Parent> list2 = new ArrayList<Child>();
+list2.add(new Object());  // C-Error
+list2.add(new Parent());  // C-Error
+list2.add(new Child());   // C-Error
+list2.add(new SubChild());
