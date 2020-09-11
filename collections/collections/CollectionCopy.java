@@ -28,4 +28,7 @@ public interface CollectionCopy<E> {
      * Removes all of the elements from this collection
      */
     void clear();
+
+
+    boolean contains(Object o);
 }

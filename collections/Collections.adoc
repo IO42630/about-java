@@ -6,6 +6,12 @@ image::API-common-Classes.png[]
 * see `basics.collections`
     * for API see `InterfaceCopy` files
 
+{empty} +
+{empty} +
+
+---
+=== Array vs. ArrayList
+
 ==== Array
 *  	a fixed-size collection of data of the same type, which can hold zero or more items
 * An array is a reference type (even if it is an array of primitives)
@@ -129,21 +135,87 @@ Arrays.deepToString(a2D);
 
 {empty} +
 
-==== List
-* care: contains both the overloaded `E remove(int index)` and `boolean remove(E e)` methods.
+---
+=== List vs Set vs Map
 
 {empty} +
 
-==== Sets and Maps
-* Sets
-** Are not ordered
-** Can't contain duplicates
-** See `Sets.java`.
-* Maps
-** See `Maps.java`.
+---
+==== List
+* ordered, allows duplicates
+* care: contains both the overloaded `E remove(int index)` and `boolean remove(E e)` methods.
+
+===== List types and their uses.
+* ArrayList : default
+** can lookup any element in constant time
+** adding /removing takes longer
+* Linked list :
+** implements Queue
+** can remove from start / end in constant time
+** tradeoff : lookup of arbitrary index takes linear time
+* Vector : legacy & threadsafe & slow
+* Stack : legacy (extends Vector) , use ArrayDeque instead.
 
 
-==== Casting Collections
+{empty} +
+
+==== Sets
+* not ordered
+* no duplicates
+* HashSet
+** lookup and adding both take constant time
+* TreeSet
+** stores elem in sorted tree structure
+** lookup / adding both take O(log n)
+
+
+{empty} +
+
+
+{empty} +
+
+==== Queue
+* ordered
+* facilitates retrieving elements from start / end.
+
+{empty} +
+
+---
+=== Iterator
+* collection extends iterable.
+* can be used to loop through lists
+**  `iterator()` is part of the `Iterable` iface.
+
+[source,java]
+Iterator iter = list.iterator();
+while(iter.hasNext()) {
+    String string = (String) iter.next();
+    System.out.println(string);
+}
+Iterator<String> iter = list.iterator();
+while(iter.hasNext()) {
+    String string = iter.next();
+    System.out.println(string);
+}
+
+
+
+
+==== Map
+* how to loop through Maps
+* Map contains a nested Interface called Map.Entry
+* The method Map.entrySet() returns a Set of the Map.Entry(s) of the Map
+** this set can then be traversed.
+
+
+
+
+
+{empty} +
+{empty} +
+
+---
+=== Casting Collections
 * array types are fixed at compile time
 ** -> can cast between arrays
 *** `Object[] objects = {"foo","bar"};`
@@ -154,4 +226,5 @@ Arrays.deepToString(a2D);
 ** `List<Object> list = new Arraylist<String>(); // C-Error "incompatible types"`
 ** this is where generic type wildcards are useful:
 *** `List<?> list = new Arraylist<String>(); // OK`
+
 

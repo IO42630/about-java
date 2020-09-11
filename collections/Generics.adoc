@@ -74,16 +74,18 @@ Syntax in method: +
 [options=header, cols="7,5,5,5"]
 |===
 | Declaration Scenarios                   | unbounded | upper bound | lower bound
-| Class with `<T>`   2+^| YES            |
-| Class with `<?>`   3+|
-| Method with `<T>`  2+^| YES          |
-| Method with `<?>`  3+|
+| Class with `<T>`   2+^| YES            ^| NO
+| Class with `<?>`   3+^| NO
+| Method with `<T> void foo()`  2+^| YES          ^| NO
+| Method with `<?> void foo()`  3+^| NO
 | Field with `<T>`   | If T declared in Class. 2+|
 | Field with `<?>`   3+^| YES
 | Parameter (or local var) with <T> | If T declared in Method (or Class). 2+|
 | Parameter (or local var) with `<?>`   3+^| YES
 |===
 
+* Method return types can be of generic type `T` but can *never* determine types or set bounds:
+** `<T> <? extends T> foo(){}` -> C-Error
 [options=header, cols="7,5"]
 |===
 | Type Scenarios |
