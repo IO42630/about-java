@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -47,7 +48,7 @@ public class Exceptions {// exception "e"
 
         try {
             declareUncheckedE();
-        } catch (IndexOutOfBoundsException e) {// runtime exception
+        } catch (IndexOutOfBoundsException e ) {// runtime exception
             System.err.println("IndexOutOfBoundsException: " + e.getMessage());
         } finally {// "cleanup", always executes
             if (writer != null) {
@@ -58,7 +59,7 @@ public class Exceptions {// exception "e"
 
         try {
             manuallyThrowUE();
-        } catch (IndexOutOfBoundsException | NullPointerException e) {// multi-catch block
+        } catch (IndexOutOfBoundsException | NullPointerException e ) {// multi-catch block
             System.out.print("foo");
         }
 
@@ -81,7 +82,7 @@ public class Exceptions {// exception "e"
     /**
      * Example of how a Checked Exception would be handled.
      */
-    static void handleCheckedE() {
+    static void handleCE() {
         try {
             writer = new PrintWriter(new FileWriter("OutFile.txt"));
             System.out.println("All OK.");
@@ -90,6 +91,12 @@ public class Exceptions {// exception "e"
             System.err.println("Caught IOException: " + e.getMessage());
             e.printStackTrace();
         }
+
+        try{
+
+        }catch (NullPointerException e){}
+
+
     }
 
 

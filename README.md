@@ -25,3 +25,5 @@ However, they shall be resolved in time.
 
 Progress
 resume Chapter 3 p. 134
+resume Chapter 5 p. 248
+resume Ch 6 p. 305

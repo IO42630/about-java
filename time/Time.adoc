@@ -1,0 +1,106 @@
+== Time
+
+|===
+| System.out.println(LocalDate.now());            |        2015–05–25
+| System.out.println(LocalTime.now());            |        09:13:07.768
+| System.out.println(LocalDateTime.now());        |        2015–05–25T09:13:07.768
+| System.out.println(ZonedDateTime.now());        |        2015–05–25T09:13:07.769–04:00[America/New_York]
+|===
+
+[source,java]
+LocalDate date1 = LocalDate.of(2015, Month.JANUARY, 20);
+LocalDate date2 = LocalDate.of(2015, 1, 20);
+
+[source,java]
+LocalTime time1 = LocalTime.of(6, 15);          // hour and minute
+LocalTime time2 = LocalTime.of(6, 15, 30);      // + seconds
+LocalTime time3 = LocalTime.of(6, 15, 30, 200); // + nanoseconds
+
+[source,java]
+public static LocalDateTime of(int year, Month month,int dayOfMonth,
+    int hour, int minute, int second, int nanos)
+LocalDateTime dateTime1 = LocalDateTime.of(2015, Month.JANUARY, 20, 6, 15, 30);
+//
+public static LocalDateTime of(LocalDate date, LocalTime time)
+LocalDateTime dateTime2 = LocalDateTime.of(date1, time1);
+
+[source,java]
+ZoneId zone = ZoneId.of("US/Eastern");
+ZonedDateTime zoned1 = ZonedDateTime.of(2015, 1, 20,6, 15, 30, 200, zone);
+ZonedDateTime zoned2 = ZonedDateTime.of(date1, time1, zone);
+ZonedDateTime zoned3 = ZonedDateTime.of(dateTime1, zone);
+
+finding a time zone
+
+[source,java]
+ZoneId.systemDefault()
+ZoneId.getAvailableZoneIds().stream()
+    .filter(z -> z.contains("US") || z.contains("America"))
+    .sorted().forEach(System.out::println);
+
+
+* All the constructors of the date/time classes are private.
+
+
+==== manipulating Dates and Times
+* Date and time classes are immutable.
+* but there are methods that return a new instance, with desired adjustments.
+* this also means these methods can be chained.
+
+[source,java]
+LocalDate contains the following methods:
+.plusDays(int i);
+.plusWeeks(int i);
+.plusMonths(int i);
+.plusYears(int i);
+same is available with minus
+LocalTime contains the following methods
+.plusHours
+.plusMinutes
+.plusSeconds
+.plusNanos
+
+=== Epoch
+* 01.01.1970 GMT Unix introduced date standards.
+** LocalDate has long toEpochDay() : days since 01.01.1970
+** LocalDateTime, ZoneDateTime has long toEpochSecond() : seconds since 01.01.1970
+
+
+* Period can store an arbitrary amount of time
+
+** Period.ofMonths(int i)
+
+[source,java]
+Period
+    .ofYears(int i)
+    .ofMonths(int i)
+    .ofWeeks(int i)
+    .ofDays(int i)
+    .of(int year, int month, int day)
+//
+Period wrong = Period.ofYears(1).ofWeeks(1); // every week
+// same as
+Period wrong = Period.ofYears(1);
+wrong = Period.ofWeeks(1);
+//
+System.out.printIn(Period.of(1,2,3));   // P1Y2M3D
+System.out.println(Period.ofMonths(3)); // P3M
+System.out.println(Period.ofWeeks(3));  // P21D
+//
+// use
+LocalDate local = LocalDate.now()
+local = local.plus(Period.of(1,2,3));
+// can't add period to LocalTime, obviously -> UnsupportedTemporalTypeException
+
+===== Duration
+
+[source,java]
+Duration daily = Duration.ofDays(1);            // PT24H
+Duration hourly = Duration.ofHours(1);          // PT1H
+Duration everyMinute = Duration.ofMinutes(1);   // PT1M
+Duration everySecond = Duration.ofSeconds(1);   // PT1S
+Duration everyMilli = Duration.ofMillis(1);     // PT0.001S
+Duration everyNano = Duration.ofNanos(1);       // PT0.000000001S
+
+
+

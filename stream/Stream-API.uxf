@@ -4,8 +4,8 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>710</x>
-      <y>1000</y>
+      <x>1320</x>
+      <y>580</y>
       <w>140</w>
       <h>30</h>
     </coordinates>
@@ -15,8 +15,8 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>230</x>
-      <y>830</y>
+      <x>840</x>
+      <y>410</y>
       <w>220</w>
       <h>70</h>
     </coordinates>
@@ -26,19 +26,19 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>1020</y>
-      <w>340</w>
-      <h>120</h>
+      <x>860</x>
+      <y>600</y>
+      <w>360</w>
+      <h>130</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;100.0;320.0;10.0</additional_attributes>
+    <additional_attributes>10.0;110.0;340.0;10.0</additional_attributes>
   </element>
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>170</x>
-      <y>860</y>
+      <x>780</x>
+      <y>440</y>
       <w>120</w>
       <h>60</h>
     </coordinates>
@@ -48,8 +48,8 @@
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>360</x>
-      <y>820</y>
+      <x>970</x>
+      <y>400</y>
       <w>160</w>
       <h>60</h>
     </coordinates>
@@ -59,8 +59,8 @@
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>100</x>
-      <y>1100</y>
+      <x>690</x>
+      <y>690</y>
       <w>340</w>
       <h>60</h>
     </coordinates>
@@ -70,8 +70,8 @@
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>550</x>
-      <y>1010</y>
+      <x>1160</x>
+      <y>590</y>
       <w>100</w>
       <h>60</h>
     </coordinates>
@@ -81,8 +81,8 @@
   <element>
     <id>UMLInterface</id>
     <coordinates>
-      <x>550</x>
-      <y>1100</y>
+      <x>1160</x>
+      <y>680</y>
       <w>100</w>
       <h>60</h>
     </coordinates>
@@ -92,12 +92,118 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>270</x>
-      <y>1110</y>
-      <w>340</w>
+      <x>860</x>
+      <y>690</y>
+      <w>360</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;20.0;340.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>740</x>
+      <y>870</y>
+      <w>370</w>
+      <h>50</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;
+BaseStream&lt;T, S extends BaseStream&lt;T,S&gt; &gt;
+bg=#90CAF9
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1240</x>
+      <y>800</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;
+Stream&lt;T&gt;
+bg=#90CAF9
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1100</x>
+      <y>810</y>
+      <w>160</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;80.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1240</x>
+      <y>870</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;
+IntStream
+bg=#90CAF9
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1240</x>
+      <y>930</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;
+LongStream
+bg=#90CAF9
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1240</x>
+      <y>990</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;interface&gt;
+DoubleStream
+bg=#90CAF9
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1100</x>
+      <y>880</y>
+      <w>160</w>
       <h>30</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;-</panel_attributes>
-    <additional_attributes>10.0;10.0;320.0;10.0</additional_attributes>
+    <additional_attributes>10.0;10.0;140.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>930</x>
+      <y>1130</y>
+      <w>150</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>&lt;&lt;class&gt;
+Collectors
+bg=#A5D6A7
+transparency=0</panel_attributes>
+    <additional_attributes/>
   </element>
 </diagram>
