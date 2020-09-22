@@ -20,7 +20,7 @@ There are specific classes for primitive types – `IntStream`, `LongStream` and
 ** return result, or produce side effect (error?)
 ** consumes the stream
 ** eager - process all the elements before returning the result
-** example -
+** Example -
 
 
 {empty} +
@@ -157,9 +157,9 @@ trySplit
 
 ==== Short Circuiting
 
-An intermediate operation is called short circuiting, if it may produce finite stream for an infinite stream. For example limit() and skip() are two short circuiting intermediate operations.
+An intermediate operation is called short circuiting, if it may produce finite stream for an infinite stream. For Example limit() and skip() are two short circuiting intermediate operations.
 
-A terminal operation is called short circuiting, if it may terminate in finite time for infinite stream. For example anyMatch, allMatch, noneMatch, findFirst and findAny are short circuiting terminal operations.
+A terminal operation is called short circuiting, if it may terminate in finite time for infinite stream. For Example anyMatch, allMatch, noneMatch, findFirst and findAny are short circuiting terminal operations.
 
 
 {empty} +

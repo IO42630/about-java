@@ -8,7 +8,7 @@
   literal | primitive value (e.g. 1 )
   								
   
-   type  |  bit |  range | example 
+   type  |  bit |  range | Example 
   ----|----| ---| ---
   boolean | 1 | true / false | true
   byte |  8 | -128 to 127  | 123

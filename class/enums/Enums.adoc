@@ -3,7 +3,7 @@
 === Enums
 * An enum is a fixed set of calls to a constructor of a particular "enum-type".
 ** the set can't be extended.
-* full enum example (including usually hidden segments):
+* full enum Example (including usually hidden segments):
 ** comments in table below.
 [source,java]
 enum SomeEnum {

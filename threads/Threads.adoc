@@ -282,9 +282,9 @@ image::img/JoinExample.png[]
 * Deadlock
 ** Thread A owns "foo" waits for "bar"
 ** Thread B owns "bar" waits for "foo"
-** TODO example
+** TODO Example
 * Livelock
-** TODO example
+** TODO Example
 * Starvation
 ** Thread A hogs a lock
 ** Thread A unable to make progress

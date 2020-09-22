@@ -12,3 +12,11 @@
     * Transactions :
 * Web
 * Miscellaneous
+
+
+
+
+===== JpaRepository
+* is-a Repository with JPA
+* is-a Component with DAO
+

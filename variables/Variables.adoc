@@ -120,7 +120,7 @@ since impossible to guess type.
 System.gc();
 
 * suggests JVM to do GC, JVM may comply.
-* example
+* Example
 
 [source,Java]
 String a = new String("a");
