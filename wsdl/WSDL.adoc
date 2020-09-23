@@ -1,0 +1,14 @@
+== WSDL
+Web Services Description Language
+
+* XML
+* Describes a Web Service
+* often used in combination with SOAP and XML Schema to provide web services over the Internet.
+** The client can then use SOAP to actually call one of the functions listed in the WSDL
+
+{empty} +
+
+=== Elements
+* Types
+* Operations
+* Binding
