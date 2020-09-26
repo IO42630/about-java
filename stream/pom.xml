@@ -4,7 +4,13 @@
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
 
-  <groupId>com.olexyn.about.java.streams</groupId>
+  <parent>
+    <artifactId>java</artifactId>
+    <groupId>com.olexyn.about.java</groupId>
+    <version>0.1</version>
+  </parent>
+
+  <groupId>com.olexyn.about.java.stream</groupId>
   <artifactId>streams</artifactId>
   <version>0.1</version>
 
@@ -19,12 +25,7 @@
   </properties>
 
   <dependencies>
-    <dependency>
-      <groupId>junit</groupId>
-      <artifactId>junit</artifactId>
-      <version>4.11</version>
-      <scope>test</scope>
-    </dependency>
+
   </dependencies>
 
   <build>

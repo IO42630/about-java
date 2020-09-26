@@ -30,16 +30,17 @@
   <modules>
         
     <module>annotations</module>
-        
+    <module>collections</module>
     <module>control</module>
         
     <module>databases</module>
         
     <module>io</module>
-        
+    <module>maven</module>
     <module>method</module>
-        
-    <module>collections</module>
+    <module>spring</module>
+    <module>stream</module>
+
       
   </modules>
     
