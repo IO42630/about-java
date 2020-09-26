@@ -7,19 +7,18 @@ import org.hibernate.Session;
 public class TestHibernate {
 
     public static void main(String[] args) {
-        Session session = HibernateUtil.getSessionFactory().openSession();
-        session.beginTransaction();
+
 
         //Add new Employee object
-        CustomerEntity emp = new CustomerEntity();
-        emp.setEmail("demo-user@mail.com");
-        emp.setFirstName("demo");
-        emp.setLastName("user");
+        CustomerEntity customer = new CustomerEntity();
+        customer.setName("Powell");
 
-        session.save(emp);
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        session.beginTransaction();
+        session.save(customer);
 
         session.getTransaction().commit();
-        HibernateUtil.shutdown();
+        HibernateUtil.getSessionFactory().close();
     }
 
 }

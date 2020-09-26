@@ -12,3 +12,9 @@ Web Services Description Language
 * Types
 * Operations
 * Binding
+
+
+
+==== JAXB
+* is not included in the default jdk anymore
+* use --add-modules java.xml.bind option
