@@ -11,7 +11,7 @@ public class TestHibernate {
         session.beginTransaction();
 
         //Add new Employee object
-        EmployeeEntity emp = new EmployeeEntity();
+        CustomerEntity emp = new CustomerEntity();
         emp.setEmail("demo-user@mail.com");
         emp.setFirstName("demo");
         emp.setLastName("user");
