@@ -6,16 +6,13 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 
-public class Helpers {
 
-    public String getResult(ResultSet rs) throws SQLException {
+public class PrettyPrint {
 
-        return mapToString(resultSetToMap(rs));
-    }
+
 
 
     public Map<Integer, String> resultSetToMap(ResultSet rs) throws SQLException {
-
 
         Map<Integer, String> idToNameMap = new HashMap<>();
 
@@ -46,7 +43,8 @@ public class Helpers {
 
 
     public void printResult(ResultSet rs) throws SQLException {
-        System.out.println(getResult(rs));
+        String string = mapToString(resultSetToMap(rs));
+        System.out.println(string);
     }
 
 

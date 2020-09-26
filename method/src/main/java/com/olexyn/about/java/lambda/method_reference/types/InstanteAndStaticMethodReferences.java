@@ -32,9 +32,7 @@ public class InstanteAndStaticMethodReferences implements StaticMethod, Instance
 
 
 interface StaticMethod {
-    /**
-     * Static methods are "attached" to class, thus can't be overridden.
-     */
+
     static boolean staticMethodFromInterface(Object o) { return false; }
 }
 

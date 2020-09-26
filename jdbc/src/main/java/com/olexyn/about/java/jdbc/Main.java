@@ -3,41 +3,39 @@ package com.olexyn.about.java.jdbc;
 import com.olexyn.about.java.h2.H2Server;
 
 import java.sql.*;
-import java.util.HashMap;
-import java.util.Map;
 
 class Main {
     public static void main(String[] args) throws SQLException {
 
-        Helpers helpers = new Helpers();
+        PrettyPrint prettyPrint = new PrettyPrint();
 
-        Connection conn = new H2Server().getConnection();
+        Connection connection = new H2Server().getConnection();
 
-        System.out.println(conn);
+        System.out.println(connection);
 
-        Statement stmt = conn.createStatement();
+        Statement statement = connection.createStatement();
 
         ResultSet rs;
-        rs = stmt.executeQuery("SELECT * FROM customers");
-        helpers.printResult(rs);
+        rs = statement.executeQuery("SELECT * FROM customers");
+        prettyPrint.printResult(rs);
 
         int result;
 
-        result = stmt.executeUpdate("insert into customers values(10, 'Maya')");
+        result = statement.executeUpdate("insert into customers values(10, 'Maya')");
 
-        rs = stmt.executeQuery("SELECT * FROM customers");
-        helpers.printResult(rs);
+        rs = statement.executeQuery("SELECT * FROM customers");
+        prettyPrint.printResult(rs);
 
-        result = stmt.executeUpdate("update customers set name = 'Bob' where name = 'Paul'");
+        result = statement.executeUpdate("update customers set name = 'Bob' where name = 'Paul'");
 
-        rs = stmt.executeQuery("SELECT * FROM customers");
-        helpers.printResult(rs);
+        rs = statement.executeQuery("SELECT * FROM customers");
+        prettyPrint.printResult(rs);
 
-        result = stmt.executeUpdate("delete from customers where name = 'Peter'");
+        result = statement.executeUpdate("delete from customers where name = 'Peter'");
 
 
-        rs = stmt.executeQuery("SELECT * FROM customers");
-        helpers.printResult(rs);
+        rs = statement.executeQuery("SELECT * FROM customers");
+        prettyPrint.printResult(rs);
     }
 
 

@@ -13,7 +13,8 @@ There are specific classes for primitive types – `IntStream`, `LongStream` and
 
 ---
 ==== Intermediate vs Terminal Operations
-* intermediate : returns a new Stream
+* intermediate
+** returns a new Stream
 ** lazy - start producing new stream elements and send them to the next operation
 ** examples `filter` , `map`
 * terminal

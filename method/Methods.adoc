@@ -142,8 +142,8 @@ To avoid  errors, the following checks are made at compilation.  |
 |Override | instance method | |  same | __same__ | __covariant__ | replaces the parent method. +
 (even if the parent-type is used as reference)
 |Hide | instance field, +
-static field, +
-static method | | same | same | covariant | replaces the member only +
+`static` field, +
+`static` method | | same | same | covariant | replaces the member only +
 if a Child reference type is used.
 |Redeclare | | (both) private  | same | same | _any_ | is always ok, +
 (accessing the member +
@@ -156,6 +156,7 @@ is prohibited).
 that it will be implemented in child class.
 * see also
 ** `method/Methods.adoc#Overriding`
+* Static methods are "attached" to class, thus can't be overridden.
 
 
 {empty} +
