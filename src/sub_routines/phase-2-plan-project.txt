@@ -1,0 +1,1674 @@
+Previously: strategic
+- Senior management has accepted the business case
+- The MOV has been defined, we know the what and why
+- We enter in the how to do it phase
+
+Next: tactic
+how to do it phase
+- Project charter
+- Baseline project plan
+- Who are the project manager & sponsor?
+- Who is on the project team?
+- What role does everyone associated with the project play?
+- What is the scope of the project?
+- What is the overall project cost & time?
+
+Questions? - What resources and technology will be required?
+- What approach, tools and techniques will be used to develop the information system?
+- What tasks or activities will be required to perform the project work?
+- How long will these tasks or activities take?
+- Who will be responsible for performing these tasks or activities?
+- What will the organization receive for the time, money and resources invested in this project?
+University of Fribourg - Jean Hennebert
+
+5
+
+KNOWLEDGE AREA PROJECT INTEGRATION MANAGEMENT
+
+(LINK WITH PMBOK)
+
+PMBOK® Project Integration Management
+
+University of Fribourg - Jean Hennebert
+
+• Project Plan Development
+- Constraints and Assumptions
+- Tools
+
+• Project Plan Execution
+- Work authorization system
+- Status review meetings
+
+• Overall Change Control
+- Ensure process in place to evaluate the
+value of proposed change
+- Determine whether accepted change
+has been implemented
+- Include procedures for handling
+emergencies
+- Help project manager manage change
+7
+
+project charter is a documented tactical plan.
+- contract between the project sponsor and team.
+- includes the baseline project plan
+
+• documents the project’s MOV
+• deᚏnes the project infrastructure
+• summarizes the details of the project plan
+• deᚏnes roles & responsibilities
+• shows explicit commitment to the project
+• sets out project control mechanisms
+
+University of Fribourg - Jean Hennebert
+
+Contains:
+• Project ID
+• Project Stakeholders
+• Project Description
+• MOV
+• Project Scope
+• Project Schedule (summary)
+• Project Budget (summary)
+• Quality issues/standards/requirements
+• Resources
+• Assumptions & Risks
+• Project Administration
+• Acceptance & Approval
+• References
+• Terminology (acronyms & definitions)
+9
+
+Project charter template
+University of Fribourg - Jean Hennebert
+
+12
+
+project plan is a detailed step-by-step action plan with
+unique objective to support the project MOV.
+
+• The plan answers the following questions:
+-
+
+What needs to be done?
+Who will do the work?
+When will they do the work?
+How long will it take?
+How much will it cost?
+
+University of Fribourg - Jean Hennebert
+
+14
+
+schema with steps to build the project plan
+WBS
+(1)
+
+(2)
+(3)
+
+(4)
+
+15
+
+2. Scope
+- deliverables or work products that must be completed in order to achieve MOV.
+- bullet-point list of work (not) to be done
+- sets boundaries of project and expectations of stakeholders
+- is the link between MOV and project plan.
+
+3. subdivide the project into phases
+- outcome of phases are deliverables and milestones
+
+4. Define phases in terms of tasks
+Sequence / Resources / Time estimates for each task
+schedule and budget are derived from phases and tasks
+
+16
+
+Scope statement
+Scope statement: is the written form of the boundary
+
+• A narrative of what deliverables or work-products the
+project team will and will not provide throughout the
+project.
+• A first step that provides a high-level abstraction of the
+project’s scope that will be defined in greater detail as
+the project progresses.
+University of Fribourg - Jean Hennebert
+
+21
+
+Scope statement example
+New web banking system
+INSIDE SCOPE BOUNDARY
+
+• Develop a proactive electronic commerce strategy that identifies the processes,
+products and services to be delivered through the web.
+• Develop an application system that supports all of the processes, products and
+services identified in the electronic commerce strategy.
+• The application system must integrate with the bank’s existing system.
+• ...
+OUTSIDE SCOPE BOUNDARY
+
+• Technology and organizational assessment of the current environment.
+• Customer resource management and data mining components.
+• ...
+University of Fribourg - Jean Hennebert
+
+22
+
+Type of scopes
+2.
+
+1. Project-Oriented Scope
+
+1.
+
+- Deliverables that support the
+project management and IT
+development processes
+-
+
+Examples
+-
+
+Business case, project charter and project plan, etc.
+
+2. Product-Oriented Scope
+- High-level features and functionality of the application system
+- First cut for requirements definition that will be defined in greater detail
+during the systems development life cycle (SDLC)
+- Examples
+-
+
+Add new customer, look up customer balance, print daily sales report by region,
+etc.
+
+University of Fribourg - Jean Hennebert
+
+23
+
+SCOPE MANAGEMENT PROCESSES
+
+(LINK WITH PMBOK)
+
+PMBOK® Scope Management Processes
+
+University of Fribourg - Jean Hennebert
+
+24
+
+Work Breakdown Structure
+The WBS represents a logical decomposition of the work to be
+performed and focuses on how the product, service, or result is
+naturally subdivided. It is an outline of what work is to be performed.
+
+Work Package
+A Work Package is one element of the logical
+decomposition of the WBS. It is a group or related tasks to
+be performed in order to meet a given objective. It is often
+associated to deliverables and milestones
+
+University of Fribourg - Jean Hennebert
+
+25
+
+Deliverables and milestones
+Deliverables are tangible, verifiable work products
+- Reports, presentations
+- Mockups, prototypes
+- Information system, code archive
+- …
+
+Milestones are significant events or achievements
+- Acceptance of deliverables or phase completion
+- Proof of concepts
+- Quality control
+- …
+
+• Deliverables and milestones keep team focused
+• Often associated to WPs
+University of Fribourg - Jean Hennebert
+
+27
+
+WP template
+
+University of Fribourg - Jean Hennebert
+
+28
+
+WP example
+
+University of Fribourg - Jean Hennebert
+
+29
+
+Developing the WBS
+• Often, the WBS is crafted from the phases and deliverables of the project
+• Phases and deliverables can be defined in a Deliverable Structure Chart
+
+University of Fribourg - Jean Hennebert
+
+30
+
+To which level of granularity should we go
+in the detail of a WP?
+• Comment on the following example.
+Activity
+6.2.2.1 send out invitations
+6.2.2.2 phase 1 test (1day)
+6.2.2.2.1 book room
+6.2.2.2.2 organize the staff
+6.2.2.2.3 do the test
+6.2.2.2.4 prepare reimbursment
+print / accouting etccc.
+6.2.2.3 phase 2 test
+
+University of Fribourg - Jean Hennebert
+
+31
+
+Developing the WBS
+• The WBS should be deliverable-oriented
+• The WBS should support the project's MOV
+- Ensure WBS allows for the delivery of all the project’s
+deliverables as defined in project scope
+
+• The level of detail should support planning and control
+• Developing the WBS should involve the people who
+will be doing the work
+• Learning cycles and lessons learned can support the
+development of a WBS
+
+University of Fribourg - Jean Hennebert
+
+32
+
+Time Estimating Techniques
+• Guesstimating
+- Based on feeling and not facts
+- Not a good method for estimating but often used by experienced
+project managers
+
+• Delphi Technique
+- Involves multiple, anonymous experts
+- Each expert makes an estimate
+- Estimates are compared
+-
+
+If close, can be averaged
+
+-
+
+If diverging, discussion and another iteration until consensus is reached
+start to consider risks
+
+University of Fribourg - Jean Hennebert
+
+35
+
+Project estimation
+• Time Boxing
+- Not really an estimation method but a way to limit the time on a
+given task or set of tasks
+- A “box” of time is allocated for a specific activity, task, or
+deliverable
+- The principle is that the box cannot be extended!
+- Can focus a team if used effectively
+- Can demoralize a team if used too often or ineffectively because
+of the increased stress or pressure on the project team to get
+things done
+
+University of Fribourg - Jean Hennebert
+
+37
+
+Project estimation
+• Top-Down Estimating
+- Top and middle managers determine overall project schedule
+and/or cost.
+- Lower level managers are expected to breakdown schedule/
+budget estimates into specific activities (WBS).
+- Often couched in terms of what a project should cost and how
+long it should take as decreed by a member of top
+management who thinks those parameters are appropriate.
+- May be a response to the business environment.
+- May lead to a death march project
+
+University of Fribourg - Jean Hennebert
+
+38
+
+Project estimation
+• Bottom-Up Estimating
+- Most common form of project estimation
+- Schedules & budgets are constructed from the WBS
+- Starts with people who will be doing the work
+- Schedules & budgets are the aggregate of detailed activities &
+costs
+
+• Analogous estimating
+- Based on similarity between current projects and others
+- Use information from previous, similar projects as a basis for
+estimation
+
+University of Fribourg - Jean Hennebert
+
+39
+
+Example WBS with Bottom Up Estimated
+Task Durations
+
+University of Fribourg - Jean Hennebert
+
+40
+
+Extra reading – The mythical man-month
+
+University of Fribourg - Jean Hennebert
+
+41
+
+Poker Planning
+
+Estimating
+Techniques
+Software Engineering
+approaches
+Lines of Code (LOC)
+Function Points
+COCOMO
+Heuristics
+
+University of Fribourg - Jean Hennebert
+
+42
+
+Parametric approaches for effort estimating
+in software development
+A parametric approach for eﬀort estimating will
+attempt to compute a function mapping the number of
+required functionalities to the effort by analysing large
+quantities of past projects.
+
+Fictive example
+
+University of Fribourg - Jean Hennebert
+
+43
+
+The Largest Deliverable of the Project –
+The Application System
+Software Engineering Estimation Model
+
+Source: Garmus and Herron, 1996; Jones 1998; Royce 1998
+University of Fribourg - Jean Hennebert
+
+44
+
+Software Engineering Metrics and
+Approaches
+• Lines of Code (LOC)
+- Often used for determining the size of the project
+- Most controversial
+-
+
+Count comments?
+
+-
+
+Declaring variables?
+
+-
+
+Efficient code vs. code bloat
+
+-
+
+Language differences
+
+-
+
+Easier to count afterwards than to estimate before programming begins
+
+University of Fribourg - Jean Hennebert
+
+45
+
+Function Points Analysis (FPA)
+•
+•
+•
+•
+•
+•
+
+Allan Albrecht, IBM – 1979
+Synthetic metric
+Independent of the Technology
+IFPUG standards (www.ifpug.org)
+Based and refined on empirical estimations!
+5 Primary Elements
+- Inputs
+- Outputs
+- Inquiries
+- Logical Files
+- Interfaces
+
+University of Fribourg - Jean Hennebert
+
+46
+
+Application boundary with FPA
+
+University of Fribourg - Jean Hennebert
+
+47
+
+Application boundary with FPA
+• Internal Logical Files
+- Ex: customer table in DB
+
+• External Interface Files
+- Same as 1 but maintained externaly
+
+• External Input
+- Ex: formular screen for user input
+
+• External Output
+- Ex: report or graphic generation
+
+• External Inquiry
+- Combination of input and output
+University of Fribourg - Jean Hennebert
+
+48
+
+FPA example (1/3)
+
+University of Fribourg - Jean Hennebert
+
+49
+
+FPA example (2/3)
+
+University of Fribourg - Jean Hennebert
+
+50
+
+Language
+
+Average Source LOC
+per Function Pont
+
+Average Source LOC
+for a 210 FP
+Application
+
+Access
+
+38
+
+7,980
+
+Basic
+
+107
+
+22,470
+
+C
+
+128
+
+26,880
+
+C++
+
+53
+
+11,130
+
+COBOL
+
+107
+
+22,470
+
+Delphi
+
+29
+
+6,090
+
+Java
+
+53
+
+11,130
+
+Machine Language
+
+640
+
+134,440
+
+Visual Basic 5
+
+29
+
+6,090
+
+University of Fribourg - Jean Hennebert
+
+51
+
+COCOMO – COnstructive COst MOdel
+• Parametric Model developed by Barry Boehm in 1981
+• 1st step is to determine the project types
+- Organic
+-
+
+Routine projects where the work is expected to go smoothly with few
+problems
+
+- Embedded
+-
+
+Challenging projects that may be new ground for the organization or
+project team
+
+- Semi-detached
+-
+
+In between organic and embedded. Projects that may not be simple and
+straightforward, but there is a high degree of confidence that the project
+team can meet the challenge
+
+University of Fribourg - Jean Hennebert
+
+52
+
+COCOMO Models (Effort)
+• Organic – Routine
+- Person Months = 2.4 * KDSI1.05
+
+• Embedded – Challenging
+- Person Months = 3.6 * KDSI1.20
+
+• Semi-Detached – Middle
+- Person Months = 3.0 * KDSI1.12
+
+• KDSI = thousands of delivered source instructions
+
+University of Fribourg - Jean Hennebert
+
+53
+
+COCOMO – Effort Example
+• Semi-Detached
+- We estimate that the software includes 210 Function Points
+
+210 FP * 53 = 11,130 Java LOC
+Person Months = 3.0 * KDSI1.12
+= 3.0 * (11.13) 1.12
+= 44.6
+
+University of Fribourg - Jean Hennebert
+
+54
+
+COCOMO Models (Duration)
+• People and months are not always interchangeable.
+Estimating the real duration involves a factor.
+Organic
+Duration = 2.5 * Effort0.38
+Semi-Detached
+Duration = 2.5 * Effort0.35
+Embedded
+Duration = 2.5 * Effort0.32
+
+University of Fribourg - Jean Hennebert
+
+55
+
+COCOMO duration example
+Duration = 2.5 * Effort0.35
+= 2.5 * 44.6 0.35
+= 9.44 months
+People Required = Effort / Duration
+= 44.6 / 9.44
+= 4.72
+≃ 5 persons
+
+University of Fribourg - Jean Hennebert
+
+56
+
+COCOMO –
+COnstructive COst MOdel
+• COCOMO Model Types
+- Basic
+- Intermediate
+- Advanced
+- COCOMO II
+
+University of Fribourg - Jean Hennebert
+
+57
+
+Other estimating methods and tools
+• Other heuristics do exist
+• See for ex book of T. Capers Jones: “Estimating
+Software Costs”
+• Automated estimating tools are available
+- COCOMO II
+- SLIM
+- CHECKPOINT
+- Knowledge Plan
+
+University of Fribourg - Jean Hennebert
+
+58
+
+Limitation of estimation approaches
+Activity
+
+• What to do if different methodologies
+(delphi, cocomo2, pert, ...) gives you
+radically different estimates?
+• What are the limits of such project
+schedule and budget estimation
+procedures?
+
+University of Fribourg - Jean Hennebert
+
+59
+
+Sequencing
+and scheduling
+
+University of Fribourg - Jean Hennebert
+
+60
+
+Here we are
+
+✔
+✔
+✔
+✔
+
+✔
+
+✔
+
+University of Fribourg - Jean Hennebert
+
+61
+
+Project duration
+Activity
+
+1. Read the following table
+2. Build a graphical representation of the
+table
+3. What is the duration of the project ?
+4. Optional question: how to include
+incertitude in tasks estimations
+
+University of Fribourg - Jean Hennebert
+
+62
+
+Activity
+
+Description
+
+Estimated
+Duration Predecessor
+(Days)
+
+A
+B
+
+Evaluate current technology platform
+Define user requirements
+
+2
+5
+
+None
+A
+
+C
+
+Design Web page layouts
+
+4
+
+B
+
+D
+E
+
+Set-up Server
+Estimate Web traffic
+
+3
+1
+
+B
+B
+
+F
+
+Test Web pages and links
+
+4
+
+C,D
+
+G
+
+Move web pages to production environment
+
+3
+
+D,E
+
+H
+I
+
+Write announcement of intranet for corp. newsletter
+Train users
+
+2
+5
+
+F,G
+G
+
+J
+
+Write report to management
+
+1
+
+H,I
+
+University of Fribourg - Jean Hennebert
+
+63
+
+Project schedule
+The project schedule builds upon the WBS by
+identifying the sequence of activities as well as the
+interdependencies.
+• In other words: put it all together to determine the start and end
+dates for the project
+• Various project management tools can be used to build the
+network of activities
+• Iterations may be necessary
+- To refine the schedule
+
+• A realistic project schedule is the goal!
+University of Fribourg - Jean Hennebert
+
+64
+
+Tools for scheduling
+•
+•
+•
+•
+•
+•
+•
+
+Gantt Charts
+Project Network Diagrams
+Activity on the Node (AON)
+Critical Path Analysis
+Program Evaluation and Review Technique (PERT)
+Precedence Diagramming Method (PDM)
+Monte-Carlo simulations
+
+University of Fribourg - Jean Hennebert
+
+65
+
+Gantt chart for planning
+
+University of Fribourg - Jean Hennebert
+
+66
+
+Gantt chart - reporting project’s progress
+
+University of Fribourg - Jean Hennebert
+
+67
+
+Project Network Diagrams
+• Similar to Gantt chart, they build a visual
+representation of the workflow of activities and tasks.
+• Different to Gantt chart, they add logical information
+about the sequence and the dependencies.
+• Sub-tools in this family:
+- Activity on the Node (AON)
+- Critical Path Analysis
+- Program Evaluation and Review Technique (PERT)
+- Precedence Diagramming Method (PDM)
+
+University of Fribourg - Jean Hennebert
+
+68
+
+Activity On the Node (AON)
+
+The AON diagram is built upon an activity analysis table
+
+University of Fribourg - Jean Hennebert
+
+69
+
+Activity analysis for AON
+Activity
+
+Description
+
+Estimated
+Duration
+(days)
+2
+5
+
+Predecessor
+
+A
+B
+
+Evaluate current technology platform
+Define user requirements
+
+C
+
+Design Web page layouts
+
+4
+
+B
+
+D
+E
+
+Set-up Server
+Estimate Web traffic
+
+3
+1
+
+B
+B
+
+F
+
+Test Web pages and links
+
+4
+
+C,D
+
+G
+
+Move web pages to production environment
+
+3
+
+D,E
+
+H
+I
+
+Write announcement of intranet for corp. newsletter
+Train users
+
+2
+5
+
+F,G
+G
+
+J
+
+Write report to management
+
+1
+
+H,I
+
+University of Fribourg - Jean Hennebert
+
+None
+A
+
+70
+
+Critical path
+The Critical Path determines the shortest time the
+project can be completed
+• Build the possible activity paths and determine the longest path (see next
+table)
+• Must be monitored and managed!
+- The Critical Path can change
+- We can have multiple CPs
+- Fast tracking – running activities in parallel which were originally planned as sequential
+- Monitor the zero slack - the amount of time we can delay an activity before it delays
+the project
+University of Fribourg - Jean Hennebert
+
+71
+
+List of activity paths
+List of paths
+
+Path
+
+Total
+
+Path 1
+
+A+B+C+F+H+J
+2+5+4+4+2+1
+
+18
+
+Path 2
+Path 3
+Path 4
+Path 5
+
+University of Fribourg - Jean Hennebert
+
+A+B+D+F+H+J
+2+5+3+4+2+1
+A+B+D+G+H+J
+2+5+3+3+2+1
+A+B+D+G+I+J
+2+5+3+3+5+1
+A+B+E+G+I+J
+2+5+1+3+5+1
+
+17
+16
+19*
+17
+
+72
+
+PERT
+• Program Evaluation and Review Technique
+• Developed in 1950s to help manage the Polaris
+Submarine Project
+• Developed about the same time as the Critical Path
+Method
+- Often combined as PERT/CPM
+
+• Employs both a project network diagram with a
+statistical distribution
+
+University of Fribourg - Jean Hennebert
+
+73
+
+Activity analysis for PERT
+Most Likely
+Estimates
+(days)
+
+Pessimistic
+Estimates
+(days)
+
+Expected
+Duration
+a+4b+c
+6
+
+Activity
+
+Predecessor
+
+Optimistic
+Estimates
+(days)
+
+A
+
+None
+
+1
+
+2
+
+4
+
+2.2
+
+B
+
+A
+
+3
+
+5
+
+8
+
+5.2
+
+C
+
+B
+
+2
+
+4
+
+5
+
+3.8
+
+D
+
+B
+
+2
+
+3
+
+6
+
+3.3
+
+E
+
+B
+
+1
+
+1
+
+1
+
+1
+
+F
+
+C,D
+
+2
+
+4
+
+6
+
+4
+
+G
+
+D,E
+
+2
+
+3
+
+4
+
+3
+
+H
+
+F,G
+
+1
+
+2
+
+5
+
+2.3
+
+I
+
+G
+
+4
+
+5
+
+9
+
+5.5
+
+J
+
+H,I
+
+0.5
+
+1
+
+3
+
+1.3
+
+University of Fribourg - Jean Hennebert
+
+74
+
+List of PERT activity paths
+List of paths
+
+Path
+
+Total
+
+Path 1
+
+A+B+C+F+H+J
+2.2+5.2+3.8+4.0+2.3+1.3
+
+18.8
+
+Path 2
+Path 3
+Path 4
+Path 5
+
+A+B+D+F+H+J
+2.2+5.2+3.3+4.0+2.3+1.3
+A+B+D+G+H+J
+2.2+5.2+3.3+3.0+2.3+1.3
+A+B+D+G+I+J
+2.2+5.2+3.3+3.0+5.5+1.3
+A+B+E+G+I+J
+2.2+5.2+1.0+3.0+5.5+1.3
+
+University of Fribourg - Jean Hennebert
+
+18.3
+18.6
+20.5*
+18.2
+
+75
+
+Disclaimer about the 3 previous slides
+• There are actual statistical distributions behind task duration estimates
+- Distribution functions can be different for each and every task, depending to the
+nature of the task
+- For example: beta, normal, tent
+- The beta distribution corresponds to natural task completion (more effort to the end)
+
+• Some tools will deduce the “most likely” estimate column from the
+optimistic and pessimistic estimates making an assumption on the
+statistical distribution (for example beta)
+• Summing the expected durations is a simplistic approach and can lead
+to optimistic estimates
+- It all depends to the distribution of the different tasks durations
+- Recent tools such as @RISK uses Monte-Carlo simulation especially useful when
+the distributions are different from tasks to tasks.
+
+University of Fribourg - Jean Hennebert
+
+76
+
+Precedence Diagramming Method
+• Additional tool for understanding the relationships among project activities
+• Based on 4 fundamental relationships
+
+University of Fribourg - Jean Hennebert
+
+77
+
+Lead and lag times
+• Lead is starting the next task before the first task is
+complete
+- Example: Begin installing the operating systems when half of
+the PCs are set up
+
+• Lag (or negative lead) is the adding of a buffer of time
+before the next task begins
+- Example: Once the walls have been painted, wait one day
+before laying the carpet so that the walls have had a chance to
+dry
+
+University of Fribourg - Jean Hennebert
+
+78
+
+Project Management Software Tools
+• A number of project management software tools are
+available to plan and track the progress of your project
+• However, having a fundamental understanding of
+these project management techniques is important to
+make the most out of these software tools
+
+University of Fribourg - Jean Hennebert
+
+79
+
+Microsoft Project ® - Gantt Chart View
+
+University of Fribourg - Jean Hennebert
+
+80
+
+Microsoft Project ® - PERT Chart View
+
+University of Fribourg - Jean Hennebert
+
+81
+
+Microsoft Project ® - Calendar View
+
+University of Fribourg - Jean Hennebert
+
+82
+
+Other considerations on plans
+• Sometimes logical bindings between tasks and WPs
+are represented on functional diagrams
+• Sometimes, higher level planing are provided to have a
+global view of the project
+- Typically at the WP level
+
+• See examples next 2 slides
+
+University of Fribourg - Jean Hennebert
+
+83
+
+Example of functional view
+Express relationships between WPs
+
+Couches
+technologiques
+
+WP0 Gestion du projet
+
+WP1
+Sol et
+capteurs
+
+WP2
+Communication
+intégrée
+
+WP3
+Infrastructure cloud
+stockage et calculs
+
+WP4
+Analyse de
+données
+
+HEPIA - inSTI
+HEIG-VD - iICT
+
+Pilote
+
+EIA-FR - iCoSys
+
+WP5 Gestion des pilotes
+Tous
+
+University of Fribourg - Jean Hennebert
+
+84
+
+Example of high level plan
+View aggregated plan at the level of WPs
+
+Année 1
+1
+
+2
+
+Année 2
+3
+
+4
+
+5
+
+6
+
+7
+
+8
+
+9
+
+10
+
+11
+
+12
+
+13
+
+14
+
+15
+
+16
+
+17
+
+18
+
+WP0 - Gestion du projet
+WP1 - Sol et capteurs
+WP2 - Communication intégrée
+WP3 - Infrastructure cloud
+WP4 - Analyse des données et applications
+WP5 - Pilote marketing et santé
+
+University of Fribourg - Jean Hennebert
+
+85
+
+Developing the
+budget
+5 steps
+Type of costs
+
+University of Fribourg - Jean Hennebert
+
+86
+
+Developing the project budget
+1. Define what resources will be needed to perform the
+work
+2. Determine the quantity of resources that are needed
+3. Define the resource cost for each resource
+4. Calculate the activity cost
+5. Ensure that the resources are leveled
+- No over-allocations: resources have not been over assigned to
+more than one task scheduled at the same time
+- Few under-allocations: don’t leave resources doing nothing
+
+University of Fribourg - Jean Hennebert
+
+87
+
+Other costs
+• Mostly used:
+- Direct Costs
+-
+
+The direct cost of labor or other resources
+
+- Indirect Costs
+-
+
+The cost for covering such things as rent, utilities, insurance, etc.
+
+• Sometimes used:
+- Sunk Costs
+-
+
+Costs incurred prior to the project such as a project that has been restarted after a failed
+attempt
+
+- Learning Curve
+-
+
+Often have to “build one and throw it away” to understand a problem or a new technology
+
+- Reserves
+-
+
+Contingency funds to be used at the discretion of the project manager
+
+University of Fribourg - Jean Hennebert
+
+88
+
+Microsoft Project ® - Adding resources
+
+University of Fribourg - Jean Hennebert
+
+89
+
+Microsoft Project ® - Project status
+
+University of Fribourg - Jean Hennebert
+
+90
+
+PROJECT COST MANAGEMENT
+
+(LINK WITH PMBOK)
+
+PMBOK® Project Cost Management
+• Resource planning
+• Cost estimating
+Based upon the activities, their time estimates, and the resource
+requirements, a cost estimate for each activity can be developed.
+
+• Cost budgeting
+Once estimation is obtained, an overall cost estimated for the project can
+be made. Once approved, this estimate becomes the project budget
+
+• Cost control
+Proper processes and procedures are put into place to control
+changes to the project bugdet
+
+University of Fribourg - Jean Hennebert
+
+91
+
+Choosing a SDLC methodology
+
+• What methodology are we going to chose to execute
+the plan and develop the system?
+• We can chose from strict waterfall to pure agile with a
+set of intermediary methodologies - see slides of PHASE III for more details
+• The choice will depend to the context of the project
+• The chosen methodology will have impacts on the
+way we do plan the project in this PHASE II
+- on the WBS
+- on the level of a priori details of planning
+- on the used estimation techniques
+University of Fribourg - Jean Hennebert
+
+93
+
+Impact of the methodology on the WBS
+• A waterfall approach will typically show a WBS synchronized
+with the phases of the SDLC
+- WP1: Analysis
+- WP2: Design
+- WP3: Implementation
+- WP4: Tests
+
+• An agile approach will typically show a WBS synchronized with
+the releases including a rough description of product features
+for each release
+- WP1: Release 1.0
+- WP2: Release 2.0
+- ...
+University of Fribourg - Jean Hennebert
+
+94
+
+Impact of the methodology on the level of
+details in planning
+• Waterfall will attempt to plan everything precisely
+- Change will be very embarrassing
+- Uncertainty on tasks duration is covered by inflating estimates
+
+• Agility will plan a un-detailed set of product
+functionalities that will be prioritized
+- Change is embraced
+- Uncertainty on tasks duration is part of the game
+
+University of Fribourg - Jean Hennebert
+
+95
+
+Impact of the methodology on the
+estimation techniques
+• A waterfall approach will typically use traditional
+estimation techniques
+- Delphi, FPA, Cocomo2
+
+• An agile approach will typically use bottom-up
+approaches
+- Often relying on a reduction of the uncertainty along the project,
+allowing for fast ongoing estimations
+- Often based on poker planning to estimate collaboratively
+
+University of Fribourg - Jean Hennebert
+
+96
+
+Some
+Conclusions
+
+University of Fribourg - Jean Hennebert
+
+97
+
+Conclusions
+• PHASE II: develop project plan and charter
+- Derive scope from MOV
+- Establish the WBS
+- Estimate tasks
+- Sequence tasks
+- Assign resources to tasks
+- Assign cost to resources
+- Compute the schedule
+- Compute the budget
+
+University of Fribourg - Jean Hennebert
+
+98
+
+Conclusions
+• Task estimating techniques
+- Use more than one technique for estimating
+-
+
+Delphi
+
+-
+
+FPA + Cocomo2
+
+-
+
+Analogous estimates
+
+-
+
+Poker planning
+
+- If estimates from different techniques are close enough, average
+them
+- Adjust estimate based on experience
+- Contract game negotiations may lead to unrealistic estimations
+
+University of Fribourg - Jean Hennebert
+
+99
+
+Conclusions
+• There are tools to build and present the project schedule
+- The base is the Gantt chart
+- Variations around network diagrams
+-
+
+Activity On the Nodes – AON
+
+-
+
+Critical Path Analysis – CPM
+
+-
+
+Program Evaluation and Review Technique – PERT
+
+-
+
+Precedence Diagramming Method – PDM
+
+• The project budget is computed from the tasks and
+schedule
+- Based on human resource occupation from the schedule
+- Based eventually on other types of costs
+University of Fribourg - Jean Hennebert
+
+100
+
+Conclusions
+• Finalizing the Project Schedule and Budget
+- The project schedule and budget may require several iterations
+before it is acceptable to the sponsor, the project manager, and
+the project team
+- Once the project schedule and project plan are accepted, the
+project plan becomes the baseline plan.
+- Once accepted, the project manager and project team have the
+authority to execute or carry out the plan ; we enter in PHASE III
+
+University of Fribourg - Jean Hennebert
+
+101
+
+✔ Strategy
+
+✔ Tactic
+
+University of Fribourg - Jean Hennebert
+
+Project Life-Cycle (PLC) = classical project phases, applicable to all projects
+Software Development Life-Cycle (SDLC) = realization phase of an IT project
+
+102
+
+Time for some
+thinking
+
+University of Fribourg - Jean Hennebert
+
+103
+
+From strategy to tactic
+Activity
+
+• Can we now answer the tactic related questions?
+1. Who is the project manager, project sponsor?
+2. Who is on the project team? What role does everyone play?
+3. What is the scope of the project?
+4. How much will the project cost?
+5. How long will it take to complete the project?
+6. What resources and technology will be required?
+7. What approach, tools and techniques will be used to develop the information
+system?
+8. What tasks or activities will be required to perform the project work?
+9. How long will these tasks or activities take?
+10.Who will be responsible for performing these tasks or activities?
+11.What will the organization receive for the time, money and resources invested
+in this project?
+
+University of Fribourg - Jean Hennebert
+
+104
+
+
