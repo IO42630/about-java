@@ -1,4 +1,4 @@
-package com.olexyn.about.java._72_jetty;
+package com.olexyn.about.java.jetty;
 
 import org.eclipse.jetty.server.Connector;
 import org.eclipse.jetty.server.Server;

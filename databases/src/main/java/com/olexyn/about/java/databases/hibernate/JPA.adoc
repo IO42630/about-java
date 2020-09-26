@@ -1,9 +1,10 @@
-== JPA
-* Java Persistence API
+== JPA (Java Persistence API)
 ** is a spec
 
 === Hibernate
-* is an implementation of JPA
+* Is an implementation of JPA
+** Thus for documentation of what the interfaces are
+supposed to do, read the JPA javadoc.
 
 image::hibernate_overview.png[]
 
