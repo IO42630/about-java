@@ -1,0 +1,11 @@
+conn0: url=jdbc:h2:mem:db1 user=USER
+
+ | CUSTOMER_ID | NAME  |
+ | 1           | Peter |
+ | 2           | Paul  |
+ | 3           | Alice |
+
+ | ORDER_ID | ITEM   | CUSTOMER_ID |
+ | 1        | Cake   | 1           |
+ | 2        | Coffee | 3           |
+ | 3        | Tea    | 4           |

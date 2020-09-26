@@ -1,6 +1,7 @@
 package com.olexyn.about.java.databases.jdbc;
 
-import com.olexyn.about.java.h2.H2Server;
+import com.olexyn.about.java.databases.h2.H2Server;
+
 
 import java.sql.*;
 import java.util.HashMap;
@@ -19,6 +20,9 @@ class Main {
 
         ResultSet rs;
         rs = stmt.executeQuery("SELECT * FROM customers");
+        helpers.printResult(rs);
+
+        rs = stmt.executeQuery("SELECT * FROM orders");
         helpers.printResult(rs);
 
         int result;

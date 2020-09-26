@@ -1,4 +1,4 @@
-package com.olexyn.about.java.streams;
+package com.olexyn.about.java.stream;
 
 /**
  * Hello world!

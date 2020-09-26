@@ -1,43 +1,108 @@
 package com.olexyn.about.java.databases.jdbc;
 
 import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.HashMap;
-import java.util.Map;
+import java.util.ArrayList;
+import java.util.List;
+
+class TableDto{
+
+    private List<List<String>> table = null;
+
+    private TableDto(){}
+
+    TableDto(List<List<String>> input){
+        this.table = input;
+    }
+
+    public List<List<String>> getTable() {
+        return table;
+    }
+}
+
 
 public class Helpers {
 
     public String getResult(ResultSet rs) throws SQLException {
 
-        return mapToString(resultSetToMap(rs));
+        return tableToString(resultSetToTable(rs));
     }
 
 
-    public Map<Integer, String> resultSetToMap(ResultSet rs) throws SQLException {
+    public TableDto resultSetToTable(ResultSet rs) throws SQLException {
 
+        List<List<String>> result = new ArrayList<>();
 
-        Map<Integer, String> idToNameMap = new HashMap<>();
+        ResultSetMetaData rsMd = rs.getMetaData();
+        int columnsNumber = rsMd.getColumnCount();
+
+        List<String> header = new ArrayList<>();
+        for (int i = 1; i <= columnsNumber; i++) {
+            header.add(rsMd.getColumnName(i));
+        }
+        result.add(header);
 
         while (rs.next()) {
-            int id = rs.getInt("customer_id");
-            String name = rs.getString("name");
-            idToNameMap.put(id, name);
+
+            List<String> values = new ArrayList<>();
+            for (int i = 1; i <= columnsNumber; i++) {
+                values.add(rs.getString(i));
+            }
+            result.add(values);
         }
 
-        return idToNameMap;
+        return new TableDto( result        );
     }
 
 
-    public String mapToString(Map<Integer, String> map) {
+    public String tableToString(TableDto input) {
+
+        List<List<String>> table = input.getTable();
+
+        int nrOfCols = table.get(0).size();
+        int[] maxCellLengths = new int[nrOfCols];
+
+        for(int rowNr =0; rowNr<table.size();rowNr++){
+            for (int columnNr =0; columnNr<nrOfCols;columnNr++){
+                String cell = table.get(rowNr).get(columnNr);
+                if(cell.length()>maxCellLengths[columnNr]){
+                    maxCellLengths[columnNr]=cell.length();
+                }
+            }
+
+        }
+
+
+
+
 
         StringBuilder sb = new StringBuilder();
-        for (Map.Entry<Integer, String> entry : map.entrySet()) {
+        for (List<String> row : table) {
             sb.append(" | ");
-            sb.append(entry.getKey().toString());
-            sb.append(" | ");
-            sb.append(entry.getValue());
-            sb.append(" |\n");
+
+
+
+
+
+            for (int columnNr=0;columnNr<row.size();columnNr++){
+                String cell = row.get(columnNr);
+
+                sb.append(cell);
+                for(int x=cell.length(); x<maxCellLengths[columnNr];x++){
+                    sb.append(" ");
+                }
+
+
+                sb.append(" | ");
+            }
+            sb.append("\n");
+
+
+
+
+
         }
 
         return sb.toString();
