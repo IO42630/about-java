@@ -1,4 +1,4 @@
-package com.olexyn.about.java.jdbc;
+package com.olexyn.about.java.databases.jdbc;
 
 import com.olexyn.about.java.h2.H2Server;
 

@@ -1,4 +1,4 @@
-package com.olexyn.about.java.jdbc;
+package com.olexyn.about.java.databases.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
