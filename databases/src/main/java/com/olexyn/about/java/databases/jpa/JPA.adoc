@@ -1,2 +1,6 @@
 == JPA
-Java Persistence API
+* Java Persistence API
+** is a spec
+
+=== Hibernate
+* is an implementation of JPA
