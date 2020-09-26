@@ -1,4 +1,4 @@
-package com.olexyn.about.java.methods;
+package com.olexyn.about.java.method;
 
 import java.util.List;
 

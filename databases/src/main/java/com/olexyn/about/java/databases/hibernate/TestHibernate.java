@@ -1,8 +1,8 @@
-package com.olexyn.about.java.databases.jpa;
+package com.olexyn.about.java.databases.hibernate;
+
 
 import org.hibernate.Session;
 
-import com.howtodoinjava.hibernate.test.dto.EmployeeEntity;
 
 public class TestHibernate {
 
@@ -21,4 +21,5 @@ public class TestHibernate {
         session.getTransaction().commit();
         HibernateUtil.shutdown();
     }
+
 }
