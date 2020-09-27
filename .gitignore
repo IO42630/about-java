@@ -5,3 +5,5 @@
 
 /spring/target/classes/spring.xml
 /spring/target/classes/spring-aware.xml
+
+/out/
