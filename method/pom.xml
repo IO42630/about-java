@@ -10,10 +10,10 @@
   </parent>
 
   <groupId>com.olexyn.about.java.method</groupId>
-  <artifactId>methods</artifactId>
+  <artifactId>method</artifactId>
   <version>0.1</version>
 
-  <name>methods</name>
+  <name>method</name>
   <!-- FIXME change it to the project's website -->
   <url>http://www.Example.com</url>
 
