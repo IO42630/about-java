@@ -16,7 +16,7 @@ public class InstanceMethodOfArbitraryObjectReference {
 
         otherClassUser(o -> o.function(o));
         otherClassUser(o -> {});
-        otherClassUser(SelfFunction::function); // TODO why is this not ok?
+        //otherClassUser(SelfFunction::function); // TODO why is this not ok?
     }
 
 
