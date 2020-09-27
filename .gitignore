@@ -6,4 +6,6 @@
 /spring/target/classes/spring.xml
 /spring/target/classes/spring-aware.xml
 
-/out/
+*/out/
+*/target/cxf-codegen-plugin-markers/
+*/target/classes/wsdl/
