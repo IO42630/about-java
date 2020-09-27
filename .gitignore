@@ -3,9 +3,7 @@
 *.class
 *.plantuml
 
-/spring/target/classes/spring.xml
-/spring/target/classes/spring-aware.xml
 
 */out/
 */target/cxf-codegen-plugin-markers/
-*/target/classes/wsdl/
+*/target/classes/
