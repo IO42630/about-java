@@ -1,0 +1,3 @@
+=== SQL
+
+NUMBER(x,y) : x size of number, y = decimals.
