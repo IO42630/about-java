@@ -8,7 +8,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 class Main {
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, InterruptedException {
 
         Helpers helpers = new Helpers();
 
@@ -42,6 +42,10 @@ class Main {
 
         rs = stmt.executeQuery("SELECT * FROM customers");
         helpers.printResult(rs);
+
+        while (true){
+            Thread.sleep(500);
+        }
     }
 
 
