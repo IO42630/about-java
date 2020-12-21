@@ -3,14 +3,18 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-
-  <groupId>com.olexyn.about.java.fields</groupId>
-  <artifactId>fields</artifactId>
+  <parent>
+    <artifactId>java</artifactId>
+    <groupId>com.olexyn.about.java</groupId>
+    <version>0.1</version>
+  </parent>
+  <groupId>com.olexyn.about.java.variables</groupId>
+  <artifactId>variables</artifactId>
   <version>0.1</version>
 
   <name>fields</name>
   <!-- FIXME change it to the project's website -->
-  <url>http://www.Example.com</url>
+  <url>http://www.olexyn.com</url>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

@@ -1,4 +1,4 @@
-package com.olexyn.about.java.fields;
+package com.olexyn.about.java.variables;
 
 /**
  * Hello world!
