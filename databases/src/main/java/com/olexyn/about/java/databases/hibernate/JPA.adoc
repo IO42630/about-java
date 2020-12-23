@@ -31,7 +31,12 @@ They are associated with exactly one
 | TransationFactory | > factory for Transaction
 |===
 
-
+==== Annotations
+[cols="1,4"]
+|===
+| @Basic | for basic columns, such as String.
+| @Transient |
+|===
 
 {empty} +
 
