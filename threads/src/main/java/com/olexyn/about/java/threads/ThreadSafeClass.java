@@ -1,4 +1,4 @@
-package com.olexyn.about.java.thread;
+package com.olexyn.about.java.threads;
 
 import java.util.ArrayList;
 import java.util.Collections;

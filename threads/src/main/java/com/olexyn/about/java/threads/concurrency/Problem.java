@@ -1,14 +1,16 @@
-package com.olexyn.about.java.syncronization.concurrent_modification;
+package com.olexyn.about.java.threads.concurrency;
 
-public class SolutionFail {
+public class Problem {
 
     private static int variable = 1;
 
     public static void main(String... args) throws InterruptedException {
 
-        Thread t1 = new Thread(new Job());
+        Job job = new Job();
+
+        Thread t1 = new Thread(job);
         t1.setName("T1");
-        Thread t2 = new Thread(new Job());
+        Thread t2 = new Thread(job);
         t2.setName("T2");
 
         // set both threads to RUNNABLE.
@@ -25,7 +27,15 @@ public class SolutionFail {
 
 
     /**
-     * Because two job instances are created ?? synchronization is ineffective.
+     * Main injects T1 into Main.
+     * T1 evaluates condition as true.
+     * T1 sleeps.
+     * Main wakes up (100ms<200ms).
+     * Main injects T2 into Main.
+     * T2 evaluates condition as true.
+     * T2 sleeps.
+     * T1 modifies.
+     * T2 modifies.
      */
     private static class Job implements Runnable {
 
@@ -34,9 +44,10 @@ public class SolutionFail {
             try {modifyVariable(); } catch (InterruptedException ignored) { }
         }
 
-        public synchronized void modifyVariable() throws InterruptedException {
-            printThread(" finds: (variable > 0) is " + (variable>0));
+        public void modifyVariable() throws InterruptedException {
             if (variable > 0) {
+                printThread(" found: " + variable);
+
                 Thread.sleep(200); // add delay between condition and modification.
                 variable--;
                 printThread(" reduced to: " + variable);

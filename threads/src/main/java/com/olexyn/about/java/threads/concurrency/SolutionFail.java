@@ -1,16 +1,14 @@
-package com.olexyn.about.java.syncronization.concurrent_modification;
+package com.olexyn.about.java.threads.concurrency;
 
-public class Solution {
+public class SolutionFail {
 
     private static int variable = 1;
 
     public static void main(String... args) throws InterruptedException {
 
-        Job job = new Job();
-
-        Thread t1 = new Thread(job);
+        Thread t1 = new Thread(new Job());
         t1.setName("T1");
-        Thread t2 = new Thread(job);
+        Thread t2 = new Thread(new Job());
         t2.setName("T2");
 
         // set both threads to RUNNABLE.
@@ -27,15 +25,7 @@ public class Solution {
 
 
     /**
-     * Main injects T1 into Main.
-     * T1 evaluates condition as true.
-     * T1 sleeps.
-     * Main wakes up (100ms<200ms).
-     * Main injects T2 into Main.
-     * T2 can't enter modifyVariable() so it suspends
-     * T1 modifies.
-     * T2 can enter modifyVariable()
-     * T2 evaluates condition as false.
+     * Because two job instances are created ?? synchronization is ineffective.
      */
     private static class Job implements Runnable {
 

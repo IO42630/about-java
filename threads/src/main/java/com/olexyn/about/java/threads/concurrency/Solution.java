@@ -1,6 +1,6 @@
-package com.olexyn.about.java.syncronization.concurrent_modification;
+package com.olexyn.about.java.threads.concurrency;
 
-public class Problem {
+public class Solution {
 
     private static int variable = 1;
 
@@ -32,10 +32,10 @@ public class Problem {
      * T1 sleeps.
      * Main wakes up (100ms<200ms).
      * Main injects T2 into Main.
-     * T2 evaluates condition as true.
-     * T2 sleeps.
+     * T2 can't enter modifyVariable() so it suspends
      * T1 modifies.
-     * T2 modifies.
+     * T2 can enter modifyVariable()
+     * T2 evaluates condition as false.
      */
     private static class Job implements Runnable {
 
@@ -44,10 +44,9 @@ public class Problem {
             try {modifyVariable(); } catch (InterruptedException ignored) { }
         }
 
-        public void modifyVariable() throws InterruptedException {
+        public synchronized void modifyVariable() throws InterruptedException {
+            printThread(" finds: (variable > 0) is " + (variable>0));
             if (variable > 0) {
-                printThread(" found: " + variable);
-
                 Thread.sleep(200); // add delay between condition and modification.
                 variable--;
                 printThread(" reduced to: " + variable);
