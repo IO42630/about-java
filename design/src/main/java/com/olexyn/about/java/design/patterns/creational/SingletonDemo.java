@@ -1,4 +1,4 @@
-package patterns.creational;
+package com.olexyn.about.java.design.patterns.creational;
 
 //Singleton => one instance + global acess to it - - - - -
 public class SingletonDemo {

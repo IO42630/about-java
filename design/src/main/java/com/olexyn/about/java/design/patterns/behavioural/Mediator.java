@@ -1,5 +1,4 @@
-package patterns.behavioural;
-
+package com.olexyn.about.java.design.patterns.behavioural;
 /*
  * Mediator.
  * Define an object that encapsulates how a set of objects interact.

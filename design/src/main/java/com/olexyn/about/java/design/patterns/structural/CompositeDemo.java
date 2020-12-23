@@ -1,4 +1,4 @@
-package patterns.structural;
+package com.olexyn.about.java.design.patterns.structural;
 
 import java.util.ArrayList;
 import java.util.List;

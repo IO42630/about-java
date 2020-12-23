@@ -1,5 +1,4 @@
-package patterns.behavioural;
-
+package com.olexyn.about.java.design.patterns.behavioural;
 /*
  * Iterator.
  * Provide a way to access the elements of an aggregate object sequentially

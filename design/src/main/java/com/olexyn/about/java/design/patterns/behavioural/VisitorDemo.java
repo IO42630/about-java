@@ -1,4 +1,4 @@
-package patterns.behavioural;
+package com.olexyn.about.java.design.patterns.behavioural;
 
 /*
  * The visitor-pattern outsources logic from an Element to a Visitor.

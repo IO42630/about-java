@@ -1,4 +1,4 @@
-package patterns.creational;
+package com.olexyn.about.java.design.patterns.creational;
 
 /*
  * Abstract Factory.

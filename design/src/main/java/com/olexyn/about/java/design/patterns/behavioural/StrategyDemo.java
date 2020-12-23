@@ -1,5 +1,4 @@
-package patterns.behavioural;
-
+package com.olexyn.about.java.design.patterns.behavioural;
 /*
  * Strategy.
  * Define a family of algorithms(1), lets the clients choose the implementation (2).

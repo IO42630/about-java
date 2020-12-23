@@ -1,5 +1,4 @@
-package patterns.behavioural;
-
+package com.olexyn.about.java.design.patterns.behavioural;
 /*
  * Template Method.
  * template for algorithm(1),

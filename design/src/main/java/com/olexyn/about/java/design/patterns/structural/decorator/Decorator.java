@@ -1,4 +1,4 @@
-package patterns.structural.decorator;
+package com.olexyn.about.java.design.patterns.structural.decorator;
 
 /*
  * DECORATOR<br>

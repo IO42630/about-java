@@ -1,4 +1,4 @@
-package patterns.behavioural;
+package com.olexyn.about.java.design.patterns.behavioural;
 
 /*
  * Command.

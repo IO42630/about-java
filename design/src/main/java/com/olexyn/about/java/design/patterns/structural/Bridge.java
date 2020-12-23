@@ -1,4 +1,4 @@
-package patterns.structural;
+package com.olexyn.about.java.design.patterns.structural;
 
 /*
  * Bridge.

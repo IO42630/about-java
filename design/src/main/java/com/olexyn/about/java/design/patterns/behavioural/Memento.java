@@ -1,5 +1,4 @@
-package patterns.behavioural;
-
+package com.olexyn.about.java.design.patterns.behavioural;
 /*
  * Memento.
  * Without violating encapsulation, capture and externalize an object's internal state
