@@ -17,7 +17,9 @@ LocalTime time2 = LocalTime.of(6, 15, 30);      // + seconds
 LocalTime time3 = LocalTime.of(6, 15, 30, 200); // + nanoseconds
 
 [source,java]
-public static LocalDateTime of(int year, Month month,int dayOfMonth,
+public static LocalDateTime of(
+    int year,
+    Month month, int dayOfMonth,
     int hour, int minute, int second, int nanos)
 LocalDateTime dateTime1 = LocalDateTime.of(2015, Month.JANUARY, 20, 6, 15, 30);
 //
@@ -48,27 +50,32 @@ ZoneId.getAvailableZoneIds().stream()
 * this also means these methods can be chained.
 
 [source,java]
-LocalDate contains the following methods:
-.plusDays(int i);
-.plusWeeks(int i);
-.plusMonths(int i);
-.plusYears(int i);
-same is available with minus
-LocalTime contains the following methods
-.plusHours
-.plusMinutes
-.plusSeconds
-.plusNanos
+LocalDate
+    .plusDays(int i);
+    .plusWeeks(int i);
+    .plusMonths(int i);
+    .plusYears(int i);
+// same is available with minus
+LocalTime
+    .plusHours
+    .plusMinutes
+    .plusSeconds
+    .plusNanos
 
-=== Epoch
+==== Epoch
 * 01.01.1970 GMT Unix introduced date standards.
-** LocalDate has long toEpochDay() : days since 01.01.1970
-** LocalDateTime, ZoneDateTime has long toEpochSecond() : seconds since 01.01.1970
+** LocalDate has `long` `toEpochDay()` : days since 01.01.1970
+** `LocalDateTime`, `ZoneDateTime` has `long` `toEpochSecond()` : seconds since 01.01.1970
 
+{empty} +
 
-* Period can store an arbitrary amount of time
+image::API-temporal.png[]
 
-** Period.ofMonths(int i)
+{empty} +
+
+==== Period
+* `Period` can store an arbitrary amount of *days*.
+* Temporal
 
 [source,java]
 Period
@@ -78,29 +85,57 @@ Period
     .ofDays(int i)
     .of(int year, int month, int day)
 //
-Period wrong = Period.ofYears(1).ofWeeks(1); // every week
-// same as
-Period wrong = Period.ofYears(1);
-wrong = Period.ofWeeks(1);
+Period wrong = Period.ofYears(1).ofWeeks(1); // P7D , reassigns to the new value
 //
 System.out.printIn(Period.of(1,2,3));   // P1Y2M3D
 System.out.println(Period.ofMonths(3)); // P3M
 System.out.println(Period.ofWeeks(3));  // P21D
 //
-// use
-LocalDate local = LocalDate.now()
-local = local.plus(Period.of(1,2,3));
-// can't add period to LocalTime, obviously -> UnsupportedTemporalTypeException
+LocalDate local = LocalDate.now().plus(Period.ofDays(2)); // OK
+LocalTime local = LocalTime.now().plus(Period.ofDays(2)); // UnsupportedTemporalTypeException
 
-===== Duration
+{empty} +
+
+==== Duration
+* `Duration` (=period of time) can store an arbitrary amount of *time*.
+* Doesn't have combined "constructor" like (1,2,3)
+* Has a "constructor" for iface `TemporalUnit` which is typically  implemented by `ChronoUnit`.
 
 [source,java]
-Duration daily = Duration.ofDays(1);            // PT24H
-Duration hourly = Duration.ofHours(1);          // PT1H
-Duration everyMinute = Duration.ofMinutes(1);   // PT1M
-Duration everySecond = Duration.ofSeconds(1);   // PT1S
-Duration everyMilli = Duration.ofMillis(1);     // PT0.001S
-Duration everyNano = Duration.ofNanos(1);       // PT0.000000001S
+Duration day = Duration.ofDays(1);      // PT24H
+Duration hour = Duration.ofHours(1);    // PT1H
+Duration min = Duration.ofMinutes(1);   // PT1M
+Duration sec = Duration.ofSeconds(1);   // PT1S
+Duration milli = Duration.ofMillis(1);  // PT0.001S
+Duration nano = Duration.ofNanos(1);    // PT0.000000001S
+//
+Duration daily = Duration.of(1, ChronoUnit.DAYS);
+Duration hourly = Duration.of(1, ChronoUnit.HOURS);
+Duration everyMinute = Duration.of(1, ChronoUnit.MINUTES);
+Duration everyTenSeconds = Duration.of(10, ChronoUnit.SECONDS);
+Duration everyMilli = Duration.of(1, ChronoUnit.MILLIS);
+Duration everyNano = Duration.of(1, ChronoUnit.NANOS);
+//
+LocalTime local = LocalTime.of(6, 15).plus(Duration.ofHours(23); // 05:15 -> wraps around
+LocalDate local = LocalDate.now().plus(Duration.ofHours(2)); // UnsupportedTemporalTypeException
+LocalDate local = Localdate.now().plus(Duration.ofDays(1)); // Unsupported unit: Seconds
+
+{empty} +
+
+==== ChronoUnit
+
+[source,java]
+LocalTime one = LocalTime.of(5, 15);
+LocalTime two = LocalTime.of(6, 30);
+LocalDate date = LocalDate.of(2016, 1, 20);
+System.out.println(ChronoUnit.HOURS.between(one, two));    // 1
+System.out.println(ChronoUnit.MINUTES.between(one, two));  // 75
+System.out.println(ChronoUnit.MINUTES.between(one, date)); // DateTimeException
+
+{empty} +
+
+==== Instant
+
 
 
 
