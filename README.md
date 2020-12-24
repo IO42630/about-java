@@ -4,11 +4,8 @@ Because data tends to expand unevenly, this collection will inevitably contain r
 However, they shall be resolved in time.
 
 
-### Overview
+### Progress
 
-        
-
-Progress
-resume Chapter 3 p. 134
-resume Chapter 5 p. 248
-resume Ch 6 p. 305
+* resume Chapter 3 p. 134
+* resume Chapter 5 p. 248
+* resume Ch 6 p. 305

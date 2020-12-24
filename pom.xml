@@ -46,6 +46,7 @@
         <module>jndi</module>
         <module>about</module>
         <module>testing</module>
+        <module>jython</module>
     </modules>
     <dependencies>
         <dependency>

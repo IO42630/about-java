@@ -1,8 +1,0 @@
-### Glossary of Abbreviations
-
-Abbreviation | -
----|---
-C-Error | Compile-time error.
-R-Error | Runtime error.
-`uE`    | Unchecked Exception, also called RuntimeException. However both `uE` and `cE` occur at Runtime.
-`cE`    | Checked Exception

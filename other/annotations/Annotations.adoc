@@ -1,6 +1,0 @@
-= Annotations
-
-* is a type of metadata
-** can be user by the compiler / or at runtime
-** `@Override` : promise - if broken -> `C-Error`
-*** `@Override` also includes implementing an interface.

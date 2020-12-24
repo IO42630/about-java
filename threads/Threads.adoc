@@ -327,3 +327,11 @@ image::img/JoinExample.png[]
 *** `Thread.MAX_PRIORITY`
 
 
+// # THREAD
+void ThreadContention(){
+// thread a holds lock.
+// thread b waits for the lock to be lifted.
+}
+
+void Deadlock(){
+//
