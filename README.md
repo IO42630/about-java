@@ -6,21 +6,6 @@ However, they shall be resolved in time.
 
 ### Overview
 
-* about
-* deployment
-    * deployment
-        * imports
-    * jar
-    * tools
-* declarations
-    * classes
-        * object
-        * interface
-    * methods
-        * lambdas
-    * collections
-        * generics
-* stream
         
 
 Progress

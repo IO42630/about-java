@@ -11,9 +11,7 @@
   <artifactId>webservice</artifactId>
   <version>0.1</version>
 
-  <name>webservice</name>
-  <!-- FIXME change it to the project's website -->
-  <url>http://www.olexyn.com</url>
+
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>

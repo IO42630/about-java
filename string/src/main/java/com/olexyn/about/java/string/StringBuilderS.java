@@ -1,4 +1,4 @@
-package string;
+package com.olexyn.about.java.string;
 
 import java.util.ArrayList;
 import java.util.List;

@@ -1,5 +1,5 @@
 
-
+package com.olexyn.about.java.testing;
 
 import org.junit.Test;
 

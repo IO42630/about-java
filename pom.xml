@@ -5,7 +5,9 @@
     <artifactId>java</artifactId>
     <version>0.1</version>
     <packaging>pom</packaging>
+
     <name>about-java</name>
+
     <url>http://www.olexyn.com</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -29,7 +31,6 @@
         <module>exceptions</module>
         <module>javafx</module>
         <module>classes</module>
-        <module>jdbc</module>
         <module>primitives</module>
         <module>operators</module>
         <module>examples</module>
@@ -42,6 +43,9 @@
         <module>threads</module>
         <module>threads</module>
         <module>time</module>
+        <module>jndi</module>
+        <module>about</module>
+        <module>testing</module>
     </modules>
     <dependencies>
         <dependency>

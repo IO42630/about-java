@@ -1,3 +1,5 @@
+package com.olexyn.about.java.testing;
+
 import java.util.List;
 
 public class ToBeTested {
