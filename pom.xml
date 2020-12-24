@@ -47,6 +47,8 @@
         <module>about</module>
         <module>testing</module>
         <module>jython</module>
+        <module>other</module>
+        <module>string</module>
     </modules>
     <dependencies>
         <dependency>
