@@ -1,4 +1,4 @@
-package com.olexyn.about.java;
+package com.olexyn.about.java.other;
 
 import java.util.Optional;
 

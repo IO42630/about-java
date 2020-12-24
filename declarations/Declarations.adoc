@@ -60,7 +60,7 @@ one per file - matches the file name. | |  | | YES
 * placement:
 ** before/after _access modifier_
 ** before
-*** `class`
+*** `classes`
 *** _return type_
 
 [options=header]

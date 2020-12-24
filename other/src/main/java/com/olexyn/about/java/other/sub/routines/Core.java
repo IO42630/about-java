@@ -16,9 +16,9 @@ public class Core {
 
 
 		System.out.println("loading pool ");
-		Map<Integer, File> pool = new sub.routines.Routines().loadPool("/home/user/ws/", "file");
+		Map<Integer, File> pool = new Routines().loadPool("/home/user/ws/", "file");
 
-		new sub.routines.Write().textPool("pool", pool);
+		new Write().textPool("pool", pool);
 
 		System.out.println("calcualting md5");
 

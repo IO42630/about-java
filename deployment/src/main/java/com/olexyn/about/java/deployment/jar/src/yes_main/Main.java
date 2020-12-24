@@ -1,6 +1,6 @@
 package com.olexyn.about.java.deployment.jar.src.yes_main;
 
-import jar.src.no_main.ClassInJar;
+import com.olexyn.about.java.deployment.jar.src.no_main.ClassInJar;
 
 
 public class Main {

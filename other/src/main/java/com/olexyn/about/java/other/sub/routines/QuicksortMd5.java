@@ -1,10 +1,6 @@
 package com.olexyn.about.java.other.sub.routines;
 
 
-
-
-import sub.routines.Artifacts;
-
 import java.util.Map;
 
 public class QuicksortMd5 {

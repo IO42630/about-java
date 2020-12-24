@@ -1,7 +1,7 @@
 package com.olexyn.about.java.classes.classes.examples.inheritance.childpackage;
 
-import classes.examples.inheritance.parentpackage.parentpackage.Parent;
-import com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent;
+
+import com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.Parent;
 
 
 public class Child extends Parent {

@@ -4,7 +4,7 @@ import java.io.File;
 
 public class Artifacts {
 
-    static sub.routines.Tools tools = new sub.routines.Tools();
+    static Tools tools = new Tools();
 
     public MFile getMFile(File file){
         return new MFile(file);

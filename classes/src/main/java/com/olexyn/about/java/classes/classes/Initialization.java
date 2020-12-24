@@ -83,7 +83,7 @@ class B1 extends A1{
     static {System.out.print("2");}
     public static void main(String... args){
         System.out.print("3");
-        new com.olexyn.about.java.classes.interfaces.B();
+        new B();
         // prints 123
     }
 }
@@ -91,7 +91,7 @@ class B1 extends A1{
 class C1{
     public static void main(String... args){
         System.out.print("3");
-        new com.olexyn.about.java.classes.interfaces.B();
+        new B();
         // prints 312
     }
 }

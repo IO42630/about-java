@@ -9,18 +9,62 @@
     <groupId>com.olexyn.about.java.javafx</groupId>
     <artifactId>javafx</artifactId>
     <name>javafx</name>
-    <url>http://www.olexyn.com</url>
-    <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
-    </properties>
     <dependencies>
         <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx</artifactId>
-            <version>11</version>
-            <type>pom</type>
+            <groupId>javafx</groupId>
+            <artifactId>javafx.base</artifactId>
+            <version>11.0.2</version>
+            <scope>system</scope>
+            <systemPath>/home/user/app/javafx-sdk-11.0.2/lib/javafx.base.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>javafx</groupId>
+            <artifactId>javafx.fxml</artifactId>
+            <version>11.0.2</version>
+            <scope>system</scope>
+            <systemPath>/home/user/app/javafx-sdk-11.0.2/lib/javafx.fxml.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>javafx</groupId>
+            <artifactId>javafx.controls</artifactId>
+            <version>11.0.2</version>
+            <scope>system</scope>
+            <systemPath>/home/user/app/javafx-sdk-11.0.2/lib/javafx.controls.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>javafx</groupId>
+            <artifactId>javafx.graphics</artifactId>
+            <version>11.0.2</version>
+            <scope>system</scope>
+            <systemPath>/home/user/app/javafx-sdk-11.0.2/lib/javafx.graphics.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>javafx</groupId>
+            <artifactId>javafx.media</artifactId>
+            <version>11.0.2</version>
+            <scope>system</scope>
+            <systemPath>/home/user/app/javafx-sdk-11.0.2/lib/javafx.media.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>javafx</groupId>
+            <artifactId>javafx.swing</artifactId>
+            <version>11.0.2</version>
+            <scope>system</scope>
+            <systemPath>/home/user/app/javafx-sdk-11.0.2/lib/javafx.swing.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>javafx</groupId>
+            <artifactId>javafx.web</artifactId>
+            <version>11.0.2</version>
+            <scope>system</scope>
+            <systemPath>/home/user/app/javafx-sdk-11.0.2/lib/javafx.web.jar</systemPath>
+        </dependency>
+        <dependency>
+            <groupId>javafx</groupId>
+            <artifactId>javafx.swt</artifactId>
+            <version>11.0.2</version>
+            <scope>system</scope>
+            <systemPath>/home/user/app/javafx-sdk-11.0.2/lib/javafx-swt.jar</systemPath>
         </dependency>
     </dependencies>
     <build>

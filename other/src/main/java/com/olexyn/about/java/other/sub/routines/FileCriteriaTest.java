@@ -9,18 +9,18 @@ import java.io.IOException;
 /** @author user */
 public class FileCriteriaTest {
 
-	sub.routines.Tools tools;
+	Tools tools;
 	Execute x;
 
-	sub.routines.Write write;
+	Write write;
 
 
 	/** selection of <b>boolean</b> that flip if <b>file</b> matches certain
 	 * <b>criteria</b>.<p> */
 	public FileCriteriaTest() {
-		tools = new sub.routines.Tools();
+		tools = new Tools();
 		x = new Execute();
-		write = new sub.routines.Write();
+		write = new Write();
 	}
 
 

@@ -1,7 +1,5 @@
-package com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage;
+package com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage;
 
-import classes.Interface;
-import classes.examples.inheritance.AbstractClass;
 import com.olexyn.about.java.classes.classes.*;
 import com.olexyn.about.java.classes.classes.examples.inheritance.*;
 

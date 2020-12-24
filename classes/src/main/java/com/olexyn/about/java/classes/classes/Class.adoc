@@ -55,7 +55,7 @@
 
 ==== Order of Initialization
 * aka _class loading_
-* a `class` is initialized either when
+* a `classes` is initialized either when
     *** program starts
     *** static member of the class is referenced
     *** shortly before instance of class is created

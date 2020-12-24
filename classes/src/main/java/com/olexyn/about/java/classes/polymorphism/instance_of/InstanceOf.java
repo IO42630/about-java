@@ -23,8 +23,8 @@ public class InstanceOf {
     void test(){
 
         boolean b;
-        b = new Child3() instanceof com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent;  // true
-        b = new com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent() instanceof Child3; // false // parent cant be cast to child without explicit cast
+        b = new Child3() instanceof com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.Parent;  // true
+        b = new com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.Parent() instanceof Child3; // false // parent cant be cast to child without explicit cast
         b = new Child1() instanceof Child3Interface; // false
         b = new Child3() instanceof Child3Interface; // true
         b = new Child1() instanceof SuperParentInterface; // true
@@ -70,9 +70,9 @@ class SuperParent implements SuperParentInterface {
 }
 
 class Parent extends SuperParent implements ParentInterface{}
-class Child1 extends com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent {}
-final class Child2 extends com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent {}
-class Child3 extends com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent implements Child3Interface {
+class Child1 extends com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.Parent {}
+final class Child2 extends com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.Parent {}
+class Child3 extends com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.Parent implements Child3Interface {
     public void child3Method(){}
 }
 

@@ -3,7 +3,7 @@
 ** can define `abstract` methods
 ** may be public or default
 ** all members of an interface are assumed to be public (unless specified otherwise)
-* a `class` can implement many `interfaces`
+* a `classes` can implement many `interfaces`
 ** class implements interface by overriding the inherited abstract methods
 
 

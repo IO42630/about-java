@@ -1,7 +1,6 @@
 package com.olexyn.about.java.classes.classes.examples.inheritance;
 
-import classes.examples.inheritance.childpackage.Child;
-import classes.examples.inheritance.parentpackage.parentpackage.Parent;
+import com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.Parent;
 import com.olexyn.about.java.classes.classes.examples.inheritance.childpackage.Child;
 
 public class Main {
@@ -25,11 +24,11 @@ public class Main {
     static void polymorphism() {
 
 
-        s = ((com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent) new Child()).toString(); // Child
+        s = ((Parent) new Child()).toString(); // Child
 
 
         Child child = new Child();
-        com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent parent = child;
+        Parent parent = child;
 
         String castToParent = compareMember(parent, child);
 
@@ -44,7 +43,7 @@ public class Main {
     }
 
 
-    static String compareMember(com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent parent, Child child) {
+    static String compareMember(Parent parent, Child child) {
         boolean instanceVarEqual = parent.instanceVar == child.instanceVar;
         boolean classVarEqual = parent.classVar == child.classVar;
         boolean instanceMethodEqual = parent.toString().equals(child.toString());

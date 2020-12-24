@@ -18,10 +18,10 @@ public class Polymorphism {
         casting();
 
 
-        com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent parent = new com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent();
-        com.olexyn.about.java.classes.classes.examples.inheritance.childpackage.Child child = new com.olexyn.about.java.classes.classes.examples.inheritance.childpackage.Child();
+        Parent parent = new Parent();
+        Child child = new Child();
 
-        com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent childAsParent = child;
+        Parent childAsParent = (Parent) child;
 
 
         // i = childAsParent.privateInt;
@@ -33,7 +33,7 @@ public class Polymorphism {
        // i = child.foo;
 
 
-        com.olexyn.about.java.classes.classes.examples.inheritance.childpackage.Child parentAsChild = (com.olexyn.about.java.classes.classes.examples.inheritance.childpackage.Child) new com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent();
+        Child parentAsChild = (Child) new Parent();
 
         int br=0;
 
@@ -45,11 +45,11 @@ public class Polymorphism {
 
     static void casting(){
 
-        com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent childAsParent = new com.olexyn.about.java.classes.classes.examples.inheritance.childpackage.Child();   // Implicit Cast, (Parent) is inserted during compilation.
-        com.olexyn.about.java.classes.classes.examples.inheritance.childpackage.Child child = (com.olexyn.about.java.classes.classes.examples.inheritance.childpackage.Child) childAsParent;  // Explicit Cast, C-Error if (Child) is omitted.
+        Parent childAsParent = new Child();   // Implicit Cast, (Parent) is inserted during compilation.
+        Child child = (Child) childAsParent;  // Explicit Cast, C-Error if (Child) is omitted.
 
 
-        if (new com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent() instanceof com.olexyn.about.java.classes.classes.examples.inheritance.childpackage.Child) { com.olexyn.about.java.classes.classes.examples.inheritance.childpackage.Child parentAsChild = (com.olexyn.about.java.classes.classes.examples.inheritance.childpackage.Child) new com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent(); }// ClassCastException
+        if (new Parent() instanceof Child) { Child parentAsChild = (Child) new Parent(); }// ClassCastException
 
 
 
@@ -86,7 +86,7 @@ class Parent{
 
 
 
-class Child extends com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.parentpackage.Parent {
+class Child extends Parent {
     static int i;
     public int publicInt =3;
     private int privateInt = 3;
