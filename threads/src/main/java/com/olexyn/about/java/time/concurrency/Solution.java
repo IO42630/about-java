@@ -1,4 +1,4 @@
-package com.olexyn.about.java.threads.concurrency;
+package com.olexyn.about.java.time.concurrency;
 
 public class Solution {
 

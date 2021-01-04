@@ -1,4 +1,4 @@
-package com.olexyn.about.java.threads;
+package com.olexyn.about.java.time;
 
 public class WaitNotify {
 

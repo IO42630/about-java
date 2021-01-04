@@ -7,7 +7,7 @@ import java.util.List;
  * StringBuilder is mutable
  * Avoids creation of new Object each loop iteration.
  */
-public class StringBuilderS {
+public class StringBuilderDemo {
     static boolean b;
     static String string;
     static List<String> list = new ArrayList<>();

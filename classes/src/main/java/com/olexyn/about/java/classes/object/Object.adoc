@@ -10,10 +10,22 @@
 {empty} +
 
 
+==== Equality
 image::power_of_equals.png[]
 
-==== equals
+===== `==` : reference equality
+* variable points to same object
+** beware when dealing with objects, e.g. arrays,
+** since a new array with same contents will be a new object and thus not ==
+** checking for reference equality of two different types -> C-Error
+
+{empty} +
+
+===== `.equals()` : value equality
+* object has same properties
+** depends on implementation by the object
 * `Object.equals()` just uses `==`.
+** Same is used in `StringBuilder`, `Array`
 * String overrides to check if literal is the same
 
 There is a contract on  how to implement equals:

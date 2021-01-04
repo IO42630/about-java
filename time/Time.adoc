@@ -26,6 +26,12 @@ LocalDateTime dateTime1 = LocalDateTime.of(2015, Month.JANUARY, 20, 6, 15, 30);
 public static LocalDateTime of(LocalDate date, LocalTime time)
 LocalDateTime dateTime2 = LocalDateTime.of(date1, time1);
 
+====== Time Zones
+
+* Time zones are shown as `T<local hour><increment from GMT>`
+* We need to reverse it to get from Zoned Time to GMT.
+* Thus `2015–05–25T09:10–04:00` means 13:10 in GMT.
+
 [source,java]
 ZoneId zone = ZoneId.of("US/Eastern");
 ZonedDateTime zoned1 = ZonedDateTime.of(2015, 1, 20,6, 15, 30, 200, zone);
@@ -122,7 +128,7 @@ LocalDate local = Localdate.now().plus(Duration.ofDays(1)); // Unsupported unit:
 
 {empty} +
 
-==== ChronoUnit
+====== ChronoUnit
 
 [source,java]
 LocalTime one = LocalTime.of(5, 15);
@@ -136,6 +142,88 @@ System.out.println(ChronoUnit.MINUTES.between(one, date)); // DateTimeException
 
 ==== Instant
 
+* Specific moment in time in *the* GMT time zone.
+* Implements `Temporal`
+* `ZonedDateTime` has an `toInstant(): Instant` method.
+* can be created by `Instant.now()`
+* can add `ChronoUnit.DAYS` , but can't add `ChronoUnit.WEEKS` -> `R-Exception`
+
+[source,java]
+Instant nextHour = instant.plus(1, ChronoUnit.HOURS);
+System.out.println(nextHour); // 2015–05–25T16:55:00Z
+Instant nextWeek = instant.plus(1, ChronoUnit.WEEKS); // exception
 
 
+==== Daylight Savings Time
+* In Nov clocks go back 1h.
+* In March clocks go forward 1h.
+
+[source,java]
+Normal
+1:59->2:00
+March
+1:59->3:00
+Nov
+1:59->1:00
+
+* below zoned time changes by 2h, but GMT changes by 1h
+
+[source,java]
+System.out.println(dateTime); // 2016–03–13T01:30–05:00[US/Eastern]
+dateTime = dateTime.plusHours(1);
+System.out.println(dateTime); // 2016–03–13T03:30–04:00[US/Eastern]
+
+* when trying to create a time that does not exist, java will skip it
+
+[source,java]
+LocalDate date = LocalDate.of(2016, Month.MARCH, 13);
+LocalTime time = LocalTime.of(2, 30);
+ZoneId zone = ZoneId.of("US/Eastern");
+ZonedDateTime dateTime = ZonedDateTime.of(date, time, zone);
+System.out.println(dateTime); // 2016–03–13T03:30–04:00[US/Eastern]
+
+==== Internationalization (i18n) & Localization (l10n)
+* i18n : designing program so locales can be added easily
+* l10n : supporting multiple locales (lang/country pair)
+* locales have two formats, other variations are invalid
+** lang only : `fr`
+** lang + country : `en_US`
+* Java allows creating invalid locales, but it will not match -> bug
+* There is a builder for locales
+
+[source,java]
+Locale locale = Locale.getDefault();
+System.out.println(Locale.GERMAN);           // de
+System.out.println(Locale.GERMANY);          // de_DE
+ystem.out.println(new Locale("fr"));         // fr
+System.out.println(new Locale("hi", "IN"));  // hi_IN
+Locale l1 = new Locale.Builder().setLanguage("en").setRegion("US").build();
+Locale.setDefault(new Locale("fr")); // changes locale for current program
+
+
+==== Resource Bundle
+* Contains local specific objects
+** can be a property file or a java class
+* See java example and Hello_en.properties7
+* `Properties`
+** similar to `Map`, but older, behaves slightly different
+* .property files are limited to String
+** Custom ResourceBundles can contain Objects, see .java example
+*** it uses ListResourceBundle which extends ResourceBundle
+* getting a Resource Bundle
+
+[%header]
+|===
+2+| resolution order when trying to resolve a `ResourceBundle`  with  param `Hello`, `fr_FR` +
+with default locale being `en_EN` .
+2+| `.java` before `.properties`
+| `Hello_fr_FR` | requested locale
+| `Hello_fr` | requested language
+| `Hello_en_US` | default locale
+| Hello_en | default language
+| Hello | no locale
+2+| `MissingResourceException`
+2+| When param is only `Hello`, `fr` - then  looking for `Hello_fr_FR` and `Hello_en_US` is skipped.
+
+|===
 

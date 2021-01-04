@@ -1,4 +1,4 @@
-package com.olexyn.about.java.threads;
+package com.olexyn.about.java.time;
 
 import static org.junit.Assert.assertTrue;
 
