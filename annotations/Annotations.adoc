@@ -1,10 +1,5 @@
 === Annotations
-Sometimes Compiler will complain if Annotation is not corresponding. +
-i.e. @Override on a method overload.
-
-= Annotations
-
 * is a type of metadata
 ** can be user by the compiler / or at runtime
 ** `@Override` : promise - if broken -> `C-Error`
-*** `@Override` also includes implementing an interface.
+*** implementing an interface is also an `@Override`.

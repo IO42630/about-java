@@ -5,16 +5,7 @@ import com.olexyn.about.java.declarations.access_modifiers.Parent;
 public class Child  extends Parent{
 
     public static void main(String... args){
-
-
-
-
         int foo = new Child().i;
-
         // foo = new Parent().i; -> C-Error
-
     }
-
-
-
 }

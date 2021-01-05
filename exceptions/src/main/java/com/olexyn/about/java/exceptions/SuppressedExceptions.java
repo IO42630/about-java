@@ -7,6 +7,7 @@ public class SuppressedExceptions {
         try (SomeResource resource = new SomeResource()) {
 
         }catch (IllegalStateException e){
+            // TODO
 
         }
 
@@ -17,13 +18,6 @@ public class SuppressedExceptions {
 
 
 }
-
-
-
-
-
-
-
 
 class SomeResource implements AutoCloseable{
 

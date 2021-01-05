@@ -1,41 +1,25 @@
+package com.olexyn.about.java.declarations;
+
 public class StaticAbout {
 
     static void staticM() {}
     void instanceM() {}
 
-    static void staticCallsX(StaticAbout instance) {
+    static void staticCallsX() {
         // static -> instance
-        instance.instanceM();
-        // instanceM();                 // C-Error
         new StaticAbout().instanceM();
-
+        // instanceM();                 // C-Err
         // static -> static
-        instance.staticM();
+        new StaticAbout().staticM();
         staticM();
     }
 
-    void instanceCallsX(StaticAbout instance) {
-        // instance -> static
-        StaticAbout.staticM();
-        staticM();
+    void instanceCallsX() {
         // instance -> instance
-        instance.instanceM();
+        new StaticAbout().instanceM();
         instanceM();
+        // instance -> static
+        new StaticAbout().staticM();
+        staticM();
     }
-
-
-
-
-
-
-
-    public static void main(String... args) {
-
-        staticCallsX(new StaticAbout());
-        new StaticAbout().instanceCallsX(new StaticAbout());
-
-
-    }
-
-
 }
