@@ -78,13 +78,25 @@ one per file - matches the file name. | |  | | YES
 *** assigning `null` counts as an assignment
 * initialization for `final` local variables  is optional
 
-===== effectively final
+{empty} +
+
+==== effectively final
 * introduced in Java 8
 * `final` can be placed in declaration without causing C-Error.
 [source,java]
 int i = 1; // is eff-final
 i++; // this makes i not eff-final,
 // and causes C-Error in all the subsequent expressions that, require it i to be eff-final
+
+{empty} +
+
+==== c-time constant
+* stricter than `final`
+** literals
+** enum constants
+** _constants_
+*** must be declared & initialized on the same line
+*** not be initialized through a function (remember ++ is a function too);
 
 {empty} +
 

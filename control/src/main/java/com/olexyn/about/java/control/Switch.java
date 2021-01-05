@@ -22,6 +22,9 @@ public class Switch {
         one = 1; // must be declared & initialized on the same line
         final int two = 2; // must be final
         final int rng = new Random().nextInt();
+        int i23 = 1;
+        final int hidden_func = ++i23;
+        final int not_func = 1 + 4;
 
         for (int i = 0; i < 4; i++) {
 
@@ -35,10 +38,7 @@ public class Switch {
                     System.out.println("default");
                 case two:
                     System.out.println(2);
-
             }
-
-            System.out.println("-------");
         }
     }
 
@@ -58,13 +58,4 @@ public class Switch {
     }
 
     enum Caps{A,B,C,D}
-
-
-
-
-
-
-    public static void main(String... args) {
-
-    }
 }
