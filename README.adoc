@@ -6,6 +6,17 @@ However, they shall be resolved in time.
 
 ### Progress
 
-* resume Chapter 3 p. 134
-* resume Chapter 5 p. 248
-* resume Ch 6 p. 305
+[%header]
+|===
+| Ch. | stuck @page | read summary | exercise
+4+| *OCP-SE8*
+| 1 | | |
+| 2 | | |
+| 3 | 134 |  |
+| 4 | | |
+| 5 | | X |
+| 6 | 305 | |
+| 7 | | |
+| 8 | | |
+| 9 | | |
+| 10 | | |
