@@ -1,5 +1,6 @@
 package com.olexyn.about.java.resource_bundle;
 
+import java.text.MessageFormat;
 import java.util.Locale;
 import java.util.Properties;
 import java.util.ResourceBundle;
@@ -23,6 +24,13 @@ public class ResourceBundleDemo {
         // uses Hello_en.properties instead.
         rb = ResourceBundle.getBundle("Hello", Locale.US);
         System.out.println(rb.getObject("hello"));
+
+        mixerDemo();
+
+        // Variables inside RB
+        ResourceBundle rb2 = ResourceBundle.getBundle("Hello", Locale.US);
+        String format = rb2.getString("hello4"); // foo {0} is {1}
+        String formatted = MessageFormat.format(format, "baz", "kaz"); // foo bar is kaz
     }
 
     public static void printProperties(Locale locale) {
@@ -34,7 +42,6 @@ public class ResourceBundleDemo {
     }
 
     /**
-     *
      * @param locale
      */
     static void propertiesClassDemo(Locale locale) {
@@ -46,9 +53,19 @@ public class ResourceBundleDemo {
         String foo;
         try {
             foo = properties.get("foo").toString(); // inherited -> NullpointerException
-        }catch (NullPointerException ignored){}
+        } catch (NullPointerException ignored) {}
 
         foo = properties.getProperty("foo"); // null
         foo = properties.getProperty("foo", "default"); // "default"
+    }
+
+    /**
+     * Java tries to find the matching properties by traversing the hierarchy
+     */
+    static void mixerDemo() {
+        Locale locale = Locale.US;
+        ResourceBundle rb = ResourceBundle.getBundle("Mixer", locale);
+        String out = rb.getString("A") + " " + rb.getString("B") + " " + rb.getString("C");
+        System.out.println(out);
     }
 }

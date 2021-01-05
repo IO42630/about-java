@@ -106,13 +106,13 @@ transparency=0</panel_attributes>
     <coordinates>
       <x>1100</x>
       <y>760</y>
-      <w>260</w>
+      <w>480</w>
       <h>70</h>
     </coordinates>
     <panel_attributes>Duration
 --
-between(Temporal, Temporal)
-of(int, TemporalUnit)
+_+between(Temporal, Temporal): Duration_
+_+of(int, TemporalUnit): Duration_
 fg=#2E7D32
 transparency=0</panel_attributes>
     <additional_attributes/>
