@@ -15,4 +15,30 @@
 When deserializing
 * Java calls no-arg constructor of first non-serializable parent class,
 * skipping the constructors of any serialized class in between
-* static vars and default initialziaations are ignored
+* static vars and default initialziations are ignored
+
+=== PrinStream
+* System.out and System.err are PrintStream
+
+=== PrintWriter
+* PrintWriter(Outputstream)
+
+* both inherit .write from Writer (but this throws Exception )
+* also have
+** print()
+** println()
+** format() methods, which do not throw exceptions
+* both have
+** .checkError() to detect presence of problem after attempted write
+
+* print()
+** overloaded  with all primitives / String / Object
+** generally performs String.valueOf()
+
+
+
+
+* println()
+** print() + linebreak
+** usefull as linebreak may depend on JVM
+** System.getProperty("line.separator);

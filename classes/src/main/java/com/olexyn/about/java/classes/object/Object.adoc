@@ -7,6 +7,9 @@
 ** pretty: ArrayList
 ** reference:  String[]
 
+=== valueOf()
+* ``obj == null ? null : obj.toString() ``
+
 {empty} +
 
 
