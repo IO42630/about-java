@@ -1,19 +1,23 @@
 === Glossary of Abbreviations
 
-Abbreviation | -
----|---
-C-Error | Compile-time error.
-R-Error | Runtime error.
-`uE`    | Unchecked Exception, also called RuntimeException. However both `uE` and `cE` occur at Runtime.
-`cE`    | Checked Exception
+[%header]
+|===
+| Abbreviation |
+| C-Error | Compile-time error.
+| R-Error | Runtime error.
+| `uE`    | Unchecked Exception, also called RuntimeException. However both `uE` and `cE` occur at Runtime.
+| `cE`    | Checked Exception
+|===
 
 == About
 
 [cols="10,10,100"]
 |===
 |JDK     | | Java Development Kit : minimum software needed for Java development.
-|Compiler | `javac` | _Compiles_ from sourcecode contained in `.java` files.''' _Compiles_ to `bytecode` contained in `.class` files.
-|Launcher | `java` |Launches the JVM. ''' JVM _interprets_ the bytecode .
+|Compiler | `javac` | _Compiles_ from sourcecode contained in `.java` files. +
+_Compiles_ to `bytecode` contained in `.class` files.
+|Launcher | `java` |Launches the JVM. +
+JVM _interprets_ the bytecode .
 |Archiver| `jar` |
 | | `javadoc` | generates documentation.
 | API | | StringBuilder is an API.
@@ -35,9 +39,11 @@ R-Error | Runtime error.
 ** Instad Gooles Dev Kit takes Java programs as input and outputs Dalvik bytecode." +
 ** This Dalvik bytecode is then the native input for the Android VM.";
 
+{empty} +
+
 ==== Interpreter vs. Compiler
 
-
+[%header]
 |===
 |Interpreter | Compiler
 |Translates program one statement at a time.| Scans the entire program and translates it as a whole into machine code.
@@ -57,7 +63,8 @@ R-Error | Runtime error.
 [cols="10,20"]
 |===
 |Object Oriented | All code is defined in classes.
-|Encapsualtion | - Access modifiers ''' - Local scope of variables
+|Encapsualtion | - Access modifiers +
+- Local scope of variables
 |Platform Independent | bytecode runs in any JVM
 |Robust| no memory leaks
 | Simple | no pointers, no operator overloading
