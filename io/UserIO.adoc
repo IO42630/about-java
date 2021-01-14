@@ -1,0 +1,59 @@
+=== PrinStream
+* System.out and System.err are PrintStream
+
+=== PrintWriter
+* PrintWriter(Outputstream)
+
+* both inherit .write from Writer (but this throws Exception )
+* also have
+** print()
+** println()
+** format() methods, which do not throw exceptions
+* both have
+** .checkError() to detect presence of problem after attempted write
+
+* print()
+** overloaded  with all primitives / String / Object
+** generally performs String.valueOf()
+
+
+
+
+* println()
+** print() + linebreak
+** usefull as linebreak may depend on JVM
+** System.getProperty("line.separator);
+
+{empty} +
+
+=== Format
+
+
+=== Interacting with Users
+
+
+* old: System.in is just an InputStream
+* new: Console is a singleton
+** adds quality of life methods
+** fetched with System.console()
+** can result in null, in sys where no console is supported
+* a
+** Console.reader() returns Reader
+** Console.writer() returns PrintWriter
+** as opposed to System.in / out which are Input/OutpuStream
+
+
+=== Console
+
+* inherits flush()
+** recommended to call before readLine / readPassword
+* `.readLine()`
+** similar to BufferedReader.readLine()
+** also contains `.readLine(String)` for user prompt
+* `.readPassword()`
+** disables display of the text the user entered
+** also has `.readPassword(String)`
+*** returns char[], so that dev can immediately clear
+array after verifying pwd is valid
+*** does not enter stringpool
+*** stringpool might be dumped to disk

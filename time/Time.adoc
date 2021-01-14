@@ -250,13 +250,15 @@ date.format(shortDateTime); // equivalent command
 
 DateTimeFormatter f = DateTimeFormatter.ofPattern("MMMM dd, yyyy, hh:mm");
 System.out.println(dateTime.format(f));
+
 // January 20, 2020, 11:12
+
 Before we look at the syntax, know that you are not expected to memorize what the dif-
 ferent numbers of each symbol mean. The most you will need to do is to recognize the date
-and time parts.
+and time parts. +
 M represents the month. The more M s you have, the more verbose the Java output. For
 example, M outputs 1, MM outputs 01, MMM outputs Jan, and MMMM outputs January.
-MMMM
+MMMM +
 dd d represents the day in the month. As with month , the more d s you have, the more ver-
 bose the Java output. dd means to include the leading zero for a single-digit day.
 ,

@@ -2,6 +2,8 @@
 
 * see `deployment.modules`
 
+image::module-demo.png[]
+
 === Benefits
 
 |===
