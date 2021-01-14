@@ -1,6 +1,4 @@
 == Class
-{empty} +
-
 '''
 ==== General
 
@@ -41,7 +39,7 @@
     *** having a private constructor effectively disables the instantiation of the class from outside.
 **** it can only be extended by inner classes.
 * `this()` and `super()` must be the first statement in the constructor
-    ** `Foo(){this();}` does not Compile, likewise other circular references caused by constructors.
+    ** `Foo(){this();}` and other circular references caused by constructors -> `C-Error`.
 * If no `this()` or `super()` are present, then the compiler inserts a `super()` in the background
     ** since compiler inserts super() the parent constructor is called in every child
 * Relevant:

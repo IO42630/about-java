@@ -10,13 +10,13 @@ However, they shall be resolved in time.
 |===
 | Ch. | stuck @page | read summary | exercise
 4+| *OCP-SE8*
-| 1 | | |
-| 2 | | |
-| 3 | 134 |  |
-| 4 | | |
-| 5 | | X |
-| 6 | 305 | |
-| 7 | | |
-| 8 | | 434 |
-| 9 | | |
-| 10 | | |
+| 1 Classes | | |
+| 2 Patterns | | |
+| 3 Generics | 134 |  |
+| 4 Functional | | |
+| 5 DateTime | DONE | TODO |
+| 6 Exceptions | 305 | |
+| 7 Concurrency | DONE | TODO | TODO
+| 8 IO | | 434 |
+| 9 NIO | | |
+| 10 JDBC | | |

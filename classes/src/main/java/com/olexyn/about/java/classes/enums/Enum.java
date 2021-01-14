@@ -5,32 +5,36 @@ import java.util.Arrays;
 
 
  enum SomeEnum {
-    A("a"){
-        public void absPrint(){ System.out.println(string); } // mandatory override of abstract method
-        public void print(){ // optional override
-            System.out.println(this.equals(SomeEnum.A)); // -> true
-            SomeEnum.A.privateString = "foo";
-            // this.privateString = "bar"; // C-Error
-            boolean b2 = SomeEnum.A.badf.equals(SomeEnum.B.badf);
-            boolean b3 = SomeEnum.badf.equals(SomeEnum.C.badf);
-            String asfd = SomeEnum.B.privateString;
-    }   },
-    B("b"){ public void absPrint(){ System.out.println(string); } },
-    C{ public void absPrint(){ System.out.println(string); } },
-    D{ public void absPrint(){ System.out.println(string); } };
-    //
-    static String badf;
-    String string;
+     A("a") {
+         public void abstractPrint() { System.out.println(instanceString); }
+         public void print() {
+             System.out.println(this.equals(SomeEnum.A)); // -> true
+             SomeEnum.A.privateString = "foo";
+             // this.privateString = "bar"; // C-Error
+             boolean b2 = SomeEnum.A.staticString.equals(SomeEnum.B.staticString);
+             boolean b3 = SomeEnum.staticString.equals(SomeEnum.C.staticString);
+             SomeEnum.B.privateString = "bar"; // can access B's privateString
+         }
+     },
+    B("b"){ public void abstractPrint(){ System.out.println(instanceString); } },
+    C{ public void abstractPrint(){ System.out.println(instanceString); } },
+    D{ public void abstractPrint(){ System.out.println(instanceString); } };
+    // ; after all constants have been listed
+
+    static String staticString;
+    String instanceString;
     private String privateString;
     SomeEnum(){}; // default constructor
-    private SomeEnum(String string){ this.string = string; } // must be private
-    public abstract void absPrint();
-    public void print() { System.out.println(string); }
+
+    private SomeEnum(String instanceString){ this.instanceString = instanceString; } // must be private
+    public abstract void abstractPrint(); // must be overridden
+    public void print() { System.out.println(instanceString); }  // may be overridden
 }
 
-
+/**
+ *
+ */
 public class Enum {
-
 
      public static void main(String... args){
 
