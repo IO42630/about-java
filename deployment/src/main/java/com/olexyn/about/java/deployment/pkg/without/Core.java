@@ -1,8 +1,5 @@
-package com.olexyn.about.java.deployment.no.pkg;
-
 public class Core {
-    public Core() {
-    }
+    public Core() { }
 
     public static void main(String[] var0) {
         System.out.println("No Pkg says Hi.");

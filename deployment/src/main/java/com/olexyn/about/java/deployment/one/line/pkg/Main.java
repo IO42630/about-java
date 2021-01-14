@@ -1,5 +1,3 @@
-package com.olexyn.about.java.deployment.one.line.pkg;
-
 public class Main {
 
 

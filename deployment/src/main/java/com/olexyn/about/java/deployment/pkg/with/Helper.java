@@ -1,4 +1,4 @@
-package com.olexyn.about.java.deployment.no.pkg;
+package com.olexyn.about.java.deployment.pkg.with;
 
 public class Helper {
 

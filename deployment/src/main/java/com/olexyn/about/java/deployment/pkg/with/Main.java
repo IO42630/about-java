@@ -1,7 +1,7 @@
-package com.olexyn.about.java.deployment.pkg;
+package com.olexyn.about.java.deployment.pkg.with;
 
 import com.olexyn.about.java.deployment.jar.src.no_main.ClassInJar;
-import com.olexyn.about.java.deployment.other.pkg.OtherPkg;
+import com.olexyn.about.java.deployment.pkg.with.other_pkg.OtherPkg;
 
 public class Main {
     public Main() {

@@ -8,9 +8,9 @@ This demo uses 3 modules:
 <br>
 
 
-This directory is used for the following puproses:
+This directory is used for the following purposes:
 * Notes about modules
-    * namely descriptions of commands and options
+    * namely, descriptions of commands and options
 * the `.jar` of the 3 modules used for the demo.
 
 

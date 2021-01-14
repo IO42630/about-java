@@ -1,4 +1,4 @@
-package com.olexyn.about.java.deployment.other.pkg;
+package com.olexyn.about.java.deployment.pkg.with.other_pkg;
 
 
 public class OtherPkg {
