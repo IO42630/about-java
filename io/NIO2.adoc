@@ -26,4 +26,4 @@ vs File
 ** factory crates
 ** helpers operate on / transform
 
-image::nio2-overview.png[]
+image::img/nio2-overview.png[]

@@ -18,5 +18,5 @@ However, they shall be resolved in time.
 | 6 Exceptions | 305 | |
 | 7 Concurrency | DONE | TODO | TODO
 | 8 IO | DONE |  |
-| 9 NIO | | |
+| 9 NIO2 | | |
 | 10 JDBC | | |

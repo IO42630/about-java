@@ -1,4 +1,4 @@
-=== IO-Streams
+== IO-Streams
 
 * `File` represents a pathname.
 * absolute path = path to working dir + separator + relative path
@@ -32,7 +32,7 @@
 **** read -> performance -> filter as Objects
 * things named Buffered read/write in groups of slices -> perf for seq FS.
 
-image::IO-Streams.png[]
+image::img/IO-Streams.png[]
 
 [%header, cols="2,3"]
 |===
@@ -80,7 +80,7 @@ System.out.print((char)is.read());
 * `read(byte[])` : read to a previously initialized `byte[]`
 ** see `IODemo.DemoByteArrayStream`
 
-image::read-buffer.png[]
+image::img/read-buffer.png[]
 
 * `write(byte[] buffer): void`
 *** write to a previously initialized byte[]
