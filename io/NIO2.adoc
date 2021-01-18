@@ -9,6 +9,7 @@ Differences to java.io streams.
 
 
 ==== Path
+vs File
 
 * `File` is a class
 * Path is an interface

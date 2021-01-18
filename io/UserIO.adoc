@@ -1,59 +1,44 @@
-=== PrinStream
-* System.out and System.err are PrintStream
-
-=== PrintWriter
-* PrintWriter(Outputstream)
-
-* both inherit .write from Writer (but this throws Exception )
-* also have
-** print()
-** println()
-** format() methods, which do not throw exceptions
-* both have
-** .checkError() to detect presence of problem after attempted write
-
-* print()
-** overloaded  with all primitives / String / Object
-** generally performs String.valueOf()
-
-
-
-
-* println()
-** print() + linebreak
-** usefull as linebreak may depend on JVM
-** System.getProperty("line.separator);
+== User IO
 
 {empty} +
 
-=== Format
+==== Overview
+* `System.out` and `System.err` are `PrintStream` (old)
+* `System.in: InputStream` (old)
+* `System.console(): Console` is a singleton (new)
+** `Console.reader(): Reader`
+** `Console.writer(): PrintWriter`
 
+{empty} +
 
-=== Interacting with Users
+==== PrintStream/Writer
+* both `PrintStream` and `PrintWriter` independently implement the following methods:
+** `.print()`
+*** overloaded  with all primitives / String / Object
+*** generally performs String.valueOf()
+** `println()` : useful as linebreak may depend on JVM
+*** `System.getProperty("line.separator");`
+** `.format()` (see examples)
+** `.checkError()` to detect presence of problem after attempted write
 
+{empty} +
 
-* old: System.in is just an InputStream
-* new: Console is a singleton
-** adds quality of life methods
-** fetched with System.console()
-** can result in null, in sys where no console is supported
-* a
-** Console.reader() returns Reader
-** Console.writer() returns PrintWriter
-** as opposed to System.in / out which are Input/OutpuStream
+==== PrintWriter
+* PrintWriter(OutputStream)
+** `.write()`  (inherited from Writer, throws IOException )
 
+{empty} +
 
-=== Console
+==== Console
 
+* `System.console()` can result in null, in sys where no console is supported
 * inherits flush()
 ** recommended to call before readLine / readPassword
 * `.readLine()`
-** similar to BufferedReader.readLine()
+** similar to `BufferedReader.readLine()`
 ** also contains `.readLine(String)` for user prompt
 * `.readPassword()`
 ** disables display of the text the user entered
 ** also has `.readPassword(String)`
-*** returns char[], so that dev can immediately clear
-array after verifying pwd is valid
-*** does not enter stringpool
-*** stringpool might be dumped to disk
+** returns char[], so that pwd does not enter stringpool,
+and can be cleared after verifying validity
