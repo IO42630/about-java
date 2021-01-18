@@ -427,11 +427,13 @@ transparency=0</panel_attributes>
       <x>880</x>
       <y>250</y>
       <w>220</w>
-      <h>50</h>
+      <h>70</h>
     </coordinates>
     <panel_attributes>BufferedReader
 --
 + BufferedReader(Reader)
+--
++ readLine(): String
 fg=#2E7D32
 transparency=0</panel_attributes>
     <additional_attributes/>
@@ -793,15 +795,17 @@ transparency=0</panel_attributes>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>690</x>
-      <y>930</y>
-      <w>170</w>
-      <h>70</h>
+      <x>630</x>
+      <y>920</y>
+      <w>200</w>
+      <h>90</h>
     </coordinates>
     <panel_attributes>Console
 --
 - reader : Reader
 - writer : Writer
+--
++ readLine(): String
 fg=#2E7D32
 transparency=0</panel_attributes>
     <additional_attributes/>
@@ -810,11 +814,11 @@ transparency=0</panel_attributes>
     <id>Relation</id>
     <coordinates>
       <x>530</x>
-      <y>950</y>
-      <w>180</w>
-      <h>50</h>
+      <y>940</y>
+      <w>120</w>
+      <h>60</h>
     </coordinates>
     <panel_attributes>lt=&lt;&lt;.</panel_attributes>
-    <additional_attributes>10.0;30.0;160.0;10.0</additional_attributes>
+    <additional_attributes>10.0;40.0;100.0;10.0</additional_attributes>
   </element>
 </diagram>

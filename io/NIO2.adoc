@@ -9,16 +9,13 @@ Differences to java.io streams.
 
 
 ==== Path
-vs File
 
-* File is a class
+* `File` is a class
 * Path is an interface
-** implemented by classes depending on which System the action is performed.
-
-
-* replacement for legacy class `java.io.File`
-* Path unlike File supports symbolic links
-** pointer to another file/directory.
+** implementation may depend on System.
+** replacement for legacy class `java.io.File`
+**  supports symbolic links (unlike File ).
+*** pointer to another file/directory.
 
 * Paths : factory for Path
 * Ther are also varioius helper classes like `Files`
@@ -26,4 +23,31 @@ vs File
 ** factory crates
 ** helpers operate on / transform
 
-image::nio2-overview.png[]
+image::img/nio2-overview.png[]
+
+
+==== Paths
+* see `NIODemo`
+* has `.toURI(): URI`
+
+==== URI
+* String that identifies a resource
+* schema followed by *absolute* path
+* schemas:
+** file://
+** http://
+** https://
+** ftp://
+
+=== FileSystem
+* Path.getPath() alias to FileSystem.getPath()
+* FileSystems.getDefault(): FileSystem
+* FileSystems.getFileSystem(URI): FileSystem
+
+* Path has toFile()
+* File has toPath()
+
+=== Methods
+* some methods require the Path to "exist", and will throw PathExceptoin if not existent
+
+

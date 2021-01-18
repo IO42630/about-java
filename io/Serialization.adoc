@@ -13,6 +13,7 @@
 ** in example done by instanceof
 
 When deserializing
+
 * Java calls no-arg constructor of first non-serializable parent class,
 * skipping the constructors of any serialized class in between
 * static vars and default initialziations are ignored
