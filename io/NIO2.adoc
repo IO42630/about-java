@@ -51,4 +51,19 @@ image::img/nio2-overview.png[]
 === Methods
 * some methods require the Path to "exist", and will throw PathExceptoin if not existent
 
+* `Path.getNameCount(): int`
+* `Path.getName(int): Path`
+* `Path.getFileName(): Path`
+* `Path.getParent(): Path`
+** will not traverse outside of working dir
+** i.e. parent of root, working dir, root of relative path
+** will return `null`
+* `Path.getRoot(): Path`
+** root or null if path relative
 
+
+==== Path Symbols
+* . current dir
+* .. parent dir
+
+* `
