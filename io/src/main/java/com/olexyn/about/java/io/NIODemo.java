@@ -1,14 +1,22 @@
 package com.olexyn.about.java.io;
 
 import java.io.File;
+import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.file.Files;
+import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class NIODemo {
     
     public static final Path resources = Paths.get(System.getProperty("user.dir") + "/io/src/main/resources");
+    
+    static Path path1;
+    static Path path2;
+    static Path path3;
+    static Path path4;
 
     public static void main(String... args){
         // pathNames();
@@ -98,5 +106,54 @@ public class NIODemo {
         
         // relativize requires both Paths to be either absolute or relative, else R-Exception
         // in windows also requires same root if absolute
+    }
+    
+    static void resolve() {
+        Path path1 = Paths.get("/foo/../bar");  // path with symbols
+        Path path2 = Paths.get("baz");
+        Path result = path1.resolve(path2); // /foo/../bar/baz
+        
+        path1 = Paths.get("/foo");
+        path2 = Paths.get("bar"); // absolute path
+        result = path1.resolve(path2); // /bar -> path1 is ignored because path2 is absolute
+
+    }
+    
+    static void normalize() {
+        path1 = Paths.get("E:\\data");
+        path2 = Paths.get("E:\\user\\home");
+        path3 = path1.relativize(path2); // ../user/home
+        path4 = path1.resolve(path3); // E:\data\..\user\home
+        path4 = path4.normalize(); // E:\user\home
+        
+    }
+    
+    static void exists() throws IOException {
+        // calls toAbsolutePath()
+        // calls normalize()
+        // throws error if files does not exist
+        // only path method to support NOFOLLOW_LINKS
+        path2 = path1.toRealPath(LinkOption.NOFOLLOW_LINKS);
+        // let wd be /horse/schedule
+        // and sym link: /zebra/food.source -> /horse/food.txt
+        path1 = Paths.get("/zebra/food.source").toRealPath(); // horse/food.txt
+        path1 = Paths.get(".././food.txt").toRealPath(); // horse/food.txt
+        path1 = Paths.get(".").toRealPath(); // fetch current working dir
+        
+    }
+
+    /**
+     * Files (nio.2 API) not to be confused with File (legacy java.io API).
+     */
+    static void files() throws IOException {
+        Files.exists(path3);
+        
+        // 1. checks .equals() , if false -> 2.
+        // 2. checks if files are the same -> IOException if one file does not exist
+        //    this checks for same content, attributes, and location
+        path1 = Paths.get("foo/bar.txt");
+        path2 = Paths.get("baz/bar.txt");
+        Files.isSameFile(path1,path2); // -> false, different location
+
     }
 }

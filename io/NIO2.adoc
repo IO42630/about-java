@@ -66,4 +66,4 @@ image::img/nio2-overview.png[]
 * . current dir
 * .. parent dir
 
-* `
+* relativize() and resolve() do not resolve path symbols 
