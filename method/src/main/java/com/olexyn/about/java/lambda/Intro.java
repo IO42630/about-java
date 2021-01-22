@@ -21,7 +21,6 @@ class IsPositive<T> implements PredicateCopy<T> {
     }
 }
 
-
 /**
  * Start here if you forgot Lambdas. <br>
  * <p>
