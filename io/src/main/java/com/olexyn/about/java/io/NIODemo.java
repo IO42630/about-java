@@ -1,13 +1,23 @@
 package com.olexyn.about.java.io;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
+import java.io.OutputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
+import java.nio.charset.Charset;
+import java.nio.file.CopyOption;
 import java.nio.file.Files;
 import java.nio.file.LinkOption;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
+import java.util.List;
 
 public class NIODemo {
     
@@ -155,5 +165,53 @@ public class NIODemo {
         path2 = Paths.get("baz/bar.txt");
         Files.isSameFile(path1,path2); // -> false, different location
 
+    }
+    
+    static void create() throws IOException {
+        // legacy
+        new File("").mkdir();
+        new File("").mkdirs(); // also creates parent dirs if needed.
+        // nio2
+        Files.createDirectory(path1); // throws IOEx
+        Files.createDirectories(path1); // throws IOEx
+        // copy is shallow, if used on dir, does not copy contents
+        Files.copy(path1, path2); // throws IOEx
+        Files.copy(path1, path2, StandardCopyOption.COPY_ATTRIBUTES, StandardCopyOption.REPLACE_EXISTING, StandardCopyOption.COPY_ATTRIBUTES);
+        // 
+        try (
+            InputStream is = new FileInputStream(path1.toFile());
+            OutputStream out = new FileOutputStream(path2.toFile() )) {
+            Files.copy(is, path3);
+            Files.copy(is, path3, StandardCopyOption.COPY_ATTRIBUTES);
+            Files.copy(path3, out); // does not support options, since target not a file
+        }
+        
+        // ATMOIC_MOVE will throw AtomicMoveNotSupportedException in not supported
+        Files.move(path1, path3, StandardCopyOption.ATOMIC_MOVE);
+        // DirectoryNotEmptyException if moving non-empty directory across drives
+        Files.delete(path3);
+        boolean b = Files.deleteIfExists(path2);
+    }
+    
+    static void readWrite() {
+        try (BufferedReader reader = Files.newBufferedReader(path2, Charset.defaultCharset())) {
+            String currentLine = null;
+            while((currentLine = reader.readLine()) != null)
+                System.out.println(currentLine);
+        } catch (IOException e) {
+            
+        }
+
+        try (BufferedWriter writer = Files.newBufferedWriter(path2, Charset.defaultCharset())) {
+            writer.write("");
+        } catch (IOException e) {
+
+        }
+        
+        try {
+            final List<String> lines = Files.readAllLines(path2); // might cause OutOfMemoryError
+        } catch (IOException e)  {
+            
+        }
     }
 }

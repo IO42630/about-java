@@ -67,3 +67,6 @@ image::img/nio2-overview.png[]
 * .. parent dir
 
 * relativize() and resolve() do not resolve path symbols 
+
+=== Views
+* Fetch metadata from a batch of files.
