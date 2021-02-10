@@ -6,7 +6,7 @@
     ** block
 * 0 and 1 are not boolean value in Java
 
-{blank} +
+{empty} +
 
 ==== Switch
 
@@ -30,7 +30,7 @@
 *** when using enum constants omit the enum name (`A` instead of `Enum.A`)
 * match the `switch` type without an explicit cast (see `about.Castig`)
 
-{blank} +
+{empty} +
 
 ==== while & do while
 
