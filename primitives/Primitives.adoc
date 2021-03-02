@@ -1,7 +1,14 @@
 == Primitives
-Java works with _objects_ that contain collections of primitive data types.
+* Java works with _objects_ that contain collections of primitive data types.
+* literal : value of a primitive, e.g. 1
+** source code representation of a fixed value;
+** represented directly in your code without requiring computation.
+** `null` : literal that can be used as a value for any reference type,
+*** except variables of primitive types.
 
-'''
+{empty} +
+
+---
 
 ==== reference vs. instance vs. object
 [cols="1,5"]
@@ -33,18 +40,39 @@ System.out.print(obj);   // java.lang.Object@6acbcfc0
     ** Thus upon declaring a Primitive Type, Java will directly allocate memory according to the size of the Primitive Type.
 * Can't contain `null` (as they don´t contain an pointer to an _object_ in the first place).
 
+[%header]
+|===
+| type  |  bit |  range | Example
+| boolean | 1 | true / false | true
+| byte |  8 | -128 to 127  | 123
+| short | 16 | -2^15 to 2^15-1 | 123
+| int | 32 | -2^31 to 2^31-1 | 123
+| long | 64   |   | 123L
+| float| 32  |IEEE 754  | 123.45f
+| double| 64  |   |  123.456
+| char | 16  |Unicode, \u0000 (0) to \uffff (2^16-1)  | 'a'
+|===
+
+* char is \u0000 in hex thus 16^4 = (2^4)^4 = 2^16 ... this again is like short.
+
+{empty} +
 
 ==== Reference Type
 * holds pointer to memory address of object
     ** unlike other Languages, Java does not allow to know what the physical memory adress is
 * a reference can be assigend to another object of the a compatible type
 
+{empty} +
+
 ==== mutable vs immutable
 * primitives are immutable
 * String , Integer , Char etc. are immutable
 * StringBuilder, List are mutable
 
-'''
+{empty} +
+
+---
+
 
 ==== Wrapper Classes
 * Wrapper classes make use of some caching, somilar to the pool for String
@@ -55,19 +83,19 @@ System.out.print(obj);   // java.lang.Object@6acbcfc0
 |P-Type  | W-Class | .valueOf(<>) | Wrapper.parse<>()
 |boolean | Boolean | true |
 |byte    |         | |
-|short   | Short   |  |
+|short   | Short   | |
 |int     | Integer | | parseInt
 |long    | Long    | | parseLong
-|float   | Float   | (float) 1.0)|
-|double  | Double | 1.0|
-|char    | Character | 'c'
+|float   | Float   | (float) 1.0) |
+|double  | Double | 1.0 |
+|char    | Character | 'c' |
 |===
 
 [source,java]
 int primitive = Integer.parseInt("123");
 Integer wrapper = Integer.valueOf("123"); // may throw NumberformatException
 
-
+{empty} +
 
 ===== Autoboxing & Unboxing
 * Autoboxing

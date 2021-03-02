@@ -25,9 +25,9 @@ public class Operators {
 
     static void incrementTest(){
         int i = 0;
-        b= i++ == 0;
+        b = i++ == 0; // evaluate, then increment
         b = (i=i+1) == 0;
-        b= ++i == 0;
+        b = ++i == 0; // increment, then evaluate
     }
 
     static Object ternary( ){

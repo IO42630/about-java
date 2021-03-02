@@ -22,6 +22,12 @@ public class NumbersCurrency {
         NumberFormat.getCurrencyInstance(Locale.US);
         NumberFormat.getPercentInstance(Locale.US);
         NumberFormat.getIntegerInstance(Locale.US); // rounds before displaying
+
+        NumberFormat germanNumberFormat = NumberFormat.getInstance(Locale.GERMAN);
+
+        formatted = germanNumberFormat.format(123331231312333L).replace('.', '\'');
+        int br = 0;
+
     }
 
     // Parsing may lead to ParseException

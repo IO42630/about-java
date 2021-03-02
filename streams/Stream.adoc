@@ -1,35 +1,24 @@
 === Stream
-`java.util.stream` provides an additional way to operate on collections. +
-`Stream`(s) are *not* passed - but either:
-
-* created
-* consumed
-* or both (a method consumes an incoming `Stream`, and returns a newly created `Stream`)
-
-There are specific classes for primitive types – `IntStream`, `LongStream` and `DoubleStream`.
-
-
-{empty} +
-
----
-==== Intermediate vs Terminal Operations
-* intermediate : returns a new Stream
-** lazy - start producing new stream elements and send them to the next operation
-** examples `filter` , `map`
-* terminal
-** return result, or produce side effect (error?)
-** consumes the stream
-** eager - process all the elements before returning the result
-** Example -
+* Additional way to operate on `Collection`. +
+* `Stream` are *not* passed - but either:
+** created
+*** usually `Stream` are not declared - but _created_, _modified_, _consumed_ it on one line.
+** consumed (~ *terminal*)
+** eager: returns result after all elements are processed
+** created + consumed (~ *intermediate*)
+*** methods that modify a `Stream` consume the incoming `Stream`, and return a new `Stream`
+*** lazy:
+**** one by one
+**** not executed unless terminal called on returned stream
+* all methods of a `Stream` consume it -> consuming again -> `IllegalStateException`
+* There are specific classes for primitive types – `IntStream`, `LongStream` and `DoubleStream`.
 
 
 {empty} +
 
 ---
 ==== Creating Streams
-Notable interfaces:
-
-* `java.util.stream.Supplier`
+* interface `java.util.stream.Supplier`
 
 
 
@@ -52,22 +41,28 @@ Stream<String> stream2 = Stream.iterate("abc", (i) -> i);
 LongStream is = Arrays.stream(new long[]{1, 2, 3, 4});
 IntStream is2 = "abc".chars();
 
-
-
-
 {empty} +
 
 ---
-==== Transforming Streams
-Notable Interfaces
+==== Consuming Streams
 
-* Function : Takes an argument of a type (T) and returns an argument of another type (`R`).
+===== Evaluating
 
+[source,java]
+boolean anyMatch(Predicate<? super T> predicate)
+boolean allMatch(Predicate<? super T> predicate)
+boolean noneMatch(Predicate<? super T> predicate)
+
+{empty} +
+
+===== Modifying
+* interface `Function` : takes argument of `T`, returns result of `R`.
+
+[source,java]
+Function<? super T, ? extends R> mapper
 
 
 [source,java]
-
-
 IntStream mapToInt(ToIntFunction<? super T> mapper);
 // similarly for long and double returning primitive specific stream.
 IntStream flatMapToInt(Function<? super T, ? extends IntStream> mapper);
@@ -75,58 +70,19 @@ IntStream flatMapToInt(Function<? super T, ? extends IntStream> mapper);
 <A> A[] toArray(IntFunction<A[]> generator);
 <U> U reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner);
 
-===== map
 [source,java]
 <R> Stream<R> map(Function<? super T, ? extends R> mapper);
-List<Integer> num = Arrays.asList(1,2,3,4,5);
-List<Integer> collect1 = num.stream().map(n -> n * 2).collect(Collectors.toList());
-System.out.println(collect1); //[2, 4, 6, 8, 10]
-
-
-* toArray
-* reduce
-** are these even transformations.
-
-
-
-
-
-
+<R> Stream<R> flatMap(Function<? super T,? extends Stream<? extends R>> mapper)
+T reduce(T identity, BinaryOperator<T> accumulator);
 
 {empty} +
 
----
-==== Collecting Streams
-==== (Bi-) Predicate
-Used to filter a Stream.
-
-examples
-
-[source,java]
-Stream<T> filter(Predicate<? super T> predicate)
-boolean anyMatch(Predicate<? super T> predicate)
-boolean allMatch(Predicate<? super T> predicate)
-boolean noneMatch(Predicate<? super T> predicate)
-
-{empty} +
-
----
-==== (Bi-) Consumer
-Operation that accepts a single input argument and returns no result.
-
-examples
+===== Collecting
 
 [source,java]
 Stream<T> peek(Consumer<? super T> action)
 void forEach(Consumer<? super T> action)
 void forEachOrdered(Consumer<? super T> action)
-
-
-{empty} +
-
-
-
-
 
 {empty} +
 
@@ -148,23 +104,20 @@ Optional<T> findAny()
 
 ---
 ==== java.util.Splinterator
-Try executing in parallel.
+Try executing in parallel. TODO
 
 [source,java]
 trySplit
 
+{empty} +
 
-
+---
 ==== Short Circuiting
-
-An intermediate operation is called short circuiting, if it may produce finite stream for an infinite stream. For Example limit() and skip() are two short circuiting intermediate operations.
-
-A terminal operation is called short circuiting, if it may terminate in finite time for infinite stream. For Example anyMatch, allMatch, noneMatch, findFirst and findAny are short circuiting terminal operations.
-
-
-{empty} +
-{empty} +
-{empty} +
-{empty} +
-{empty} +
+[cols="1,3"]
+|===
+| intermediate operation | producing finite stream for infintie stream +
+e.g. limit() , skip()
+| terminal operation | terminate in finite time for infinite stream +
+e.g. anyMatch(), findFirst()
+|===
 
