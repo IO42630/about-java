@@ -14,7 +14,11 @@ public class Lists {
 
 
     public static void main(String args[]){
+
+
         List<String> list = new ArrayList<>();
+
+        String foo = String.join("as", list);
         list.add("foo");
         int i = list.size();
 
