@@ -48,6 +48,7 @@
         <module>jython</module>
         <module>other</module>
         <module>string</module>
+        <module>charts</module>
     </modules>
     <dependencies>
         <dependency>

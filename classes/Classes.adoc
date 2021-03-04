@@ -82,8 +82,16 @@
 
 
 === Inheritance
-* Only members are inherited.
 
+==== Members
+* only members are inherited, all members are inherited.
+** _fields_ : variable declared outside of method, but inside class.
+** _methods_ (=functions) (operate on state)
+*** methods have parameters
+*** _method signature_ = name + parameter types
+*** _method declaration_ = full line (?)
+** nested classes, interfaces, enums
+** NOT _constructors_ , since those are not inherited.
 
 
 ==== Subtype and Supertype

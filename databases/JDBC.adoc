@@ -1,4 +1,5 @@
 == JDBC
+* Java Database Connectivity Language
 
 
 
@@ -17,8 +18,10 @@ Are usually provided in a `.jar` supplied by the DB manufacturer.
 ==== JDBC URL
 
 |===
-|`Protocol : Product Name:  DB Specific Connection Details`
-|`jdbc:postgres://localhost:5432/foo`
+|`Protocol` `:` `Product Name` `:` `DB Specific Connection Details`
+|`jdbc` `:` `postgres` `:` `//localhost:5432/foo`
+|`jdbc` `:` `h2` `:` `mem:db1`
+|`jdbc` `:` `oracle:thin` `:` `@localhost:1521:XE`
 |===
 
 === Driver

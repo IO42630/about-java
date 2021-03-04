@@ -30,7 +30,8 @@ public class Helpers {
         return tableToString(resultSetToTable(rs));
     }
 
-
+    /**
+     */
     public TableDto resultSetToTable(ResultSet rs) throws SQLException {
 
         List<List<String>> result = new ArrayList<>();
@@ -56,7 +57,8 @@ public class Helpers {
         return new TableDto( result        );
     }
 
-
+    /**
+     */
     public String tableToString(TableDto input) {
 
         List<List<String>> table = input.getTable();
@@ -64,52 +66,30 @@ public class Helpers {
         int nrOfCols = table.get(0).size();
         int[] maxCellLengths = new int[nrOfCols];
 
-        for(int rowNr =0; rowNr<table.size();rowNr++){
-            for (int columnNr =0; columnNr<nrOfCols;columnNr++){
-                String cell = table.get(rowNr).get(columnNr);
-                if(cell.length()>maxCellLengths[columnNr]){
-                    maxCellLengths[columnNr]=cell.length();
+        for (List<String> strings : table) {
+            for (int columnNr = 0; columnNr < nrOfCols; columnNr++) {
+                String cell = strings.get(columnNr);
+                if (cell.length() > maxCellLengths[columnNr]) {
+                    maxCellLengths[columnNr] = cell.length();
                 }
             }
-
         }
-
-
-
-
-
         StringBuilder sb = new StringBuilder();
         for (List<String> row : table) {
             sb.append(" | ");
-
-
-
-
-
             for (int columnNr=0;columnNr<row.size();columnNr++){
                 String cell = row.get(columnNr);
-
                 sb.append(cell);
-                for(int x=cell.length(); x<maxCellLengths[columnNr];x++){
-                    sb.append(" ");
-                }
-
-
+                sb.append(" ".repeat(Math.max(0, maxCellLengths[columnNr] - cell.length())));
                 sb.append(" | ");
             }
             sb.append("\n");
-
-
-
-
-
         }
-
         return sb.toString();
-
     }
 
-
+    /**
+     */
     public void printResult(ResultSet rs) throws SQLException {
         System.out.println(getResult(rs));
     }
