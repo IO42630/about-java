@@ -5,61 +5,31 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * switch,
+ * &&	AND
+ * ||	OR
+ * !(true)	NOT
+ * !=		NEQ
+ * ==		EQ
+ * <=,>=	LEQ, GEQ
+ *
+ * with (true || false) or (false && true) the second "false/true" is never checked
+ *
  */
 public class Logic {
     private static final int i = 2;
 
     static boolean b;
-    static boolean b1;
-    static boolean b2;
-
-    /*
-     * &&	AND
-     * ||	OR
-     * !(true)	NOT
-     * !=		NEQ
-     * ==		EQ
-     * <=,>=	LEQ, GEQ
-     *
-     * with (true || false) or (false && true) the second "false/true" is never checked
-     *
-     */
-    public static void main(String[] args) {
-
-        ifTest();
-        switchTest();
-
-    }
-
 
     static void ifTest() {
-        if (1 == 2) {
-
-        } else if (2 != 1) {
-
-        } else {
-
-        }
-
+        if (true) { } else if (true) { } else { }
 
         // one line allowed without braces.
         // whitespace is ignored in Java.
         if (true)
-
-
             b = false;
-
-
         else if (true) b = true;
         else b = false;
-
-        if (true) {} else {int i = 1; }
     }
-
-
-
-
 
     static void unperformedSide() {
         int i = 0;
@@ -69,14 +39,11 @@ public class Logic {
             i--;
         }
         // i == -1
-
+        // TODO why is this noteworthy?
         i = i > 0 ? i-- : i++; // the i-- is ignored
-
     }
 
     static void labelTest() {
-
-
         List<String> list = new ArrayList<>();
         optionalLabel:
         for (String entry : list) {
@@ -85,8 +52,4 @@ public class Logic {
             }
         }
     }
-
 }
-
-
-

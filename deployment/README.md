@@ -2,7 +2,7 @@
 
 | | |
 ---|---
-`./no/pkg` | Plain example without a package.
+`./no/pkg` | Plain Example without a package.
 `./pkg`| Example using a package. Has the dependencies `./other/pkg` and `no_main.jar` (see below).
 `./other/pkg` | Package without `main()`. Used by `pkg`. Can't be used by `yes_main.jar` (to be clarified).
 `./jar..` | Example using `.jar` files.

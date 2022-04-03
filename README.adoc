@@ -1,0 +1,22 @@
+### About
+This repository contains a collection of notes and summaries about Java.
+Because data tends to expand unevenly, this collection will inevitably contain redundancies.
+However, they shall be resolved in time.
+
+
+### Progress
+
+[%header]
+|===
+| Ch. | stuck @page | read summary | exercise
+4+| *OCP-SE8*
+| 1 Classes | | |
+| 2 Patterns | | |
+| 3 Generics | 134 |  |
+| 4 Functional | | |
+| 5 DateTime | DONE | TODO |
+| 6 Exceptions | 305 | |
+| 7 Concurrency | DONE | TODO | TODO
+| 8 IO | DONE |  |
+| 9 NIO2 | 473 | |
+| 10 JDBC | | |

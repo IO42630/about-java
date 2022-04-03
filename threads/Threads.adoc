@@ -39,7 +39,7 @@ image::img/WaitingRoom.png[]
 |===
 |[1]|entering the monitor |
     Thread arrives at the beginning of a _monitor region_.
-|Entry Set| |
+2+|Entry Set |
     Thread will participate in next tournament.
 |[2]| acquiring the monitor |
     Thread won the _tournament_. +
@@ -54,7 +54,7 @@ image::img/WaitingRoom.png[]
     Tournament starts. +
     `Object.wait(1000)` may specify a timer. +
     When timer expires, the waiting thread will "notify itself".
-|Wait Set| |
+2+|Wait Set |
     Waiting threads only participate in tournament if notified.
 | [4] |acquiring the monitor |
     Owner executed `Object.notify()`. +
@@ -282,9 +282,9 @@ image::img/JoinExample.png[]
 * Deadlock
 ** Thread A owns "foo" waits for "bar"
 ** Thread B owns "bar" waits for "foo"
-** TODO example
+** TODO Example
 * Livelock
-** TODO example
+** TODO Example
 * Starvation
 ** Thread A hogs a lock
 ** Thread A unable to make progress
@@ -327,3 +327,11 @@ image::img/JoinExample.png[]
 *** `Thread.MAX_PRIORITY`
 
 
+// # THREAD
+void ThreadContention(){
+// thread a holds lock.
+// thread b waits for the lock to be lifted.
+}
+
+void Deadlock(){
+//

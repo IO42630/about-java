@@ -1,0 +1,20 @@
+=== Serialization
+
+* good practice
+* have static long serialVersionUID and
+** Java does his auto
+** however recommended to do manually, because possible mismatch between jdks
+* not all classes can be `Serializable` such as Thread are too complex to be easily serialized
+
+
+* `ObjectOutputStream.writeObject(Object)`
+* `ObjectInputStream.readObject(): Object`
+* both support `null` , thus check must be performed
+** in example done by instanceof
+
+When deserializing
+
+* Java calls no-arg constructor of first non-serializable parent class,
+* skipping the constructors of any serialized class in between
+* static vars and default initialziations are ignored
+

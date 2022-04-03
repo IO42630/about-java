@@ -1,16 +1,11 @@
 == Declarations
 
-[options=header]
-|===
-| Related Documents
-|===
-
 === Overview
 ==== Method
 
 [cols="10,10,10,10,10,10,10", options="header"]
 |===
-|__access modifier__|__specifier__|__return type__|__method name__|__(list of param)__|__exception__|__{method body}__
+|__access modifier__|__specifier__|__return type__|__name__|__(list of param)__|__exception__|__{body}__
 |optional | optional | | | empty-able | optional | empty-able
 |public | final | void | foo | () | throws Exception | {int i=0;}
 |===
@@ -18,15 +13,13 @@
 ==== Class
 [cols="10,10,10,10,10,10,10", options="header"]
 |===
-|__access modifier__|__specifier__| __class__ | __class name__ |__extends__|__implements__|__{class body}__
+|__access modifier__|__specifier__| __class__ | __name__ |__extends__|__implements__|__{body}__
 | | optional | | | optional | optional |empty-able
 |public | final, abstract | class | Foo | extends Bar| implements Zoc | {int i=0;}
 |===
 
-
 {empty} +
 {empty} +
-
 
 === Access Modifier
 * order of _access modifiers_ and _specifiers_ does not matter
@@ -39,7 +32,7 @@
 *** may *not* be accessed in child through instance of parent class.
 * public : anywhere
 
-[cols="40,10,10,10,10", options="header"]
+[cols="30,10,10,10,10", options="header"]
 |===
 |Construct | `private` | (default) | `protected` | `public`
 |top-level type +
@@ -58,10 +51,8 @@ one per file - matches the file name. | |  | | YES
 
 === Specifiers
 * placement:
-** before/after _access modifier_
-** before
-*** `class`
-*** _return type_
+** before / after :  _access modifier_
+** before : `class` / _return type_
 
 [options=header]
 |===
@@ -76,21 +67,22 @@ one per file - matches the file name. | |  | | YES
 
 ==== final
 * Can't assign other Object to reference
-* `final` fields are not initialized by default
+* `final` fields are *not* initialized by default
 ** `final int i=0;  // OK` +
 `final int i;       // C-Error`
 * `final` can be assigned values
 ** in the line in which they are declared
 ** in an instance initializer
-* constructor
-* `final` local variable may be assigned a value
-* `final` field not assigned after constructor `-> C-Error`
-* assigning `null` counts as an assignment
-* initialization is optional for local final variables
+** constructor
+*** `final` field not assigned after constructor `-> C-Error`
+*** assigning `null` counts as an assignment
+* initialization for `final` local variables  is optional
 
-===== effectively final
+{empty} +
+
+==== effectively final
 * introduced in Java 8
-* final can be placed in declaration without causing C-Error.
+* `final` can be placed in declaration without causing C-Error.
 [source,java]
 int i = 1; // is eff-final
 i++; // this makes i not eff-final,
@@ -98,20 +90,30 @@ i++; // this makes i not eff-final,
 
 {empty} +
 
-'''
+==== c-time constant
+* stricter than `final`
+** literals
+** enum constants
+** _constants_
+*** must be declared & initialized on the same line
+*** not be initialized through a function (remember ++ is a function too);
+
+{empty} +
+
 ==== static
 * Purpose
 ** Helper methods, that don't require any object state.
 ** State that is shared by all instances of a class.
 
 [source,java]
-System.out.print(0);
 Store st = new Store(0); // stores 0
-int i = st.get();        // static method get() returns stored value
+st.get();        // static method get() returns 0
 st = null;
-i = st.get();           // st.get() is still 0
+st.get();        // st.get() is still 0
 
 * `static` initializer : `static {i=1;}`
+
+{empty} +
 
 ==== static vs instance
 * See `about.StaticAbout` .
@@ -123,7 +125,7 @@ i = st.get();           // st.get() is still 0
 |Method parameter & local variable (static and instance)| one copy per call
 |===
 
-* static imports
+* imports
 
 [source,java]
 import java.util.Arrays;
@@ -133,9 +135,10 @@ import static java.util.Arrays.*;
 import static java.util.Arrays;  // Error
 import java.util.Arrays.asList;  // Error
 
+{empty} +
 
-
-==== Illegal Combinations
-* `abstract_class` + `private` = C-Error
-* `abstract_class` + `final` = C-Error
-* `abstract_class` + `static` = C-Error
+==== Abstract
+* Illegal Combinations -> `C-Error`
+** `abstract_class` + `private`
+** `abstract_class` + `final`
+** `abstract_class` + `static`

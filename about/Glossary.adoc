@@ -1,0 +1,24 @@
+
+[%header,cols="1,3"]
+|===
+| Word | Comment
+| autoboxing | automatic conversion between the primitive types
+and their corresponding object wrapper classes +
+`Character a = 'a';`
+| class | the core type in Java that defines the implementation
+of a particular kind of object;
+it defines instance and class variables and methods,
+as well as specifies the interfaces it implements and the
+immediate superclass of the class, by default Object +
+`public class Foo {}`
+| declaration | officially, this is defined as a statement that establishes an identifier and associates attributes with it, without necessarily reserving its storage or providing the implementation
+| definition | a declaration that reserves storage (for data) or provides an implementation (for methods). (definition + initialization)
+| DOM | Document Object Model, defined by the W3C,
+that allows applications to dynamically access and update the content,
+structure, and style of documents
+| DTO | Data Transfer Object
+| C-Error | Compile-time error.
+| R-Error | Runtime error.
+| `uE`    | Unchecked Exception, also called RuntimeException. However both `uE` and `cE` occur at Runtime.
+| `cE`    | Checked Exception
+|===

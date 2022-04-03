@@ -4,7 +4,9 @@
 * the target of an decision-making statement can be a
     ** single statement
     ** block
-* reminder : 0 and 1 are not boolean value in Java
+* 0 and 1 are not boolean value in Java
+
+{empty} +
 
 ==== Switch
 
@@ -18,24 +20,17 @@
 * `switch` does ot allow `continue` statement.
 * allowed `switch(T)` param types:
     ** `short` , `Short` , `int` , `Integer` +
-    `byte` , `Byte` , `char` , `Character` +
-    `String`
-    ** enum instance
+    `byte` , `Byte` , `char` , `Character` , `String`
+    ** enum
     ** `var` (type resolves to one of the above)
 
 ===== case expressions
 * no declarations allowed
 * be, or consist of, `C-time constant` expressions
-    ** literals
-    ** enum constants
-        *** when using enum constants omit the enum name (`A` instead of `Enum.A`)
-
-    ** _constants_
-
-
+*** when using enum constants omit the enum name (`A` instead of `Enum.A`)
 * match the `switch` type without an explicit cast (see `about.Castig`)
 
-{blank} +
+{empty} +
 
 ==== while & do while
 

@@ -1,0 +1,68 @@
+== JDBC
+* Java Database Connectivity Language
+
+
+
+=== Interfaces
+Are usually provided in a `.jar` supplied by the DB manufacturer.
+
+[options=header, cols="10,20"]
+|===
+|Interface |
+|`Driver`| Knows how to get a connection to the database
+|`Connection`| Knows how to communicate with the database
+|`Statement`| SQL-statement.
+|`ResultSet`| Knows what was returned by a SELECT query
+|===
+
+==== JDBC URL
+
+|===
+|`Protocol` `:` `Product Name` `:` `DB Specific Connection Details`
+|`jdbc` `:` `postgres` `:` `//localhost:5432/foo`
+|`jdbc` `:` `h2` `:` `mem:db1`
+|`jdbc` `:` `oracle:thin` `:` `@localhost:1521:XE`
+|===
+
+=== Driver
+TODO
+
+=== Statement
+
+[source,java]
+Statement stmt = conn.createStatement();
+Statement stmt = conn.createStatement(
+    ResultSet.TYPE_FORWARD_ONLY,
+    ResultSet.CONCUR_READ_ONLY);
+
+[options=header]
+|===
+|ResultSet.|
+    Can Go Backward through the retreived Data|
+    See latest Data from DB Table|
+    Supported by Most Drivers
+| TYPE_FORWARD_ONLY |No|No|Yes
+| TYPE_SCROLL_INSENSITIVE | Yes|No|Yes
+| TYPE_SCROLL_SENSITIVE|Yes|Yes|No
+|===
+
+
+|===
+| `CONCUR_READ_ONLY` | Read only.
+| `CONCUR_READ_UPDATABLE` | Read & Write.
+|usually | Writes are performed with `INSERT`, `UPDATE`, `DELETE` statements, and not the `ResultSet`.
+|===
+
+[options=header]
+|===
+| Method|Comment
+|`int Statement.executeUpdate()`|
+|`ResultSet Statement.executeQuery()`|
+|`boolean Statement.execute()` |
+    `true` is statement has a `ResultSet`. +
+    See `jdbc.Helpers.universalHandler()`.
+|===
+
+
+=== Progress
+@ Page 522

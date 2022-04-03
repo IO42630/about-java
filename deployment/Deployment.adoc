@@ -15,13 +15,14 @@
 
 
 #### One Line
-Normal | One Line
----|---
-`javac Core.java` | `java Core.java`
-`java Core` |
-Produces class file | Fully in memory
-For any program | For programs with one class
-Can import any library | Can ony import code that came with the JDK.
+|===
+| Normal | One Line
+| `javac Core.java` | `java Core.java`
+| `java Core` |
+| Produces class file | Fully in memory
+| For any program | For programs with one class
+|Can import any library | Can ony import code that came with the JDK.
+|===
 
 * One Line ignores packages, thus a `Main.java` in `package one.line.pkg;` can be called as:
     * `java ./one/line/pkg/Main.java`

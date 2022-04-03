@@ -1,0 +1,183 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="13.3">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>880</y>
+      <w>240</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>DB
+bg=#FFF59D
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>940</x>
+      <y>810</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>JNDI
+bg=#80DEEA
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1100</x>
+      <y>810</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>JDBC
+bg=#80DEEA
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1260</x>
+      <y>810</y>
+      <w>80</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>JTA
+bg=#80DEEA
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1140</x>
+      <y>720</y>
+      <w>120</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>
+
+Session
+bg=#80DEEA
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1260</x>
+      <y>720</y>
+      <w>120</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>
+Transaction
+bg=#80DEEA
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1150</x>
+      <y>700</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Persistent
+Objects
+bg=#FFF59D
+transparency=0
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>640</y>
+      <w>480</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Application
+bg=#80DEEA
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>910</x>
+      <y>660</y>
+      <w>100</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Transient
+Objects
+bg=#FFF59D
+transparency=0
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>720</y>
+      <w>240</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>SessionFactory
+bg=#80DEEA
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>750</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Transaction
+Factory
+bg=#80DEEA
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>750</y>
+      <w>120</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>Connection
+Provider
+bg=#80DEEA
+transparency=0</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>790</y>
+      <w>480</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>
+
+transparency=0
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

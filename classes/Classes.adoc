@@ -1,0 +1,239 @@
+== Class
+'''
+==== General
+
+* `.java` file can have 0..1 public top-level classes.
+    ** `C-Error` if filename does not match name of public class.
+* `this.var` references current and inherited members
+    ** used do set apart instance/class variables from parameters/local variables
+* `super.var` reference to inherited members
+    ** used to call members of the Parent class from the Child class.
+* `this(int i)` is used to call overloaded Constructor.
+* Java supports only single inheritance
+
+{empty} +
+
+'''
+==== Ordering of Elements
+
+[options=header]
+|===
+|Element|Example|Required|Placement
+|Package declaration | `package foo;`|NO | First line in the file
+|Import statements | `import bar.*;`|NO | After the package
+|Class declaration | `public class C`| YES | After import
+|Field declarations | `int i;`| NO | Any top-level element in class
+|Method declarations | `void method()` | NO |  Any top-level element in class
+|===
+{empty} +
+
+'''
+==== Constructors
+* The purpose of a _constructor_ is to initialize fields.
+* Matches the name of the class.
+* May have different access modifiers.
+    ** Overloading rules do apply.
+* If a user-declared constructor is present,
+    ** then the default constructor is not declared in the background.
+    *** Thus calling the default constructor `-> C-Error`.
+    *** having a private constructor effectively disables the instantiation of the class from outside.
+**** it can only be extended by inner classes.
+* `this()` and `super()` must be the first statement in the constructor
+    ** `Foo(){this();}` and other circular references caused by constructors -> `C-Error`.
+* If no `this()` or `super()` are present, then the compiler inserts a `super()` in the background
+    ** since compiler inserts super() the parent constructor is called in every child
+* Relevant:
+    ** Parent has no-default constructor
+    ** Child has no (or no matching) constructor.
+    ** C-Error, since compiler will insert call to default constructor of parent.
+* super() refers to most direct parent
+* see `about.basics.classes.Constructors`
+
+'''
+
+==== Order of Initialization
+* aka _class loading_
+* a `classes` is initialized either when
+    *** program starts
+    *** static member of the class is referenced
+    *** shortly before instance of class is created
+
+===== Order
+. `static`
+    .. init `super` first (start with highest)
+    .. `static` var declarations (in order of appearance)
+    .. `static` initializers (in order of appearance)
+. `instance`
+    .. init `super` first
+    .. instance var declaration (in order of appearance)
+    .. instance initializers (in order of appearance)
+    .. Initialize the constructor including any overloaded constructors referenced with `this()`.
+        ... `this()` or `super()` if present
+        ... default `super()`
+. what ever instance method is called
+
+'''
+
+==== Reviewing Constructor Rules SKIP
+
+
+{empty} +
+{empty} +
+
+
+=== Inheritance
+
+==== Members
+* only members are inherited, all members are inherited.
+** _fields_ : variable declared outside of method, but inside class.
+** _methods_ (=functions) (operate on state)
+*** methods have parameters
+*** _method signature_ = name + parameter types
+*** _method declaration_ = full line (?)
+** nested classes, interfaces, enums
+** NOT _constructors_ , since those are not inherited.
+
+
+==== Subtype and Supertype
+* if X subtype of Y , then
+    ** X, Y class -> X subclass of Y
+    ** X, Y interface -> X subinterface of Y
+    ** X class, Y interface -> X implements Y (directly or through superclass)
+
+
+
+{empty} +
+{empty} +
+
+
+
+
+
+
+
+{empty} +
+{empty} +
+
+
+
+
+
+
+
+
+{empty} +
+{empty} +
+
+'''
+=== Abstract Classes
+|===
+| `classes.AbastractDemo.java`
+| `interfaces.Interfaces.adoc`
+|===
+
+* abstract class may contain concrete members
+** concrete class may NOT contain abstract members
+* abstract methods
+** without body: `abstract void foo();`
+** does not define an implementation upon declaration
+** must be overridden in first _concrete class_
+*** overriding rules _DO_ apply
+* `abstract_class` classes may contain anything an concrete class contains
+** not true vice-versa
+
+
+==== Constructors in Abstract
+* main difference:
+    * can only be called by instantiating subclass
+* see `about.basics.classes.AbstractDemo`
+
+
+
+
+
+
+{empty} +
+{empty} +
+
+
+
+{blank} +
+
+=== Poly and Ifaces
+* when using abstract reference (e.g. inface) for concrete class
+    ** wish to access memeber which exist in concrete class only
+    ** explicit cast from e.g. infterface to class
+        *** mus be compatible
+* `instance_of`
+    ** if reference type is final compiler will detect
+    ** if reference type is abstract it might be extended to become an instance of
+        *** thus compiler can't check
+
+==== Inner Classes / Interfaces
+* member of a class
+* can have all 4 access modifiers ( top-level classes/interfaces can only be public/default)
+* can't contain static methods
+
+
+{empty} +
+{empty} +
+
+
+=== Nesting
+All 4 Types are considered nested. Non-static nested classes are called inner classes.
+
+[options=header]
+|===
+| 4 Types| static nested | member inner | local inner | anon inner
+| 2+| same level as fields 2+|within method
+| | static | instance | | without name
+| access modif 2+| ALL 2+| none, already local to method
+| Can extend, implement. +
+Can be `abstract`, `final`. 3+| YES | NO, zero. +
+Instead it is assigned to one `super` or `iface` at declaration
+|access to instance members of enclosing class +
+(incl. private vars) | NO 3+|YES
+|access local var of enclosing method | NO +
+Not applicable, since member-inner can't contain static members. |YES +
+If member inner of local inner. (and if final or eff-final)
+2+|YES, if final or effectively-final.
+|Declare `static` methods. | YES 3+|NO
+|===
+
+==== General
+* nested / inner are treated as separate namespaces.
+
+{empty} +
+
+==== Static Nested
+* may be static-imported:
+[source,java]
+package somepkg;
+public class Enclosing{ static class Nested{} }
+//
+import static somepkg.Enclosing.Nested;
+
+
+{empty} +
+
+==== Local Inner
+* Local inner class instance can't be returned by enclosing method.
+
+{empty} +
+
+==== Anon Inner
+* Required to  extend an existing class or implement an existing interface.
+* Can be a param:
+[source,java]
+void bar(SomeAnon some){}
+void foo(){
+    return bar(new SomeAnon{ void baz(){} });
+}
+
+
+
+
+
+
+
+

@@ -1,0 +1,30 @@
+== Maven
+
+:toc:
+
+==== Add Spring Resources
+[source]
+<project>
+<build>
+<resources>
+      <resource>
+        <directory>src/main/resources</directory>
+      </resource>
+    </resources>
+
+
+
+|===
+| -X    | debug
+| clean | delete previously generated stuff
+| -U    | force update
+|===
+
+
+{empty} +
+
+=== Quick Fixes
+
+|===
+| set mvn java version | `export JAVA_HOME=/usr/lib/jvm/<jdk>`
+|===

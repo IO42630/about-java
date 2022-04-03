@@ -4,13 +4,8 @@ import java.util.*;
 import java.util.function.Consumer;
 import java.util.function.Supplier;
 
-
-
-
-
 public class LambdaTypes {
-
-
+    
     public static void main(String[] args) {
 
 
@@ -20,13 +15,14 @@ public class LambdaTypes {
 
 
     }
+}
 
-
-
-
-
-
-
+/**
+ * Copy of java.util.function.Consumer
+ */
+@FunctionalInterface
+interface ConsumerCopy<T> {
+    void accept(T value);
 }
 
 
@@ -37,14 +33,13 @@ class ConsumerDemo {
      * public interface Consumer<T>{ void accept(T t); }
      */
     static void run() {
-        Consumer<String> consumer = x -> System.out.println(x); // Elaborate the body of the .accept(T t); method
+        ConsumerCopy<String> consumer = x -> System.out.println(x); // Elaborate the body of the .accept(T t); method
         consumer.accept("Hello"); // call directly
         indirectAccept(consumer, "Hello World"); // call through method
         indirectAccept(x -> System.out.println(x), "Hello"); // skip Consumer variable
-
     }
 
-    static void indirectAccept(Consumer<String> consumer, String value) {
+    static void indirectAccept(ConsumerCopy<String> consumer, String value) {
         consumer.accept(value);
     }
 
@@ -53,8 +48,6 @@ class ConsumerDemo {
 
 /**
  * Copy of Functional Interface java.util.function.Supplier
- *
- * @param <T>
  */
 interface SupplierCopy<T> {
     T get();

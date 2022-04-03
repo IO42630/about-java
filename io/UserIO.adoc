@@ -1,0 +1,44 @@
+== User IO
+
+{empty} +
+
+==== Overview
+* `System.out` and `System.err` are `PrintStream` (old)
+* `System.in: InputStream` (old)
+* `System.console(): Console` is a singleton (new)
+** `Console.reader(): Reader`
+** `Console.writer(): PrintWriter`
+
+{empty} +
+
+==== PrintStream/Writer
+* both `PrintStream` and `PrintWriter` independently implement the following methods:
+** `.print()`
+*** overloaded  with all primitives / String / Object
+*** generally performs String.valueOf()
+** `println()` : useful as linebreak may depend on JVM
+*** `System.getProperty("line.separator");`
+** `.format()` (see examples)
+** `.checkError()` to detect presence of problem after attempted write
+
+{empty} +
+
+==== PrintWriter
+* PrintWriter(OutputStream)
+** `.write()`  (inherited from Writer, throws IOException )
+
+{empty} +
+
+==== Console
+
+* `System.console()` can result in null, in sys where no console is supported
+* inherits flush()
+** recommended to call before readLine / readPassword
+* `.readLine()`
+** similar to `BufferedReader.readLine()`
+** also contains `.readLine(String)` for user prompt
+* `.readPassword()`
+** disables display of the text the user entered
+** also has `.readPassword(String)`
+** returns char[], so that pwd does not enter stringpool,
+and can be cleared after verifying validity

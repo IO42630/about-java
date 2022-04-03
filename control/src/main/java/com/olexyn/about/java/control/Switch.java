@@ -4,27 +4,23 @@ import java.util.Random;
 
 public class Switch {
 
-
-
-    public Switch(){
-
+    public static void main(String... args){
+        switchTest();
+        switchEnumTest();
     }
-
-    int set(){
-        return 1;
-    }
-
 
     static void switchTest() {
-
 
         final int one;
         one = 1; // must be declared & initialized on the same line
         final int two = 2; // must be final
         final int rng = new Random().nextInt();
+        int i23 = 1;
+        final int hidden_func = ++i23;
+        final int not_func = 1 + 4;
 
         for (int i = 0; i < 4; i++) {
-
+            System.out.println("this is i = "+ i);
             switch (i) {
                 case 0:
                     System.out.println(0);
@@ -35,36 +31,19 @@ public class Switch {
                     System.out.println("default");
                 case two:
                     System.out.println(2);
-
             }
-
-            System.out.println("-------");
         }
     }
 
+    enum Caps{A,B}
 
-    static void switchEnum(){
-
-        Caps c = null;
-        c = Caps.A;
-
-        switch (c){
+    static void switchEnumTest(){
+        switch (Caps.A){
             case A:
-                System.out.println("f");
+                System.out.println("A");
                 break;
-            case C:
+            case B:
                 break;
         }
-    }
-
-    enum Caps{A,B,C,D}
-
-
-
-
-
-
-    public static void main(String... args) {
-
     }
 }

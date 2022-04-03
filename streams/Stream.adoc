@@ -1,0 +1,123 @@
+=== Stream
+* Additional way to operate on `Collection`. +
+* `Stream` are *not* passed - but either:
+** created
+*** usually `Stream` are not declared - but _created_, _modified_, _consumed_ it on one line.
+** consumed (~ *terminal*)
+** eager: returns result after all elements are processed
+** created + consumed (~ *intermediate*)
+*** methods that modify a `Stream` consume the incoming `Stream`, and return a new `Stream`
+*** lazy:
+**** one by one
+**** not executed unless terminal called on returned stream
+* all methods of a `Stream` consume it -> consuming again -> `IllegalStateException`
+* There are specific classes for primitive types – `IntStream`, `LongStream` and `DoubleStream`.
+
+
+{empty} +
+
+---
+==== Creating Streams
+* interface `java.util.stream.Supplier`
+
+
+
+[source,java]
+Stream<Integer> stream;
+stream = Stream.of(1, 2, 3, 4);
+stream = Stream.of(new Integer[]{1, 2, 3, 4});
+stream = Stream.of(new int[]{1,2,3,4}); // -> C-Error
+//
+List<Integer> myList = new ArrayList<>();
+Stream<Integer> sequentialStream = myList.stream(); //sequential stream
+Stream<Integer> parallelStream = myList.parallelStream(); //parallel stream
+//
+//
+public static<T> Stream<T> generate(Supplier<T> s)
+Stream<String> stream1 = Stream.generate(() -> {return "abc";});
+//
+Stream<String> stream2 = Stream.iterate("abc", (i) -> i);
+//
+LongStream is = Arrays.stream(new long[]{1, 2, 3, 4});
+IntStream is2 = "abc".chars();
+
+{empty} +
+
+---
+==== Consuming Streams
+
+===== Evaluating
+
+[source,java]
+boolean anyMatch(Predicate<? super T> predicate)
+boolean allMatch(Predicate<? super T> predicate)
+boolean noneMatch(Predicate<? super T> predicate)
+
+{empty} +
+
+===== Modifying
+* interface `Function` : takes argument of `T`, returns result of `R`.
+
+[source,java]
+Function<? super T, ? extends R> mapper
+
+
+[source,java]
+IntStream mapToInt(ToIntFunction<? super T> mapper);
+// similarly for long and double returning primitive specific stream.
+IntStream flatMapToInt(Function<? super T, ? extends IntStream> mapper);
+// similarly for long and double
+<A> A[] toArray(IntFunction<A[]> generator);
+<U> U reduce(U identity, BiFunction<U, ? super T, U> accumulator, BinaryOperator<U> combiner);
+
+[source,java]
+<R> Stream<R> map(Function<? super T, ? extends R> mapper);
+<R> Stream<R> flatMap(Function<? super T,? extends Stream<? extends R>> mapper)
+T reduce(T identity, BinaryOperator<T> accumulator);
+
+{empty} +
+
+===== Collecting
+
+[source,java]
+Stream<T> peek(Consumer<? super T> action)
+void forEach(Consumer<? super T> action)
+void forEachOrdered(Consumer<? super T> action)
+
+{empty} +
+
+---
+==== java.util.Optional
+Java Optional is a container object which may or may not contain a non-null value. +
+If a value is present, isPresent() will return true and get() will return the value. +
+Stream terminal operations return Optional object. Some of these methods are: +
+
+[source,java]
+Optional<T> reduce(BinaryOperator<T> accumulator)
+Optional<T> min(Comparator<? super T> comparator)
+Optional<T> max(Comparator<? super T> comparator)
+Optional<T> findFirst()
+Optional<T> findAny()
+
+
+{empty} +
+
+---
+==== java.util.Splinterator
+Try executing in parallel. TODO
+
+[source,java]
+trySplit
+
+{empty} +
+
+---
+==== Short Circuiting
+[cols="1,3"]
+|===
+| intermediate operation | producing finite stream for infintie stream +
+e.g. limit() , skip()
+| terminal operation | terminate in finite time for infinite stream +
+e.g. anyMatch(), findFirst()
+|===
+

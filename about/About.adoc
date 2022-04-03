@@ -1,19 +1,12 @@
-=== Glossary of Abbreviations
-
-Abbreviation | -
----|---
-C-Error | Compile-time error.
-R-Error | Runtime error.
-`uE`    | Unchecked Exception, also called RuntimeException. However both `uE` and `cE` occur at Runtime.
-`cE`    | Checked Exception
-
-== About
+=== About
 
 [cols="10,10,100"]
 |===
 |JDK     | | Java Development Kit : minimum software needed for Java development.
-|Compiler | `javac` | _Compiles_ from sourcecode contained in `.java` files.''' _Compiles_ to `bytecode` contained in `.class` files.
-|Launcher | `java` |Launches the JVM. ''' JVM _interprets_ the bytecode .
+|Compiler | `javac` | _Compiles_ from sourcecode contained in `.java` files. +
+_Compiles_ to `bytecode` contained in `.class` files.
+|Launcher | `java` |Launches the JVM. +
+JVM _interprets_ the bytecode .
 |Archiver| `jar` |
 | | `javadoc` | generates documentation.
 | API | | StringBuilder is an API.
@@ -35,9 +28,11 @@ R-Error | Runtime error.
 ** Instad Gooles Dev Kit takes Java programs as input and outputs Dalvik bytecode." +
 ** This Dalvik bytecode is then the native input for the Android VM.";
 
+{empty} +
+
 ==== Interpreter vs. Compiler
 
-
+[%header]
 |===
 |Interpreter | Compiler
 |Translates program one statement at a time.| Scans the entire program and translates it as a whole into machine code.
@@ -57,7 +52,8 @@ R-Error | Runtime error.
 [cols="10,20"]
 |===
 |Object Oriented | All code is defined in classes.
-|Encapsualtion | - Access modifiers ''' - Local scope of variables
+|Encapsualtion | - Access modifiers +
+- Local scope of variables
 |Platform Independent | bytecode runs in any JVM
 |Robust| no memory leaks
 | Simple | no pointers, no operator overloading
@@ -78,17 +74,6 @@ R-Error | Runtime error.
 |===
 
 
-
-* _member_ all that is inherited
-** _field_ : variable declared outside of method, but inside class.
-** _methods_ (=functions) (operate on state)
-*** methods have parameters
-*** _method signature_ = name + parameter types
-*** _method declaration_ = full line (?)
-** _nested classes_
-** _interfaces_
-** _enumerated types_
-** NOT _Constructors_ , since those are not inherited.
 * Comment
 * `/* */ */` does not compile, as there is one `*/` too much.
 
@@ -108,4 +93,26 @@ public class Foo {    // class definition
 }   }
 
 '''
+
+
+ // Java SE  Java Platform, Standard Edition
+    //      Specification of a computing platform for development and deployment.
+    // Oracle JDK   Java Development Kit
+    //      Oracle's implementation of Java SE
+
+
+
+        String  Java_EE = "Java Enterprise Edition " +
+                                  "(Currently rebranded as Jakarta EE)" +
+                                  "Specification that is related to JAVA SE." +
+                                  "It includes all the classes in Java SE, plus a number that are more useful to programs that run on servers as opposed to workstations.";
+        String JRE = "Java Runtime Environment" +
+                             "contains a stand-alone JVM (HotSpot)" +
+                             "the Java standard library (Java Class Library)" +
+                             "and a configuration tool";
+        String Android_VM = "Google's implementation" +
+                                    "Incompatible with the JVM spec." +
+                                    "Instad Gooles Dev Kit takes Java programs as input and outputs Dalvik bytecode." +
+                                    "This Dalvik bytecode is then the native input for the Android VM.";
+
 

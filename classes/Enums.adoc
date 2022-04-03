@@ -1,0 +1,54 @@
+// TODO REDO
+
+=== Enums
+* An `enum` is a fixed set of calls to a constructor of a particular "enum-type".
+** the set can't be extended.
+* full enum Example see `Enum`
+** includes usually hidden segments
+** comments in table below.
+
+|===
+| the enum construct | `public enum SomeEnum { A, B, C, D}`
+| enum-type |  `SomeEnum`
+| calls to constructor of enum-type | `A, B, C, D`
+| reference to instance created by constructor calls +
+> when first reference is made, +
+. then all the constructor calls are executed. +
+> also called enum-value
+|  `SomeEnum foo == SomeEnum.A;`
+|===
+[source,java]
+foo == SomeEnum.A; // true
+(SomeEnum.A.toString()).equals(SomeEnum.A.name());     // true, string value is "A"
+SomeEnum.A.ordinal() // returns linear position of enum constant instance
+
+
+
+* Enum usage in `switch` see `control.Control.adoc#Switch`
+* Enums are top-level constructs
+* Enum types (i.e. `SomeEnum`) can't be instantiated directly (i.e. `new SomeEnum() -> C-Error`)
+
+{empty} +
+
+===== static methods
+|===
+|`static enum[] values()` | returns array
+|`Season.valueOf("SUMMER")` | returns instance that matches param, as if reverse of `Enum.SUMMER.name()`.
+|===
+
+{empty} +
+
+===== Constructor
+* must be `private`
+*** `private` keyword may be omitted
+* Enum-instances can't access private members (e.g. `baz`) of enum via `this.baz`.
+** still possible via `SomeEnum.A.baz`
+** can also access private members of other enum-instances
+
+
+
+
+
+
+{empty} +
+{empty} +
