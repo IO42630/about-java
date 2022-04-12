@@ -64,4 +64,4 @@ Foo = new FooBuilder.setA("a").setB("b").build();
 ** pick which factory creates the product object (abstract factory pattern)
 ** allow method to further influence what kind of product object is created (factory method pattern)
 
-image::FactoryDemo.png[]
+image::factory/FactoryDemo.png[]

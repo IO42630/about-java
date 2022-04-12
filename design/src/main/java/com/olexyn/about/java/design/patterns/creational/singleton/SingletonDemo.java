@@ -1,12 +1,13 @@
-package com.olexyn.about.java.design.patterns.creational;
+package com.olexyn.about.java.design.patterns.creational.singleton;
 
-//Singleton => one instance + global acess to it - - - - -
+/**
+ * Singleton => one instance + global access to it - - - - -
+ */
 public class SingletonDemo {
 
     private static SingletonDemo instance = null;
 
-    private SingletonDemo() {// avoids instantiation
-    }
+    private SingletonDemo() { /* avoids instantiation */ }
 
     // sync for thread safety
     public static synchronized SingletonDemo getInstance() {

@@ -18,6 +18,7 @@ public class Streams {
     }
 
     public static void main(String... args){
+        //
         evaluateStream();
         collectStream();
         modifySteam();
@@ -51,9 +52,6 @@ public class Streams {
     static void evaluateStream() {
         integerStream = integerList.stream();
         integerStream.allMatch(x -> x > 0);
-
-
-
     }
 
 
