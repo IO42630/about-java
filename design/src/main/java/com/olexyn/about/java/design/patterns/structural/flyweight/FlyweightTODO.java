@@ -1,4 +1,4 @@
-package com.olexyn.about.java.design.patterns.structural;
+package com.olexyn.about.java.design.patterns.structural.flyweight;
 
 /*
  * Flyweight.
@@ -6,13 +6,15 @@ package com.olexyn.about.java.design.patterns.structural;
  */
 
 import java.util.ArrayList;
+import java.util.Map;
 import java.util.WeakHashMap;
 
 
-
+// TODO this is not a basic flyweight - is this a flyweight factory?
 class CoffeeFlavour {
+
     private final String name;
-    private static final WeakHashMap<String, CoffeeFlavour> CACHE = new WeakHashMap<>();
+    private static final Map<String, CoffeeFlavour> CACHE = new WeakHashMap<>();
 
     // only intern() can call this constructor
     private CoffeeFlavour(String name) {
@@ -39,6 +41,7 @@ class CoffeeFlavour {
 
 @FunctionalInterface
 interface Order {
+
     void serve();
 
     static Order of(String flavourName, int tableNumber) {
@@ -59,7 +62,7 @@ class CoffeeShop {
     }
 }
 
-public class Flyweight {
+public class FlyweightTODO {
     public static void main(String[] args) {
         CoffeeShop shop = new CoffeeShop();
         shop.takeOrder("Cappuccino", 2);
