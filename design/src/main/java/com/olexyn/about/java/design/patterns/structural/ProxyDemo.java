@@ -1,28 +1,28 @@
 package com.olexyn.about.java.design.patterns.structural;
 
-/*
- * Proxy.
- * Provide a placeholder for another object to control access to it.
- */
 
-interface Image {
-	public void print();
+
+interface Service {
+	void print();
 }
 
-class Real implements Image {
+class RealService implements Service {
 	public void print() {
 		System.out.println(this);
 	}
-	private void write() {
-	}
 }
 
-class Proxy implements Image {
+class Proxy implements Service {
 	public void print() {
-		(new Real()).print();
+		(new RealService()).print();
 	}
 }
 
+/**
+ * <b>Proxy</b><br>
+ * Placeholder for another object to control access to it.<br>
+ * Popular use case is lazy access/init. Thereby semantically overlaps with Singleton.
+ */
 public class ProxyDemo {
 	public static void main(String[] args) {
 		(new Proxy()).print();
