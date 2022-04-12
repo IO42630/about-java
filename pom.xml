@@ -46,6 +46,7 @@
         <module>charts</module>
         <module>spring-demo</module>
         <module>kotlin</module>
+        <module>amq</module>
     </modules>
     <dependencies>
         <dependency>
