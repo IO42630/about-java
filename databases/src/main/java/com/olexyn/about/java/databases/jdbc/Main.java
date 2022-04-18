@@ -1,18 +1,17 @@
 package com.olexyn.about.java.databases.jdbc;
 
-import com.olexyn.about.java.databases.h2.H2Server;
+import com.olexyn.about.java.databases.h2.H2PocketServer;
+import com.olexyn.about.java.databases.h2.H2PocketServerDemo;
 
 
 import java.sql.*;
-import java.util.HashMap;
-import java.util.Map;
 
 class Main {
     public static void main(String[] args) throws SQLException, InterruptedException {
 
         Helpers helpers = new Helpers();
 
-        Connection conn = new H2Server().getConnection();
+        Connection conn = new H2PocketServerDemo().getConnection();
 
         System.out.println(conn);
 
