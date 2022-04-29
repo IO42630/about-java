@@ -1,0 +1,13 @@
+=== Architectures
+
+==== Event Driven (EDA)
+* Producer
+* Router
+* Consumer
+
+Similar to our "threds.message" example with:
+
+* Router -> Medium (with some added logic)
+
+
+

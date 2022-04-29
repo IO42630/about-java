@@ -23,10 +23,10 @@ public class ThreadDemo {
         // The Constructor of Thread may take an Object which is implementing Runnable as a Parameter.
         // This Parameter is called Target.
         // The run() in the Thread is overridden by the run() in the Target.
-        // Thus the Target may be a Thread.
-        // However it is wasteful to use Thread as a Target as only the run() is used.
-        // If Thread is initialied through the no-args Constructor, it's run is not overridden.
-        // Or if Thread is extended, then the overriding happens by the extending class and not throught Constructor.
+        // Thus, the Target may be a Thread.
+        // However, it is wasteful to use Thread as a Target as only the run() is used.
+        // If Thread is initialized through the no-args Constructor, it's run is not overridden.
+        // Or if Thread is extended, then the overriding happens by the extending class and not trough Constructor.
 
 
         // available Constructors for Thread

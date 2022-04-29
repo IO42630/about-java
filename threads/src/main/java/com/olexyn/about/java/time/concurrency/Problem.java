@@ -4,28 +4,6 @@ public class Problem {
 
     private static int variable = 1;
 
-    public static void main(String... args) throws InterruptedException {
-
-        Job job = new Job();
-
-        Thread t1 = new Thread(job);
-        t1.setName("T1");
-        Thread t2 = new Thread(job);
-        t2.setName("T2");
-
-        // set both threads to RUNNABLE.
-        t1.start();
-        t2.start();
-
-        // inject both threads
-        t1.join();
-        Thread.sleep(100);
-        t2.join();
-
-        printThread(" concluded with: " + variable); // 0
-    }
-
-
     /**
      * Main injects T1 into Main.
      * T1 evaluates condition as true.
@@ -41,7 +19,7 @@ public class Problem {
 
         @Override
         public void run() {
-            try {modifyVariable(); } catch (InterruptedException ignored) { }
+            try { modifyVariable(); } catch (InterruptedException ignored) { }
         }
 
         public void modifyVariable() throws InterruptedException {
@@ -58,5 +36,25 @@ public class Problem {
     private static void printThread(String s){
         System.out.println(Thread.currentThread().getName() + s);
     }
+
+    public static void main(String... args) throws InterruptedException {
+
+        Job job = new Job();
+
+        Thread t1 = new Thread(job, "T1");
+        Thread t2 = new Thread(job, "T2");
+
+        // set both threads to RUNNABLE.
+        t1.start();
+        t2.start();
+
+        // inject both threads
+        t1.join();
+        Thread.sleep(100);
+        t2.join();
+
+        printThread(" concluded with: " + variable); // 0
+    }
+
 }
 
