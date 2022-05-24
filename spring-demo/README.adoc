@@ -1,0 +1,8 @@
+= Spring (Boot)
+:toc:
+:toclevels:4
+
+=== Quickstart
+
+* run Demo.java
+* open http://localhost:8080/greeting
