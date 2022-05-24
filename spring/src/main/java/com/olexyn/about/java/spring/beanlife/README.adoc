@@ -1,0 +1,7 @@
+= Beanlife
+
+== 3 Ways of Configuring via XML
+
+* A : implementing `XYZBean` interfaces
+* B : init `CommonAnnotationBeanPostProcessor`
+* C : implementing `XYZAware` interfaces
