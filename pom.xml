@@ -44,7 +44,7 @@
         <module>other</module>
         <module>string</module>
         <module>charts</module>
-        <module>spring-demo</module>
+        <module>spring-boot</module>
         <module>kotlin</module>
         <module>amq</module>
     </modules>
