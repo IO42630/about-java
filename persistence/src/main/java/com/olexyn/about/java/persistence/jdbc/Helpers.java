@@ -1,4 +1,4 @@
-package com.olexyn.about.java.databases.jdbc;
+package com.olexyn.about.java.persistence.jdbc;
 
 import java.sql.ResultSet;
 import java.sql.ResultSetMetaData;

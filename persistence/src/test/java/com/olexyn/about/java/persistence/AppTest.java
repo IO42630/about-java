@@ -1,4 +1,4 @@
-package com.olexyn.about.java.databases;
+package com.olexyn.about.java.persistence;
 
 import org.junit.Test;
 

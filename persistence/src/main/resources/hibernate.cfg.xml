@@ -13,6 +13,6 @@
         <!-- org.hibernate.HibernateException: No CurrentSessionContext configured! -->
         <property name="hibernate.current_session_context_class">thread</property>
         <!-- Mapping with model class containing annotations -->
-        <mapping class="com.olexyn.about.java.databases.hibernate.CustomerEntity"/>
+        <mapping class="com.olexyn.about.java.persistence.hibernate.CustomerEntity"/>
     </session-factory>
 </hibernate-configuration>

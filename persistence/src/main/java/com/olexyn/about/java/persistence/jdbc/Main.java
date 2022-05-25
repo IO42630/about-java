@@ -1,6 +1,6 @@
-package com.olexyn.about.java.databases.jdbc;
+package com.olexyn.about.java.persistence.jdbc;
 
-import com.olexyn.about.java.databases.h2.H2PocketServerDemo;
+import com.olexyn.about.java.persistence.h2.H2PocketServerDemo;
 
 import java.sql.Connection;
 import java.sql.ResultSet;

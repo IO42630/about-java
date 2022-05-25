@@ -1,4 +1,4 @@
-package com.olexyn.about.java.databases.hibernate;
+package com.olexyn.about.java.persistence.hibernate;
 
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.Metadata;

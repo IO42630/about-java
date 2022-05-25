@@ -6,7 +6,7 @@
     <version>0.1</version>
     <packaging>pom</packaging>
     <name>about-java</name>
-    <url>http://www.olexyn.com</url>
+    <url>https://www.olexyn.com</url>
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <java.version>17</java.version>
@@ -15,10 +15,11 @@
         <jax.version>2.3.0</jax.version>
     </properties>
     <modules>
+        <module>amq</module>
         <module>annotations</module>
         <module>collections</module>
         <module>control</module>
-        <module>databases</module>
+        <module>persistence</module>
         <module>design</module>
         <module>io</module>
         <module>jetty</module>
@@ -37,7 +38,6 @@
         <module>streams</module>
         <module>threads</module>
         <module>time</module>
-        <module>jndi</module>
         <module>about</module>
         <module>testing</module>
         <module>jython</module>
@@ -47,6 +47,7 @@
         <module>spring-boot</module>
         <module>kotlin</module>
         <module>amq</module>
+        <module>jakarta</module>
     </modules>
     <dependencies>
         <dependency>

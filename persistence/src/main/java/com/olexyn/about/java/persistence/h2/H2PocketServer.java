@@ -1,4 +1,4 @@
-package com.olexyn.about.java.databases.h2;
+package com.olexyn.about.java.persistence.h2;
 
 import org.h2.jdbcx.JdbcDataSource;
 
