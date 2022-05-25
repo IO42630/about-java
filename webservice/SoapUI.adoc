@@ -1,7 +1,0 @@
-
-
-=== WADL vs WSDL
-* WADL : Web Application Description Language
-** XML to describe RESTful web services
-* WSDL : Web Service Description Language
-** XML to describe SOAP-based web services

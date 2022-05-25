@@ -16,7 +16,7 @@ import javax.jms.TextMessage;
 /**
  * Hello world!
  */
-public class App {
+public class AmqDemo {
 
     public static void main(String... args) throws Exception {
         thread(new HelloWorldProducer(), false);

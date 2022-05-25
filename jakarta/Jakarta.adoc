@@ -4,9 +4,10 @@
 
 === Overview
 
-This module gives an overview of Jakarta.
-Smaller topics will be included here.
-Larger topics will be extracted into their own modules.
+* This module gives an overview of Jakarta.
+* Smaller topics will be included here.
+* Larger topics will be extracted into their own modules.
+* For some of the acronyms see https://github.com/IO42630/about-java/blob/master/about/Glossary.adoc[Glossary.adoc].
 
 === Jakarta
 
@@ -21,7 +22,8 @@ It integrates selected specifications (annotated with 🌱).
 
 [cols="1,2,2"]
 |===
-| `Servlet` | 🌱 | Tomcat, Jetty
+| `Servlet` | 🌱, +
+`com.olexyn.about.java.jetty` | Tomcat, Jetty
 | `Websocket` | 🌱 |
 | `JSF` | Server Faces |
 | `JEL` | Expression Language used by `JSF`. |
@@ -34,8 +36,12 @@ It integrates selected specifications (annotated with 🌱).
 | RESTful Web Services | |
 | JSON Processing | Manage JSON. Possible alternative: GSON. |
 | JSON Binding | 🌱 |
-| XML Binding | |
-| XML Web Services | |
+| `JAXB` | XML Binding +
+uses `XSD` to describe Java classes. +
+see `webservice` module + |
+| `JAX-WS` | XML Web Services +
+uses `WSDL` to describe `SOAP` web services. +
+uses `WADL` to describe `RESTful` web services. |
 |===
 
 === Enterprise
@@ -46,9 +52,9 @@ It integrates selected specifications (annotated with 🌱).
 | CDI (Contexts and Dependency Injection) | |
 | EJB (Enterprise Beans) | |
 | Bean Validation | 🌱 |
-| JPA (Persistence) | 🌱 | Hibernate, Spring JPA
+| JPA (Persistence) | 🌱, `com.olexyn.about.java.persistence` uses JDBC| Hibernate, Spring JPA
 | JTA (Transactions) | (🌱?) |
-| JMS (Messaging) | 🌱 |
+| JMS (Messaging) | 🌱, `com.olexyn.about.java.amq` |
 | Concurrency Utilities | 🌱 |
 |===
 

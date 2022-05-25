@@ -5,14 +5,14 @@ import javax.naming.InvalidNameException;
 import javax.naming.Name;
 import java.util.Enumeration;
 
-public class Example {
+public class JndiDemo {
 
     public static void main(String... args) throws InvalidNameException {
 
 
         Name objectName = new CompositeName("java:comp/env/jdbc");
         Enumeration<String> elements = objectName.getAll();
-        while(elements.hasMoreElements()){
+        while (elements.hasMoreElements()) {
             System.out.println(elements.nextElement());
         }
 
