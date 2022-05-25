@@ -1,4 +1,4 @@
-package com.olexyn.about.java.spring.beanlife.main;
+package com.olexyn.about.java.spring.beanlife;
 
 import com.olexyn.about.java.spring.beanlife.service.AService;
 import com.olexyn.about.java.spring.beanlife.service.BService;
@@ -10,7 +10,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * ABOUT:
  * Shows how we can config/init a Service/nested Obj from XML.
  */
-public class BeanlifeDemo {
+public class BeanLifeDemo {
 
     public static void main(String[] args) {
 
