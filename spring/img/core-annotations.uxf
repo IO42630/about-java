@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>17</zoom_level>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>629</x>
+      <y>119</y>
+      <w>221</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>@Component
+--
+To be registered as Spring Bean.
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>221</x>
+      <y>510</y>
+      <w>221</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>@Service
+--
+Cosmetic, same as @Component
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>306</x>
+      <y>238</y>
+      <w>391</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>210.0;10.0;10.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>527</x>
+      <y>510</y>
+      <w>221</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>@Repository
+--
+Data access class.
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>816</x>
+      <y>510</y>
+      <w>221</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>@Controller
+--
+Web Layer service.
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>816</x>
+      <y>816</y>
+      <w>221</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>@RestController
+--
+@Controller
+@ResponseBody
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>765</x>
+      <y>238</y>
+      <w>204</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;100.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1071</x>
+      <y>510</y>
+      <w>272</w>
+      <h>136</h>
+    </coordinates>
+    <panel_attributes>@Configuration
+--
+Config representing a Spring Bean factory
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>799</x>
+      <y>238</y>
+      <w>408</w>
+      <h>306</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;220.0;160.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>918</x>
+      <y>629</y>
+      <w>51</w>
+      <h>221</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
+  </element>
+</diagram>
