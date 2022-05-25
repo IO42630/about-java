@@ -1,0 +1,7 @@
+= Session
+
+* REST is by default stateless
+* Can use Session, consisting of
+** Cookie on client
+** Session in DB (using `spring-session-jdbc`)
+* This is abstracted away by Spring Boot.
