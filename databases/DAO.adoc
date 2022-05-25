@@ -1,3 +1,0 @@
-=== DAO
-* Data Access Object
-* Is-a pattern

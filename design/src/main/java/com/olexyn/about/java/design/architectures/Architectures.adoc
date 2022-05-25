@@ -1,13 +1,53 @@
-=== Architectures
+= Architectures
+:toc:
+:toclevels:4
 
 ==== Event Driven (EDA)
+
 * Producer
 * Router
 * Consumer
 
-Similar to our "threds.message" example with:
+Similar to our "threads.message" example with:
 
 * Router -> Medium (with some added logic)
 
+=== 3 Tier architecture
 
+* Client -> Logic -> Data
+* Open to interpretation where the exact boundaries of each are.
+
+{empty} +
+
+==== Client
+
+* MVC
+** some components are duplicated on Client / Server
+* Model
+** Can be seen as Data Model
+*** Dto (TS/Java)
+** Can be seen as View Model
+*** DOM
+* View
+** rendered HTML
+* Controller
+** Sometimes stays within the Client
+** Sometimes goes to Server (Endpoint/Controller)
+
+{empty} +
+
+==== Logic
+
+* Services
+
+{empty} +
+
+==== Data
+
+* DAL (Data Abstraction Layer)
+** DAO / Repo are both implementations of the DAL.
+* DAO (Data Access Object)
+** Global Object that implements methods for CRUD on an Entity
+* Repo
+** Singleton that acts like a Collection of Entity
 
