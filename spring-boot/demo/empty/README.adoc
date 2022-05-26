@@ -1,0 +1,4 @@
+= README
+
+* Template Demo
+* returns 'EMPTY' on http://localhost:8080/
