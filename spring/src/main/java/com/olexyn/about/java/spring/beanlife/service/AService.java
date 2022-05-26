@@ -1,6 +1,6 @@
 package com.olexyn.about.java.spring.beanlife.service;
 
-import com.olexyn.about.java.spring.beanlife.bean.Employee;
+import com.olexyn.about.java.spring.beanlife.beans.Employee;
 import org.springframework.beans.factory.DisposableBean;
 import org.springframework.beans.factory.InitializingBean;
 

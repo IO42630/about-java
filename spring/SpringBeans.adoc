@@ -1,0 +1,47 @@
+= Beans
+:toc:
+:toclevels:4
+
+
+==== Spring Container
+
+The Spring Container manages the lifecycle of Spring Beans.
+
+* see `Spring Bean Life Cycle`
+
+image:img/spring-container.png[]
+
+* uses IoC / DI
+* 2 main container types:
+** `ApplicationContext` `extends` `BeanFactory`
+
+{empty} +
+
+==== Spring Bean Life Cycle
+
+image:img/bean-life.png[]
+
+{empty} +
+
+==== IoCC (IoC Container)
+
+* is responsible for injecting the dependency.
+* is responsible to instantiate, configure and assemble the objects.
+** to instantiate the application class
+** to configure the object
+** to assemble the dependencies between the objects
+
+{empty} +
+
+==== Dependency Injection (DI)
+
+* See `design/decoupling/levels/Levels.adoc` for an overview.
+* DI is the opposite of _dependency lookup_
+** resource is retrieved after demand
+** `A obj = new AImpl();`
+** `A obj = A.getA(); // using factory`
+** tight coupling
+** complicates testing
+* Spring supports
+** Constructor injection
+** Method injection (by setter)

@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>12</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>312</y>
+      <w>252</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>Data Access / Integration
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>888</x>
+      <y>312</y>
+      <w>252</w>
+      <h>132</h>
+    </coordinates>
+    <panel_attributes>Web (MVC / Remoting)
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>564</y>
+      <w>516</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Core Container
+bg=#F6F6F6
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>636</x>
+      <y>612</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Beans
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>756</x>
+      <y>612</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Core
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>612</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Context
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>612</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>SpEL
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>672</y>
+      <w>516</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Test
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>624</x>
+      <y>504</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>AOP
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>912</x>
+      <y>504</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Instr.
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>744</x>
+      <y>504</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Aspects
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1032</x>
+      <y>504</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Messaging
+bg=#F6F6F6</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>600</x>
+      <y>264</y>
+      <w>564</w>
+      <h>468</h>
+    </coordinates>
+    <panel_attributes>Spring Framework
+layer=-1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>636</x>
+      <y>348</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>JDBC
+bg=#F6F6F6
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>756</x>
+      <y>348</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>ORM
+bg=#F6F6F6
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>636</x>
+      <y>396</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>OXM
+bg=#F6F6F6
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>756</x>
+      <y>396</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>JMS
+bg=#F6F6F6
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>348</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>WebSocket
+bg=#F6F6F6
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>636</x>
+      <y>444</y>
+      <w>228</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Transactions
+bg=#F6F6F6
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>900</x>
+      <y>396</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Web
+bg=#F6F6F6
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>396</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Portlet
+bg=#F6F6F6
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1020</x>
+      <y>348</y>
+      <w>108</w>
+      <h>36</h>
+    </coordinates>
+    <panel_attributes>Servlet
+bg=#F6F6F6
+layer=1</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

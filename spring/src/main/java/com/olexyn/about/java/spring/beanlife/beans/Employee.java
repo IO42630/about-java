@@ -1,4 +1,4 @@
-package com.olexyn.about.java.spring.beanlife.bean;
+package com.olexyn.about.java.spring.beanlife.beans;
 
 public class Employee {
 

@@ -1,31 +1,19 @@
 = Spring
 :toc:
-:toclevels: 6
+:toclevels:4
 
 {empty} +
 
-==== Spring Container
-The Spring Container manages the lifecycle of Spring Beans.
-
-* see `Spring Bean Life Cycle`
-
-image:img/spring-container.png[]
-
-* uses IoC / DI
-* 2 main container types:
-** `ApplicationContext` `extends` `BeanFactory`
-
-{empty} +
 
 ==== Architecture
 
-image:img/architecture.png[]
+image:img/spring-architecture.png[]
 
 * Core
-    ** Core
-    ** Bean
-    ** Context
-    ** SpeL : expression language for manipulating object graph at runtime
+** Core
+** Bean
+** Context
+** SpeL : expression language for manipulating object graph at runtime
 * Data Access/Integration
     ** JDBC :
     ** ORM : integrates object-relational-mapping (JPA/JDO/Hibernate)
@@ -37,34 +25,12 @@ image:img/architecture.png[]
 
 {empty} +
 
-==== Spring Bean Life Cycle
-
-image:img/bean-life.png[]
 
 
 ==== JpaRepository
 * is-a Repository with JPA
 * is-a Component with DAO
 
-==== IoCC (IoC Container)
-* IoCC
-** is responsible for injecting the dependency.
-** is responsible to instantiate, configure and assemble the objects.
-*** to instantiate the application class
-*** to configure the object
-*** to assemble the dependencies between the objects
-
-==== Dependency Injection (DI)
-* See `design/decoupling/levels/Levels.adoc` for an overview.
-* DI is the opposite of _dependency lookup_
-** resource is retrieved after demand
-** `A obj = new AImpl();`
-** `A obj = A.getA(); // using factory`
-** tight coupling
-** complicates testing
-* Spring supports
-** Constructor injection
-** Method injection (by setter)
 
 {empty} +
 
