@@ -4,6 +4,12 @@
 
 {empty} +
 
+=== About
+
+* `Spring` demos go here
+** incl. `.adoc` for each demo
+** `Boot` demos -> `../spring-boot/*`
+
 
 ==== Architecture
 
@@ -15,22 +21,19 @@ image:img/spring-architecture.png[]
 ** Context
 ** SpeL : expression language for manipulating object graph at runtime
 * Data Access/Integration
-    ** JDBC :
-    ** ORM : integrates object-relational-mapping (JPA/JDO/Hibernate)
-    ** OXM : supports object-xml-mapping (JAXB, Castor, XMLBeans)
-    ** JMS :
-    ** Transactions :
+** JDBC :
+** ORM : integrates object-relational-mapping (JPA/JDO/Hibernate)
+** OXM : supports object-xml-mapping (JAXB, Castor, XMLBeans)
+** JMS :
+** Transactions :
 * Web
 * Miscellaneous
 
 {empty} +
 
-
-
 ==== JpaRepository
 * is-a Repository with JPA
 * is-a Component with DAO
-
 
 {empty} +
 
@@ -39,7 +42,6 @@ HAL is a simple format that gives a consistent and easy way to hyperlink between
 
 Adopting HAL will make your API explorable, and its documentation easily discoverable from within the API itself.
 In short, it will make your API easier to work with and therefore more attractive to client developers.
-
 
 APIs that adopt HAL can be easily served and consumed using open source libraries available for most major programming languages.
 It's also simple enough that you can just deal with it as you would any other JSON.
