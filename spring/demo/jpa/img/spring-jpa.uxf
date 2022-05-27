@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1220</x>
+      <y>830</y>
+      <w>200</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>JpaRepository&lt;T,ID&gt;
+style=wordwrap
+bg=#91cb7b</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1290</x>
+      <y>790</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1220</x>
+      <y>690</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>CrudRepository&lt;T,ID&gt;
+style=wordwrap
+bg=#91cb7b</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1290</x>
+      <y>640</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1230</x>
+      <y>620</y>
+      <w>160</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>Repository&lt;T,ID&gt;
+style=wordwrap
+bg=#91cb7b</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1200</x>
+      <y>770</y>
+      <w>260</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>PagingAndSortingRepository&lt;T,ID&gt;
+style=wordwrap
+bg=#91cb7b</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>890</x>
+      <y>830</y>
+      <w>220</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>QueryByExampleExecutor&lt;T&gt;
+style=wordwrap
+bg=#91cb7b</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1100</x>
+      <y>830</y>
+      <w>140</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;120.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1290</x>
+      <y>710</y>
+      <w>30</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;60.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1200</x>
+      <y>970</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>SimpleJpaRepository&lt;T, ID&gt;
+style=wordwrap
+bg=#8cd3e1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1280</x>
+      <y>920</y>
+      <w>30</w>
+      <h>60</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;40.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1170</x>
+      <y>900</y>
+      <w>270</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>JpaRepositoryImplementation&lt;T, ID&gt;
+style=wordwrap
+bg=#91cb7b</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1200</x>
+      <y>1040</y>
+      <w>210</w>
+      <h>30</h>
+    </coordinates>
+    <panel_attributes>QuerydslJpaRepository&lt;T, ID&gt;
+style=wordwrap
+bg=#8cd3e1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1280</x>
+      <y>850</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1280</x>
+      <y>990</y>
+      <w>30</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;.</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;50.0</additional_attributes>
+  </element>
+</diagram>
