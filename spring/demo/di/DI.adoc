@@ -1,0 +1,44 @@
+= Dependency Injection
+:toc:
+:toclevels:4
+
+{empty} +
+
+=== 3 Ways
+
+* This Demo shows 3 ways to configure DI
+** A : XML
+** B : java (`@Configuration`/`@Bean`)
+** C : auto
+*** `@Configuration` : this is config
+*** `@ComponentScan(path)` : where to scan for components
+*** `@Component` : this is component
+*** `@Autowired` : inject this
+* The Demo consists of creating a `ParentBean.NestedBean.String`
+
+{empty} +
+
+=== 3 Types
+
+* SDI (Setter)
+* CDI (Constructor)
+* FDI (Field, since 2.5 ~ @Autowired)
+
+=== @Import
+
+* Import other `@Configuration`
+
+=== @Qualifier
+
+* used with @Autowire to distinguish bean instances of same type.
+* differes based on 'way'
+** B : 'qualifier' matches `@Bean qualifier()`
+** C : 'qualifier' matches `@Component("qualifier")`
+* can write own custome 'qualifiers' (skip due to scope, see https://www.baeldung.com/spring-autowire)
+
+{empty} +
+
+=== Trivia
+
+* Annotation DI was added in Spring 2.5
+* Annotation DI happens before XML, thus overriden if overlapping.
