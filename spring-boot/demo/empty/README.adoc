@@ -1,4 +1,5 @@
 = README
 
 * Template Demo
+** Thus if compararing to a non-empty demo, any diff can be considered part of non-empty demo.
 * returns 'EMPTY' on http://localhost:8080/
