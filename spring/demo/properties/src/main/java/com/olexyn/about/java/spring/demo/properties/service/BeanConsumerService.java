@@ -1,6 +1,6 @@
-package com.olexyn.about.java.spring.bean.config.service;
+package com.olexyn.about.java.spring.demo.properties.service;
 
-import com.olexyn.about.java.spring.bean.config.beans.ConfiguredBean;
+import com.olexyn.about.java.spring.demo.properties.beans.ConfiguredBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;

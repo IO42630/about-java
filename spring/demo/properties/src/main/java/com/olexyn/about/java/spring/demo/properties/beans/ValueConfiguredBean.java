@@ -1,4 +1,4 @@
-package com.olexyn.about.java.spring.bean.config.beans;
+package com.olexyn.about.java.spring.demo.properties.beans;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;

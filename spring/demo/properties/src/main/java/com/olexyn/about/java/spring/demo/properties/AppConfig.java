@@ -1,8 +1,8 @@
-package com.olexyn.about.java.spring.bean.config;
+package com.olexyn.about.java.spring.demo.properties;
 
-import com.olexyn.about.java.spring.bean.config.beans.ConfiguredBean;
-import com.olexyn.about.java.spring.bean.config.beans.EnvironmentConfiguredBean;
-import com.olexyn.about.java.spring.bean.config.beans.ValueConfiguredBean;
+import com.olexyn.about.java.spring.demo.properties.beans.ConfiguredBean;
+import com.olexyn.about.java.spring.demo.properties.beans.EnvironmentConfiguredBean;
+import com.olexyn.about.java.spring.demo.properties.beans.ValueConfiguredBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
@@ -10,7 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 
 @Configuration /* this is a config file */
-@ComponentScan("com.olexyn.about.java.spring.bean.config") /* scan there for components. */
+@ComponentScan("com.olexyn.about.java.spring.demo.properties") /* scan there for components. */
 public class AppConfig {
 
     @Autowired

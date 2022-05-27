@@ -1,10 +1,10 @@
-package com.olexyn.about.java.spring.bean.config;
+package com.olexyn.about.java.spring.demo.properties;
 
-import com.olexyn.about.java.spring.bean.config.beans.ConfiguredBean;
-import com.olexyn.about.java.spring.bean.config.service.BeanConsumerService;
+import com.olexyn.about.java.spring.demo.properties.beans.ConfiguredBean;
+import com.olexyn.about.java.spring.demo.properties.service.BeanConsumerService;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
-public class BeanConfigDemo {
+public class PropertiesDemo {
     public static void main(String[] args) {
         var appContext = new AnnotationConfigApplicationContext(AppConfig.class);
 
