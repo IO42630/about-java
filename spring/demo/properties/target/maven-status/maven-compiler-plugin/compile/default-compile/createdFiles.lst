@@ -1,7 +1,0 @@
-com\olexyn\about\java\spring\demo\properties\AppConfig.class
-com\olexyn\about\java\spring\demo\properties\beans\UnusedBean.class
-com\olexyn\about\java\spring\demo\properties\beans\ConfiguredBean.class
-com\olexyn\about\java\spring\demo\properties\beans\ValueConfiguredBean.class
-com\olexyn\about\java\spring\demo\properties\service\BeanConsumerService.class
-com\olexyn\about\java\spring\demo\properties\BeanConfigDemo.class
-com\olexyn\about\java\spring\demo\properties\beans\EnvironmentConfiguredBean.class
