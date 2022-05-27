@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>16</zoom_level>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>896</x>
+      <y>688</y>
+      <w>256</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>EntityManagerFactory
+--
+Create EMs for different sessions.
+style=wordwrap
+bg=#91cb7b</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>736</x>
+      <y>672</y>
+      <w>192</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+creates
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>512</x>
+      <y>688</y>
+      <w>240</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>*Persistence*
+--
+Bootstrap class for obtaining an EMF in Java environments.
+style=wordwrap
+bg=#8cd3e1</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>832</x>
+      <y>320</y>
+      <w>288</w>
+      <h>256</h>
+    </coordinates>
+    <panel_attributes>EntityManager
+--
+The interface that provides the control point of retrieving and persisting objects in a relational database based on a single Persistence Unit for a single session
+style=wordwrap
+bg=#91cb7b</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1008</x>
+      <y>560</y>
+      <w>128</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+creates
+m1=1
+m2=*</panel_attributes>
+    <additional_attributes>20.0;80.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>160</x>
+      <y>448</y>
+      <w>160</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Entity Class
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>608</x>
+      <y>448</y>
+      <w>160</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Client Code
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>752</x>
+      <y>448</y>
+      <w>112</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;50.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>304</x>
+      <y>448</y>
+      <w>336</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;190.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1328</x>
+      <y>688</y>
+      <w>272</w>
+      <h>128</h>
+    </coordinates>
+    <panel_attributes>Data Source
+--
+Factory for connections to the physical data source it represents.
+style=wordwrap
+bg=#91cb7b</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>544</x>
+      <y>1504</y>
+      <w>192</w>
+      <h>112</h>
+    </coordinates>
+    <panel_attributes>Mapping Descriptor ?
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1824</x>
+      <y>688</y>
+      <w>144</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>DB
+valign=center
+style=wordwrap
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>720</x>
+      <y>752</y>
+      <w>1216</w>
+      <h>864</h>
+    </coordinates>
+    <panel_attributes>lt=.
+mappings for</panel_attributes>
+    <additional_attributes>10.0;520.0;740.0;300.0;740.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>176</x>
+      <y>480</y>
+      <w>400</w>
+      <h>1136</h>
+    </coordinates>
+    <panel_attributes>lt=.
+mappings for</panel_attributes>
+    <additional_attributes>30.0;10.0;10.0;480.0;230.0;690.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1296</x>
+      <y>464</y>
+      <w>256</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Connection
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1104</x>
+      <y>448</y>
+      <w>224</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>lt=-
+db</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1392</x>
+      <y>496</y>
+      <w>96</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>lt=-
+from</panel_attributes>
+    <additional_attributes>10.0;120.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1136</x>
+      <y>672</y>
+      <w>224</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+references</panel_attributes>
+    <additional_attributes>10.0;20.0;120.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1584</x>
+      <y>672</y>
+      <w>272</w>
+      <h>64</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+represents</panel_attributes>
+    <additional_attributes>10.0;20.0;150.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>928</x>
+      <y>816</y>
+      <w>160</w>
+      <h>208</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;.
+references</panel_attributes>
+    <additional_attributes>10.0;10.0;30.0;110.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>816</x>
+      <y>992</y>
+      <w>288</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>JpaTransactionManager
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1328</x>
+      <y>896</y>
+      <w>352</w>
+      <h>224</h>
+    </coordinates>
+    <panel_attributes>(Spring) JpaVendorAdapter
+--
+SPI interface that allows to plug in vendor-specific behavior into Spring's EntityManagerFactory creators.
+Serves as single configuration point for all vendor-specific properties.
+style=wordwrap
+bg=#91cb7b</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>1376</x>
+      <y>1168</y>
+      <w>288</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Properties
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1136</x>
+      <y>688</y>
+      <w>224</w>
+      <h>256</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+references</panel_attributes>
+    <additional_attributes>10.0;10.0;80.0;140.0;120.0;140.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1088</x>
+      <y>816</y>
+      <w>320</w>
+      <h>416</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+references</panel_attributes>
+    <additional_attributes>10.0;10.0;70.0;130.0;180.0;240.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>1312</x>
+      <y>128</y>
+      <w>176</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>Persistence
+Context
+valign=center
+style=wordwrap
+halign=center</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1072</x>
+      <y>192</y>
+      <w>272</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+is-a</panel_attributes>
+    <additional_attributes>10.0;80.0;150.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>848</x>
+      <y>32</y>
+      <w>256</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>Session
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>448</x>
+      <y>16</y>
+      <w>256</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>SessionFactory
+style=wordwrap</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>688</x>
+      <y>0</y>
+      <w>192</w>
+      <h>96</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+creates
+m2=*</panel_attributes>
+    <additional_attributes>10.0;20.0;100.0;30.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1088</x>
+      <y>32</y>
+      <w>256</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;
+is-a</panel_attributes>
+    <additional_attributes>10.0;10.0;140.0;80.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>608</x>
+      <y>816</y>
+      <w>144</w>
+      <h>320</h>
+    </coordinates>
+    <panel_attributes>lt=.&gt;
+references</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;180.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLState</id>
+    <coordinates>
+      <x>464</x>
+      <y>1104</y>
+      <w>384</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>PersistenceProvider
+--
+Impl by persistence provider. Called by P when an EMF is to be created. If not specified, the PP will be taken from the JVA or scanned.
+style=wordwrap
+bg=#91cb7b</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>

@@ -1,0 +1,20 @@
+= Entity
+:toc:
+:toclevels:4
+
+{empty} +
+
+=== Lifecycle
+
+|===
+| New | em.persist | Managed
+| New | em.merge | Managed
+| Managed | em.remove | Removed
+| Managed | em.find | Managed
+| Managed | query.getResultList | Managed
+| Managed | query.getSingleResult | Managed
+| Managed | em.detach | Detached
+| Managed | em.close | Detached
+| Managed | em.clear | Detached
+| Detached | em.merge | Managed
+|===

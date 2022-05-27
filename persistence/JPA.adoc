@@ -1,12 +1,15 @@
-== JPA (Java Persistence API)
+= JPA (Java Persistence API)
+:toc:
+:toclevels:4
+
 ** is a spec
 
 === Hibernate
-* Is an implementation of JPA
-** Thus for documentation of what the interfaces are
-supposed to do, read the JPA javadoc.
 
-image::hibernate_overview.png[]
+* Is an implementation of JPA
+** Thus for documentation of what the interfaces are supposed to do, read the JPA javadoc.
+
+image::img/hibernate_overview.png[]
 
 [cols="1,4"]
 |===
@@ -32,10 +35,21 @@ They are associated with exactly one
 |===
 
 ==== Annotations
+
 [cols="1,4"]
 |===
 | @Basic | for basic columns, such as String.
 | @Transient |
+|===
+
+=== Entity Manager
+
+image:img/jpa-em.png[]
+
+[cols="1,4"]
+|===
+| Entity Manager | .
+| Entity Manager Factory |
 |===
 
 {empty} +
@@ -44,7 +58,6 @@ They are associated with exactly one
 
 is the programming technique to map application domain model objects to the relational database tables. +
 Hibernate is java based ORM tool that provides framework for mapping application domain objects to the relational database tables and vice versa.
-
 
 {empty} +
 
