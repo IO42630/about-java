@@ -1,4 +1,4 @@
-package com.olexyn.about.java.spring.session.demo;
+package com.olexyn.about.java.spring.boot.session;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
