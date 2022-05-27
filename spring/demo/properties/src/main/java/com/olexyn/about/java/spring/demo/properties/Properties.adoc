@@ -15,3 +15,9 @@
 * Any property that is in `Evironment` can be accessed via `@Value("${foo}")`
 
 * Also `BeanConsumerService` shows how `@Qualifier` can be used to select bean.
+
+
+
+== Trivia
+
+* sometimes a `@Bean PropertySourcesPlaceholderConfigurer` is required to resolve the `@PropertySource`.

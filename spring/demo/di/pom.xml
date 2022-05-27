@@ -9,7 +9,7 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
-        <exec.mainClass>com.olexyn.about.java.spring.demo.DiDemo</exec.mainClass>
+        <exec.mainClass>com.olexyn.about.java.spring.demo.di.DiDemo</exec.mainClass>
     </properties>
     <dependencies>
         <dependency>

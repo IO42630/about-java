@@ -1,4 +1,4 @@
-package com.olexyn.about.java.spring.demo;
+package com.olexyn.about.java.spring.demo.di;
 
 
 import com.olexyn.about.java.spring.demo.di.auto.CAppConfig;
@@ -12,7 +12,6 @@ public class DiDemo {
     public static void main(String[] args) {
         var aContext = new ClassPathXmlApplicationContext("beans.xml");
         var aBean = aContext.getBean("aParentBean");
-        // TODO fix this if time
         aContext.close();
 
 
