@@ -1,3 +1,12 @@
 = Spring MVC
+:toc:
+:toclevels:4
 
 image:img/spring-mvc.jpg[]
+
+=== View Resolver
+
+* In Boot `WebMvcAutoConfiguration` automatically configures the following bean in the application context:
+** `InternalResourceViewResolver`
+** `BeanNameViewResolver`
+* `ThymeleafViewResolver` also exists

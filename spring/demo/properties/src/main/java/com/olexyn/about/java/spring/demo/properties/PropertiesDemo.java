@@ -14,6 +14,7 @@ public class PropertiesDemo {
         System.out.println(envConfBean.getProperty() + " " + envConfBean.getHiddenProperty());
         System.out.println(valueConfBean.getProperty() + " " + valueConfBean.getHiddenProperty());
 
+        // @Qualifier Demo
         var service = appContext.getBean(BeanConsumerService.class);
         System.out.println(service.getProperty() + " " + service.getHiddenProperty());
 
