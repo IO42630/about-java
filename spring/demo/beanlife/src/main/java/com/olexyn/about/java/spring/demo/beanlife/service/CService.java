@@ -1,4 +1,4 @@
-package com.olexyn.about.java.spring.beanlife.service;
+package com.olexyn.about.java.spring.demo.beanlife.service;
 
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.BeansException;

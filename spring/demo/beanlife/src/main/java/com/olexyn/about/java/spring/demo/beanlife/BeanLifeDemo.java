@@ -1,8 +1,9 @@
-package com.olexyn.about.java.spring.beanlife;
+package com.olexyn.about.java.spring.demo.beanlife;
 
-import com.olexyn.about.java.spring.beanlife.service.AService;
-import com.olexyn.about.java.spring.beanlife.service.BService;
-import com.olexyn.about.java.spring.beanlife.service.CService;
+
+import com.olexyn.about.java.spring.demo.beanlife.service.AService;
+import com.olexyn.about.java.spring.demo.beanlife.service.BService;
+import com.olexyn.about.java.spring.demo.beanlife.service.CService;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 

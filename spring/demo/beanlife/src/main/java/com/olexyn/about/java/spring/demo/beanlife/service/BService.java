@@ -1,4 +1,4 @@
-package com.olexyn.about.java.spring.beanlife.service;
+package com.olexyn.about.java.spring.demo.beanlife.service;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;

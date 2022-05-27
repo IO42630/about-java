@@ -1,10 +1,10 @@
-package com.olexyn.about.java.spring.beanlife.beans;
+package com.olexyn.about.java.spring.demo.beanlife.beans;
 
 public class Employee {
 
-	Employee() {
-		System.out.println("Employee()");
-	}
+    public Employee() {
+        System.out.println("Employee()");
+    }
 
 	private String name;
 
