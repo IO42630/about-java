@@ -1,0 +1,70 @@
+= Spring AOP
+:toc:
+:toclevels:4
+
+==== Idea
+
+* instead of calling util class
+** write in util class where it will be applied (~ aspect class)
+
+{empty} +
+
+==== Glossary
+
+[cols="1,4"]
+|===
+| concern | some cross-cutting concern, e.g. logging
+| advice | implementation of concern logic
+| join points | places where advice will be injected
+| pointcut | defines join points
+|===
+
+{empty} +
+
+==== Spring
+
+* 🌱 wraps beans in proxy, thus can intercept calls and apply advice.
+
+
+
+* 🌱 provides 5 _join point_ instructions :
+** @Before
+** @After : any outcome
+** @AfterReturning : after success
+** @AfterThrowing : after fail
+** @Around : @Before && @After
+
+[source,java]
+/* see below for explanation */
+@Pointcut("execution(public * *(..))") // pointcut expression
+private void anyPublicMethod() {}   // pointcut signature
+//
+@Before("anyPublicMethod() && args(a,b)")
+private void beforeAdvice(String a, String b) { /* advice */ }
+// must provide param if args() used
+
+* 🌱 supports 5 _pointcut_ designators
+** `execution()`
+** `within()`
+** `this()`
+** `target()`
+** `args()`
+* `@Pointcut` is meant for the creation reusable _pointcut_ expressions
+** empty body
+
+{empty} +
+
+==== Demo
+
+* see `spring-boot/aop`
+
+ececution() pattern
+
+[source,java]
+execution(modifier? ret-type declaring-type? name(param) throws?)
+execution(* *(..)) // minimal (no optionals)
+execution(String com.olexyn.*(..)) // minimal non-empty
+execution(* * * *(..) *) // maximal (all optionals)
+execution(public String type?? com.olexyn.*(String) Throwable) // maximal non-empty (TODO)
+
+* see also https://docs.spring.io/spring-framework/docs/2.0.x/reference/aop.html
