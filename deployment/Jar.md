@@ -17,7 +17,7 @@ The extensions framework provides a means by which you can add functionality to 
 `x`| extract
 `u`| update
 `e`| entry point : overrides the main-class set in the manifest
-`<input>` | Can be a file, a list of files, a wildcard or a directory 
+`<input>` | Can be a file, a list of files, a wildcard or a directory
 `-C`|  input directory. `jar -cf foo.jar -C pkg Main.class` ~ `jar -cf foo.jar pkg/Main.class`
 `jar cf foo.jar <input>` | create JAR
 `jar cfm jar-file manifest input-file(s)` | create JAR with manifest-addition|
@@ -27,8 +27,13 @@ The extensions framework provides a means by which you can add functionality to 
 `jar cfe Core.jar pkg.Core pkg/Core.class` | set entry point (directly set main class)|
 `java -jar app.jar`|run|
 
+    java -cp target/iomvntest-1.jar com.olexyn.iomvntest.App
+
+    -cp  <class search path of directories and zip/jar files>
+    meaning: execute com/olexyn/iomvntest/App.java in /iomvntest-1.jar
 
 #### Manifest Files
+
 JAR files support a wide range of functionality, including electronic signing, version control, package sealing, and others. What gives a JAR file this versatility? The answer is the JAR file's manifest.
 
 The manifest is a special file that can contain information about the files packaged in a JAR file. By tailoring this "meta" information that the manifest contains, you enable the JAR file to serve a variety of purposes.

@@ -2,7 +2,7 @@
 
 * see `deployment.modules`
 
-image::module-demo.png[]
+image::img/module-demo.png[]
 
 === Benefits
 
@@ -28,14 +28,13 @@ image::module-demo.png[]
 
 
 === `java` Options
-* `--describe-module` 
 
-    
+* `--describe-module`
+
 === `module-info.java`
 * `requires transitive foo` : this module depends on `foo` and its dependencies
 * also exist:
 ** `provides` , `uses` , `opens`
-     
 
 === `jdeps`
 * looks at module-info.java and code contents
