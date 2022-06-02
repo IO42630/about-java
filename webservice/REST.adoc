@@ -1,0 +1,14 @@
+= REST
+:toc:
+
+{empty} +
+
+=== HTTP Methods
+
+|===
+| Method | Idempotent | Safe
+| GET|  ✔️  |  ✔️
+| HEAD |  ✔️  |  ✔️
+| PUT |  ✔️  |
+| DELETE |  ✔️ |
+| POST | |

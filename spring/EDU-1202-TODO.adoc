@@ -3,4 +3,6 @@
 * Health Indicators
 * Logging
 * @Required
-* Mockito
+* Mockito / Testing
+* Transaction
+* Spring acutator endponts
