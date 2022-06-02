@@ -21,7 +21,19 @@ class Constructors2() {
 
 }
 
-
-object Constructors3 {
+object ASingleton {
     // This is a Singleton
+}
+
+
+fun main() {
+
+    val a1 = Constructors1(3);
+    var s1 = a1.aString;
+
+    val foo = Constructors2();
+    val bar = ASingleton;
+
+    val br = 1;
+
 }
