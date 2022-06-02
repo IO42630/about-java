@@ -13,7 +13,7 @@
 
 Jakarta is a collection of specifications for developing and deploying enterprise applications.
 
-=== vs Spring
+=== Spring
 
 Spring does not 'implement' Java EE.
 It integrates selected specifications (annotated with 🌱).
@@ -62,6 +62,8 @@ uses `WADL` to describe `RESTful` web services. |
 
 [cols="2,4"]
 |===
+| Dependency Injection | 🌱
+| Common Annotations | 🌱
 | Validation |
 | Batch |
 | Connectors |

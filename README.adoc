@@ -15,7 +15,8 @@ However, they shall be resolved in time. +
 | Module | Topic
 
 | `about` |
-| `spring` | Main `spring` wiki.
+| `deployment` | `POJO` deployment, `jar`, Java `modules`, etc.
+| `spring` | Main `spring` wiki. Be default all `spring`-related information goes here.
 | `spring-boot` | `spring-boot` examples, particularities.
 |===
 
