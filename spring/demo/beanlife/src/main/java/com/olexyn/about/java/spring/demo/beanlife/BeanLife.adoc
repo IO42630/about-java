@@ -1,7 +1,57 @@
 = Beanlife
+:toc:
 
-== 3 Ways of Configuring via XML
+==== Topics
 
-* A : implementing `XYZBean` interfaces
-* B : init `CommonAnnotationBeanPostProcessor`
-* C : implementing `XYZAware` interfaces
+* How to configure a single bean, for ways to inject beans see `~/spring/di/../Di.adoc`
+
+=== Preface
+
+* Annotations are processed before XML, thus overriden if overlapping.
+* All the instructions are optional.
+
+{empty} +
+
+=== Ways of Configuring
+
+* We can split config into:
+** _bean_ config (what are the beans)
+** _hook_ config (what hooks, what logic)
+* if we combine hook configs, 🌱 will eagerly execute all of them
+** e.g. `init-method="init"` and `@PostConstruct`
+** thus split into `<type>HookBean` for demo
+
+|===
+| Demo | bean config | hook config
+
+| someBeanXmlXml | XML | XML
+| someBeanXmlJava | XML (`<bean class="CommonAnnotationBeanPostProcessor"`) | Java (`@PostConstruct`...)
+| someBeanJavaJava | Java (`@Configuration` -> `@Bean`) | Java (`@PostConstruct`...)
+| someBeanXmlAnnotation | XML | Annotation (`@InitializingBean`...) based on implemented ifaces.
+3+| other combinations possible
+|===
+
+{empty} +
+
+===== Spring Bean Life Cycle
+
+1. load ☕ definitions -> ordered graph.
+2. Instantiate and run `BeanFactoryPostProcessors` (you can update bean definitions here).
+3. instantiate ☕.
+4. populate properties.
+5. call `BeanNameAware.setBeanName()` with ☕ ID, if ☕ implements the iface.
+6. call `BeanFactoryAware.setBeanFactory()`, if ☕ implements the iface.
+7. call `ApplicationContextAware.setApplicationContext()`, if ☕ implements the iface.
+8. call `BeanPostProcessor.postProcessBeforeInitialization()` , if ☕ implements the iface.
+(Preinitialization)
+9. **init**
+** XML -> `init-method="init"`
+** Java -> `@PostConstruct`
+** Annotation -> `InitializingBean.afterPropertiesSet()`
+10. call `BeanPostProcessor.postProcessAfterInitialization()` , if ☕ implements the iface.
+(Postinitialization)
+11. Bean is ready, can be called with `getBean()`, is alive till appcontext.close().
+12. **destroy**
+** XML -> `destroy-method="destroy"`
+** Java -> `@PreDestroy`
+** Annotation -> `DisposibleBean.destroy()`

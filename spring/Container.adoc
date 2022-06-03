@@ -5,7 +5,7 @@
 
 ===== Spring Bean
 
-* any obj init through 🌱 container.
+* any object init through 🌱 container.
 
 {empty} +
 
@@ -17,6 +17,7 @@ Indicates that a method produces a bean to be managed by the Spring container. +
 * name – allows you give name for bean
 * initMethod – allows you to choose method which will be invoked on context register
 * destroyMethod – allows you to choose method which will be invoked on context shutdown
+
 {empty} +
 
 ===== Spring Container
@@ -24,9 +25,37 @@ Indicates that a method produces a bean to be managed by the Spring container. +
 image:img/spring-container.png[]
 
 * 🌱 container manages the lifecycle of 🌱☕s.
-* uses IoC / DI
-* 2 main container types:
-** `ApplicationContext` `extends` `BeanFactory`
+* 2 main container types :
+** `BeanFactory`
+*** provides _DI_ capability, see `./di/../Di.adoc`
+** `ApplicationContext` `extends` `BeanFactory`, adds :
+*** MessageSource
+*** Access to resources
+*** Event propagation to beans
+*** Loading of multiple (hierarchical) contexts
+* 5 main container impl (see `./di/../Di.adoc`) :
+** `FileSystemXmlApplicationContext`
+** `ClassPathXmlApplicationContext`
+** `AnnotationConfigApplicationContext`
+** `XmlWebApplicationContext`
+** `AnnotationConfigWebApplicationContext`
+
+{empty} +
+
+===== Container Lifecycle
+
+1. 📦 is created.
+1. 📦 reads config data.
+3. ☕ definitions are created from the config data.
+4. `BeanFactoryPostProcessor` processes ☕ definitions.
+5. ☕ are instantiated by 📦 using ☕ definitions.
+6. ☕ are configured and assembled. +
+Property values and dependencies are injected into the ☕ by the container.
+7. `BeanPostProcessor` processes ☕, invokes any initialization callbacks.
+8. The application runs.
+9. Application shut down is initialized.
+10. The Spring container is closed.
+11. Destruction callbacks are invoked on the singleton Spring beans in the container.
 
 {empty} +
 
@@ -62,9 +91,7 @@ image:img/spring-container.png[]
 
 ===== Spring Bean Life Cycle
 
-image:img/bean-life.png[]
-
-{empty} +
+* see `./beanlife/../BeanLife.adoc`.
 
 ===== IoCC (IoC Container)
 

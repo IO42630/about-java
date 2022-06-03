@@ -8,13 +8,20 @@
 
 * This Demo shows 3 ways to configure DI
 ** A : XML
-** B : java (`@Configuration`/`@Bean`)
-** C : auto
+** B : Java (`@Configuration`/`@Bean`)
+** C : Annotation
 *** `@Configuration` : this is config
 *** `@ComponentScan(path)` : where to scan for components
 *** `@Component` : this is component
 *** `@Autowired` : inject this
 * The Demo consists of creating a `ParentBean.NestedBean.String`
+
+{empty} +
+
+==== @Bean vs @Component
+
+`@Bean` applies to methods, when using Java config. +
+`@Component` applies to classes, when using Auto config.
 
 {empty} +
 

@@ -1,9 +1,10 @@
 package com.olexyn.about.java.spring.demo.beanlife;
 
 
-import com.olexyn.about.java.spring.demo.beanlife.service.AService;
-import com.olexyn.about.java.spring.demo.beanlife.service.BService;
-import com.olexyn.about.java.spring.demo.beanlife.service.CService;
+import com.olexyn.about.java.spring.demo.beanlife.beans.AnnotationHookBean;
+import com.olexyn.about.java.spring.demo.beanlife.beans.JavaHookBean;
+import com.olexyn.about.java.spring.demo.beanlife.beans.XmlHookBean;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 
@@ -15,18 +16,21 @@ public class BeanLifeDemo {
 
     public static void main(String[] args) {
 
-        var aContext = new ClassPathXmlApplicationContext("a-service.xml");
-        var aService = aContext.getBean("aService", AService.class);
-        var employee = aService.getEmployee();
-        aContext.close();
+        var xmlXmlContext = new ClassPathXmlApplicationContext("a-service.xml");
+        xmlXmlContext.getBean("someBeanXmlXml", XmlHookBean.class);
+        xmlXmlContext.close();
 
-        var bContext = new ClassPathXmlApplicationContext("b-service.xml");
-        var bService = bContext.getBean("bService", BService.class);
-        bContext.close();
+        var xmlJavaContext = new ClassPathXmlApplicationContext("b-service.xml");
+        xmlJavaContext.getBean("someBeanXmlJava", JavaHookBean.class);
+        xmlJavaContext.close();
 
-        var cContext = new ClassPathXmlApplicationContext("c-service.xml");
-        var cService = cContext.getBean("cService", CService.class);
-        cContext.close();
+        var javaJavaContext = new AnnotationConfigApplicationContext(JavaConfig.class);
+        javaJavaContext.getBean("someBeanJavaJava", JavaHookBean.class);
+        javaJavaContext.close();
+
+        var xmlAnnotationContext = new ClassPathXmlApplicationContext("c-service.xml");
+        xmlAnnotationContext.getBean("someBeanXmlAnnotation", AnnotationHookBean.class);
+        xmlAnnotationContext.close();
     }
 
 

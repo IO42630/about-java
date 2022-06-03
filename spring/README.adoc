@@ -1,0 +1,18 @@
+= README
+:toc:
+
+=== Getting Started
+
+* start at `Spring.adoc` for an architectural overview.
+* start at `Container.adoc` for the core mechanism of 🌱.
+* these documents should reference the individual demos.
+* each demo has its own `.adoc` where appropriate.
+
+* 👢 demos have their own module -> `../spring-boot/*`
+
+=== Emoji Glossary
+
+* 🌱 Spring
+* 👢 Spring Boot
+* ☕ Spring Bean
+* 📦 Spring Container

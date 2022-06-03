@@ -1,0 +1,13 @@
+= Test
+:toc:
+
+* `@RunWith` (JUnit 4) / `@ExtendWith` (JUnit 5) mandatory
+* `@ContextConfiguration(classes)` mandatory
+* `@WebAppConfiguration` if web
+
+==== JUnit5
+
+|===
+| `@SpringJUnitConfig(classes)` | `@ExtendWith` + `@ContextConfiguration(classes)`
+| `@SpringJUnitWebConfig(classes)` | `@SpringJUnitConfig(classes)` + `@WebAppConfiguration`
+|===

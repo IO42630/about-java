@@ -4,11 +4,7 @@
 
 {empty} +
 
-=== About
 
-* `Spring` demos go here
-** incl. `.adoc` for each demo
-** `Boot` demos -> `../spring-boot/*`
 
 
 ==== Architecture

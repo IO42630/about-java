@@ -7,9 +7,12 @@ import com.olexyn.about.java.spring.demo.di.java.BAppConfig;
 import com.olexyn.about.java.spring.demo.di.java.BParentBean;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
+import org.springframework.context.support.FileSystemXmlApplicationContext;
 
 public class DiDemo {
     public static void main(String[] args) {
+        var xContext = new FileSystemXmlApplicationContext("C:\\Users\\user\\home\\ws\\about-java\\spring\\demo\\di\\src\\main\\resources\\beans.xml");
+        // equiv
         var aContext = new ClassPathXmlApplicationContext("beans.xml");
         var aBean = aContext.getBean("aParentBean");
         aContext.close();
