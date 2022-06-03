@@ -12,3 +12,16 @@
 | PUT |  ✔️  |
 | DELETE |  ✔️ |
 | POST | |
+|===
+
+{empty} +
+
+=== HTTP Error Codes
+
+|===
+| 100 | info
+| 200 | success
+| 300 | redirection
+| 400 | client error
+| 500 | server error
+|===
