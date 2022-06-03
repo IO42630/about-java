@@ -1,6 +1,5 @@
 = Annotations
 :toc:
-:toclevels:4
 
 == About
 
@@ -10,110 +9,56 @@ image:img/core-annotations.png[]
 
 {empty} +
 
-== A
-
-==== @Autowired
-
-Automatic injection of beans, instead of using XML-config. +
-Used with @Qualifier to avoid confusion when we have two of more beans for same type.
-
-{empty} +
-
-== B
-==== @Bean
-
-Indicates that a method produces a bean to be managed by the Spring container. +
-This is one of the most used and important spring annotation. +
-@Bean annotation also can be used with parameters like name, initMethod and destroyMethod.
-
-* name – allows you give name for bean
-* initMethod – allows you to choose method which will be invoked on context register
-* destroyMethod – allows you to choose method which will be invoked on context shutdown
-
-{empty} +
-
-== C
-==== @Configuration
-Used to indicate that a class declares one or more @Bean methods. +
-These classes are processed by the Spring container to generate bean definitions and service requests for those beans at runtime.
-
-
-
-
-==== @ComponentScan
-Configures component scanning directives for use with @Configuration classes. +
-Here we can specify the base packages to scan for spring components.
-
-
-==== @Conditional
-
-==== @ControllerAdvice
-
-{empty} +
-
-== E
-==== @EnableAutoConfiguration
-Spring Boot
-
-==== @Entity
-JPA annotation to make this object ready for storage in a JPA-based data store.
-
-{empty} +
-
-== I
-==== @Inject
-==== @InitBinder
-
-{empty} +
-
-== M
-==== @ModelAttribute
-
-{empty} +
-
-== N
-==== @Named
-
-{empty} +
-
-== O
-
-{empty} +
-
-== P
-==== @PathVariable
-Used to indicate type of parameter in method REST-endpoint.
-See `@RequestParameter`.
-
-==== @PostConstruct
-alternative way for bean initMethod +
-It can be used when the bean class is defined by us
-
-==== @PreDestroy
-alternative way for bean destroyMethod +
-It can be used when the bean class is defined by us
-
-==== @PropertySource
-provides a simple declarative mechanism for adding a property source to Spring’s Environment. +
-There is a similar annotation for adding an array of property source files i.e `@PropertySources`.
-
-==== @Profile
-An app can be run with different profiles. Profiles are sets of parameters.
-
-{empty} +
-
-== Q
-==== @Query
-
-{empty} +
-
-[cols="3,1,1,1,1,9"]
+[cols="4,1,1,1,1,12"]
 |===
 | Annotation 4+| Class/Field/Method/Param | Comment
 
+6+| **A**
+| `@Autowired` | | | | | Automatic injection of ☕s, instead of using XML-config. +
+Used with `@Qualifier`.
+6+| **B**
+| `@Bean` | | | | | indicates that method returns a  🌱☕. See `SpringBeans.adoc`.
 | `` | | | | |
 | `` | | | | |
+6+| **C**
+| `@Configuration` | | | | | Used to indicate that a class declares one or more @Bean methods. +
+These classes are processed by the Spring container to generate bean definitions and service requests for those beans at runtime.
+| `@ComponentScan` | | | | | Configures component scanning directives for use with @Configuration classes. +
+Here we can specify the base packages to scan for spring components.
+| `@Conditional` | | | | |
+| `@ControllerAdvice` | | | | |
+6+| **E**
+| `@BeanFactoryPostProcessor` | | | | | see `SpringBeans.adoc`
+| `@BeanPostProcessor` | | | | | see `SpringBeans.adoc`
+| `@EnableAutoConfiguration` | | | | | Boot
+| `@EnableJpaRepositories` | | | | | allows `@Repository`
+| `@EnableTransactionManagement` | | | | | Indicates config for `tm` -> `ds` -> `db`
+| `@Entity` | | | | | JPA annotation to make this object ready for storage in a JPA-based data store.
+| `` | | | | |
+6+| **I**
+| `@Inject` | | | | |
+| `@InitBinder` | | | | |
+6+| **M**
+| `@ModelAttribute` | | | | |
+6+| **N**
+| `@Named` | | | | |
+6+| **P**
+| `@PathVariable` | | | | | Used to indicate type of parameter in method REST-endpoint. See `@RequestParameter`.
+| `@PostConstruct` | | | | | alternative way for bean initMethod +
+It can be used when the bean class is defined by us
+| `@PreDestroy` | | | | | alternative way for bean destroyMethod +
+It can be used when the bean class is defined by us
+| `PropertySource` | | | | | provides a simple declarative mechanism for adding a property source to Spring’s Environment. +
+There is a similar annotation for adding an array of property source files i.e `@PropertySources`.
+| `@Profile` | | | | | An app can be run with different profiles. Profiles are sets of parameters.
+6+| **S**
+| `@Service` | ✔️ | | | | see diagram
+| `@SessionAttributes` | | | | |
+| `@SpringBootApplication` | ✔️ |   |   |   | @Configuration +
+@EnableAutoConfiguration +
+@ComponentScan +
 6+| **R**
+| `@Repository` | ✔️ | | | | see diagram
 | `@RestController` | ✔️ |   |   |   | `@Controller` + `@ResponseBody`
 | `@RequestMapping` |   |   | ✔️ |  ️ | For URL/method (e.g. GET) in `@Controller`
 | `@Resource`       |   |   |   |   |
@@ -122,34 +67,11 @@ An app can be run with different profiles. Profiles are sets of parameters.
 | `@RequestParam`   |   |   |   | ✔️ | For `/?foo=bar` in `@Controller` +
 See `@PathVariable`.
 | `@RequestHeader`  |   |   |   |   |
-6+| **R**
-| `@SpringBootApplication` | ✔️ |   |   |   | @Configuration +
-@EnableAutoConfiguration +
-@ComponentScan +
+6+| **T**
+| `@Transactional`  |   |   |   |   | Specify transactional (JPA) behaviour of Bean.
+6+| **V**
+| `@Value`  |   |   |   |   | Inject value from `.properties`.
+6+| **Q**
+| `@Qualifier`  |   | ✔️ |   |   | wire only one bean out of several candidates
+| `@Query` | | | | |
 |===
-
-{empty} +
-
-== S
-
-==== @SpringBootApplication
-
-==== @SessionAttributes
-
-{empty} +
-
-== T
-==== @Transactional
-Specify transactional (JPA) behaviour of Bean.
-
-{empty} +
-
-== V
-==== @Value
-Inject value from `.properties`.
-
-{empty} +
-
-== Q
-==== @Qualifier
-wire only one bean out of several candidates
