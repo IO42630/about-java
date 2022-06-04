@@ -64,9 +64,10 @@ Property values and dependencies are injected into the ☕ by the container.
 [cols="1,4"]
 |===
 | singleton | > one instance per container +
-> default scope
+> **default** scope
 | prototype | new instance each time bean is requested
-| request | (~prototype) new instance for each HTTP session.
+| request | new instance for each HTTP request.
+| session | new instance for each HTTP session.
 | global-session | for portlet apps
 |===
 
@@ -78,14 +79,18 @@ Property values and dependencies are injected into the ☕ by the container.
 ** singleton, portlet(?)
 * lazy (on demand)
 ** singleton (@Lazy), all others
+* `@Lazy` can apply to:
+** `@Bean`
+** `@Configuration` (then applies to all `@Bean`)
+** `@Component`
 
 {empty} +
 
 ===== 3 Bean Configuration Paths
 
 * XML : `resources/foo.xml`
-* Annotation : `@Service` , `@Component`, `@Scope`.
 * Java (Spring 3.0+) : `@Configuration`, `@ComponentScan`, `@Bean`.
+* Annotation : `@Service` , `@Component`, `@Scope`. (only Annotatin supports `@Autowire`)
 
 {empty} +
 
@@ -129,3 +134,15 @@ Property values and dependencies are injected into the ☕ by the container.
 ** thus
 *** during startup for singleton beans
 *** on demand for prototype beans
+
+{empty} +
+
+==== Shutdown
+
+* 2 ways
+** appcontext.close()
+** appcontext.registerShutdownHook()
+* web
+** ContextLoaderListener impl ServletContextListener
+** ContextLoaderListener receives ServletContextEvent when web container stops the web application
+* same for boot

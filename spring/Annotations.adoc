@@ -2,8 +2,8 @@
 :toc:
 
 == About
-
-Some core annotations are shown in the following diagram, others are listed below.
+* Meta-Annotations : annotations that combine other annotations.
+* Some core annotations are shown in the following diagram, others are listed below.
 
 image:img/core-annotations.png[]
 
@@ -21,11 +21,16 @@ Used with `@Qualifier`.
 | `` | | | | |
 | `` | | | | |
 6+| **C**
-| `@Configuration` | | | | | Used to indicate that a class declares one or more @Bean methods. +
-These classes are processed by the Spring container to generate bean definitions and service requests for those beans at runtime.
-| `@ComponentScan` | | | | | Configures component scanning directives for use with @Configuration classes. +
+| `@Configuration` | ✔️ | | | | extends `@Component` +
+> processed by 🌱 to generate ☕ definitions. +
+> usually used with `@Bean` methods, `@ComponentScan`, `@PropertySource`.
+| `@Component` | ✔️ ️| | | | registers class for scanning.
+| `@ComponentScan` | | | | | > requires `@Configuration` +
+> enables component scanning (`@Autowire` etc.) +
+> designate base directory for component scanning.
 Here we can specify the base packages to scan for spring components.
 | `@Conditional` | | | | |
+| `@Controller` | ✔️ | | | | extends `@Component`
 | `@ControllerAdvice` | | | | |
 6+| **E**
 | `@BeanFactoryPostProcessor` | | | | | see `SpringBeans.adoc`
@@ -48,7 +53,8 @@ Here we can specify the base packages to scan for spring components.
 It can be used when the bean class is defined by us
 | `@PreDestroy` | | | | | alternative way for bean destroyMethod +
 It can be used when the bean class is defined by us
-| `PropertySource` | | | | | provides a simple declarative mechanism for adding a property source to Spring’s Environment. +
+| `@PropertySource` | | | | | > requires `@Configuration` +
+provides a simple declarative mechanism for adding a property source to Spring’s Environment. +
 There is a similar annotation for adding an array of property source files i.e `@PropertySources`.
 | `@Profile` | | | | | An app can be run with different profiles. Profiles are sets of parameters.
 6+| **S**
@@ -57,6 +63,7 @@ There is a similar annotation for adding an array of property source files i.e `
 | `@SpringBootApplication` | ✔️ |   |   |   | @Configuration +
 @EnableAutoConfiguration +
 @ComponentScan +
+| `@SpringBootTest` |  | | | |
 6+| **R**
 | `@Repository` | ✔️ | | | | see diagram
 | `@RestController` | ✔️ |   |   |   | `@Controller` + `@ResponseBody`

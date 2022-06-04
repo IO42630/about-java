@@ -1,0 +1,24 @@
+= Bean Config
+
+* This demo shows 2 ways to load properties:
+** `Evironment` (see `AppConfig`)
+** `@Value` (see `beans.ValueConfiguredBean`)
+* Spring has an predefined `@Autowire Evironment.getProperty("foo")`
+** by default it contains only:
+*** `systemProperties`
+*** `systemEnvironment`
+** more can be added through `.properties` files
+*** these are added manually with `@PropertySource`
+*** it does not matter where the `@PropertySource` is used,
+**** as long as it is in `@ComponentScan` path, it will be loaded.
+**** must be used with `@Configuration` or child thereof.
+*** `@PropertySource` uses `classpath` (as defined in `pom/build/resources`)
+* Any property that is in `Evironment` can be accessed via `@Value("${foo}")`
+
+* Also `BeanConsumerService` shows how `@Qualifier` can be used to select bean.
+
+
+
+== Trivia
+
+* sometimes (?TODO) a `@Bean PropertySourcesPlaceholderConfigurer` is required to resolve the `@PropertySource`.

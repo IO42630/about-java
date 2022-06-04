@@ -6,3 +6,5 @@
 * Mockito / Testing
 * Transaction
 * Spring acutator endponts
+
+@DataJpaTest
