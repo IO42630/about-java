@@ -1,12 +1,10 @@
 package com.olexyn.about.java.spring.demo.jpa;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
-import org.springframework.core.env.Environment;
 import org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor;
 import org.springframework.jdbc.datasource.DriverManagerDataSource;
 import org.springframework.orm.jpa.JpaTransactionManager;
@@ -16,8 +14,6 @@ import org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter;
 import org.springframework.transaction.PlatformTransactionManager;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import javax.sql.DataSource;
 import java.util.Properties;
 
@@ -26,8 +22,6 @@ import java.util.Properties;
 @PropertySource("classpath:application.properties")
 public class JpaAppConfig {
 
-    @Autowired
-    Environment environment;
 
 
     @Value("${spring.datasource.driver-class-name}")
@@ -45,8 +39,10 @@ public class JpaAppConfig {
     @Value("${spring.jpa.hibernate.ddl-auto}")
     private String ddlAuto;
 
-    @PersistenceContext
-    private EntityManager foo;
+    @Bean
+    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
+        return new PropertySourcesPlaceholderConfigurer();
+    }
 
     @Bean
     public PlatformTransactionManager transactionManager() {
@@ -68,10 +64,12 @@ public class JpaAppConfig {
         em.setJpaProperties(additionalProperties());
 
         var provider = em.getPersistenceProvider();
-        var name = em.getPersistenceUnitName();
-        var map = em.getJpaPropertyMap();
-        var emf = provider.createEntityManagerFactory(name, map);
-        emf.createEntityManager();
+        if (provider != null) {
+            var name = em.getPersistenceUnitName();
+            var map = em.getJpaPropertyMap();
+            var emf = provider.createEntityManagerFactory(name, map);
+            var someEm = emf.createEntityManager();
+        }
         return em;
     }
 
@@ -99,9 +97,6 @@ public class JpaAppConfig {
         return properties;
     }
 
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertySourcesPlaceholderConfigurer() {
-        return new PropertySourcesPlaceholderConfigurer();
-    }
+
 
 }

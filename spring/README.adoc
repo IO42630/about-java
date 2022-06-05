@@ -16,3 +16,4 @@
 * 👢 Spring Boot
 * ☕ Spring Bean
 * 📦 Spring Container
+* ✉️ Post Processor (PP)

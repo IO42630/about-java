@@ -7,7 +7,7 @@ import org.springframework.context.annotation.Configuration;
 @Configuration
 public class JavaConfig {
 
-    @Bean
+    @Bean(destroyMethod = "destroy") /* can specify destroyMethod here, thus could omit @PreDestroy */
     public JavaHookBean someBeanJavaJava() {
         var bean = new JavaHookBean();
         bean.setDescription("Java-Java");

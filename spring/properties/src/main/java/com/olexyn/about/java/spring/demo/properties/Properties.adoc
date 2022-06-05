@@ -17,8 +17,9 @@
 
 * Also `BeanConsumerService` shows how `@Qualifier` can be used to select bean.
 
+{empty} +
 
+==== Trivia
 
-== Trivia
-
-* sometimes (?TODO) a `@Bean PropertySourcesPlaceholderConfigurer` is required to resolve the `@PropertySource`.
+* for some ungodly reason `DataSource` requires `PropertySourcesPlaceholderConfigurer`.
+** see `./jpa/`

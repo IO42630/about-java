@@ -46,16 +46,28 @@ image:img/spring-container.png[]
 
 1. 📦 is created.
 1. 📦 reads config data.
-3. ☕ definitions are created from the config data.
-4. `BeanFactoryPostProcessor` processes ☕ definitions.
-5. ☕ are instantiated by 📦 using ☕ definitions.
-6. ☕ are configured and assembled. +
-Property values and dependencies are injected into the ☕ by the container.
-7. `BeanPostProcessor` processes ☕, invokes any initialization callbacks.
-8. The application runs.
+3. ☕ definitions are created.
+4. `BeanFactoryPostProcessor` updates definitions.
+5. ☕ are instantiated using definitions.
+6. injections are applied to ☕s.
+7. `BeanPostProcessor` updates ☕
+** if initialization callbacks exist, invoke, and goto 7.
+8. ☕s ready.
 9. Application shut down is initialized.
 10. The Spring container is closed.
 11. Destruction callbacks are invoked on the singleton Spring beans in the container.
+
+{empty} +
+
+===== Container Lifecyle Details
+
+(2) configs:
+
+* XML -> XML
+* Java -> @Configuration
+* Annotation -> @Component
+
+(4) there are many `BeanFactoryPostProcessor` can specify order via `@Order`
 
 {empty} +
 

@@ -4,17 +4,33 @@
 
 {empty} +
 
-=== 3 Ways
+=== 3 Types of DI
 
-* This Demo shows 3 ways to configure DI
-** A : XML
-** B : Java (`@Configuration`/`@Bean`)
-** C : Annotation
-*** `@Configuration` : this is config
-*** `@ComponentScan(path)` : where to scan for components
-*** `@Component` : this is component
-*** `@Autowired` : inject this
-* The Demo consists of creating a `ParentBean.NestedBean.String`
+* CDI (Constructor)
+* SDI (Setter)
+* FDI (Field, since 2.5 ~ @Autowired)
+
+{empty} +
+
+=== Ways to configure DI
+
+* A : XML
+** `beans.xml` -> `ParentBean`
+*** CDI POJO
+*** SDI method name pattern
+* B : Java
+** `@Configuration` -> `@Bean` +
+`AppConfig` -> `ParentBean`
+*** CDI POJO
+*** SDI POJO
+* C : Annotation
+** `@Configuration` : this is config
+** `@ComponentScan(path)` : where to scan for components
+** `@Component` : this is component
+** `@Autowired` : inject this, used on
+*** CDI `@Autowired`
+*** SDI `@Autowired`
+*** FDI `@Autowired`
 
 {empty} +
 
@@ -24,12 +40,6 @@
 `@Component` applies to classes, when using Auto config.
 
 {empty} +
-
-=== 3 Types
-
-* SDI (Setter)
-* CDI (Constructor)
-* FDI (Field, since 2.5 ~ @Autowired)
 
 === @Import
 
@@ -49,3 +59,15 @@
 
 * Annotation DI was added in Spring 2.5
 * Annotation DI happens before XML, thus overriden if overlapping.
+
+==== CDI vs SDI
+
+* SDI can:
+** skip injections
+*** could be done with assigning `null` in CDI, +
+but that is obviously not the intended use.
+** swap injected bean without new instance of host bean
+* overall logic applies:
+** if always provided and bound to instance -> CDI
+** if optional or swappable -> SDI
+

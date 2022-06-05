@@ -1,9 +1,7 @@
 package com.olexyn.about.java.spring.demo.properties.beans;
 
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.stereotype.Component;
 
-@Component
 public class ValueConfiguredBean implements ConfiguredBean {
 
     @Value("${some.value.config.property}")

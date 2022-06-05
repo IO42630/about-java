@@ -77,7 +77,7 @@ See `@PathVariable`.
 6+| **T**
 | `@Transactional`  |   |   |   |   | Specify transactional (JPA) behaviour of Bean.
 6+| **V**
-| `@Value`  |   |   |   |   | Inject value from `.properties`.
+| `@Value`  |   |   |   |   | Inject value from `.properties`. See `./properties/`.
 6+| **Q**
 | `@Qualifier`  |   | ✔️ |   |   | wire only one bean out of several candidates
 | `@Query` | | | | |

@@ -11,6 +11,6 @@ public class JavaHookBean extends AbstractHookBean {
     public void init() { echo(); }
 
     @PreDestroy
-    public void destory() { echo(); }
+    public void destroy() { echo(); }
 
 }

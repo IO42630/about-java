@@ -1,18 +1,18 @@
 = Beanlife
 :toc:
 
-==== Topics
+
+===== Topics
 
 * How to configure a single bean, for ways to inject beans see `~/spring/di/../Di.adoc`
 
-=== Preface
+==== Preface
 
-* Annotations are processed before XML, thus overriden if overlapping.
 * All the instructions are optional.
 
 {empty} +
 
-=== Ways of Configuring
+==== Ways of Configuring
 
 * We can split config into:
 ** _bean_ config (what are the beans)
@@ -33,7 +33,7 @@
 
 {empty} +
 
-===== Spring Bean Life Cycle
+==== Spring Bean Life Cycle
 
 1. load ☕ definitions -> ordered graph.
 2. Instantiate and run `BeanFactoryPostProcessors` (you can update bean definitions here).
@@ -55,3 +55,34 @@
 ** XML -> `destroy-method="destroy"`
 ** Java -> `@PreDestroy`
 ** Annotation -> `DisposibleBean.destroy()`
+
+{empty} +
+
+===== Ordering
+
+* within init and destroy, the following order is applied
+1. Java
+2. Annotation
+3. XML
+* thus `@PostConstruct` comes before `afterPropertiesSet()`.
+
+===== `static` Beans
+
+* `BeanFactoryPostProcessors` are declared static to ensure they are loaded early.
+** e.g. `PropertySourcesPlaceholderConfigurer`
+
+==== Trivia
+
+* PP are called around initialization thus depend on scope (singleton vs prototype)
+
+==== PP examples
+
+AutowiredAnnotationBeanPostProcessor.
+Implements support for dependency injection with the @Autowired annotation.
+- PersistenceExceptionTranslationPostProcessor.
+Applies exception translation to Spring beans annotated with the @Repository annotation
+
+==== JSR-250 (@PostConstruct / @PreDestroy)
+
+* needs PP: CommonAnnotationBeanPostProcessor
+** auto-registered if using Annotation based config - AnnotationConfigApplicationContext (TODO cannot reproduce)
