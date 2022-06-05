@@ -1,16 +1,19 @@
 package com.olexyn.about.java.spring.demo.di.annotation;
 
+import com.olexyn.about.java.spring.demo.di.java.BNestedBean;
 import com.olexyn.about.java.spring.demo.di.java.BParentBean;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+
+import java.util.Optional;
 
 
 @Component
 public class CConsumerBean {
 
     /**
-     * \@Qualifier matches @Component(qualifier) of CParentBean.
+     * @Qualifier("name") matches @Component("name") of CParentBean.
      */
     @Autowired
     @Qualifier("cParentBean")
@@ -24,5 +27,16 @@ public class CConsumerBean {
     @Autowired
     @Qualifier("bParentBean")
     BParentBean bParentBean;
+
+    @Autowired(required = false)
+    MissingBean missingBean;
+
+    /* 2nd way to handle missing beans */
+    @Autowired
+    Optional<MissingBean> missingBean2;
+
+    @Autowired
+    @Qualifier("bNestedBean3x")
+    BNestedBean bNestedBean3;
 
 }

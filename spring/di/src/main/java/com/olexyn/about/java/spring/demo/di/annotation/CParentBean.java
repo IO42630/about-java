@@ -3,17 +3,17 @@ package com.olexyn.about.java.spring.demo.di.annotation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
-@Component("cParentBean")
+@Component("cParentBean") /* name opt, since no conflict */
 public class CParentBean {
 
-    @Autowired
-    private CNestedBean nestedBeanFDI; // Field DI
+    @Autowired /* Field DI */
+    private CNestedBean nestedBeanFDI;
 
     private CNestedBean nestedBeanCDI;
 
     private CNestedBean nestedBeanSDI;
 
-    @Autowired
+    @Autowired /* @Autowired opt, since only 1 constructor */
     public CParentBean(CNestedBean nestedBeanCDI) {
         this.nestedBeanCDI = nestedBeanCDI;
     }
