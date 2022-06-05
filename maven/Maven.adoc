@@ -1,6 +1,6 @@
 = Maven
 :toc:
-:toclevels:4
+:toclevels: 5
 
 ==== Add Spring Resources
 [source]

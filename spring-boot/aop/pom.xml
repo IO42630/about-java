@@ -3,7 +3,7 @@
     <groupId>com.olexyn.about.java.spring.boot.aop</groupId>
     <artifactId>aop</artifactId>
     <version>0.1</version>
-    <name>controller</name>
+    <name>aop</name>
     <parent>
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>

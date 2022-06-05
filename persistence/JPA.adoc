@@ -1,6 +1,6 @@
 = JPA (Java Persistence API)
 :toc:
-:toclevels:4
+:toclevels: 5
 
 ** is a spec
 

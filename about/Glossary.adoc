@@ -17,6 +17,9 @@ immediate superclass of the class, by default Object +
 that allows applications to dynamically access and update the content,
 structure, and style of documents
 | DTO | Data Transfer Object
+2+| **I**
+| `initialisation` | put value into allocated memory (via constructor call)
+| `instantiation` | allocate memory for obj (`new`)
 | C-Error | Compile-time error.
 | R-Error | Runtime error.
 | `uE`    | Unchecked Exception, also called RuntimeException. However both `uE` and `cE` occur at Runtime.

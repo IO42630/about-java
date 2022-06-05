@@ -77,8 +77,12 @@
 
 ==== PP examples
 
-AutowiredAnnotationBeanPostProcessor.
-Implements support for dependency injection with the @Autowired annotation.
+[cols="1,4"]
+|===
+| `AutowiredAnnotationBeanPostProcessor` | Implements support for dependency injection with the @Autowired annotation.
+|===
+
+.
 - PersistenceExceptionTranslationPostProcessor.
 Applies exception translation to Spring beans annotated with the @Repository annotation
 

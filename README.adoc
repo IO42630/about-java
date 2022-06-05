@@ -1,6 +1,6 @@
 = About
 :toc:
-:toclevels:4
+:toclevels: 5
 
 This repository contains a collection of notes and summaries about Java.
 Because data tends to expand unevenly, this collection will inevitably contain redundancies.
