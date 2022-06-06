@@ -21,7 +21,8 @@ public class CConsumerBean {
 
     /**
      * This is a special case, it shows how to 'autowire' a 'java' configured bean.
-     * \@Qualifier matches the @Bean method name in class with @Configuration.
+     *
+     * @Qualifier matches the @Bean method name in class with @Configuration.
      * To enable this @Import(BAppConfig) is used in CAppConfig.
      */
     @Autowired
