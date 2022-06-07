@@ -1,4 +1,4 @@
-package com.olexyn.about.java.spring.gui.demo.thymeleaf;
+package com.olexyn.about.java.spring.logging;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
