@@ -5,6 +5,7 @@
 | autoboxing | automatic conversion between the primitive types
 and their corresponding object wrapper classes +
 `Character a = 'a';`
+| `callback` | function passed as param, which may eventually be executed in the body.
 | class | the core type in Java that defines the implementation
 of a particular kind of object;
 it defines instance and class variables and methods,
