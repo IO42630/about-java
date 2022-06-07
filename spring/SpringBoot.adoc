@@ -1,0 +1,23 @@
+= Spring (Boot)
+:toc:
+:toclevels: 5
+
+
+=== About
+
+* `Boot` demos go here (auto-config etc.).
+** `Spring` demos -> `../spring/*`
+
+=== Quickstart
+
+* run Demo.java
+* open http://localhost:8080/greeting
+* uses local MariaDB, see also https://github.com/IO42630/about-linux
+
+=== Tools
+
+==== Dozer
+
+* Java Bean to Java Bean mapper
+* recursively copies data from one object to another
+* currently, mapping to Kotlin requires some `TODO` config
