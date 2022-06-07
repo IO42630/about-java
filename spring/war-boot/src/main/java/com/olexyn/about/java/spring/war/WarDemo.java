@@ -1,4 +1,4 @@
-package com.olexyn.about.java.spring.demo.war;
+package com.olexyn.about.java.spring.war;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
