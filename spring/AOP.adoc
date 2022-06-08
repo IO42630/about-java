@@ -16,15 +16,26 @@
 | concern | some cross-cutting concern, e.g. logging
 | advice | implementation of concern logic
 | join points | places where advice will be injected
-| pointcut | defines join points
+| pointcut | specifies join points
 |===
+
+==== Typical Concerns
+
+* Logging
+* Transaction management
+* Security
+* Caching
+* Error handling
+* Performance monitoring
+* Business rules
 
 {empty} +
 
 ==== Spring
 
 * 🌱 wraps beans in proxy, thus can intercept calls and apply advice.
-
+** this happens at R-time
+** methods must be public to be proxied (have a public interface for JDK proxy)
 
 
 * 🌱 provides 5 _join point_ instructions :
@@ -49,8 +60,14 @@ private void beforeAdvice(String a, String b) { /* advice */ }
 ** `this()`
 ** `target()`
 ** `args()`
+** `bean`
 * `@Pointcut` is meant for the creation reusable _pointcut_ expressions
 ** empty body
+* this vs target
+** this checks the proxied object
+** target checks the original object
+** how are those different -> TODO
+* can't use wildcards with `this` , `target`
 
 {empty} +
 
@@ -68,3 +85,19 @@ execution(* * * *(..) *) // maximal (all optionals)
 execution(public String type?? com.olexyn.*(String) Throwable) // maximal non-empty (TODO)
 
 * see also https://docs.spring.io/spring-framework/docs/2.0.x/reference/aop.html
+
+=== CCC
+
+- Logging and tracing
+- Transaction management
+- Security
+- Caching
+- Error handling
+- Performance monitoring
+- Custom business rules
+
+==== JoinPoint
+
+* optional first parameter of advice method.
+* `ProceedingJoinPoint` extends `JoinPoint`
+* used to access data.

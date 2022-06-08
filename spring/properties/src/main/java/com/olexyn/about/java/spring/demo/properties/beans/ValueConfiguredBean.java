@@ -10,6 +10,12 @@ public class ValueConfiguredBean implements ConfiguredBean {
     @Value("${hidden.property}")
     private String hiddenProperty;
 
+    @Value("${missing.property:defaultValue}")
+    private String missingProperty;
+
+    @Value("${missing.property.array:1,2,3,4}")
+    private int[] missingArrayProperty;
+
     @Value("${SESSIONNAME}")
     String sessionName; /* this is an systemProperty */
 

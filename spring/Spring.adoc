@@ -69,4 +69,12 @@ to be requested from another domain outside the domain from which the first reso
 | Spring WebFlux | reactive
 |===
 
+{empty} +
 
+=== Templates
+
+* 🌱 provides templates to hide boilerplate:
+** `JdbcTemplate`
+** `JmsTemplate`
+** `RestTemplate`
+** `WebServiceTemplate`

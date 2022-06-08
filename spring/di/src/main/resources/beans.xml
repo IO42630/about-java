@@ -4,10 +4,10 @@
      http://www.springframework.org/schema/context
      http://www.springframework.org/schema/context/spring-context-3.0.xsd">
     <context:annotation-config/>
-    <bean id="aParentBean" class="com.olexyn.about.java.spring.demo.di.xml.AParentBean">
+    <bean id="aParentBean" class="com.olexyn.about.java.spring.demo.di.xml.ParentXmlBean">
         <constructor-arg ref="aNestedBeanCDI"/>
         <property name="aNestedBeanSDI" ref="aNestedBeanSDI"/>
     </bean>
-    <bean id="aNestedBeanCDI" class="com.olexyn.about.java.spring.demo.di.xml.ANestedBean"/>
-    <bean id="aNestedBeanSDI" class="com.olexyn.about.java.spring.demo.di.xml.ANestedBean"/>
+    <bean id="aNestedBeanCDI" class="com.olexyn.about.java.spring.demo.di.xml.NestedXmlBean"/>
+    <bean id="aNestedBeanSDI" class="com.olexyn.about.java.spring.demo.di.xml.NestedXmlBean"/>
 </beans>

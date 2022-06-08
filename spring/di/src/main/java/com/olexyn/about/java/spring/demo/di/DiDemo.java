@@ -1,12 +1,12 @@
 package com.olexyn.about.java.spring.demo.di;
 
 
-import com.olexyn.about.java.spring.demo.di.annotation.CAppConfig;
-import com.olexyn.about.java.spring.demo.di.annotation.CConsumerBean;
-import com.olexyn.about.java.spring.demo.di.java.BAppConfig;
-import com.olexyn.about.java.spring.demo.di.java.BNestedBean;
-import com.olexyn.about.java.spring.demo.di.java.BParentBean;
+import com.olexyn.about.java.spring.demo.di.annotation.AppAnnoConfig;
+import com.olexyn.about.java.spring.demo.di.annotation.ParentAnnoBean;
+import com.olexyn.about.java.spring.demo.di.java.AppJavaConfig;
 import com.olexyn.about.java.spring.demo.di.java.LiteBeanConfig;
+import com.olexyn.about.java.spring.demo.di.java.NestedJavaBean;
+import com.olexyn.about.java.spring.demo.di.java.ParentJavaBean;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
@@ -19,18 +19,18 @@ public class DiDemo {
         aContext.close();
 
 
-        var bContext = new AnnotationConfigApplicationContext(BAppConfig.class);
-        var bBean = bContext.getBean(BParentBean.class);
-        var bNestedBeanPrimary = bContext.getBean(BNestedBean.class);
-        var bNestedBean2x = bContext.getBean("bNestedBean2x");
+        var bContext = new AnnotationConfigApplicationContext(AppJavaConfig.class);
+        var bBean = bContext.getBean(ParentJavaBean.class);
+        var nestedJavaBeanPrimary = bContext.getBean(NestedJavaBean.class);
+        var nestedJavaBean2x = bContext.getBean("nestedJavaBean2x");
         bContext.close();
 
         var liteContext = new AnnotationConfigApplicationContext(LiteBeanConfig.class);
         var liteBean = liteContext.getBean("liteBean");
         liteContext.close();
 
-        var cContext = new AnnotationConfigApplicationContext(CAppConfig.class);
-        var cConsumerBean = cContext.getBean(CConsumerBean.class);
-        cContext.close();
+        var annoCtx = new AnnotationConfigApplicationContext(AppAnnoConfig.class);
+        var annoParent = annoCtx.getBean(ParentAnnoBean.class);
+        annoCtx.close();
     }
 }

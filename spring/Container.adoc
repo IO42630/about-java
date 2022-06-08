@@ -83,6 +83,11 @@ image:img/spring-container.png[]
 | global-session | for portlet apps
 |===
 
+====== Singleton
+
+* 🌱 wraps `@Configuration` calsses in proxy, and intercepts calls to `@Bean` methods, and checks if instance exists.
+** thus methods can`t be final.
+
 {empty} +
 
 ===== Initialization
@@ -158,3 +163,5 @@ image:img/spring-container.png[]
 ** ContextLoaderListener impl ServletContextListener
 ** ContextLoaderListener receives ServletContextEvent when web container stops the web application
 * same for boot
+
+==== Profiles

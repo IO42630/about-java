@@ -1,0 +1,16 @@
+<component name="ProjectRunConfigurationManager">
+    <configuration default="false" name="ProfilesDemo" type="Application" factoryName="Application">
+        <option name="MAIN_CLASS_NAME" value="com.olexyn.about.java.spring.demo.profiles.ProfilesDemo"/>
+        <module name="profiles"/>
+        <option name="VM_PARAMETERS" value="-Dspring.profiles.active=dev"/>
+        <extension name="coverage">
+            <pattern>
+                <option name="PATTERN" value="com.olexyn.about.java.spring.demo.profiles.*"/>
+                <option name="ENABLED" value="true"/>
+            </pattern>
+        </extension>
+        <method v="2">
+            <option name="Make" enabled="true"/>
+        </method>
+    </configuration>
+</component>

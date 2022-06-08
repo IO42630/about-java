@@ -1,0 +1,11 @@
+* can use profiles on:
+** @Configuration
+** @Bean
+** @Component
+** type level in custom annotations (TODO?)
+
+* one can set profile via `ConfigurableEnvironment`
+** however, can't get it to initialize properly
+
+* thus easy way to supply via VM params
+* @Profile can be used on @Configuration or @Bean

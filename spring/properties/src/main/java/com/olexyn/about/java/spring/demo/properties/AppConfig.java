@@ -29,4 +29,5 @@ public class AppConfig {
         return new ValueConfiguredBean();
     }
 
+
 }

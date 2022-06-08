@@ -5,8 +5,8 @@ import org.springframework.context.annotation.Bean;
 public class LiteBeanConfig {
 
     @Bean(name = "liteBean")
-    BNestedBean liteBean() {
-        return new BNestedBean();
+    NestedJavaBean liteBean() {
+        return new NestedJavaBean();
     }
 
 }

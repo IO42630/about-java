@@ -8,7 +8,7 @@
 * these documents should reference the individual demos.
 * each demo has its own `.adoc` where appropriate.
 
-* 👢 demos have their own module -> `../spring-boot/*`
+* 👢 are postfixed with `-boot`.
 
 === Emoji Glossary
 
@@ -17,3 +17,4 @@
 * ☕ Spring Bean
 * 📦 Spring Container
 * ✉️ Post Processor (PP)
+* 🔖 Annotation
