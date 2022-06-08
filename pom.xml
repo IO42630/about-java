@@ -48,6 +48,7 @@
         <module>kotlin</module>
         <module>amq</module>
         <module>jakarta</module>
+        <module>new_features</module>
     </modules>
     <dependencies>
         <dependency>
