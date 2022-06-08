@@ -25,7 +25,7 @@ public class JpaAppConfig {
     DataSourceConfig dataSourceConfig;
 
     @Autowired
-    @Qualifier("myDataSource")
+    @Qualifier("rawDs")
     DataSource dataSource;
 
 

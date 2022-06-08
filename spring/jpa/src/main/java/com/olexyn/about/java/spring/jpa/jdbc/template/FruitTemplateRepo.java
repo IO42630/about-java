@@ -2,6 +2,7 @@ package com.olexyn.about.java.spring.jpa.jdbc.template;
 
 import com.olexyn.about.java.spring.jpa.model.FruitEntity;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -13,8 +14,11 @@ import java.util.List;
 @Repository
 public class FruitTemplateRepo {
 
-    @Autowired
-    private JdbcTemplate jdbcTemplate;
+    private final JdbcTemplate jdbcTemplate;
+
+    public FruitTemplateRepo(@Qualifier("jdbcTemplate") JdbcTemplate jdbcTemplate) {
+            this.jdbcTemplate = jdbcTemplate;
+    }
 
     private final FruitRowMapper fruitRowMapper = new FruitRowMapper();
 

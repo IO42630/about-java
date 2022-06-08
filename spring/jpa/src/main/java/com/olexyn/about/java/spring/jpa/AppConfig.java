@@ -8,8 +8,7 @@ import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@ComponentScan
+@ComponentScan("com.olexyn.about.java.spring.jpa")
 @EnableAspectJAutoProxy(proxyTargetClass = true)
-@Import({DataSourceConfig.class, JdbcTemplateConfig.class, TxConfig.class})
 public class AppConfig {
 }

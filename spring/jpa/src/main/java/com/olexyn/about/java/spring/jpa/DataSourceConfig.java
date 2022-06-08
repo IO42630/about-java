@@ -28,7 +28,7 @@ public class DataSourceConfig {
     public String ddlAuto;
 
 
-    @Bean(name = "myDataSource")
+    @Bean(name = "rawDs")
     public DataSource dataSource() {
         var dataSource = new DriverManagerDataSource();
         dataSource.setDriverClassName(driverClassName);
