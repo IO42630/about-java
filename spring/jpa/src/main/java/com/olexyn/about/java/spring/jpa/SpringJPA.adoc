@@ -69,6 +69,7 @@ image:img/spring-jpa-e.png[]
 * calling @Transactoinal of same obj, bypasses proxy
 ** thus, the called method will execut within the same TX ctx
 * recommend to put `@Transactional` on concrete classes/methods as this will work with both proxy types.
+* must wrap DataSource in TransactionAwareDataSourceProxy to use @Transactional
 
 ===== TX Isolation Levels
 
@@ -122,3 +123,20 @@ of a transaction if one does not exist
 
 * default on Unchecked E / Errors
 * `@Transactional(rollbackFor="", noRollbackFor="")`
+
+==== ORM
+* think Hibernate
+* pros
+** decent abstraction, less boilderplate, unified api
+** cache
+* cons
+** slow, added hidden complexity
+
+==== Cache
+* cache : copy of data outside of the db
+* flushing : writing cache back to db
+* PersistenceContext ~ cache
+** has it's own non-shared db conn
+* EntityManager
+** represents PC
+** API for managing pc / interacting with entities
