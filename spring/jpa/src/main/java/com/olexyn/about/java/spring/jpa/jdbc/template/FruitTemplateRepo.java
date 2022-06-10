@@ -1,6 +1,7 @@
 package com.olexyn.about.java.spring.jpa.jdbc.template;
 
 import com.olexyn.about.java.spring.jpa.model.FruitEntity;
+import com.olexyn.about.java.spring.jpa.model.FruitRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.jdbc.core.JdbcTemplate;
@@ -12,31 +13,35 @@ import java.sql.SQLException;
 import java.util.List;
 
 @Repository
-public class FruitTemplateRepo {
+public class FruitTemplateRepo implements FruitRepo {
 
     private final JdbcTemplate jdbcTemplate;
 
+    @Autowired
     public FruitTemplateRepo(@Qualifier("jdbcTemplate") JdbcTemplate jdbcTemplate) {
-            this.jdbcTemplate = jdbcTemplate;
+        this.jdbcTemplate = jdbcTemplate;
     }
 
     private final FruitRowMapper fruitRowMapper = new FruitRowMapper();
 
+    @Override
     public FruitEntity save(FruitEntity entity) {
         jdbcTemplate.update(
-            "INSERT INTO FruitEntity(pk,name,color) values(?,?,?)",
+            "INSERT INTO fruit(pk,name,color) values(?,?,?)",
             entity.getPk(), entity.getName(), entity.getColor()
         );
         return entity;
     }
 
+    @Override
     public List<FruitEntity> findAll() {
         return jdbcTemplate.query(
             "SELECT * FROM fruit",
-            (rs, rowNum) -> fruitRowMapper.mapRow(rs, rowNum)
+            fruitRowMapper
         );
     }
 
+    @Override
     public FruitEntity getById(int id) {
         return jdbcTemplate.queryForObject(
             "SELECT * FROM Student WHERE ID=?",
@@ -45,21 +50,20 @@ public class FruitTemplateRepo {
         );
     }
 
+    @Override
     public FruitEntity update(FruitEntity entity) {
         jdbcTemplate.update(
-            "UPDATE Student SET name=?, color=? WHERE pk=?",
+            "UPDATE fruit SET name=?, color=? WHERE pk=?",
             entity.getName(), entity.getColor(), entity.getPk()
         );
         return entity;
     }
 
+    @Override
     public boolean deleteById(int id) {
         jdbcTemplate.update("DELETE FROM Student WHERE ID=?", id);
         return true;
     }
-
-
-
 
     private class FruitRowMapper implements RowMapper<FruitEntity> {
         @Override
@@ -71,5 +75,7 @@ public class FruitTemplateRepo {
             return entity;
         }
     }
+
+
 
 }

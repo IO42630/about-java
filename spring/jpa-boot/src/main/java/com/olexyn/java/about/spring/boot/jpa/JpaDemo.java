@@ -12,7 +12,7 @@ public class JpaDemo {
 
     public static void main(String... args) {
         var ctx = SpringApplication.run(JpaDemo.class, args);
-        var result = ctx.getBean(FruitRepo.class).findAll();
+        var result = ctx.getBean(FruitRepoJava.class).findAll();
         int br = 0;
         ctx.getBean(FruitService.class).foo();
         ctx.close();

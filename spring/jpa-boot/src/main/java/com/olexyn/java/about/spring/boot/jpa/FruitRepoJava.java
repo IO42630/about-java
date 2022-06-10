@@ -7,7 +7,7 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface FruitRepo extends JpaRepository<FruitEntity, Long> {
+public interface FruitRepoJava extends JpaRepository<FruitEntity, Long> {
 
 
 

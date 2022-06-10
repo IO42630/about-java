@@ -1,4 +1,4 @@
-package com.olexyn.about.java.spring.jpa;
+package com.olexyn.about.java.spring.jpa.ds;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;

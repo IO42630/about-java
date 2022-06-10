@@ -3,40 +3,53 @@ package com.olexyn.about.java.spring.jpa;
 
 import com.olexyn.about.java.spring.jpa.jdbc.template.FruitTemplateRepo;
 import com.olexyn.about.java.spring.jpa.tx.FruitTxTemplateRepo;
-import com.olexyn.about.java.spring.jpa.tx.TxAwareService;
-import com.olexyn.about.java.spring.jpa.tx.TxConfig;
+import com.olexyn.about.java.spring.jpa.util.Helpers;
+import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
-import org.springframework.jdbc.core.JdbcTemplate;
 
 import javax.sql.DataSource;
 import java.sql.SQLException;
-import java.sql.Statement;
 
 public class JpaDemo {
-    public static void main(String[] args) throws SQLException {
-        var context = new AnnotationConfigApplicationContext(AppConfig.class);
-        var dataSource =(DataSource) context.getBean("rawDs");
-        var connection = dataSource.getConnection();
-        try (Statement stmt = connection.createStatement()) {
-            var resultSet = stmt.executeQuery("SELECT * FROM fruit");
-            int br = 0;
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-
-
-
-
-        var templateRepo = context.getBean(FruitTemplateRepo.class);
-        var boo = templateRepo.findAll();
-
-        var txConfig = new AnnotationConfigApplicationContext(TxConfig.class);
-        try {
-            txConfig.getBean(TxAwareService.class).getFoo();
-        } catch (RuntimeException e) {
-
-        }
-
-        context.close();
+    public static void main(String[] args) {
+        var ctx = new AnnotationConfigApplicationContext(AppConfig.class);
+        testDs(ctx);
+        testTemplate(ctx);
+        testTx(ctx);
+        testEmJava(ctx);
+        testEmAnno(ctx);
+        ctx.close();
     }
+
+    public static void testDs(ApplicationContext ctx) {
+        var ds = (DataSource) ctx.getBean("rawDs");
+        try {
+            var rs = ds.getConnection().createStatement().executeQuery("SELECT * FROM fruit");
+            new Helpers().resultSetToTable(rs);
+        } catch (SQLException ignored) { }
+    }
+
+    public static void testTemplate(ApplicationContext ctx) {
+        var result = ctx.getBean(FruitTemplateRepo.class).findAll();
+    }
+
+    public static void testTx(ApplicationContext ctx) {
+        var repo = ctx.getBean(FruitTxTemplateRepo.class);
+        var entity = repo.findAll().get(0);
+        try {
+            entity.setName("ROLLED BACK");
+            repo.update(entity);
+        } catch (RuntimeException e) {
+            repo.findAll().get(0);
+        }
+    }
+
+    public static void testEmJava(ApplicationContext ctx) {
+
+    }
+
+    public static void testEmAnno(ApplicationContext ctx) {
+
+    }
+
 }

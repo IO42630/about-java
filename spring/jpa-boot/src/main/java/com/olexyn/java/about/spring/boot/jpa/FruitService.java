@@ -8,7 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 public class FruitService {
 
     @Autowired
-    FruitRepo fruitRepo;
+    FruitRepoJava fruitRepo;
 
     @Transactional
     public void foo() {

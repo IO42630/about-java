@@ -10,6 +10,13 @@
 
 * if non-Boot : must set up `EntityManager`
 
+=== Demo Layers
+
+* starting with `ds` we can make `db` queries.
+* each layer adds features, until we arrive at `em`
+
+image:img/spring-jpa-layers.svg[,100%]
+
 === Repo Hierarchy
 
 image:img/spring-jpa.png[]
@@ -133,6 +140,7 @@ of a transaction if one does not exist
 ** slow, added hidden complexity
 
 ==== Cache
+
 * cache : copy of data outside of the db
 * flushing : writing cache back to db
 * PersistenceContext ~ cache
@@ -140,3 +148,44 @@ of a transaction if one does not exist
 * EntityManager
 ** represents PC
 ** API for managing pc / interacting with entities
+
+{empty} +
+
+=== JPA
+
+* starts at `emf` (`ds` and `jdbc` themselves are not yet considered `jpa`)
+* to use, define:
+** `emf`
+** jpa Vendor
+*** EclipseLinkJpaVendorAdapter
+*** HibernateJpaVendorAdapter
+*** OpenJpaVendorAdapter
+
+=== EMF
+
+* ~ `PersistenceUnit`
+* provides as either:
+** app-managed : `LocalEntityManagerFactoryBean`
+** container-managed : `LocalContainerEntityManagerFactoryBean`
+* injected as : `EntityManagerFactory`
+* creates `EntityManager`
+** ~ `PersistenceContext`
+** ~ cache
+
+==== @Entity
+
+* scanned at r-time & included in persistence unit.
+
+need also to define a JPA vendor
+
+=== JTA
+
+* `tm` are global : may span multiple resources (dbs, ques)
+* if using 1 `emf`, then `JpaTransactionManager` recommended
+** only `tm` that is `emf` aware
+* if > 1 `emf`, then use JTA `tm`
+
+=== Trivia
+
+* `@PersistenceConext` is not an injection, but a proxy
+** returns em of current tx, or creates new em.

@@ -64,8 +64,8 @@ image:img/spring-container.png[]
 (2) configs:
 
 * XML -> XML
-* Java -> @Configuration
-* Annotation -> @Component
+* Java -> @Configuration (programmatic)
+* Annotation -> @Component (declarative)
 
 (4) there are many `BeanFactoryPostProcessor` can specify order via `@Order`
 
