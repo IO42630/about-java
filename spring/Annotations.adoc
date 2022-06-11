@@ -24,6 +24,7 @@ Used with `@Qualifier`.
 | `@Configuration` | ✔️ | | | | extends `@Component` +
 > processed by 🌱 to generate ☕ definitions. +
 > usually used with `@Bean` methods, `@ComponentScan`, `@PropertySource`.
+| `@ConfigurationProperties` | | | | | TODO
 | `@Component` | ✔️ ️| | | | registers class for scanning.
 | `@ComponentScan` | | | | | > requires `@Configuration` +
 > enables component scanning (`@Autowire` etc.) +
@@ -32,10 +33,13 @@ Here we can specify the base packages to scan for spring components.
 | `@Conditional` | | | | |
 | `@Controller` | ✔️ | | | | extends `@Component`
 | `@ControllerAdvice` | | | | |
+6+| **D**
+| `@DataJpaTest` | | | | |
 6+| **E**
 | `@BeanFactoryPostProcessor` | | | | | see `SpringBeans.adoc`
 | `@BeanPostProcessor` | | | | | see `SpringBeans.adoc`
-| `@EnableAutoConfiguration` | | | | | Boot
+| `@EnableAutoConfiguration` | ✔️ | | | | enables 👢 to conf ☕ based on dependencies available on class-path
+| `@EnableConfigurationProperties` | | | | | enables `@ConfigurationProperties`
 | `@EnableJpaRepositories` | | | | | allows `@Repository`
 | `@EnableTransactionManagement` | | | | | Indicates config for `tm` -> `ds` -> `db`
 | `@Entity` | | | | | JPA annotation to make this object ready for storage in a JPA-based data store.
@@ -60,9 +64,9 @@ There is a similar annotation for adding an array of property source files i.e `
 6+| **S**
 | `@Service` | ✔️ | | | | see diagram
 | `@SessionAttributes` | | | | |
-| `@SpringBootApplication` | ✔️ |   |   |   | @Configuration +
-@EnableAutoConfiguration +
-@ComponentScan +
+| `@SpringBootApplication` | ✔️ |   |   |   | `@Configuration` +
+`@EnableAutoConfiguration` +
+`@ComponentScan` +
 | `@SpringBootTest` |  | | | |
 6+| **R**
 | `@Repository` | ✔️ | | | | see diagram
@@ -78,6 +82,8 @@ See `@PathVariable`.
 | `@Transactional`  |   |   |   |   | Specify transactional (JPA) behaviour of Bean.
 6+| **V**
 | `@Value`  |   |   |   |   | Inject value from `.properties`. See `./properties/`.
+6+| **W**
+| `@WebMvcTest`  |   |   |   |   | Test ony MVC components
 6+| **Q**
 | `@Qualifier`  |   | ✔️ |   |   | wire only one bean out of several candidates
 | `@Query` | | | | |
