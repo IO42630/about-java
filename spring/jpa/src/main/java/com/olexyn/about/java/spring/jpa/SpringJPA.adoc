@@ -6,10 +6,6 @@
 
 * see `about-java/persistence/JPA`
 
-=== Trivia
-
-* if non-Boot : must set up `EntityManager`
-
 === Demo Layers
 
 * starting with `ds` we can make `db` queries.
@@ -17,27 +13,9 @@
 
 image:img/spring-jpa-layers.svg[,100%]
 
-=== Repo Hierarchy
-
-image:img/spring-jpa.png[]
-
 {empty} +
 
-=== Dependencies
-
-* When creating a `tm`, the following objects are required.
-* TODO unify with `about-java/persistence/JPA`
-
-image:img/spring-jpa-dependencies.png[]
-
-==== Exceptions
-
-* Spring favors `uE` for simplicity.
-* all of the below `E` are `uE` :
-
-image:img/spring-jpa-e.png[]
-
-==== `DataSource` s
+=== DataSource
 
 * `DriverManagerDataSource` : new connection for every request
 * `SimpleDriverDataSource` : like `DriverManagerDataSource` but works with JDBC directly.
@@ -45,25 +23,23 @@ image:img/spring-jpa-e.png[]
 * `EmbeddedDatabase` via `new EmbeddedDatabaseBuilder().build()`
 ** mostly for _dev_ and _test_.
 
-==== JdbcTemplate
+{empty} +
 
-* makes use of some callbacks:
+=== JdbcTemplate
+
+* uses callbacks:
 ** `RowMapper` (see demo)
 ** `RowCallbackHandler` (TODO)
 ** `ResultSetExtractor`
 * methods
-** batchUpdate
+** update / batchUpdate
 ** execute
-** query
-** queryForList
-** queryForMap
-** queryForObject
-** queryForRowSet
-** update
+** query / queryForList / queryForMap / queryForObject / queryForRowSet
 * new conn for every method called (avoids hogging)
 
-==== Transactions
+{empty} +
 
+=== Transactions
 * _local_ on a single resource (db, msg que)
 * _global_ over multiple resources
 ** e.g. if resource B fails to persist, resource A roll back as well
@@ -73,21 +49,21 @@ image:img/spring-jpa-e.png[]
 
 * method with `@Transactional` must be public
 * must `@EnableAspectJAutoProxy(proxyTargetClass = true)` unless you want to specify `ifaces`.
-* calling @Transactoinal of same obj, bypasses proxy
+* calling `@Transactional` of same obj, bypasses proxy
 ** thus, the called method will execut within the same TX ctx
 * recommend to put `@Transactional` on concrete classes/methods as this will work with both proxy types.
-* must wrap DataSource in TransactionAwareDataSourceProxy to use @Transactional
+* must wrap `ds` in `TransactionAwareDataSourceProxy` to use `@Transactional`
 
 ===== TX Isolation Levels
 
-* in regard to other TX
-* characteristics
-** dirty read : TX1 reads uncommited data from TX2
-** non-repeatable read: TX1 reads data, which TX2 is about to modify
-** phantom read: same query returns different data
-
-* locks are usually held till end of TX
-** range 🔒 : on select where
+* relative to other TX
+* issues
+** DR (dirty read):
+*** TX2 updates cache -> TX1 reads uncommitted data from cache
+** NRR (non-repeatable read):
+*** TX1 reads row -> TX2 *updates* row -> TX1 reads row with diff *values*.
+** PR (phantom read):
+*** TX1 reads table -> TX2 *inserts/deletes* row -> TX reads table with diff *rows*.
 
 [cols="4,1,1,1,1,1,1"]
 |===
@@ -120,18 +96,23 @@ Suspends any existing transactio
 of a transaction if one does not exist
 |===
 
-==== JDBC AutoCommit
+===== JDBC AutoCommit
 
 * commits after every query
 * makes it to have multiple queries (unit of work) within a TX
 * `setAuttoCommit(false)` to disable
 
-==== Rollabck Policy
+===== Rollabck Policy
 
 * default on Unchecked E / Errors
 * `@Transactional(rollbackFor="", noRollbackFor="")`
 
-==== ORM
+{empty} +
+
+=== JPA
+
+===== ORM
+
 * think Hibernate
 * pros
 ** decent abstraction, less boilderplate, unified api
@@ -139,7 +120,7 @@ of a transaction if one does not exist
 * cons
 ** slow, added hidden complexity
 
-==== Cache
+===== Cache
 
 * cache : copy of data outside of the db
 * flushing : writing cache back to db
@@ -151,7 +132,7 @@ of a transaction if one does not exist
 
 {empty} +
 
-=== JPA
+===== JPA
 
 * starts at `emf` (`ds` and `jdbc` themselves are not yet considered `jpa`)
 * to use, define:
@@ -161,7 +142,7 @@ of a transaction if one does not exist
 *** HibernateJpaVendorAdapter
 *** OpenJpaVendorAdapter
 
-=== EMF
+===== EMF
 
 * ~ `PersistenceUnit`
 * provides as either:
@@ -172,20 +153,32 @@ of a transaction if one does not exist
 ** ~ `PersistenceContext`
 ** ~ cache
 
-==== @Entity
+===== @Entity
 
 * scanned at r-time & included in persistence unit.
 
 need also to define a JPA vendor
 
-=== JTA
+===== JTA
 
 * `tm` are global : may span multiple resources (dbs, ques)
 * if using 1 `emf`, then `JpaTransactionManager` recommended
 ** only `tm` that is `emf` aware
 * if > 1 `emf`, then use JTA `tm`
 
+{empty} +
+
+=== Exceptions
+
+* Spring favors `uE` for simplicity.
+* all of the below `E` are `uE` :
+
+image:img/spring-jpa-e.png[]
+
+{empty} +
+
 === Trivia
 
+* if non-Boot : must set up `EntityManager`
 * `@PersistenceConext` is not an injection, but a proxy
 ** returns em of current tx, or creates new em.

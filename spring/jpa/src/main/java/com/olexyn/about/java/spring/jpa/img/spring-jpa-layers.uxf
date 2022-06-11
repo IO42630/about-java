@@ -188,24 +188,26 @@ txDs</panel_attributes>
     <coordinates>
       <x>640</x>
       <y>760</y>
-      <w>180</w>
-      <h>40</h>
+      <w>200</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>FruitJavaRepo
+-
+em: EntityManager
 style=wordwrap</panel_attributes>
     <additional_attributes/>
   </element>
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>800</x>
+      <x>820</x>
       <y>740</y>
-      <w>320</w>
+      <w>300</w>
       <h>80</h>
     </coordinates>
     <panel_attributes>lt=&lt;.
 EntityManagerFactory</panel_attributes>
-    <additional_attributes>140.0;20.0;10.0;20.0</additional_attributes>
+    <additional_attributes>130.0;20.0;10.0;20.0</additional_attributes>
   </element>
   <element>
     <id>UMLState</id>
