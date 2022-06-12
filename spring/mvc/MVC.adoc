@@ -3,14 +3,19 @@
 :toclevels: 5
 
 
-=== View Resolver
+=== Overview
 
-* In Boot `WebMvcAutoConfiguration` automatically configures the following bean in the application context:
-** `InternalResourceViewResolver`
-** `BeanNameViewResolver`
-* `ThymeleafViewResolver` also exists
+image:img/spring-mvc.svg[,70%]
 
-=== Dispatcher Servlet
+[cols="1,8"]
+|===
+| (2) | Handler mapping decides the particular controller by using the URL and request parameters.
+| (3) | Response data is wrapped in _model_. _view name_ is also returned.
+| (4) | disp-servlet contains ☕ which impl `ViewResolver`. +
+Asks those to resolve _view name_ until success.
+|===
+
+===== Dispatcher Servlet
 
 * front controller pattern
 * central dispatcher servlet
@@ -18,11 +23,55 @@
 ** resolves views, maps view-names to view instances
 ** resolves exceptions
 * enables centralized handling of security/exceptions
-* web app, may define >1 dispatcher servelts,
-** each with own namespace / app context / set of mappings/hadlers
+* web app, may define >1 dispatcher servlets,
+** each with own namespace / app context / set of mappings/handlers
 * disp-servlet is init before any app-ctx
 
-=== Web Container
+===== Handler Mapping
+
+skip
+
+===== Controller
+
+see EOF.
+
+===== Model
+
+* impl `Model`
+* collection of key-value pairs
+* represents state of the app
+* is provided as param to the `View`
+
+===== View Resolver
+
+* In Boot `WebMvcAutoConfiguration` automatically configures the following bean in the application context:
+** `InternalResourceViewResolver`
+** `BeanNameViewResolver`
+* `ThymeleafViewResolver` also exists
+
+===== View
+
+* impl `View`
+
+[source]
+public interface View {
+    void render(
+        @Nullable Map<String, ?> model,
+        HttpServletRequest request,
+        HttpServletResponse response
+    ) throws Exception;
+}
+
+* View Types: JSP, Velocity, FreeMarker, JSF, Tiles, Thymeleaf, ...
+
+{empty} +
+
+=== Trivia
+
+* `spring-core` does not include `spring-mvc.jar`
+** `spring-mvc` includes `spring-core`
+
+===== Web Container
 
 * servlet 3.0:
 ** container uses impl of `ServletContainerInitializer` to config servlet container
@@ -38,44 +87,7 @@
 ** xml
 ** extend `AbstractAnnotationConfigDispatcherServletInitializer`
 
-=== Request Life
-
-image:img/spring-mvc.svg[,70%]
-
-[cols="1,8"]
-|===
-| (2) | Handler mapping decides the particular controller by using the URL and request parameters.
-| (3) | Response data is wrapped in _model_. _view name_ is also returned.
-| (4) | disp-servlet contains ☕ which impl `ViewResolver`. +
-Asks those to resolve _view name_ until success.
-|===
-
-===== Model
-
-* impl `Model`
-* collection of key-value pairs
-* represents state of the app
-* is provided as param to the `View`
-
-===== View
-
-* impl `View`
-
-[source]
-public interface View {
-    void render(
-        @Nullable Map<String, ?> model,
-        HttpServletRequest request,
-        HttpServletResponse response
-    ) throws Exception;
-}
-
-=== Trivia
-
-* `spring-core` does not include `spring-mvc.jar`
-** `spring-mvc` includes `spring-core`
-
-=== Controller param types
+===== Controller param types
 
 * if not in below list
 ** if simple -> as if @RequestParam
@@ -83,20 +95,16 @@ public interface View {
 
 image:img/controller-param.png[]
 
-==== Param Annotations
+===== Param Annotations
 
 image:img/controller-anno1.png[]
 image:img/controller-anno2.png[]
 
-==== Method Anno
+===== Method Anno
 
 image:img/controller-anno3.png[]
 
-=== View Types
-
-JSP, Velocity, FreeMarker, JSF, Tiles, Thymeleaf,
-
-=== Test
+==== Test
 
 he goal of Spring MVC Test is to provide an effective way to test controllers by performing requests and generating responses through the actual DispatcherServlet.
 Spring MVC Test builds on the familiar “mock” implementations of the Servlet API available in the spring-test module.
