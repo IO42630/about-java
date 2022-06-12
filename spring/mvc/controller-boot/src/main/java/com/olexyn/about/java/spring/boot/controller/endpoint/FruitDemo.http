@@ -7,3 +7,6 @@ GET http://localhost:8080/fruitPathShort/orange
 
 ###
 GET http://localhost:8080/fruitPath/orange
+
+###
+GET http://localhost:8080/fruitNoParam/?name=orange

@@ -72,15 +72,19 @@ image:img/spring-container.png[]
 {empty} +
 
 ===== 5 Bean Scopes
+* custom scopes can be created using the `Scope` interface.
+* 🌐 scopes only valid with web-aware app-ctx
 
 [cols="1,4"]
 |===
 | singleton | > one instance per container +
 > **default** scope
-| prototype | new instance each time bean is requested
-| request | new instance for each HTTP request.
-| session | new instance for each HTTP session.
+| prototype | new instance each time ☕ is requested
+| 🌐 request | new instance for each HTTP request.
+| 🌐 session | new instance for each HTTP session. imagine shopping-cart.
 | global-session | for portlet apps
+| 🌐 application | lifecycle of a `ServletContext`
+| 🌐 websocket | lifecycle of a `WebSocket`
 |===
 
 ====== Singleton

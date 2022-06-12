@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import javax.servlet.http.HttpServletRequest;
+
 @RestController
 @RequestMapping("fruit")
 public class FruitEndpoint {
@@ -31,10 +33,17 @@ public class FruitEndpoint {
         return getFruitInternal(name);
     }
 
+    @GetMapping(value = "fruitNoParam")
+    public FruitDto getFruitNoParam(HttpServletRequest request) {
+        return getFruitInternal(request.getParameter("name"));
+    }
+
     @RequestMapping(value = "fruitPath/{name}", method = RequestMethod.GET, produces = "application/json")
     public FruitDto getFruitPath(@PathVariable String name) {
         return getFruitInternal(name);
     }
+
+
 
 
     private FruitDto getFruitInternal(String name) {

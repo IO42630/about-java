@@ -8,3 +8,6 @@
 * Spring acutator endponts
 
 @DataJpaTest
+
+A. @Transactional annotation works only on methods with public visibility.
+(FALSE - WHY?)

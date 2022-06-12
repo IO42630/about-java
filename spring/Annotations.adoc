@@ -14,6 +14,7 @@ image:img/core-annotations.png[]
 | Annotation 4+| Class/Field/Method/Param | Comment
 
 6+| **A**
+| `@AliasFor` | | | | | Used to make one field an alias of another (why? TODO)
 | `@Autowired` | | | | | Automatic injection of ☕s, instead of using XML-config. +
 Used with `@Qualifier`.
 6+| **B**
@@ -31,7 +32,9 @@ Used with `@Qualifier`.
 > designate base directory for component scanning.
 Here we can specify the base packages to scan for spring components.
 | `@Conditional` | | | | |
-| `@Controller` | ✔️ | | | | extends `@Component`
+| `@Controller` | ✔️ | | | | extends `@Component`, adds MVC features: +
+> web-layer exception-handling +
+> handler mapping
 | `@ControllerAdvice` | | | | |
 6+| **D**
 | `@DataJpaTest` | | | | |
