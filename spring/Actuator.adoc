@@ -1,0 +1,3 @@
+= Actuator
+
+* HTTP endpoints or JMX beans to enable us to interact
