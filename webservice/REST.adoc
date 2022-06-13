@@ -1,27 +1,61 @@
 = REST
 :toc:
 
+=== REpresentational State Transfer
+
+[cols="1,4"]
+|===
+| Representational | REST resources can be represented in many forms: XML, JSON, HTML
+| State | State of resource is more important than functions
+| Transfer | REST is concerned with transferrig data
+| Resource | Anything aceccible over the web
+|===
+
+* stateless :
+** server does not store client state / session etc.
+** server still stores data
+** each request to the server is independent
+* interoperable : any client / (at the level of MIME type)
+
 {empty} +
 
 === HTTP Methods
 
+* _idempotent_ : repeatable with same outcome
+* _safe_ : do not modif resources.
+
 |===
-| Method | Idempotent | Safe
-| GET|  ✔️  |  ✔️
-| HEAD |  ✔️  |  ✔️
-| PUT |  ✔️  |
-| DELETE |  ✔️ |
-| POST | |
+| Method | _idempotent_ | _safe_ | CRUD
+| POST | | | C
+| GET|  ✔️  |  ✔️ | R
+
+| PATCH | ? | ? | U
+| PUT |  ✔️  | | U
+| DELETE |  ✔️ | | D
+| HEAD |  ✔️  |  ✔️ |
+| OPTIONS  | ? |  ✔️ |
+
 |===
+
+=== Security
+
+* OAuth2
+* JWT (JSON Web Token)
+* Basic Authentication
 
 {empty} +
 
 === HTTP Error Codes
 
+[cols="1,1,4"]
 |===
-| 100 | info
-| 200 | success
-| 300 | redirection
-| 400 | client error
-| 500 | server error
+| 100 2+| info
+| 2xx 2+| success
+| 200 | OK | GET / POST / PUT / DELETE(indirect)
+| 201 | Created | POST / PUT
+| 202 | Accepted | DELETE(direct, long ops)
+| 204 | No Content | POST / PUT / DELETE(direct)
+| 300 2+| redirection
+| 400 2+| client error
+| 500 2+| server error
 |===

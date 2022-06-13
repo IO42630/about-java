@@ -110,3 +110,48 @@ he goal of Spring MVC Test is to provide an effective way to test controllers by
 Spring MVC Test builds on the familiar “mock” implementations of the Servlet API available in the spring-test module.
 This allows performing requests and generating responses without the need for running in a Servlet container However, when writing such a unit test, much remains untested: for example, request mappings, data binding, type conversion, validation, and much more.
 Furthermore, other controller methods such as @InitBinder, @ModelAttribute, and @ExceptionHandler may also be invoked as part of the request processing lifecycl
+
+= REST
+* public interface HttpMessageConverter<T> converts HTTP requests to/from obj
+* spring provides:
+
+BufferedImageHttpMessageConverter: Converts BufferedImage to and from image binary data; - Jaxb2RootElementHttpMessageConverter: Reads and writes XML (either text/xml or application/xml) to and from JAXB2-annotated objects.
+Registered if JAXB v2 libraries are present on the classpath; - MappingJackson2HttpMessageConverter: Reads and writes JSON to and from typed objects or untyped HashMaps.
+Registered if the Jackson 2 JSON library is present on the classpath; - StringHttpMessageConverter: Reads all media types (*/*) into a String.
+Writes String to text/plain.
+
+=== @ResponseBody
+
+* @Controller result is passeed to a view
+* @RestController result is processed by HttpMessageConverter
+* can be also used on a single method
+
+=== @ResponseStatus
+
+* best to return body with error,
+* only if method ok -> no exception
+
+=== @RequestBody
+
+* used on param to deserialize Obj
+
+
+==== REST Trivia
+
+* need spring mvc on classpath for REST to work
+
+==== RestTemplate
+
+* syncronous client for HTTP requests
+* comparibly higher level Methods:
+- getForObject;
+- getForEntity;
+- headForHeaders;
+- postForObject;
+- postForEntity;
+- put;
+- patchForObject;
+- delete;
+- optionsForAllow;
+- exchange (general method);
+- execute (most general)
