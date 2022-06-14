@@ -2,7 +2,8 @@
 :toc:
 
 == About
-* Meta-Annotations : annotations that combine other annotations.
+* Meta-Annotations : annotations that are used on other annotations.
+** if an 🔖 has `@Target(ElementType.TYPE)`, it can accept other 🔖
 * Some core annotations are shown in the following diagram, others are listed below.
 
 image:img/core-annotations.png[]
@@ -22,29 +23,39 @@ Used with `@Qualifier`.
 | `` | | | | |
 | `` | | | | |
 6+| **C**
-| `@Configuration` | ✔️ | | | | extends `@Component` +
-> processed by 🌱 to generate ☕ definitions. +
-> usually used with `@Bean` methods, `@ComponentScan`, `@PropertySource`.
-| `@ConfigurationProperties` | | | | | TODO
 | `@Component` | ✔️ ️| | | | registers class for scanning.
 | `@ComponentScan` | | | | | > requires `@Configuration` +
 > enables component scanning (`@Autowire` etc.) +
 > designate base directory for component scanning.
 Here we can specify the base packages to scan for spring components.
-| `@Conditional` | | | | |
+| `@Configuration` | ✔️ | | | | extends `@Component` +
+> processed by 🌱 to generate ☕ definitions. +
+> usually used with `@Bean` methods, `@ComponentScan`, `@PropertySource`.
+| `@ConfigurationProperties` | | | | | TODO
+| `@Conditional` | ✔️ | | ✔️ | | on `@Configuration` or on `@Bean`
 | `@Controller` | ✔️ | | | | extends `@Component`, adds MVC features: +
 > web-layer exception-handling +
-> handler mapping
+> handler mapping +
+> is +
+`@Target(value=TYPE)` +
+`@Retention(value=RUNTIME)` +
+`@Documented` +
+`@Component`
 | `@ControllerAdvice` | | | | |
 6+| **D**
 | `@DataJpaTest` | | | | |
 6+| **E**
 | `@BeanFactoryPostProcessor` | | | | | see `SpringBeans.adoc`
 | `@BeanPostProcessor` | | | | | see `SpringBeans.adoc`
-| `@EnableAutoConfiguration` | ✔️ | | | | enables 👢 to conf ☕ based on dependencies available on class-path
+| `@EnableAutoConfiguration` | ✔️ | | | | enables 👢 to conf ☕ based on dependencies available on class-path +
+> exclude?={SomeObj.class} +
+> excludeName?={SomeObj}
 | `@EnableConfigurationProperties` | | | | | enables `@ConfigurationProperties`
 | `@EnableJpaRepositories` | | | | | allows `@Repository`
 | `@EnableTransactionManagement` | | | | | Indicates config for `tm` -> `ds` -> `db`
+| `@EnableWebMvc` | ✔️ | | | | enables MVC Java config +
+> requires `@Configuration`
+
 | `@Entity` | | | | | JPA annotation to make this object ready for storage in a JPA-based data store.
 | `` | | | | |
 6+| **I**
@@ -77,7 +88,8 @@ There is a similar annotation for adding an array of property source files i.e `
 | `@RequestMapping` |   |   | ✔️ |  ️ | For URL/method (e.g. GET) in `@Controller`
 | `@Resource`       |   |   |   |   |
 | `@ResponseBody`   | ✔️ |   |   |   | Auto-map return data into response body -> skip template.
-| `@Required`       |   |   |   |   |
+| `@Required`       |   |   | ✔️ |   | legacy, applies to setter inside bean +
+indicated the value must be provided via xml at config-time.
 | `@RequestParam`   |   |   |   | ✔️ | For `/?foo=bar` in `@Controller` +
 See `@PathVariable`.
 | `@RequestHeader`  |   |   |   |   |

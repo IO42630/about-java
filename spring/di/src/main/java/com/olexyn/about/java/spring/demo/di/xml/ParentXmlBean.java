@@ -18,7 +18,7 @@ public class ParentXmlBean {
      * Setter Based DI
      * method name 'aNestedBeanSDI' must match beans.xml/property/name
      */
-    @Required
+    @Required /* must be supplied via xml at configuration time. */
     public void setaNestedBeanSDI(NestedXmlBean aNestedBeanSDI) {
         this.aNestedBeanSDI = aNestedBeanSDI;
     }

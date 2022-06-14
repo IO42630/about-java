@@ -2,12 +2,16 @@
 
 * Health Indicators
 * Logging
-* @Required
 * Mockito / Testing
 * Transaction
 * Spring acutator endponts
 
 @DataJpaTest
 
-A. @Transactional annotation works only on methods with public visibility.
-(FALSE - WHY?)
+what exactly is IoC and DI
+
+=== Trick Questions
+
+* choose either (both are true)
+- @Transactional works only on public
+- @Transactional default propagation is PROPAGATION_REQUIED (pick this)

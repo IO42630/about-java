@@ -18,3 +18,29 @@
 * 📦 Spring Container
 * ✉️ Post Processor (PP)
 * 🔖 Annotation
+
+=== Overview
+
+[cols="1,3"]
+|===
+|`aop-boot`|
+|`beanlife` | ☕ def, ☕ hooks, ☕ lifecycle
+|`boot-jdbc` | 3rd party code, TODO rework.
+|`di` | di, xml vs java vs anno.
+|`empty`| empty template for non boot
+|'empty-boot`| empty template for boot
+|`jpa`| dataSource, jdbcTemplate, Tx, Em
+|`jpa-boot` | 🌱 JPA
+|`logging-boot`|
+|`mvc/...`| anything that uses `Controller`.
+|`mvc/controller`|
+|`mvc/controller-boot`|
+|`mvc/session-boot`| `HttpSession` with 👢.
+|`mvc/thymeleaf-boot`|
+|`profiles`| TODO combine with properties?
+|`properties`|
+|`properties-boot`|
+|`security`|
+|`spel`| SpEL
+|`war-boot`| how to package 👢 as `war`.
+|===

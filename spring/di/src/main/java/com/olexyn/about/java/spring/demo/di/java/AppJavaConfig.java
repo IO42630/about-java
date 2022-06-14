@@ -31,7 +31,7 @@ public class AppJavaConfig {
         return new NestedJavaBean("BNestedBean_PAYLOAD_2X");
     }
 
-    @Bean
+    @Bean(name = {"foo", "bar"}) /* may define multiple names*/
     @Qualifier("nestedJavaBean3x")
     /* cannot be used with bContext.getBean("nestedJavaBean3x")
      * for @Autowire usage from CConsumerBean only. */

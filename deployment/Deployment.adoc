@@ -107,16 +107,15 @@ sort(list);
 
 #### `java`
 * _Classpath_ : indicates where .class files are located +
-an environment variable or a command-line argument indicating the path searched by the Java
-compiler and the runtime for class definitions
-    * `java -cp ./out pkg.Core`
-    * also `-classpath` , `--class-path`
-    * possible to use multiple paths
-        * look in current dir and in ./out and in foo.jar
-        * Win: `java -cp ".;./out;./foo.jar`
-        * Unix: `java -cp ".:./out:./foo.jar`
+an environment variable or a command-line argument indicating the path searched by the Java compiler and the runtime for class definitions
+* `java -cp ./out pkg.Core`
+* also `-classpath` , `--class-path`
+* possible to use multiple paths
+* look in current dir and in ./out and in foo.jar
+* Win: `java -cp ".;./out;./foo.jar`
+* Unix: `java -cp ".:./out:./foo.jar`
 
-
+* _classpath_ contains multiple paths, similar to Win PATH
 
 
 #### Examples

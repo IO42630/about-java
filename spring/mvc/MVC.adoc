@@ -32,8 +32,13 @@ Asks those to resolve _view name_ until success.
 skip
 
 ===== Controller
+* handler methods can return
+- `Model`
+- `ModelAndView`
+- `String` (usually view name)
+- `JstlView` (JSP Standard Tag Library)
 
-see EOF.
+* for more, see EOF.
 
 ===== Model
 
@@ -63,6 +68,10 @@ public interface View {
 }
 
 * View Types: JSP, Velocity, FreeMarker, JSF, Tiles, Thymeleaf, ...
+
+===== ModelAndView
+
+* Obj that combines `Model` and `View` (as in view name to be returned from handler method.
 
 {empty} +
 

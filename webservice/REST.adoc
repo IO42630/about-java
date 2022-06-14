@@ -27,7 +27,7 @@
 |===
 | Method | _idempotent_ | _safe_ | CRUD
 | POST | | | C
-| GET|  ✔️  |  ✔️ | R
+| GET|  ✔️  | ✔️ | R
 
 | PATCH | ? | ? | U
 | PUT |  ✔️  | | U

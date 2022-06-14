@@ -1,4 +1,4 @@
-package com.olexyn.about.java.spring.gui.demo.empty;
+package com.olexyn.about.java.spring.empty;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

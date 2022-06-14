@@ -4,6 +4,7 @@ import com.olexyn.about.java.spring.jpa.model.FruitEntity;
 import com.olexyn.about.java.spring.jpa.model.FruitRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.stereotype.Repository;
@@ -25,7 +26,7 @@ public class FruitTemplateRepo implements FruitRepo {
     private final FruitRowMapper fruitRowMapper = new FruitRowMapper();
 
     @Override
-    public FruitEntity save(FruitEntity entity) {
+    public FruitEntity save(FruitEntity entity) throws DataAccessException {
         jdbcTemplate.update(
             "INSERT INTO fruit(pk,name,color) values(?,?,?)",
             entity.getPk(), entity.getName(), entity.getColor()
@@ -76,6 +77,8 @@ public class FruitTemplateRepo implements FruitRepo {
         }
     }
 
-
+    private void test() {
+        jdbcTemplate.execute("DELETE FROM Student WHERE ID=3");
+    }
 
 }

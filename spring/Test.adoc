@@ -1,7 +1,23 @@
 = Test
 :toc:
 
+
+== General
+
+* when possible, best to mock obj, and avoid env.
+* some env:
+- Environment : MockEnvironment and MockPropertySource
+- JNDI
+- Servlet API contains some Mock obj
+- Spring Web Reactive
+
+== @RunWith
+
+* `@RunWith(SpringRunner.class)` enables 🌱 features for testing, e.g. :
+** `@Autowire`, `@MockBean`
+
 * `@RunWith` (JUnit 4) / `@ExtendWith` (JUnit 5) mandatory
+
 * `@ContextConfiguration(classes)` mandatory
 * `@WebAppConfiguration` if web
 
@@ -11,3 +27,26 @@
 | `@SpringJUnitConfig(classes)` | `@ExtendWith` + `@ContextConfiguration(classes)`
 | `@SpringJUnitWebConfig(classes)` | `@SpringJUnitConfig(classes)` + `@WebAppConfiguration`
 |===
+
+===== @SpringBootTest 👢
+
+* used to load complete app-ctx for e2e and integration testing.
+- creates app-ctx for test-suite
+- reuses app-ctx for tests withing the suite
+* will by default not start a web-ctx
+* can supply `webEnvironment` param:
+- mock : default
+- random_port : loads web-ctx
+- defined_port : loads web-ctx
+- none : no web-ctx, no mock
+* will use SpringBootContextLoader if no ctx-loader is config
+
+===== @WebMvcTest 👢
+
+* applies only auto-conf relevant to MVC
+- @Controller, ...
+- Spring Security
+- MockMvc
+* ignores auto-conf for:
+- @Component, @Service, @Repository
+

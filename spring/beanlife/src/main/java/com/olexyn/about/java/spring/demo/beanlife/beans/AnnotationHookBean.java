@@ -24,23 +24,23 @@ public class AnnotationHookBean extends AbstractHookBean implements ApplicationC
     ApplicationEventPublisherAware, BeanClassLoaderAware, BeanFactoryAware,
     BeanNameAware, EnvironmentAware, ImportAware, ResourceLoaderAware, InitializingBean, DisposableBean, BeanPostProcessor {
 
-
+    /**
+     * BeanNameAware
+     */
     @Override
     public void setBeanName(@NotNull String beanName) { echo(); }
 
     @Override
-    public void setBeanFactory(BeanFactory beanFactory) throws BeansException { echo(); }
+    public void setBeanFactory(@NotNull BeanFactory beanFactory) throws BeansException { echo(); }
 
     @Override
-    public void setApplicationContext(ApplicationContext ctx) throws BeansException { echo(); }
-
-
+    public void setApplicationContext(@NotNull ApplicationContext ctx) throws BeansException { echo(); }
 
     @Override
-    public void setBeanClassLoader(ClassLoader classLoader) { echo(); }
+    public void setBeanClassLoader(@NotNull ClassLoader classLoader) { echo(); }
 
     @Override
-    public void setResourceLoader(ResourceLoader resourceLoader) { echo(); }
+    public void setResourceLoader(@NotNull ResourceLoader resourceLoader) { echo(); }
 
     @Override
     public void setImportMetadata(@NotNull AnnotationMetadata annotationMetadata) { echo(); }
@@ -53,20 +53,26 @@ public class AnnotationHookBean extends AbstractHookBean implements ApplicationC
     @Override
     public void setApplicationEventPublisher(@NotNull ApplicationEventPublisher applicationEventPublisher) { echo(); }
 
+    /**
+     * InitializingBean
+     */
     @Override
     public void afterPropertiesSet() { echo(); }
 
+    /**
+     * DisposableBean
+     **/
     @Override
     public void destroy() { echo(); }
 
     @Override
-    public Object postProcessBeforeInitialization(Object bean, String beanName) throws BeansException {
+    public Object postProcessBeforeInitialization(@NotNull Object bean, @NotNull String beanName) throws BeansException {
         echo();
         return BeanPostProcessor.super.postProcessBeforeInitialization(bean, beanName);
     }
 
     @Override
-    public Object postProcessAfterInitialization(Object bean, String beanName) throws BeansException {
+    public Object postProcessAfterInitialization(@NotNull Object bean, @NotNull String beanName) throws BeansException {
         echo();
         return BeanPostProcessor.super.postProcessAfterInitialization(bean, beanName);
     }

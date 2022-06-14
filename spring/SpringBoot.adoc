@@ -43,18 +43,7 @@
 | `spring-boot-starter-data-jpa` |
 |===
 
-=== Configuration Options
 
-|===
-| @ConditionalOnClass | create ☕ if class available on classpath
-| @ConditionalOnMissingClass |
-| @ConditionalOnBean |
-| @ConditionalOnMissingBean | create ☕ if other  ☕ missing
-| @ConditionalOnProperty |
-| @ConditionalOnMissingProperty |
-| @ConditionalOnWebApplication |
-| @ConditionalOnMissingWebApplication |
-|===
 
 === Property Override Order
 
@@ -84,4 +73,4 @@
 ** 👢 supports Tomcat, Jetty, Undertow as embedden containers
 * war : app is deployed in external container
 
-=== Logging
+

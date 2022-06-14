@@ -6,7 +6,7 @@
 
 === Overview
 
-=== Authen Steps
+===== Authentication Steps
 
 * user:pwd combined into `UsernamePasswordAuthenticationToken` impl `Authentication`
 * token passed to impl `AuthenticationManager`
@@ -76,12 +76,17 @@ This can be a login name and a password that has been verified to match
 * generic bean used for use mgmt.
 * usually used to back a `Authentication` instance.
 
+{empty} +
+
 === Config
 
-==== XML
+===== XML
 
 * `<http><intercept-url pattern="x">`
 ** may define multiple `<intercept-url>`, usually most specific first
+** attributes:
+- requires-channel: http, https, any
+- more ...
 
 ==== Java
 
@@ -91,8 +96,8 @@ This can be a login name and a password that has been verified to match
 **  ? : single char
 ** * : 0..n chars, excluding /
 ** ** : 0..n dirs in path
-* `antMatcher("/foo")` matches `"/foo"` (legacy)
-* `mvcMatcher("/foo")` matches "/foo" , "/foo/" , "/foo.xyz"
+* `antMatchers("/foo")` matches `"/foo"` (legacy)
+* `mvcMatchers("/foo")` matches "/foo" , "/foo/" , "/foo.xyz"
 
 ==== Passwords
 
@@ -102,7 +107,7 @@ This can be a login name and a password that has been verified to match
 
 === Levels
 
-==== Endpoint
+==== Web Security
 
 Enabled by
 
@@ -110,11 +115,6 @@ Enabled by
 @Cofiguration
 SecurityConfig extends WebSecurityConfigurerAdapter
 
-{empty} +
-
-==== Web (same as Endpoint?)
-
-* `TODO` an example, to see what the diff is.
 
 {empty} +
 
@@ -130,18 +130,18 @@ SecurityConfig extends WebSecurityConfigurerAdapter
 
 === Annotations
 
-[cols="3,1,1,1,1,9"]
+[cols="3,1,1,1,9"]
 |===
-| Annotation 4+| Class/Field/Method/Param | Comment
+| Annotation 3+| Class/Method/SpEL | Comment
 
-| `@EnableGlobalMethodSecurity` | ✔️ |   |   |  ️ | Enables `@Secured`.
-| `@EnableWebSecurity` | ✔️ |   |   |  ️ | `@Configuration` + apply class to global `WebSecurity`
-| `@PreAuthorize` |   |   | ✔️ |  ️ | New `@Secured`, allows `SpEL`
-| `@PreFilter` |   |   | ✔️ |  ️ |
-| `@PostAuthorize` |   |   | ✔️ |  ️ |
-| `@PostFilter` |   |   | ✔️ |  ️ |
-| `@Secured` |   |   | ✔️ |  ️ | legacy, no `SpEL`
-| `@RolesAllowed`  |   |   | ✔️ |  ️ | `@EnableGlobalMethodSecurity(jsr250Enabled="true")`, no `Spel`
+| `@EnableGlobalMethodSecurity` | ✔️ |   |  ️ | Enables `@Secured`.
+| `@EnableWebSecurity` | ✔️ |   |  ️ | `@Configuration` + apply class to global `WebSecurity`
+| `@PreAuthorize` |   | ✔️ |  ️ | New `@Secured`, allows `SpEL`
+| `@PreFilter` |   | ✔️ |  ️ |
+| `@PostAuthorize` |   | ✔️ |  ️ |
+| `@PostFilter` |    | ✔️ |  ️ |
+| `@Secured` |  | ✔️ |⛔| legacy
+| `@RolesAllowed`  |   | ✔️ |⛔| `@EnableGlobalMethodSecurity(jsr250Enabled="true")`
 |===
 
 === JSP secu Tags
@@ -152,3 +152,8 @@ SecurityConfig extends WebSecurityConfigurerAdapter
 * csrfInput tag
 
 image:img/spring-secu-jsp-tags.png[]
+
+=== Trivia
+
+* Spring AOP is not the best solution if you need to secure in finer detail than method invocations.
+For example, if you need to secure domain objects directly, AspectJ could be a better choice.

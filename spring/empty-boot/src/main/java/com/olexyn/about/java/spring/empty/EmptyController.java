@@ -1,6 +1,5 @@
-package com.olexyn.about.java.spring.gui.demo.empty;
+package com.olexyn.about.java.spring.empty;
 
-import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -8,7 +7,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class EmptyController {
 
     @GetMapping({"/"})
-    public String getFoo(Model model) {
+    public String getEmpty() {
         return "EMPTY";
     }
 
