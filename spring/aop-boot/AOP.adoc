@@ -2,32 +2,28 @@
 :toc:
 :toclevels: 5
 
-==== AOP
+=== AOP
 
 * instead of calling util class
 ** write in util class where it will be applied (~ aspect class)
 
-{empty} +
-
-==== Glossary
+===== Glossary
 
 [cols="1,4"]
 |===
-| concern | some cross-cutting concern, e.g. logging
-| advice | implementation of concern logic
-| join points | places where advice will be injected
-| pointcut | specifies join points
+| *concern* | some cross-cutting concern, e.g. logging
+| *advice* | implementation of concern logic
+| *join points* | places where advice will be injected
+| *pointcut* | instruction that specifies join points
 |===
 
-==== Typical Concerns
+===== Typical Concerns
 
-* Logging
-* Transaction management
-* Security
-* Caching
-* Error handling
-* Performance monitoring
-* Business rules
+|===
+| Logging | Caching | Business rules
+| Transaction management | Error handling |
+| Security | Performance monitoring |
+|===
 
 {empty} +
 
