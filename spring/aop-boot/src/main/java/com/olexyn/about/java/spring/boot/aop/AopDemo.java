@@ -12,4 +12,5 @@ public class AopDemo {
 	public static void main(String[] args) {
 		SpringApplication.run(AopDemo.class, args);
 	}
+
 }

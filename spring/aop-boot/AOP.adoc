@@ -1,0 +1,94 @@
+= Spring AOP
+:toc:
+:toclevels: 5
+
+==== AOP
+
+* instead of calling util class
+** write in util class where it will be applied (~ aspect class)
+
+{empty} +
+
+==== Glossary
+
+[cols="1,4"]
+|===
+| concern | some cross-cutting concern, e.g. logging
+| advice | implementation of concern logic
+| join points | places where advice will be injected
+| pointcut | specifies join points
+|===
+
+==== Typical Concerns
+
+* Logging
+* Transaction management
+* Security
+* Caching
+* Error handling
+* Performance monitoring
+* Business rules
+
+{empty} +
+
+=== Spring
+
+* `@EnableAspectJAutoProxy` enables `@AspectJ` support
+- -> enables `@Aspect`
+* 🌱 wraps beans in proxy, thus can intercept calls and apply advice.
+** this happens at R-time
+** methods must be public to be proxied (have a public interface for JDK proxy)
+
+{empty} +
+
+===== 🌱 Join Point Instructions
+
+** `@Before`
+** `@After` : any outcome
+** `@AfterReturning` : after success
+** `@AfterThrowing` : after fail
+** `@Around` : `@Before` && `@After`
+
+[source,java]
+/* see below for explanation */
+@Pointcut("execution(public * *(..))") // pointcut expression
+private void anyPublicMethod() {}   // pointcut signature
+//
+@Before("anyPublicMethod() && args(a,b)")
+private void beforeAdvice(String a, String b) { /* advice */ }
+// must provide param if args() used
+
+* `JoinPoint`
+- optional first parameter of advice method.
+- `ProceedingJoinPoint` extends `JoinPoint`
+- used to access data.
+
+{empty} +
+
+===== 🌱 Pointcut Designators
+
+[cols="3,8,1"]
+|===
+| | | Wildcard
+
+| `execution()` | `execution(modifier? ret-type pkg?name(param) throws?)` +
+> modifier : omit or specify +
+> return type : omit or `*` or specify +
+> pkg : omit or specify +
+> name : * or specify +
+> param : `..` or specify +
+> throws : omit or `throws *` or `throws E`
+|
+| `within()` |  |
+| `this(ClassName)` | checks for proxied obj | ⛔
+| `target(ClassName)` | ~ `this`, but checks for original object. | ⛔
+| `args()` |    |
+| `bean(ClassName)` |    |
+|===
+
+* `@Pointcut` is meant for the creation reusable _pointcut_ expressions
+** empty body
+
+
+
+

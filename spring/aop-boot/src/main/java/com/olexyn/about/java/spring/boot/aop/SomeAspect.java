@@ -22,6 +22,18 @@ public class SomeAspect {
         System.out.println("after " + a + b);
     }
 
+    @Pointcut("execution(* *(..))")
+    private void minWildcards() { }
+
+    @Pointcut("execution(String foo(..))")
+    private void minNoWildcards() { }
+
+    @Pointcut("execution(public * *(..) throws *)")
+    private void allWildcards() { }
+
+    @Pointcut("execution(public String com.olexyn.*foo(..) throws Exception)")
+    private void allNoWildcards() { }
+
     @Pointcut("execution(public * *(..))")
     private void anyPublicOperation() { }
 
@@ -48,7 +60,5 @@ public class SomeAspect {
 
     @Pointcut("args(java.util.*)")
     public void anyMethodWithArgsFromUtil() { }
-
-
 
 }
