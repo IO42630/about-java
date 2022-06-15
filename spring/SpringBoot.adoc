@@ -2,26 +2,6 @@
 :toc:
 :toclevels: 5
 
-
-=== About
-
-* `Boot` demos go here (auto-config etc.).
-** `Spring` demos -> `../spring/*`
-
-=== Quickstart
-
-* run Demo.java
-* open http://localhost:8080/greeting
-* uses local MariaDB, see also https://github.com/IO42630/about-linux
-
-=== Tools
-
-==== Dozer
-
-* Java Bean to Java Bean mapper
-* recursively copies data from one object to another
-* currently, mapping to Kotlin requires some `TODO` config
-
 === What is Boot?
 
 * simplifies 🌱 config
@@ -42,8 +22,6 @@
 | `spring-boot-starter-security` |
 | `spring-boot-starter-data-jpa` |
 |===
-
-
 
 === Property Override Order
 
@@ -70,7 +48,7 @@
 === Containers
 
 * embedded : container comes with app
-** 👢 supports Tomcat, Jetty, Undertow as embedden containers
+** 👢 supports Tomcat, Jetty, Undertow as embedded containers
 * war : app is deployed in external container
 
 

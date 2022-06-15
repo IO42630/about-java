@@ -2,38 +2,12 @@
 :toc:
 :toclevels: 5
 
-{empty} +
-
-=== Spring Bean
-
-* any object init through 🌱 container.
-* attributes:
-- `autowireCandidate` : skip
-- initMethod – allows you to choose method which will be invoked on context register
-- destroyMethod – allows you to choose method which will be invoked on context shutdown
-- name – allows you give name for bean
-- value : alias for name
-* ☕ ID is not an attribute -> auto by spring -> class name with first letter lower case
-
-{empty} +
-
-===== `@Bean`
-
-Indicates that a method produces a bean to be managed by the Spring container. +
-@Bean annotation also can be used with parameters like name, initMethod and destroyMethod.
-
-* can set attributes via parameters
-
-{empty} +
-
 === Spring Container
 
-image:img/spring-container.png[]
-
-* 🌱 container manages the lifecycle of 🌱☕s.
+* 📦 manages the lifecycle of ☕s.
 * 2 main container types :
 ** `BeanFactory`
-*** provides _DI_ capability, see `./di/../Di.adoc`
+*** provides _DI_ capability
 ** `ApplicationContext` `extends` `BeanFactory`, adds :
 *** MessageSource
 *** Access to resources
@@ -45,6 +19,29 @@ image:img/spring-container.png[]
 ** `AnnotationConfigApplicationContext`
 ** `XmlWebApplicationContext`
 ** `AnnotationConfigWebApplicationContext`
+* ~ IoCC (IoC Container)
+
+* is responsible for injecting the dependency.
+* is responsible to instantiate, configure and assemble the objects.
+** to instantiate the application class
+** to configure the object
+** to assemble the dependencies between the objects
+
+{empty} +
+
+===== Dependency Injection (DI)
+
+* See `design/decoupling/levels/Levels.adoc` for an overview.
+* DI is the opposite of _dependency lookup_
+** resource is retrieved after demand
+** `A obj = new AImpl();`
+** `A obj = A.getA(); // using factory`
+** tight coupling
+** complicates testing
+* 🌱 supports
+** Constructor injection
+** Method injection (by setter)
+
 
 {empty} +
 
@@ -52,32 +49,25 @@ image:img/spring-container.png[]
 
 1. 📦 is created.
 1. 📦 reads config data.
+* XML -> `resources/foo.xml`
+* Java ->  `@Configuration`, `@Bean` (programmatic)
+* Annotation -> `@Component`,`@ComponentScan`, `@Autowire` (declarative)
 3. ☕ definitions are created.
 4. `BeanFactoryPostProcessor` updates definitions.
+* there are many `BeanFactoryPostProcessor` can specify order via `@Order`
 5. ☕ are instantiated using definitions.
 6. injections are applied to ☕s.
 7. `BeanPostProcessor` updates ☕
 ** if initialization callbacks exist, invoke, and goto 7.
 8. ☕s ready.
 9. Application shut down is initialized.
-10. The Spring container is closed.
-11. Destruction callbacks are invoked on the singleton Spring beans in the container.
+10. 📦 is closed.
+11. Destruction callbacks are invoked on the singleton ☕.
 
 {empty} +
 
-===== Container Lifecyle Details
+===== Bean Scopes
 
-(2) configs:
-
-* XML -> XML
-* Java -> @Configuration (programmatic)
-* Annotation -> @Component (declarative)
-
-(4) there are many `BeanFactoryPostProcessor` can specify order via `@Order`
-
-{empty} +
-
-===== 5 Bean Scopes
 * custom scopes can be created using the `Scope` interface.
 * 🌐 scopes only valid with web-aware app-ctx
 
@@ -113,40 +103,9 @@ image:img/spring-container.png[]
 
 {empty} +
 
-===== 3 Bean Configuration Paths
 
-* XML : `resources/foo.xml`
-* Java (Spring 3.0+) : `@Configuration`, `@ComponentScan`, `@Bean`.
-* Annotation : `@Service` , `@Component`, `@Scope`. (only Annotatin supports `@Autowire`)
 
-{empty} +
 
-===== Spring Bean Life Cycle
-
-* see `./beanlife/../BeanLife.adoc`.
-
-===== IoCC (IoC Container)
-
-* is responsible for injecting the dependency.
-* is responsible to instantiate, configure and assemble the objects.
-** to instantiate the application class
-** to configure the object
-** to assemble the dependencies between the objects
-
-{empty} +
-
-===== Dependency Injection (DI)
-
-* See `design/decoupling/levels/Levels.adoc` for an overview.
-* DI is the opposite of _dependency lookup_
-** resource is retrieved after demand
-** `A obj = new AImpl();`
-** `A obj = A.getA(); // using factory`
-** tight coupling
-** complicates testing
-* 🌱 supports
-** Constructor injection
-** Method injection (by setter)
 
 {empty} +
 
