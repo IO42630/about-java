@@ -4,7 +4,12 @@
 
 === Spring Container
 
+* ~ IoCC (IoC Container)
 * 📦 manages the lifecycle of ☕s.
+** to instantiate the application class
+** to configure the object
+** assembles the dependencies between the objects (di)
+*** see `Beans-4-Inject.adoc`
 * 2 main container types :
 ** `BeanFactory`
 *** provides _DI_ capability
@@ -12,36 +17,13 @@
 *** MessageSource
 *** Access to resources
 *** Event propagation to beans
-*** Loading of multiple (hierarchical) contexts
-* 5 main container impl (see `./di/../Di.adoc`) :
+*** Loading of multiple (hierarchical) ctx
+* 5 main container impl:
 ** `FileSystemXmlApplicationContext`
 ** `ClassPathXmlApplicationContext`
 ** `AnnotationConfigApplicationContext`
 ** `XmlWebApplicationContext`
 ** `AnnotationConfigWebApplicationContext`
-* ~ IoCC (IoC Container)
-
-* is responsible for injecting the dependency.
-* is responsible to instantiate, configure and assemble the objects.
-** to instantiate the application class
-** to configure the object
-** to assemble the dependencies between the objects
-
-{empty} +
-
-===== Dependency Injection (DI)
-
-* See `design/decoupling/levels/Levels.adoc` for an overview.
-* DI is the opposite of _dependency lookup_
-** resource is retrieved after demand
-** `A obj = new AImpl();`
-** `A obj = A.getA(); // using factory`
-** tight coupling
-** complicates testing
-* 🌱 supports
-** Constructor injection
-** Method injection (by setter)
-
 
 {empty} +
 
@@ -103,12 +85,6 @@
 
 {empty} +
 
-
-
-
-
-{empty} +
-
 ===== Post Processors
 
 * `@BeanFactoryPostProcessor` called:
@@ -125,12 +101,12 @@
 
 ==== Shutdown
 
-* 2 ways
-** appcontext.close()
-** appcontext.registerShutdownHook()
+* standard
+** `appcontext.close()`
+** `appcontext.registerShutdownHook()`
 * web
-** ContextLoaderListener impl ServletContextListener
-** ContextLoaderListener receives ServletContextEvent when web container stops the web application
+** `ContextLoaderListener` impl `ServletContextListener`
+** `ContextLoaderListener` receives `ServletContextEvent` when web container stops the web application
 * same for boot
 
 ==== Profiles

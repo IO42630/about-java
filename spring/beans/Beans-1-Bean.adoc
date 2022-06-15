@@ -16,5 +16,7 @@ image:img/spring-container.png[]
 ** name – allows you give name for bean
 ** value : alias for name
 * ☕ ID is not an attribute -> auto by spring -> class name with first letter lower case
+* `@Bean` outside of `@Configuration` causes _lite mode_.
+** calls to the `@Bean` method will not be itercepted by the CGLib proxy.
 
 {empty} +
