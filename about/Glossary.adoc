@@ -12,8 +12,10 @@ it defines instance and class variables and methods,
 as well as specifies the interfaces it implements and the
 immediate superclass of the class, by default Object +
 `public class Foo {}`
+| DDL  | Data Definition Language , see also `about-sql`.
 | declaration | officially, this is defined as a statement that establishes an identifier and associates attributes with it, without necessarily reserving its storage or providing the implementation
 | definition | a declaration that reserves storage (for data) or provides an implementation (for methods). (definition + initialization)
+| DML | Data Manipulation Language, see also `about-sql`.
 | DOM | Document Object Model, defined by the W3C,
 that allows applications to dynamically access and update the content,
 structure, and style of documents
