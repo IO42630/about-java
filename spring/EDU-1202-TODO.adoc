@@ -1,14 +1,10 @@
 == TODO Topics
 
-* Health Indicators
+
 * Logging
 * Mockito / Testing
 * Transaction
-* Spring acutator endponts
-
-@DataJpaTest
-
-what exactly is IoC and DI
+* Spring acutator endpoints
 
 === Trick Questions
 

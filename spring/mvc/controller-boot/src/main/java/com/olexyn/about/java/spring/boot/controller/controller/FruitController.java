@@ -15,7 +15,7 @@ import javax.servlet.http.HttpServletRequest;
 
 @RestController
 @RequestMapping("fruit")
-public class FruitEndpoint {
+public class FruitController {
 
     @Autowired
     FruitRepo globalRepo;

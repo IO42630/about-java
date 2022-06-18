@@ -11,6 +11,7 @@
 
 [cols="1,4"]
 |===
+| *aspect* | class with `@Aspect` containing advice.
 | *concern* | some cross-cutting concern, e.g. logging
 | *advice* | implementation of concern logic
 | *join points* | places where advice will be injected

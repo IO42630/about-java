@@ -50,3 +50,8 @@
 * ignores auto-conf for:
 - @Component, @Service, @Repository
 
+===== Links
+
+* how to test a _service_ : `jpa-boot/FruitServiceTest.java`
+* how to test a _repo_ : `jpa-boot/FruitRepoTest.java`
+

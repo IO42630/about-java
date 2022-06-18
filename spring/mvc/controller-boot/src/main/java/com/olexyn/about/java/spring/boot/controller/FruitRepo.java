@@ -12,4 +12,7 @@ public interface FruitRepo extends JpaRepository<FruitEntity, Long> {
 
 
     List<FruitEntity> findByName(String name);
+
+    FruitEntity findFirstByName(String name);
+
 }
