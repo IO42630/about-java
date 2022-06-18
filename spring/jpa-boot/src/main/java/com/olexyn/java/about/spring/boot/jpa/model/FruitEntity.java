@@ -21,13 +21,12 @@ public class FruitEntity {
     @Column(name = "COLOR")
     private String color;
 
-    public void setPk(Long id) {
-        this.pk = id;
-    }
-
-
     public Long getPk() {
         return pk;
+    }
+
+    public void setPk(Long id) {
+        this.pk = id;
     }
 
     public String getName() {

@@ -17,5 +17,6 @@ public interface FruitRepoJava extends JpaRepository<FruitEntity, Long> {
     @Query("select x from FruitEntity x")
     List<FruitEntity> findAllQuery();
 
+    FruitEntity findFirstByName(String name);
 
 }
