@@ -52,6 +52,16 @@
 
 ===== Links
 
-* how to test a _service_ : `jpa-boot/FruitServiceTest.java`
-* how to test a _repo_ : `jpa-boot/FruitRepoTest.java`
-
+* how to test:
+- _service_ : `jpa-boot/FruitServiceTest.java`
+- _repo_ : `jpa-boot/FruitRepoTest.java`
+- _controller_ : `mvc/controller-boot/FruitControllerTest.java`
+* there are also further annotations (out of scope):
+- `@WebFluxTest`
+- `@JdbcTest`
+- `@JooqTest`
+- `@DataMongoTest`
+- `@DataRedisTest`
+- `@DataLdapTest`
+- `@RestClientTest`
+- `@JsonTest`

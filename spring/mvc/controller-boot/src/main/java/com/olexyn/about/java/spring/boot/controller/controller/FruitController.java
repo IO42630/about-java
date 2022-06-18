@@ -1,8 +1,9 @@
-package com.olexyn.about.java.spring.boot.controller.endpoint;
+package com.olexyn.about.java.spring.boot.controller.controller;
 
-import com.olexyn.about.java.spring.boot.controller.FruitRepo;
-import com.olexyn.about.java.spring.boot.controller.MapperService;
 import com.olexyn.about.java.spring.boot.controller.model.FruitDto;
+import com.olexyn.about.java.spring.boot.controller.model.FruitEntity;
+import com.olexyn.about.java.spring.boot.controller.service.MapperService;
+import com.olexyn.about.java.spring.boot.controller.service.SomeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -18,40 +19,39 @@ import javax.servlet.http.HttpServletRequest;
 public class FruitController {
 
     @Autowired
-    FruitRepo globalRepo;
+    MapperService mapperService;
 
     @Autowired
-    MapperService mapperService;
+    SomeService someService;
 
     @GetMapping("/fruitParam")
     public FruitDto getFruit(@RequestParam(value = "name", defaultValue = "orange") String name) {
-        return getFruitInternal(name);
+        return map(name);
     }
 
     @GetMapping(value = "fruitPathShort/{name}")
     public FruitDto getFruitPathShort(@PathVariable String name) {
-        return getFruitInternal(name);
+        return map(name);
     }
 
     @GetMapping(value = "fruitNoParam")
     public FruitDto getFruitNoParam(HttpServletRequest request) {
-        return getFruitInternal(request.getParameter("name"));
+        return someService.fetchApple();
     }
 
     @RequestMapping(value = "fruitPath/{name}", method = RequestMethod.GET, produces = "application/json")
     public FruitDto getFruitPath(@PathVariable String name) {
-        return getFruitInternal(name);
+        return map(name);
     }
 
 
 
-
-    private FruitDto getFruitInternal(String name) {
-        var entities = globalRepo.findByName(name);
-        if (entities.isEmpty()) { return new FruitDto(); }
-        return mapperService.map(entities.get(0), FruitDto.class);
+    private FruitDto map(String name) {
+        var entity = new FruitEntity();
+        entity.setPk(0L);
+        entity.setName("apple");
+        entity.setColor("green");
+        return mapperService.map(entity, FruitDto.class);
     }
-
-
 
 }

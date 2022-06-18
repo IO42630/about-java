@@ -1,4 +1,4 @@
-package com.olexyn.about.java.spring.boot.controller;
+package com.olexyn.about.java.spring.boot.controller.service;
 
 import org.dozer.DozerBeanMapper;
 import org.springframework.stereotype.Service;
