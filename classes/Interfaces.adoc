@@ -83,5 +83,4 @@ class D implements B,C{
 > > e.g. String.
 | if signatures of both declarations are different | It is an overload.
 |===
-* if class or interface inherits two default methods with same signature,
-and does not provide it's own implementation -> C-Error
+* if class or interface inherits two default methods with same signature, and does not provide it's own implementation -> cErr

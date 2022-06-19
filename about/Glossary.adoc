@@ -23,10 +23,10 @@ structure, and style of documents
 2+| **I**
 | `initialisation` | put value into allocated memory (via constructor call)
 | `instantiation` | allocate memory for obj (`new`)
-| C-Error | Compile-time error.
-| R-Error | Runtime error.
-| `uE`    | Unchecked Exception, also called RuntimeException. However both `uE` and `cE` occur at Runtime.
-| `cE`    | Checked Exception
+| `cErr` | Compile-time error.
+| `rErr` | Runtime error.
+| `uEx`    | Unchecked Exception, also called RuntimeException. However both `uEx` and `cEx` occur at Runtime.
+| `cEx`    | Checked Exception
 2+| W
 | `WADL` | Web Application Description Language (XML based)
 | `WSDL` | Web Service Description Language (XML based)

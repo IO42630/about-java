@@ -14,8 +14,17 @@ public interface FruitRepoJava extends JpaRepository<FruitEntity, Long> {
 
     List<FruitEntity> findByName(String name);
 
+    /**
+     * Native SQL
+     */
+    @Query(value = "select * from fruit x", nativeQuery = true)
+    List<FruitEntity> findAllQueryNative();
+
+    /**
+     * JPQL
+     */
     @Query("select x from FruitEntity x")
-    List<FruitEntity> findAllQuery();
+    List<FruitEntity> findAllQueryJpql();
 
     FruitEntity findFirstByName(String name);
 

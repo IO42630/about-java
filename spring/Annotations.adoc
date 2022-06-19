@@ -101,5 +101,5 @@ See `@PathVariable`.
 | `@WebMvcTest`  |   |   |   |   | Test ony MVC components
 6+| **Q**
 | `@Qualifier`  |   | ✔️ |   |   | wire only one bean out of several candidates
-| `@Query` | | | | |
+| `@Query` | | | | | allows specifying a query in `JPQL`/native `SQL` in `@Repository`
 |===

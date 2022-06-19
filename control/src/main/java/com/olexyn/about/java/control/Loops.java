@@ -103,7 +103,7 @@ public class Loops {
         for (String entry : list) {
             for (String foo : list) {
                 break label;
-                //int i = 0; // C-Error
+                //int i = 0; // cErr
             }
         }
     }

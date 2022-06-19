@@ -6,6 +6,6 @@ public class Child  extends Parent{
 
     public static void main(String... args){
         int foo = new Child().i;
-        // foo = new Parent().i; -> C-Error
+        // foo = new Parent().i; -> cErr
     }
 }

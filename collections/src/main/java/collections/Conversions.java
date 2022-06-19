@@ -58,7 +58,7 @@ public class Conversions {
         // immutable (values of list are immutable)
         integerList = List.of(new Integer[]{0,1});
         integerList = List.of(0,1); // accepts varargs
-        // integerList.set(0,0);    // R-Error
+        // integerList.set(0,0);    // rErr
     }
 
 

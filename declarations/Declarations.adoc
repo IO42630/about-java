@@ -69,28 +69,31 @@ one per file - matches the file name. | |  | | YES
 * Can't assign other Object to reference
 * `final` fields are *not* initialized by default
 ** `final int i=0;  // OK` +
-`final int i;       // C-Error`
+`final int i;       // cErr`
 * `final` can be assigned values
 ** in the line in which they are declared
 ** in an instance initializer
 ** constructor
-*** `final` field not assigned after constructor `-> C-Error`
+*** `final` field not assigned after constructor `-> cErr`
 *** assigning `null` counts as an assignment
-* initialization for `final` local variables  is optional
+* initialization for `final` local variables is optional
 
 {empty} +
 
 ==== effectively final
+
 * introduced in Java 8
-* `final` can be placed in declaration without causing C-Error.
+* `final` can be placed in declaration without causing cErr.
+
 [source,java]
 int i = 1; // is eff-final
 i++; // this makes i not eff-final,
-// and causes C-Error in all the subsequent expressions that, require it i to be eff-final
+// and causes `cErr` in all the subsequent expressions that, require it i to be eff-final
 
 {empty} +
 
 ==== c-time constant
+
 * stricter than `final`
 ** literals
 ** enum constants
@@ -138,7 +141,8 @@ import java.util.Arrays.asList;  // Error
 {empty} +
 
 ==== Abstract
-* Illegal Combinations -> `C-Error`
+
+* Illegal Combinations -> `cErr`
 ** `abstract_class` + `private`
 ** `abstract_class` + `final`
 ** `abstract_class` + `static`

@@ -20,7 +20,7 @@ image::power_of_equals.png[]
 * variable points to same object
 ** beware when dealing with objects, e.g. arrays,
 ** since a new array with same contents will be a new object and thus not ==
-** checking for reference equality of two different types -> C-Error
+** checking for reference equality of two different types -> cErr
 
 {empty} +
 

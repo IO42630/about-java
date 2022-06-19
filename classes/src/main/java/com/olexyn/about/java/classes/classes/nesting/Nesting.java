@@ -19,7 +19,7 @@ class Outer {
 
     class InnerClass extends PrivateInnerClass implements Bar {
 
-        //interface Bars{} // C-Error : inner classes cannot have static declarations.
+        //interface Bars{} // cErr : inner classes cannot have static declarations.
         // interfaces are considered static,
         // because they are a contract of what the class, and not of what the instance does.
 
@@ -27,7 +27,7 @@ class Outer {
 
             privateField++;                     // can access private members of enclosing class.
             defaultPrivateInnerClassField++;    // can access members of private members of enclosing class.
-            // privatePrivateInnerClassField++; // C-Error : however can't access private fields of private members of enclosing class.
+            // privatePrivateInnerClassField++; // cErr : however can't access private fields of private members of enclosing class.
 
 
             class LocalInner {} // [3]
@@ -59,7 +59,7 @@ class A {
             public void allTheX() {
                 System.out.println(x);// 30
                 System.out.println(this.x);// 30
-                System.out.println(B.this.x);// 20 B.this refers to the instance of B, B.x would be a static reference which is not OK -> C-Error
+                System.out.println(B.this.x);// 20 B.this refers to the instance of B, B.x would be a static reference which is not OK -> cErr
                 System.out.println(A.this.x);// 10
             }
         }

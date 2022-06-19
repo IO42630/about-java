@@ -42,8 +42,6 @@ public class SomeController implements ServletContextAware {
         return mav;
     }
 
-
-
     @Override
     public void setServletContext(@NotNull ServletContext servletContext) {
         this.servletContext = servletContext;

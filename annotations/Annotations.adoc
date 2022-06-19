@@ -1,9 +1,24 @@
 === Annotations
+
 * is a type of metadata
 ** can be user by the compiler or at runtime
-** `@Override` : promise - if broken -> `C-Error`
+** `@Override` : promise - if broken -> `cErr`
 *** implementing an interface is also an `@Override`.
 
-
 === Custom Annotations
+
 * See `CustomAnnotationsDemo`
+
+=== Target Types
+
+[cols="1,8"]
+|===
+| `TYPE` | class, iface (incl. other annotations), enum, record
+| `METHOD` | method
+| `PARAMETER` |
+| `CONSTRUCTOR` |
+| `LOCAL_VARIABLE` |
+| `ANNOTATION_TYPE` | other annotations
+| `PACKAGE` |
+| ... |
+|===

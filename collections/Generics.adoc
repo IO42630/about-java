@@ -34,7 +34,7 @@ List<Object> objList = new ArrayList<>();
 obj = str;           // OK
 str = (String) obj;  // OK (here obj is a String instance with a Object reference,
 // if obj were an Object instance, then ClassCastException at runtime.
-objList = strList    // C-Error
+objList = strList    // cErr
 obj = strList        // OK
 //
 interface MyList<E,T> extends List<E>{} // Example of what can be done with generics.
@@ -85,7 +85,7 @@ Syntax in method: +
 |===
 
 * Method return types can be of generic type `T` but can *never* determine types or set bounds:
-** `<T> <? extends T> foo(){}` -> C-Error
+** `<T> <? extends T> foo(){}` -> cErr
 [options=header, cols="7,5"]
 |===
 | Type Scenarios |
@@ -142,11 +142,10 @@ type is linked to the instance of the class.
 | Why? | if list was of type Child and one added a Parent -> ClassCastException
 |===
 
-
 [source,java]
 List<? super Child> list2 = new ArrayList<Parent>();
-list2.add(new Object());  // C-Error
-list2.add(new Parent());  // C-Error
+list2.add(new Object());  // cErr
+list2.add(new Parent());  // cErr
 list2.add(new Child());
 list2.add(new SubChild());
 
@@ -162,7 +161,7 @@ If we add any of the known classes, a `ClassCastException` might happen.
 
 [source,java]
 List<? Extends Parent> list2 = new ArrayList<Child>();
-list2.add(new Object());  // C-Error
-list2.add(new Parent());  // C-Error
-list2.add(new Child());   // C-Error
+list2.add(new Object());  // cErr
+list2.add(new Parent());  // cErr
+list2.add(new Child());   // cErr
 list2.add(new SubChild());

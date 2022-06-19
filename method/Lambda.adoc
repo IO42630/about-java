@@ -3,7 +3,7 @@
 * A _functional interface_ (FI) is an interface with only one `abstract` method.
 ** it may contain multiple `static` or `default` methods (those don't count towards)
 ** Optional annotation `@FunctionalInterface` for signaling intent.
-*** causes `C-Error` if mutiple abstract methods.
+*** causes `cErr` if mutiple abstract methods.
 ** An FI can only contain one `abstract` method, +
 but a class can implement multiple functional interfaces.
 * Lambda expressions (lambdas) can be written for FIs.
@@ -19,14 +19,14 @@ a -> a.foo()
 
 * IF one parameter omit `()`
 ** if `()` , then may contain parameter type e.g. `(String a)`
-*** if one parameter uses a type, all param must use type, else C-Error.
+*** if one parameter uses a type, all param must use type, else cErr.
 * IF one statement, omit `{ return ;}`
 * var can be used in Lambda parameters
 * Lambda body may contain:
 ** any Lambda parameters (the ones before `->`)
 ** any class/instance variables (of the surrounding class)
 ** `effectively final` parameters/local variables (of the surrounding method)
-*** A variable is _effectively final_ if adding final before it would not cause an C-Error
+*** A variable is _effectively final_ if adding final before it would not cause an cErr
 
 
 

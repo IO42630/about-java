@@ -1,6 +1,5 @@
 package com.olexyn.about.java.exceptions;
 
-import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -74,7 +73,7 @@ public class Exceptions {// exception "e"
 
         if (SIZE < 0) { // possible to manually trow
             throw new IndexOutOfBoundsException();
-            // int i =0; // C-Error : unreachable
+            // int i =0; // cErr : unreachable
         }
         list.get(SIZE); // natural throw
         int i = 0;      // Code after Exception is not executed.
@@ -145,9 +144,9 @@ public class Exceptions {// exception "e"
 
     static void errors() {
 
-        try {} catch (NullPointerException e) {}
-        // try {} catch (IOException e) {} // C-Error : unable to throw cE
-        // try {} catch (RuntimeException e) {} catch (NullPointerException e) {} // C-Error : Exception already caught by super
+        try { } catch (NullPointerException e) { }
+        // try {} catch (IOException e) {} // cErr : unable to throw cE
+        // try {} catch (RuntimeException e) {} catch (NullPointerException e) {} // cErr : Exception already caught by super
     }
 
 }

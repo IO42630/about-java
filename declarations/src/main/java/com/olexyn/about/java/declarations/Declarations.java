@@ -31,7 +31,7 @@ class Variables{
 
     static void compoundDeclaration(){
 
-        // var foo =1,bar=2;    // var not allowed in compound declaration (C-Error)
+        // var foo =1,bar=2;    // var not allowed in compound declaration (cErr)
 
     }
 

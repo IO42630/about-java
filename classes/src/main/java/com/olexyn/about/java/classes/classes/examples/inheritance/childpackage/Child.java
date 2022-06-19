@@ -45,7 +45,7 @@ public class Child extends Parent {
     void protectedTest(){
         int i = protectedInteger;            // declared in parent
         i = new Child().protectedInteger;
-        //i = new Parent().protectedInteger; // C-Error, since this is a different package
+        //i = new Parent().protectedInteger; // cErr, since this is a different package
 
 
     }

@@ -34,14 +34,14 @@ image:img/spring-jpa-layers.svg[,90%]
 ** `RowCallbackHandler` (TODO)
 ** `ResultSetExtractor`
 * methods
-** update / batchUpdate
+** *update* / batchUpdate
 - to use with DML (INSERT / UPDATE /DELETE)
 - returns number of rows affected (`int` / `int[]`)
-** execute
+** *execute*
 - can be used with any instruction
 - usually used with DDL (CREATE / ALTER / DROP / TRUNCATE / COMMENT)
 - returns `void`
-** query / queryForList / queryForMap / queryForObject / queryForRowSet
+** *query* / queryForList / queryForMap / queryForObject / queryForRowSet
 - returns `T` or `List<T>`
 * new conn for every method called (avoids hogging)
 
@@ -61,6 +61,7 @@ image:img/spring-jpa-layers.svg[,90%]
 ** thus, the called method will execute within the same TX ctx
 * recommend to put `@Transactional` on concrete classes/methods as this will work with both proxy types.
 * must wrap `ds` in `TransactionAwareDataSourceProxy` to use `@Transactional`
+* 🌱 tx use `TransactionInterceptor` for aop
 
 ===== TX Isolation Levels
 
@@ -112,7 +113,7 @@ of a transaction if one does not exist
 
 ===== Rollbck Policy
 
-* default on Unchecked E / Errors
+* default : on `uEx` / `rErr`
 * `@Transactional(rollbackFor="", noRollbackFor="")`
 
 {empty} +
@@ -182,8 +183,8 @@ of a transaction if one does not exist
 
 === Exceptions
 
-* Spring favors `uE` for simplicity.
-* all of the below `E` are `uE` :
+* Spring favors `uEx` for simplicity.
+* all of the below `E` are `uEx` :
 
 image:img/spring-jpa-e.png[]
 

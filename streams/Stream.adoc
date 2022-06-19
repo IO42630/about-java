@@ -26,7 +26,7 @@
 Stream<Integer> stream;
 stream = Stream.of(1, 2, 3, 4);
 stream = Stream.of(new Integer[]{1, 2, 3, 4});
-stream = Stream.of(new int[]{1,2,3,4}); // -> C-Error
+stream = Stream.of(new int[]{1,2,3,4}); // -> cErr
 //
 List<Integer> myList = new ArrayList<>();
 Stream<Integer> sequentialStream = myList.stream(); //sequential stream

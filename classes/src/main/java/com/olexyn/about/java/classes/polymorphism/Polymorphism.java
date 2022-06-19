@@ -46,7 +46,7 @@ public class Polymorphism {
     static void casting(){
 
         Parent childAsParent = new Child();   // Implicit Cast, (Parent) is inserted during compilation.
-        Child child = (Child) childAsParent;  // Explicit Cast, C-Error if (Child) is omitted.
+        Child child = (Child) childAsParent;  // Explicit Cast, cErr if (Child) is omitted.
 
 
         if (new Parent() instanceof Child) { Child parentAsChild = (Child) new Parent(); }// ClassCastException
@@ -54,7 +54,7 @@ public class Polymorphism {
 
 
 
-       //String s = (String) new Integer(1);         // C-Error (can't cast between unrelated types
+        //String s = (String) new Integer(1);         // cErr (can't cast between unrelated types
     }
 
 

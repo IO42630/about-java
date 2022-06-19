@@ -30,18 +30,17 @@ public class Methods {
     class Foo2<T extends Bar>{}
 
 
-    class Bar{}
+    class Bar { }
 
 
 
 
 
+    int overload(int i) { return i; }
 
-    int overload(int i) {return i; }
-
-    int overload(int[] i) {return i[0];}
-    // void overload(int i) {} // C-Error
-    // static void overload(int i){}  // C-Error
+    int overload(int[] i) { return i[0]; }
+    // void overload(int i) {} // cErr
+    // static void overload(int i){}  // cErr
 }
 
 

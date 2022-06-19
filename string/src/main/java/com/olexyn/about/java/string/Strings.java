@@ -1,8 +1,5 @@
 package com.olexyn.about.java.string;
 
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * String is immutable.
  * String is a reference type.
@@ -96,7 +93,7 @@ public class Strings {
     }
 
     static void comparison(){
-        // b = "a" > "a"; -> C-Error
+        // b = "a" > "a"; -> cErr
         b = "a".compareTo("a") == 0;
         i = "a".compareTo("A") ;
         i = "a".compareTo("ABCD") ;

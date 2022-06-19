@@ -3,7 +3,7 @@
 ==== General
 
 * `.java` file can have 0..1 public top-level classes.
-    ** `C-Error` if filename does not match name of public class.
+** `cErr` if filename does not match name of public class.
 * `this.var` references current and inherited members
     ** used do set apart instance/class variables from parameters/local variables
 * `super.var` reference to inherited members
@@ -32,20 +32,20 @@
 * The purpose of a _constructor_ is to initialize fields.
 * Matches the name of the class.
 * May have different access modifiers.
-    ** Overloading rules do apply.
+** Overloading rules do apply.
 * If a user-declared constructor is present,
-    ** then the default constructor is not declared in the background.
-    *** Thus calling the default constructor `-> C-Error`.
-    *** having a private constructor effectively disables the instantiation of the class from outside.
+** then the default constructor is not declared in the background.
+*** Thus calling the default constructor `-> cErr`.
+*** having a private constructor effectively disables the instantiation of the class from outside.
 **** it can only be extended by inner classes.
 * `this()` and `super()` must be the first statement in the constructor
-    ** `Foo(){this();}` and other circular references caused by constructors -> `C-Error`.
+** `Foo(){this();}` and other circular references caused by constructors -> `cErr`.
 * If no `this()` or `super()` are present, then the compiler inserts a `super()` in the background
-    ** since compiler inserts super() the parent constructor is called in every child
+** since compiler inserts super() the parent constructor is called in every child
 * Relevant:
-    ** Parent has no-default constructor
-    ** Child has no (or no matching) constructor.
-    ** C-Error, since compiler will insert call to default constructor of parent.
+** Parent has no-default constructor
+** Child has no (or no matching) constructor.
+** cErr, since compiler will insert call to default constructor of parent.
 * super() refers to most direct parent
 * see `about.basics.classes.Constructors`
 

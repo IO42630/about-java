@@ -25,7 +25,6 @@
         <module>jetty</module>
         <module>maven</module>
         <module>method</module>
-        <module>spring</module>
         <module>variables</module>
         <module>webservice</module>
         <module>exceptions</module>

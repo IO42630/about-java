@@ -21,35 +21,32 @@
 
 === Implementation
 
-image:img/spring-secu-overview.png[]
+image:img/spring-secu-overview.svg[,100%]
 
-* DelegatingFilterProxy is config, delegates to FilterChainProxy
-* FilterChainProxy takes 1..n SecurityFilterChain as constructor param.
-* SecurityFilterChain associates URL pattern with a list of filters.
+===== DelegatingFilterProxy
 
-image:img/spring-secu-comp.png[]
-
-==== DelegatingFilterProxy
-
-* impl `Filter`
-** `void doFilter() { ctx.getBean().doFilter() }`
+* ~ config
+* impl `Filter` -> `void doFilter() { ctx.getBean().doFilter() }`
 
 ===== SecurityFilterChain
 
-* iface
+* associates URL pattern with a list of filters.
 * `DefaultSecurityFilterChain` impl `SecurityFilterChain`
 * constructor of `DefaultSecurityFilterChain` params:
-- request matcher
-- ChannelProcessingFilter (2..n are optional but ordered) SecurityContextPersistenceFilter
-- ConcurrentSessionFilter
+- request matcher (pattern?)
+- `ChannelProcessingFilter` (2..n are optional but ordered)
+- `SecurityContextPersistenceFilter`
+- `ConcurrentSessionFilter`
 - Any authentication filter.
-Such as UsernamePasswordAuthenticationFilter, CasAuthenticationFilter, BasicAuthenticationFilter
-- SecurityContextHolderAwareRequestFilter
-- JaasApiIntegrationFilter
-- RememberMeAuthenticationFilter
-- AnonymousAuthenticationFilter
-- ExceptionTranslationFilter
-- FilterSecurityInterceptor
+** `UsernamePasswordAuthenticationFilter`
+** `CasAuthenticationFilter`
+** `BasicAuthenticationFilter`
+- `SecurityContextHolderAwareRequestFilter`
+- `JaasApiIntegrationFilter`
+- `RememberMeAuthenticationFilter`
+- `AnonymousAuthenticationFilter`
+- `ExceptionTranslationFilter`
+- `FilterSecurityInterceptor`
 
 ===== SecurityContextHolder
 
@@ -101,9 +98,11 @@ This can be a login name and a password that has been verified to match
 
 ==== Passwords
 
-* PasswordEncoderFactories -> PasswordEncoder
+* `PasswordEncoderFactories` -> `PasswordEncoder`
 * hash : never store password, just hash, compare hashes
 * salt : rng string, stored alongside hash, concat to pwd before hast, prevents similar hashes
+
+{empty} +
 
 === Levels
 
@@ -122,7 +121,7 @@ SecurityConfig extends WebSecurityConfigurerAdapter
 
 * Allows annotationg any method with `@Secured`, `@PreAuthorize`, etc.
 * Enable by (either):
-** Place below any `@Configuration` : +
+** `@Configuration` +
 `@EnableGlobalMethodSecurity(securedEnabled = true, prePostEnabled = true)`
 ** `<sec:method-security secured-enabled="true"/>`
 
@@ -135,14 +134,21 @@ SecurityConfig extends WebSecurityConfigurerAdapter
 | Annotation 3+| Class/Method/SpEL | Comment
 
 | `@EnableGlobalMethodSecurity` | ✔️ |   |  ️ | Enables `@Secured`.
-| `@EnableWebSecurity` | ✔️ |   |  ️ | `@Configuration` + apply class to global `WebSecurity`
-| `@PreAuthorize` |   | ✔️ |  ️ | New `@Secured`, allows `SpEL`
+| `@EnableWebSecurity` | ✔️ |   |  ️ | if we disabled secu auto-conf add `@EnableWebSecurity` to
+`SecurityConfig extends WebSecurityConfigurerAdapter`. Requires `@Configuration`.
+| `@PreAuthorize` |   | ✔️ |  ️ | New `@Secured`
 | `@PreFilter` |   | ✔️ |  ️ |
 | `@PostAuthorize` |   | ✔️ |  ️ |
 | `@PostFilter` |    | ✔️ |  ️ |
 | `@Secured` |  | ✔️ |⛔| legacy
 | `@RolesAllowed`  |   | ✔️ |⛔| `@EnableGlobalMethodSecurity(jsr250Enabled="true")`
 |===
+
+===== Disabling Auto-Config
+
+`@SpringBootApplication(exclude = { SecurityAutoConfiguration.class })`
+
+{empty} +
 
 === JSP secu Tags
 
@@ -157,3 +163,5 @@ image:img/spring-secu-jsp-tags.png[]
 
 * Spring AOP is not the best solution if you need to secure in finer detail than method invocations.
 For example, if you need to secure domain objects directly, AspectJ could be a better choice.
+
+image:img/spring-secu-comp.png[]

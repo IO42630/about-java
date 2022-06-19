@@ -104,7 +104,7 @@ public class Operators {
             // Compound assignment operators obscure casting
             l = 1;
             i = 1;
-            // i = i + l;             // C-Error
+            // i = i + l;             // cErr
             i = (int) (i + l);        // OK , addition will be done with longs
             i = (int) ((long) i + l); // what actually happens
             i += l;                   // ok, same as above ... obscured

@@ -1,7 +1,7 @@
 package com.olexyn.about.java.classes.classes.examples.inheritance;
 
-import com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.Parent;
 import com.olexyn.about.java.classes.classes.examples.inheritance.childpackage.Child;
+import com.olexyn.about.java.classes.classes.examples.inheritance.parentpackage.Parent;
 
 public class Main {
 
@@ -17,7 +17,7 @@ public class Main {
 
         new Child().classVar = 3; // OK to modify a static variable from a not-static environment
 
-        //new ConstructorError(); // C-Error , there is no default Constructor
+        //new ConstructorError(); // cErr , there is no default Constructor
     }
 
 

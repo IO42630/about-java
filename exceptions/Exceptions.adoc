@@ -6,10 +6,10 @@ image::Exceptions.png[]
 * Since `Throwable` includes `Error` , do not catch `Throwable` directly.
 * _handle_ : `try/catch`
 * _declare_ : `throw`
-* catching `cE` which the try-block is unable to throw -> `C-Error` (unreachable code)
-** catching `uE` is always allowed
-** catching `Exception` is also ok, because it might be an `uE`
-* `Errors` : issues which  should not be handled.
+* catching `cEx` which the try-block is unable to throw -> `cErr` (unreachable code)
+** catching `uEx` is always allowed
+** catching `Exception` is also ok, because it might be an `uEx`
+* `Errors` : issues which should not be handled.
 
 {empty} +
 
@@ -20,14 +20,15 @@ image::Exceptions.png[]
 * there may be multiple catch blocks
 ** evaluated in the order they appear in
 ** only one may run
-** if superclass Exception catch block appears before subclass catch-block -> `C-Error` (unreachable code)
+** if superclass Exception catch block appears before subclass catch-block -> `cErr` (unreachable code)
 * order of try/catch/finally matters
 * either catch *or* finally must be present.
 
 {empty} +
 
 ==== multi-catch-block
-* declaring inheritance-related Exceptions in a multi-catch-block -> `C-Error`
+
+* declaring inheritance-related Exceptions in a multi-catch-block -> `cErr`
 ** even if child comes before parent.
 * multi catch block contains only one `e`
 ** `(IOException | RuntimeException e)` is the correct syntax
@@ -37,11 +38,12 @@ image::Exceptions.png[]
 {empty} +
 
 ==== Kinds of Exceptions
+
 [options=header]
 |===
 | Type | May be declared | Should be handled | Must be declared/handled
-| Unchecked Exception `uE`  | Yes | Yes |
-| Checked Exception `cE` | Yes | Yes | Yes
+| Unchecked Exception `uEx`  | Yes | Yes |
+| Checked Exception `cEx` | Yes | Yes | Yes
 | Error | Yes | |
 |===
 
@@ -50,7 +52,7 @@ image::Exceptions.png[]
 ==== Common Exceptions
 [cols="2,4"]
 |===
-2+| *RuntimeExceptions* `uE`
+2+| *RuntimeExceptions* `uEx`
 | `ArithmeticException` | Thrown when code attempts to divide by zero
 | `ArrayIndexOutOfBoundsException` | Thrown when code uses an illegal index to access an array
 | `java.lang.ArrayStoreException` | Storing wrong data type in an array.
@@ -152,15 +154,14 @@ try (   FileInputStream in = new FileInputStream("foo");
 
 ==== Supressed Exceptions
 
-
-
 {empty} +
 
 ==== Overriding with Exceptions
-* this applies only to `cE` - since they _must_ be handled.
+
+* this applies only to `cEx` - since they _must_ be handled.
 * narrower means "child-of" or "more precise"
-* Parent method must declare a wider `cE` than the Child method.
-* Child may (not must) declare a narrower `cE`
+* Parent method must declare a wider `cEx` than the Child method.
+* Child may (not must) declare a narrower `cEx`
 
 [source,java]
 class Parent{ void foo() throws RuntimeException{} }

@@ -19,10 +19,10 @@ Asks those to resolve _view name_ until success.
 
 * front controller pattern
 * central dispatcher servlet
-** processes requests, delegates to delegates (@Controller )
+** processes requests, delegates to delegates (`@Controller`)
 ** resolves views, maps view-names to view instances
-** resolves exceptions
-* enables centralized handling of security/exceptions
+** resolves `Ex`
+* enables centralized handling of security/`Ex`
 * web app, may define >1 dispatcher servlets,
 ** each with own namespace / app context / set of mappings/handlers
 * disp-servlet is init before any app-ctx

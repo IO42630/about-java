@@ -72,9 +72,9 @@ import java.nio.file.Paths.*;   // methods can't be instance-imported
 assuming `java.util.Date` and `java.sql.Date` :
 
 [source,java]
-import java.util.*; import java.sql.*;        // causes Date declaration to C-Error
+import java.util.*; import java.sql.*;        // causes Date declaration to cErr
 import java.util.Date; import java.sql.*;     // OK
-import java.util.Date; import java.sql.Date;  // C-Error (even if not used)
+import java.util.Date; import java.sql.Date;  // `cErr` (even if not used)
 
 
 ===== determine when imports are needed

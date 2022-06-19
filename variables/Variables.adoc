@@ -75,7 +75,7 @@ int b = x; // NO // reading uninitialized variable
 
 ==== Parameters (constructor or method)
 * are local variables, that have been pre-initialized
-* C-Error: `int i; find(i);`
+* cErr: `int i; find(i);`
 
 {empty} +
 

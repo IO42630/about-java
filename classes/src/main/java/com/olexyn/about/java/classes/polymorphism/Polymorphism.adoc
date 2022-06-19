@@ -14,7 +14,7 @@ In reverse this means : setting param type to super and supplying any of the sub
 ** Example below: +
 Compiler will check if all calls to `foo` are with param of type `Parent`. +
 Compiler will *not* check if all call to `foo` are with param of type `Child`. +
-If it so happens that `p` is not of type `Child` -> `R-Error`.
+If it so happens that `p` is not of type `Child` -> `rErr`.
 *** Similarly if p was a local variable +
 Basically when we write Parent p = new Child(); +
 
@@ -26,15 +26,15 @@ void foo(Parent p){
 Parent p = new Child1(); // the compiler only checks if the object can match the reference,
 // and forgets the rest.
 Interface i = (Interface) p; // child may implement interface or not - the compiler doesn't remember
-// -> R-Error (if Child1 doesn't happen to be implementing Interface)
+// -> `rErr` (if Child1 doesn't happen to be implementing Interface)
 
 [source,java]
-Chi1d1 c = new Child2(); // C-Error
+Chi1d1 c = new Child2(); // cErr
 
 * To the compiler it is very clear, that Child2 can
 ** neither implement Child1 (as Child1 is a class),
 ** nor extend Child1 (since Child2 already extends Parent).
-*** -> C-Error
+*** -> cErr
 
 {empty} +
 
@@ -42,7 +42,7 @@ Chi1d1 c = new Child2(); // C-Error
 ** immutable
 * type of reference (data type)
 ** determines API (what methods / vars can be accessed)
-* Casting to child  == reclaiming the full API of the child class.
+* Casting to child == reclaiming the full API of the child class.
 
 {empty} +
 
@@ -62,7 +62,7 @@ Chi1d1 c = new Child2(); // C-Error
 | X need to be explicit cast to Y +
 > even if `ClassCastException` would occur
 | => | X instanceof Y == false
-|casting X to Y -> `C-Error` | => | `X instance Y` -> `C-Error`
+|casting X to Y -> `cErr` | => | `X instance Y` -> `cErr`
 |===
 
 {empty} +

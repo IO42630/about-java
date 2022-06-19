@@ -1,6 +1,11 @@
 package com.olexyn.about.java.streams;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collection;
+import java.util.Comparator;
+import java.util.List;
+import java.util.Map;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 import java.util.stream.LongStream;
@@ -29,7 +34,7 @@ public class Streams {
         Stream<Integer> stream;
         stream = Stream.of(1, 2, 3, 4);
         stream = Stream.of(new Integer[]{1, 2, 3, 4});
-        // stream = Stream.of(new int[]{1,2,3,4}); -> C-Error
+        // stream = Stream.of(new int[]{1,2,3,4}); -> cErr
 
 
         List<Integer> myList = new ArrayList<>();

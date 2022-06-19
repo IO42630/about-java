@@ -47,7 +47,7 @@ interface ParentTwo {
 class ChildSuper implements ParentTwo, ParentOne {
 
     public String foo() { return null; } // dummy
-    //public CharSequence foo() { return ""; } // C-Error because of using Super
+    //public CharSequence foo() { return ""; } // cErr because of using Super
 
 
 }

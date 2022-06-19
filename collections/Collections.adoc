@@ -223,7 +223,7 @@ while(iter.hasNext()) {
 *** `Object[] objects = {"foo","bar"};`
 *** `objects[0] = {new Integer(1)};`
 * due to the dangers of type erasure, java does not allow casting between collections
-** `List<Object> list = new Arraylist<String>(); // C-Error "incompatible types"`
+** `List<Object> list = new Arraylist<String>(); // `cErr` "incompatible types"`
 ** this is where generic type wildcards are useful:
 *** `List<?> list = new Arraylist<String>(); // OK`
 

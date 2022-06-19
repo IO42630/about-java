@@ -8,7 +8,7 @@
 * syntax: +
 `find(First[count])By[property expression][comparison operator][ordering operator]`
 * creates proxy, routes calls to default `SimpleJpaRepository`
-* `@Query` allows specifying a query
+* `@Query` allows specifying a query in `JPQL` (Java Persistence Query Language) and native `SQL`.
 
 {empty} +
 

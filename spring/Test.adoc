@@ -11,7 +11,7 @@
 - Servlet API contains some Mock obj
 - Spring Web Reactive
 
-== @RunWith
+=== @RunWith
 
 * `@RunWith(SpringRunner.class)` enables 🌱 features for testing, e.g. :
 ** `@Autowire`, `@MockBean`
@@ -49,6 +49,12 @@
 - MockMvc
 * ignores auto-conf for:
 - @Component, @Service, @Repository
+
+===== JPA Tests
+
+* TX
+- `@Commit` : commit test-based TX
+- `@Rollback(value)` : rollback test-based TX (default `true`)
 
 ===== Links
 

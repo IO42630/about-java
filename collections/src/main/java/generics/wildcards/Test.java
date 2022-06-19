@@ -18,7 +18,7 @@ public class Test {
         List<Object> objectList = new ArrayList<>();
         List<String> stringList = new ArrayList<>();
 
-        // objectList = stringList; // -> C-Error
+        // objectList = stringList; // -> cErr
 
         obj = objectList;
         obj2 = stringList;

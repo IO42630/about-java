@@ -121,11 +121,11 @@ var =                 double;
 
 ==== Relational Operators
 * boolean
-    * `>` , `>=`, `<`, `<=`
-    * `obj instanceof Object`
-        * may be used before Casting
-        * `null instanceof Object` is always `false`
-        * C-Error: `null instanceof null`
+* `>` , `>=`, `<`, `<=`
+* `obj instanceof Object`
+* may be used before Casting
+* `null instanceof Object` is always `false`
+* cErr: `null instanceof null`
 
 ==== Logical Operators
 * Logical

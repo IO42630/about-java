@@ -26,7 +26,7 @@ SomeEnum.A.ordinal() // returns linear position of enum constant instance
 
 * Enum usage in `switch` see `control.Control.adoc#Switch`
 * Enums are top-level constructs
-* Enum types (i.e. `SomeEnum`) can't be instantiated directly (i.e. `new SomeEnum() -> C-Error`)
+* Enum types (i.e. `SomeEnum`) can't be instantiated directly (i.e. `new SomeEnum() -> cErr`)
 
 {empty} +
 

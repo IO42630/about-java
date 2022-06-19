@@ -1,8 +1,9 @@
 package com.olexyn.about.java.spring.controller.config;
 
+import org.jetbrains.annotations.NotNull;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
-public class DSInitImpl extends AbstractAnnotationConfigDispatcherServletInitializer {
+public class DispatcherServletInitializerImpl extends AbstractAnnotationConfigDispatcherServletInitializer {
 
     @Override
     protected Class<?>[] getRootConfigClasses() {
@@ -15,7 +16,7 @@ public class DSInitImpl extends AbstractAnnotationConfigDispatcherServletInitial
     }
 
     @Override
-    protected String[] getServletMappings() {
+    protected String @NotNull [] getServletMappings() {
         return new String[]{"/"};
     }
 

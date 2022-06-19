@@ -10,7 +10,7 @@ import java.util.Arrays;
          public void print() {
              System.out.println(this.equals(SomeEnum.A)); // -> true
              SomeEnum.A.privateString = "foo";
-             // this.privateString = "bar"; // C-Error
+             // this.privateString = "bar"; // cErr
              boolean b2 = SomeEnum.A.staticString.equals(SomeEnum.B.staticString);
              boolean b3 = SomeEnum.staticString.equals(SomeEnum.C.staticString);
              SomeEnum.B.privateString = "bar"; // can access B's privateString
@@ -41,7 +41,7 @@ public class Enum {
          boolean b = SomeEnum.A.toString().equals(SomeEnum.A.name());
 
          SomeEnum s = SomeEnum.A;
-         // SomeEnum foo = new SomeEnum(); // -> C-Error
+         // SomeEnum foo = new SomeEnum(); // -> cErr
 
          SomeEnum[] sa = s.values();
          System.out.println(sa);

@@ -62,11 +62,11 @@ void foo(int j){j=1;}
 === Overloading
 * _method name_ must stay the same.
 * _parameter list_ must change.
-** changing `int[]` to `int...` (varargs) does not count, -> `C-Error`.
+** changing `int[]` to `int...` (varargs) does not count, -> `cErr`.
 * other parts of the declaration are irrelevant
-** only changing `return` type or `static` modifier -> `C-Error`
+** only changing `return` type or `static` modifier -> `cErr`
 * Generics
-** Due to _type erasure_ can't overload `foo(List<String> a)` with `foo(List<Integer> a)` -> `C-Error`.
+** Due to _type erasure_ can't overload `foo(List<String> a)` with `foo(List<Integer> a)` -> `cErr`.
 * Arrays  - don't have _type erasure_.
 ** `foo(String[] a)` overloads `foo(Integer[] a)`.
 
@@ -85,7 +85,7 @@ int -> long
 [source,java]
 void play(Long a){}
 play(4L); // OK , autobox long -> Long
-play(4); // C-Error , autobox int -> Integer is OK.
+play(4); // `cErr` , autobox int -> Integer is OK.
 // Can't cast between children (Integer, Long) of parent (Number).
 void play(Object a){}
 play(4); // OK can autobox from int to Integer
@@ -170,11 +170,11 @@ that it will be implemented in child class.
 |===
 | Parent | Child |
 | `foo(List<Integer>)` | `foo(List<String>)` | Not an override du to different param. +
-C-Error due to same type erasure.
+`cErr` due to same type erasure.
 | `foo(List<Integer>)` | `foo(List<Integer>)` | Override
 | `foo(List<Integer>)` | `foo(ArrayList<Integer>)` | Overload
 | `foo(List<? super String>)` | `foo(List<? extends String>)` | Not an override du to different param. +
-C-Error due to same type erasure.
+`cErr` due to same type erasure.
 |===
 
 ===== return types (of overriding methods)

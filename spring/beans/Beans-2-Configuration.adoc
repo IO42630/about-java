@@ -1,4 +1,4 @@
-= Beanlife
+= Configuration
 :toc:
 :toclevels: 5
 
@@ -7,7 +7,6 @@
 * How to
 - configure a single ☕ -> *bean config*
 - add behaviour via hooks -> *hook config*
-* for ways to inject ☕ see `Di.adoc`
 
 ===== Trivia
 

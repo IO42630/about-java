@@ -31,7 +31,7 @@ public class Array {
 
         // anonymous array, type and size are deduced.
         int[] a1D_local = {1, 2, 3};  // only allowed when declaring
-        // a1D = {1,2,3};				// C-Error
+        // a1D = {1,2,3};				// cErr
 
 
         a1D = new int[]{1, 2};
@@ -76,7 +76,7 @@ public class Array {
 		String[] stringS = { "stringValue" };
 		Object[] objectS = stringS;
 		String[] againStringS = (String[]) objectS;
-		objectS[0] = new StringBuilder(); // R-Error
+        objectS[0] = new StringBuilder(); // rErr
 
 		int e = new int[4].length; // .length is not a method
 

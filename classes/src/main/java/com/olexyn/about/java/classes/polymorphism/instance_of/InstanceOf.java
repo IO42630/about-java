@@ -28,7 +28,7 @@ public class InstanceOf {
         b = new Child1() instanceof Child3Interface; // false
         b = new Child3() instanceof Child3Interface; // true
         b = new Child1() instanceof SuperParentInterface; // true
-        //b = new Child() instanceof  Child3; // C-Error TODO
+        //b = new Child() instanceof  Child3; // cErr TODO
 
         Child3Interface ss = (Child3Interface) new Child1();
         //Child3 cc = (Child3) new Child();
@@ -57,7 +57,7 @@ public class InstanceOf {
         b = i instanceof List; // since Number is not Final, the instance type might extend Number and implement List
         // -> OK
         Integer ii = 4;
-        // b = ii instanceof List; // C-Error , since Integer is final, and compiler can be sure there is no way the instance type might implement List
+        // b = ii instanceof List; // cErr , since Integer is final, and compiler can be sure there is no way the instance type might implement List
     }
 
 }
