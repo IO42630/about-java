@@ -1,0 +1,6 @@
+
+=== Trick Questions
+
+* choose either (both are true)
+- @Transactional works only on public
+- @Transactional default propagation is PROPAGATION_REQUIED (pick this)

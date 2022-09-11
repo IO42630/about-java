@@ -5,12 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.EnableAspectJAutoProxy;
 
 @SpringBootApplication
-@EnableAspectJAutoProxy(proxyTargetClass = true) /* true ~ use CGLIB proxy, false ~ use JDK proxy. */
-/* optional in Boot, unless param desired. */
+@EnableAspectJAutoProxy(proxyTargetClass = true) /* true ~ false CGLIB proxy, false ~ use JDK proxy if iface exists. */
+/* optional in Boot, unless param  desired. */
 public class AopDemo {
 
-	public static void main(String[] args) {
-		SpringApplication.run(AopDemo.class, args);
-	}
+    public static void main(String[] args) {
+        SpringApplication.run(AopDemo.class, args);
+    }
 
 }

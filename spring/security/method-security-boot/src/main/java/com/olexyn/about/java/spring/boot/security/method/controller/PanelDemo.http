@@ -1,0 +1,9 @@
+
+# Note that this can not be run from here,
+# since the LOGIN happens via form/browser.
+
+###
+GET http://localhost:8080/user-panel
+
+###
+GET http://localhost:8080/admin-panel

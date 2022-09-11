@@ -18,3 +18,11 @@ image:img/spring-proxy.svg[,80%]
 * neither proxy intercepts self-invocations
 ** `obj.foo(){ obj.bar(); }`
 * multiple layers of proxies may be used, beware complexity.
+
+{empty} +
+
+=== Proxy Selection
+
+* if no iface exists or CGLib forced (`@EnableAspectJAutoProxy(proxyTargetClass = true)`),
+- then `CGLib` is used,
+- else JDK proxy is used.

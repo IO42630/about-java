@@ -56,7 +56,7 @@ image:img/spring-jpa-layers.svg[,90%]
 ===== TX Trivia
 
 * method with `@Transactional` must be `public`
-* must `@EnableAspectJAutoProxy(proxyTargetClass = true)` unless you want to specify `ifaces`.
+* must `@EnableAspectJAutoProxy` unless you want to specify `ifaces`.
 * calling `@Transactional` of same obj, bypasses proxy
 ** thus, the called method will execute within the same TX ctx
 * recommend to put `@Transactional` on concrete classes/methods as this will work with both proxy types.

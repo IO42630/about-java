@@ -19,7 +19,6 @@
 * 📦 Spring Container
 * ✉️ Post Processor (PP)
 * 🔖 Annotation
-
 === Overview
 
 [cols="1,3"]
@@ -45,12 +44,3 @@
 |`spel`| SpEL
 |`war-boot`| how to package 👢 as `war`.
 |===
-
-
-== problem:
-beans/cotainer section is too long
-split into
-- Bean-1-Bean
-- Bean-2-Container
-- Bean-3-Configure
-- Bean-4-Inject

@@ -9,4 +9,5 @@ public class SecureControllerDemo {
     public static void main(String... args) {
         SpringApplication.run(SecureControllerDemo.class, args);
     }
+
 }

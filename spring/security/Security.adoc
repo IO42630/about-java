@@ -14,10 +14,12 @@
 * secu-context established by
 `SecurityContextHolder.getContext().setAuthentication(auth)`
 
-=== Authorization
+===== Authorization
 
 * Authenticated _principal_ is assigned 1..n authorities (roles).
 * Requests to resources are bound to roles.
+
+{empty} +
 
 === Implementation
 

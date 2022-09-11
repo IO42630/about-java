@@ -8,15 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class SomeController {
 
-	@Autowired
-	private SomeService employeeService;
+    @Autowired
+    private SomeService employeeService;
 
-	@RequestMapping(value = "/concat", method = RequestMethod.GET)
-	public String addEmployee() {
+    @RequestMapping(value = "/concat", method = RequestMethod.GET)
+    public String addEmployee() {
 
-		return employeeService.concat("HELLO", "WORLD");
+        return employeeService.concat("HELLO", "WORLD");
 
-	}
+    }
 
 
 }

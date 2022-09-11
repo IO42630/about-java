@@ -22,12 +22,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
         UserDetails user = User.withUsername("user")
             .passwordEncoder(PasswordEncoderFactories.createDelegatingPasswordEncoder()::encode)
-            .password("this-is-user")
+            .password("user")
             .roles("USER").build();
 
         UserDetails admin = User.withUsername("admin")
             .passwordEncoder(PasswordEncoderFactories.createDelegatingPasswordEncoder()::encode)
-            .password("this-is-admin")
+            .password("admin")
             .roles("ADMIN").build();
 
         var userDetailsManager = new InMemoryUserDetailsManager();
@@ -50,11 +50,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
             .and()
             .httpBasic()
             .and()
-            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-        http.logout(logout -> logout
-            .logoutUrl("/logout")
-            .invalidateHttpSession(true)
-        );
+            .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
+            .and()
+            .logout(logout -> logout
+                .logoutUrl("/logout")
+                .invalidateHttpSession(true)
+            );
     }
+
 }
 
