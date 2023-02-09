@@ -45,6 +45,7 @@
         <module>charts</module>
         <module>kotlin</module>
         <module>amq</module>
+        <module>wildfly</module>
         <module>jakarta</module>
         <module>new_features</module>
     </modules>
