@@ -1,0 +1,9 @@
+version: '3'
+services:
+    wildfly:
+        container_name: wildfly
+        build: ./docker
+        ports:
+            - "8080:8080"
+            - "9990:9990"
+
