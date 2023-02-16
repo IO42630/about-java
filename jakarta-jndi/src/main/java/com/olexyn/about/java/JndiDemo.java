@@ -1,4 +1,4 @@
-package com.olexyn.about.java.jakarta.jndi;
+package com.olexyn.about.java;
 
 import javax.naming.CompositeName;
 import javax.naming.InvalidNameException;

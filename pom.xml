@@ -45,8 +45,8 @@
         <module>charts</module>
         <module>kotlin</module>
         <module>amq</module>
-        <module>jakarta</module>
-        <module>new_features</module>
+        <module>jakarta-jaas</module>
+        <module>jakarta-jndi</module>
     </modules>
     <dependencies>
         <dependency>
