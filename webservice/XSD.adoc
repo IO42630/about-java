@@ -1,13 +1,15 @@
-== XSD
-XML Schema Definition
+=== XSD : XML Schema Definition
+* describes static structure of data types exchanged by web services (see WSDL)
 
-=== JAXB
+{empty} +
+
+==== JAXB
 * Java Architecture for XML Binding
 * Generates Java classes from XSD Files
 
 {empty} +
 
-==== _marshal_
+===== _marshal_
 * .java -> .xml (`schemagen`)
 * cmd if executed from withing `about.java.jaxb`:
 ** `schemagen -cp .\..\..\..\..\..\..\..\..\target\classes\com\olexyn\about\java\jaxb ClassToMarshal.java`
@@ -15,7 +17,7 @@ XML Schema Definition
 
 {empty} +
 
-==== _unmarshal_
+===== _unmarshal_
 * .xml -> .java (`xjc`)
 * cmd if executed from withing `about.java.jaxb`:
 ** `xjc -d . employee.xsd`
