@@ -22,7 +22,7 @@ import javax.security.auth.spi.*;
  * If set to true in the login Configuration,
  * debug messages will be output to the output stream, System.out.
  */
-public class SampleLoginModule implements LoginModule {
+public class SomeLoginModule implements LoginModule {
 
 	// initial state
 	private Subject subject;
@@ -42,7 +42,7 @@ public class SampleLoginModule implements LoginModule {
 	private char[] password;
 
 	// testUser's SamplePrincipal
-	private SamplePrincipal userPrincipal;
+	private SomePrincipal userPrincipal;
 
 	/**
 	 * Initialize this <code>LoginModule</code>.
@@ -116,10 +116,10 @@ public class SampleLoginModule implements LoginModule {
 
 		// print debugging information
 		if (debug) {
-			System.out.println("\t\t[SampleLoginModule] " +
+			System.out.println("\t\t[SomeLoginModule] " +
 					"user entered user name: " +
 					username);
-			System.out.print("\t\t[SampleLoginModule] " +
+			System.out.print("\t\t[SomeLoginModule] " +
 					"user entered password: ");
 			for (int i = 0; i < password.length; i++) {
 				System.out.print(password[i]);
@@ -151,7 +151,7 @@ public class SampleLoginModule implements LoginModule {
 			// authentication succeeded!!!
 			passwordCorrect = true;
 			if (debug) {
-				System.out.println("\t\t[SampleLoginModule] " +
+				System.out.println("\t\t[SomeLoginModule] " +
 						"authentication succeeded");
 			}
 			succeeded = true;
@@ -160,7 +160,7 @@ public class SampleLoginModule implements LoginModule {
 
 			// authentication failed -- clean out state
 			if (debug) {
-				System.out.println("\t\t[SampleLoginModule] " +
+				System.out.println("\t\t[SomeLoginModule] " +
 						"authentication failed");
 			}
 			succeeded = false;
@@ -204,13 +204,13 @@ public class SampleLoginModule implements LoginModule {
 			// to the Subject
 
 			// assume the user we authenticated is the SamplePrincipal
-			userPrincipal = new SamplePrincipal(username);
+			userPrincipal = new SomePrincipal(username);
 			if (!subject.getPrincipals().contains(userPrincipal)) {
 				subject.getPrincipals().add(userPrincipal);
 			}
 
 			if (debug) {
-				System.out.println("\t\t[SampleLoginModule] " +
+				System.out.println("\t\t[SomeLoginModule] " +
 						"added SamplePrincipal to Subject");
 			}
 

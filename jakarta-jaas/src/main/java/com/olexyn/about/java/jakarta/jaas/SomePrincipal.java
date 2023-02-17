@@ -16,7 +16,7 @@ import java.security.Principal;
  * @see java.security.Principal
  * @see javax.security.auth.Subject
  */
-public class SamplePrincipal implements Principal, java.io.Serializable {
+public class SomePrincipal implements Principal, java.io.Serializable {
 
 	/**
 	 * @serial
@@ -30,7 +30,7 @@ public class SamplePrincipal implements Principal, java.io.Serializable {
 	 * @throws NullPointerException if the <code>name</code>
 	 *                              is <code>null</code>.
 	 */
-	public SamplePrincipal(String name) {
+	public SomePrincipal(String name) {
 		if (name == null) {
 			throw new NullPointerException("illegal null input");
 		}
@@ -76,10 +76,10 @@ public class SamplePrincipal implements Principal, java.io.Serializable {
 			return true;
 		}
 
-		if (!(o instanceof SamplePrincipal)) {
+		if (!(o instanceof SomePrincipal)) {
 			return false;
 		}
-		SamplePrincipal that = (SamplePrincipal) o;
+		SomePrincipal that = (SomePrincipal) o;
 
 		if (this.getName().equals(that.getName())) {
 			return true;

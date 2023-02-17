@@ -10,7 +10,7 @@ import javax.security.auth.callback.*;
  * This Sample application attempts to authenticate a user
  * and reports whether or not the authentication was successful.
  */
-public class SampleApplication {
+public class SomeApp {
 
 	/**
 	 * Attempt to authenticate the user.

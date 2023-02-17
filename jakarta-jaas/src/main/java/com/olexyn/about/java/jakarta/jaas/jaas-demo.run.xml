@@ -1,6 +1,6 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="jaas-demo" type="Application" factoryName="Application">
-    <option name="MAIN_CLASS_NAME" value="com.olexyn.about.java.jakarta.jaas.SampleApplication" />
+    <option name="MAIN_CLASS_NAME" value="com.olexyn.about.java.jakarta.jaas.SomeApp" />
     <module name="jakarta-jaas" />
     <selectedOptions>
       <option name="environmentVariables" visible="false" />
