@@ -48,7 +48,8 @@
         <module>wildfly</module>
         <module>jakarta-jaas</module>
         <module>jakarta-jndi</module>
-    </modules>
+		<module>jakarta-jax-ws</module>
+	</modules>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

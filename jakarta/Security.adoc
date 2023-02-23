@@ -1,9 +1,0 @@
-= Security
-
-== JAAS
-
-* included/used with Java SE
-
-== JASPIC
-
-* extension point for Java EE 6+
