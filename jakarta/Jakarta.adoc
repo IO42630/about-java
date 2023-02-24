@@ -81,3 +81,7 @@ uses `WADL` to describe `RESTful` web services. |
 |===
 
 
+
+https://stackoverflow.com/questions/29245083/in-simplest-terms-can-anyone-explain-to-me-the-difference-between-jaas-jacc-an
+https://github.com/wildfly/wildfly/blob/main/docs/src/main/asciidoc/_elytron/Elytron_and_Java_Authentication_SPI_for_Containers-JASPI.adoc
+https://wildfly-security.github.io/wildfly-elytron/blog/jaas-realm/

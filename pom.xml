@@ -46,9 +46,10 @@
         <module>kotlin</module>
         <module>amq</module>
         <module>wildfly</module>
-        <module>jakarta</module>
-        <module>new_features</module>
-    </modules>
+        <module>jakarta-jaas</module>
+        <module>jakarta-jndi</module>
+		<module>jakarta-jax-ws</module>
+	</modules>
     <dependencies>
         <dependency>
             <groupId>junit</groupId>

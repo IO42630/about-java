@@ -1,10 +1,9 @@
-== WSDL
-Web Services Description Language
-
-* XML
-* Describes a Web Service
-* often used in combination with SOAP and XML Schema to provide web services over the Internet.
-** The client can then use SOAP to actually call one of the functions listed in the WSDL
+== WSDL : Web Services Description Language
+* is XML
+* describes web service & it's operations (methods)
+* used with SOAP and XSD to provide web services over the internet
+** we generate stubs (interfaces) from WSDL/XSL,
+** and call them from our code to access the remote service
 
 {empty} +
 
@@ -13,12 +12,15 @@ Web Services Description Language
 * Operations
 * Binding
 
-
+{empty} +
 
 ==== JAXB
 * is not included in the default jdk anymore
 * use --add-modules java.xml.bind option
 
+{empty} +
+
+'''
 === Web Service
 === RPC (Remote Process Call)
 * RMI (remote method invocation)
@@ -26,23 +28,22 @@ Web Services Description Language
 ** Skeleton : code on the server providing the webservice
 ** Stub : proxy / adapter on the client
 
-{empty} +
-{empty} +
+----
 
 ==== Generate Stubs from .wsdl
 * command : `mvn cxf-codegen:wsdl2java`
 * use java 1.8 otherwise error.
 
+{empty} +
 
 ==== XML namespaces
 * see https://www.w3schools.com/XML/xml_namespaces.asp
 ** namespace is defined at start of doc with `xmlns:<foo>`
 ** URI is just used as distinction (not for lookup)
 
-
+{empty} +
 
 ==== WSDL Document
-
 
 [cols="1,5"]
 |===
@@ -58,7 +59,7 @@ All the WSDL elements, such as <definitions>, <types> and <message> reside in th
 > `xmlns:ns1` is set to the value of the `schema targetNamespace`, in the `<types>` section. +
 |===
 
-image:wsdl.gif[]
+image:wsdl.gif[,100%]
 
 [cols="1,5"]
 |===

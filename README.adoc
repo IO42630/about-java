@@ -1,4 +1,4 @@
-= About
+= About-`Java`
 :toc:
 :toclevels: 5
 
@@ -22,23 +22,4 @@ However, they shall be resolved in time. +
 
 {empty} +
 
-=== OCP Progress
 
-----
-On hold.
-----
-
-[%header]
-|===
-| Ch. | stuck @page | read summary | exercise
-4+| *OCP-SE8*
-| 1 Classes | | |
-| 2 Patterns | | |
-| 3 Generics | 134 |  |
-| 4 Functional | | |
-| 5 DateTime | DONE | TODO |
-| 6 Exceptions | 305 | |
-| 7 Concurrency | DONE | TODO | TODO
-| 8 IO | DONE |  |
-| 9 NIO2 | 473 | |
-| 10 JDBC | | |
