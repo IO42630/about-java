@@ -49,6 +49,7 @@
         <module>jakarta-jaas</module>
         <module>jakarta-jndi</module>
 		<module>jakarta-jax-ws</module>
+        <module>jakarta/jee-web-app</module>
 	</modules>
     <dependencies>
         <dependency>
