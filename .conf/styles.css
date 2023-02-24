@@ -1,0 +1,21 @@
+h1 {
+    color: #d7c3a4;
+}
+h2 {
+    color: #a1c1e6;
+}
+h3 {
+    color: #a1c1e6;
+}
+
+body {
+    font-family: Helvetica, sans-serif;
+}
+
+table, th, td {
+    border: 1px solid;
+    border-collapse: collapse;
+}
+
+/* brown #9A6A1B -> 60% #d7c3a4 -> 80% #ebe1d1 */
+/* blue  #1565C0 -> 60% #a1c1e6 -> 80% #d0e0f2 */
