@@ -1,0 +1,21 @@
+= JASPI
+:stylesheet: ../../shared/adoc-styles.css
+
+* JASPI :Java Authentication Security Parameter Index (for Containers)
+
+{empty} +
+
+* to enable for _web-app_:
+** link to `http-authentication-factory` or `security-domain`
+* once enabled
+** requests will be handled by global `AuthConfigProvider`
+*** will call `AuthConfigProvider`
+**** if missing -> by default of deployed _web-app_ (`web.xml`)
+
+{empty} +
+
+* resolution
+. From the deployment descriptors / annotations of the deployment being deployed.
+. The value defined on the default-security-domain attribute on the Undertow subsystem.
+. Default to 'other'.
+
