@@ -42,6 +42,12 @@ They are associated with exactly one
 | @Transient |
 |===
 
+
+
+==== Naming
+
+* Implicit
+
 === Entity Manager
 
 image:img/jpa-em.png[]
