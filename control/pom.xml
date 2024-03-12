@@ -3,11 +3,8 @@
     <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>about-java</artifactId>
-        <groupId>com.olexyn.about.java</groupId>
+        <groupId>com.olexyn.about</groupId>
         <version>0.1</version>
     </parent>
-    <groupId>com.olexyn.about.java.control</groupId>
     <artifactId>control</artifactId>
-    <version>0.1</version>
-    <name>control</name>
 </project>

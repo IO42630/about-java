@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
     <parent>
         <artifactId>about-java</artifactId>
-        <groupId>com.olexyn.about.java</groupId>
+        <groupId>com.olexyn.about</groupId>
         <version>0.1</version>
     </parent>
-    <modelVersion>4.0.0</modelVersion>
-    <artifactId>new_features</artifactId>
+    <artifactId>new-features</artifactId>
     <build>
         <plugins>
             <plugin>
@@ -20,8 +20,4 @@
             </plugin>
         </plugins>
     </build>
-    <properties>
-        <maven.compiler.source>17</maven.compiler.source>
-        <maven.compiler.target>17</maven.compiler.target>
-    </properties>
 </project>
