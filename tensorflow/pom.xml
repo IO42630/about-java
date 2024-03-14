@@ -5,27 +5,27 @@
         <artifactId>about-java</artifactId>
         <version>0.1</version>
     </parent>
-    <artifactId>about-tensorflow</artifactId>
+    <artifactId>tensorflow</artifactId>
     <packaging>jar</packaging>
     <name>tensorflow</name>
     <properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <xx.tensorflow.version>1.15.0</xx.tensorflow.version>
     </properties>
     <dependencies>
         <dependency>
             <groupId>org.tensorflow</groupId>
             <artifactId>tensorflow</artifactId>
-            <version>1.15.0</version>
+            <version>${xx.tensorflow.version}</version>
         </dependency>
         <dependency>
             <groupId>org.tensorflow</groupId>
             <artifactId>libtensorflow</artifactId>
-            <version>1.15.0</version>
+            <version>${xx.tensorflow.version}</version>
         </dependency>
         <dependency>
             <groupId>org.tensorflow</groupId>
             <artifactId>proto</artifactId>
-            <version>1.15.0</version>
+            <version>${xx.tensorflow.version}</version>
         </dependency>
         <dependency>
             <groupId>org.deeplearning4j</groupId>
